@@ -18,7 +18,7 @@ RUN systemd=no dnf -y install /tmp/${REPLICATE_FILE}.rpm
 RUN dnf clean all
 RUN rm -f /tmp/${REPLICATE_FILE}.rpm
 
-COPY start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh
 RUN chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
 
@@ -45,7 +45,6 @@ ENV PATH="/usr/bin:/usr/local/bin:${PATH}"
 ARG CACHE_BUST=1
 WORKDIR /opt/qlikcli
 COPY qlikcli/ ./
-COPY requirements.txt ./
 ENV PIP_ROOT_USER_ACTION=ignore
 RUN pip3 install -r ./requirements.txt && \
     pip3 install .

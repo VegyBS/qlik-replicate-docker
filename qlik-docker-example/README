@@ -2,25 +2,25 @@ This folder contains the script files necessary to make a Dockerfile that can be
 The folder contains the following files:
 
 create-dockerfile.sh:
-  The script for creating the Dockerfile. 
+  The script for creating the Dockerfile.
   It uses the "drivers" file described below.
   If a file named "license.json" is in the docker context folder, it will be added to the image and imported to Replicate as a license file.
-  
+
 drivers:
   Contains a key-value pair that describes which drivers to install as well as the installation file containing the driver.
   Lines beginning with # will be considered comments.
-  
+
   Currently, this script supports the following drivers:
   - Oracle 21.8 - should be an rpm file
   - Microsoft SQL Server 18.1 - should be an rpm file
   - MySQL 8.0.32 - should be an rpm file
   - IBM DB2 for LUW 11.1 - should be a tar.gz file
-  
+
   See the provided "drivers" file for an example.
-  
+
 db2client.rsp:
   The response file for IBM DB2 for LUW client installation.
-  
+
 run_docker.sh:
   The script for running the docker image after it was built.
   It accepts the following parameters:
@@ -29,14 +29,14 @@ run_docker.sh:
   - The password for accessing the Replicate UI - Note that the run_docker.sh script DOES NOT validate the Replicate UI password. Therefore, if an invalid password was specified (i.e. weak and/or containing invalid characters), the setserverpassword command will fail and users will not be able to access the Replicate UI.
   - Replicate Data folder, optional, when empty "/replicate/data" is used
   - container name, optional, when empty a random name is provided
-  
+
   To ensure persistency of the Replicate data folder, the run_docker.sh script needs to be edited to bind Replicate's data folder to a mounted path on the host machine.
   This can be done using either the docker bind mount or docker volumes.
   Example:
   docker run -d -e ReplicateRestPort=$1 -e ReplicateAdminPassword=$3 -p $1:$1 --expose $1 --mount type=bind,source=/replicate/physical_data,target=/replicate/data $2
-  
+
   This will bind the physical folder /replicate/physical_data to the virtual folder /replicate/data which is the default Replicate data folder inside the container.
-   
+
 start_replicate.sh:
   Used internally by the created Dockerfile to run Replicate (serves as the docker entrypoint).
   It accepts the following parameters, which can be overridden when running the docker using the -e parameter:
@@ -44,4 +44,4 @@ start_replicate.sh:
   - DefaultReplicateAdminPassword - The admin password for Replicate.
   - rest port on which Replicate should listen to incoming http requests.
   - license file
-                     
+
