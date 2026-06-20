@@ -15,7 +15,7 @@ RUN systemd=no dnf -y install /tmp/${REPLICATE_FILE}.rpm
 RUN dnf clean all
 RUN rm -f /tmp/${REPLICATE_FILE}.rpm
 
-COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./qlik-replicate/scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh
 RUN chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
 
