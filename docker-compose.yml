@@ -1,0 +1,25 @@
+services:
+
+  replicate:
+    image: qlik-replicate:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: replicate
+    ports:
+      - "3562:3562"
+    environment:
+      ReplicateDataFolder: /replicate/data
+      ReplicateAdminPassword: SomeLongPassword1
+      ReplicateRestPort: 3562
+      # REPLICATE_LICENSE_FILE: /tmp/replicate_license.txt
+    volumes:
+       - replicate-data:/replicate/data
+
+volumes:
+  replicate-data:
+
+networks:
+  default:
+    name: replicate-network
+

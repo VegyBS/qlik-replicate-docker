@@ -1,0 +1,4 @@
+oracle21.8		= oracle-instantclient-basiclite-21.8.0.0.0-1.el8.x86_64.rpm
+sqlserver18.1	= msodbcsql18-18.1.2.1-1.x86_64.rpm
+mysql8			= mysql-connector-odbc-8.0.32-1.el8.x86_64.rpm
+db2luw11.1		= DB2_ESE_AUSI_Svr_11.1_Linux_86-64.tar.gz
