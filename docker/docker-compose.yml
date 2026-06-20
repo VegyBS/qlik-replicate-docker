@@ -4,7 +4,7 @@ services:
     image: qlik-replicate:latest
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./qlik-replicate/Dockerfile
     container_name: replicate
     ports:
       - "3562:3562"
