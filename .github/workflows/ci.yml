@@ -89,12 +89,12 @@ jobs:
 
       - name: Get image name
         run: |
-          CONTAINER_NAME=$(grep -E 'container_name:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
-          echo "IMAGE_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
+          IMAGE_NAME=$(grep -E 'image:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
+          echo "QLIK_IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
 
       - name: Save Docker image
         run: |
-          docker save ${{ env.IMAGE_NAME }} -o image.tar
+          docker save ${{ env.QLIK_IMAGE_NAME }} -o image.tar
 
       - name: Upload image artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -113,7 +113,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: ${{ env.IMAGE_NAME }}
+          image-ref: ${{ env.QLIK_IMAGE_NAME }}
           format: table
           exit-code: 0
           ignore-unfixed: true
