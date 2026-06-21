@@ -8,11 +8,45 @@ on:
   pull_request:
 
 jobs:
+  discover-versions:
+    name: Discover Qlik Replicate versions
+    runs-on: ubuntu-latest
+    outputs:
+      urls: ${{ steps.extract.outputs.urls }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Run version discovery script
+        id: extract
+        run: |
+          chmod +x ./scripts/get-qlik-versions.sh
+
+          # Run script and capture only URLs (strip blank lines)
+          URLS_RAW=$(./scripts/get-qlik-versions.sh | grep '^https')
+
+          echo "Discovered URLs:"
+          echo "$URLS_RAW"
+
+          # Convert to JSON array
+          JSON_ARRAY=$(printf '%s\n' "$URLS_RAW" | jq -R . | jq -s .)
+
+          echo "urls=$JSON_ARRAY" >> $GITHUB_OUTPUT
+
   build-test:
     name: Build, test, and scan Docker image
+    needs: discover-versions
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        replicate_url: ${{ fromJson(needs.discover-versions.outputs.urls) }}
+
     env:
       COMPOSE_FILE: docker/docker-compose.yml
+      REPLICATE_URL: ${{ matrix.replicate_url }}
 
     steps:
       - name: Checkout repository
@@ -35,7 +69,6 @@ jobs:
           {
             echo "## Hadolint Results"
             echo ""
-
             # Check: file exists AND contains at least one non-whitespace character
             if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
               echo '```'
@@ -62,10 +95,12 @@ jobs:
         with:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
-          tags: ${{ env.IMAGE_NAME }}
+          tags: ${{ env.IMAGE_NAME }}-${{ matrix.replicate_url }}
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            REPLICATE_URL=${{ matrix.replicate_url }}
 
       - name: Start services with Docker Compose
         run: |
@@ -105,7 +140,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: ${{ env.IMAGE_NAME }}
+          image-ref: ${{ env.IMAGE_NAME }}-${{ matrix.replicate_url }}
           format: table
           exit-code: 0
           ignore-unfixed: true
