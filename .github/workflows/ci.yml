@@ -35,7 +35,7 @@ jobs:
             echo "## Hadolint Results"
             echo ""
             echo '```'
-            cat "${{ steps.hadolint.outputs.hadolint_output }}"
+            cat "hadolint.txt"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
