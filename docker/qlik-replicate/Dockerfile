@@ -16,8 +16,7 @@ RUN dnf install -y \
 
 COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 
-RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh && \
-    chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
+RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh
 
 ARG REPLICATE_URL="https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz"
 
@@ -29,5 +28,7 @@ RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
     systemd=no dnf -y install "$RPM_FILE" && \
     rm -f "$RPM_FILE" && \
     dnf clean all
+
+RUN chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
 
 ENTRYPOINT ["/opt/attunity/replicate/bin/start_replicate.sh"]
