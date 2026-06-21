@@ -29,7 +29,6 @@ runs:
         output-format: json
         output-file: ${{ inputs.prefix }}-grype.json
         fail-build: false
-        severity-cutoff: none
 
     - name: Syft filesystem SBOM
       uses: anchore/syft-action@e22c389904149dbc22b58101806040fa8d37a610

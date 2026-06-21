@@ -11,6 +11,20 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  hadolint:
+    name: Hadolint Dockerfile
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Hadolint Dockerfile
+        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
+        with:
+          dockerfile: docker/qlik-replicate/Dockerfile
+
   discover-qlik-versions:
     name: Discover Qlik Replicate Versions
     uses: ./.github/workflows/discover-qlik-versions.yml
