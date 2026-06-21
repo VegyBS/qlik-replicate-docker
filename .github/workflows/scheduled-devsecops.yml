@@ -64,7 +64,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: qlik-replicate-ci
+          image-ref: qlik-replicate
           format: table
           exit-code: 0
           ignore-unfixed: true
@@ -72,13 +72,13 @@ jobs:
       - name: Run Grype scan
         uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
         with:
-          image: qlik-replicate-ci
+          image: qlik-replicate
           fail-build: false
 
       - name: Generate SBOM (Syft)
         uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
         with:
-          image: qlik-replicate-ci
+          image: qlik-replicate
           format: json
           output-file: sbom.json
 

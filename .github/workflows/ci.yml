@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t qlik-replicate-ci ./docker/qlik-replicate
+          docker build -t qlik-replicate ./docker/qlik-replicate
 
       - name: Start services with Docker Compose
         run: |
@@ -68,7 +68,7 @@ jobs:
 
       - name: Save Docker image
         run: |
-          docker save qlik-replicate-ci -o image.tar
+          docker save qlik-replicate -o image.tar
 
       - name: Upload image artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -87,7 +87,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: qlik-replicate-ci
+          image-ref: qlik-replicate
           format: table
           exit-code: 0
           ignore-unfixed: true
