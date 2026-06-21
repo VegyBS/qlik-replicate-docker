@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
       - name: Run Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@d1e9f0b4b7a2d2f8c8b7e6f4a2d3c1b9e8f7d6c5
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: qlik-replicate-ci
           format: table

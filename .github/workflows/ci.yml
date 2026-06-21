@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "Waiting for Replicate endpoint..."
           for i in {1..30}; do
-            if curl -s http://localhost:3562 >/dev/null; then
+            if curl -s https://localhost:3562 >/dev/null; then
               echo "Service is up"
               exit 0
             fi
@@ -48,6 +48,18 @@ jobs:
       - name: Health check endpoint
         run: |
           curl -v http://localhost:3562
+
+      - name: Save compose logs
+        if: always()
+        run: |
+          docker compose -f docker/docker-compose.yml logs > compose-logs.txt
+
+      - name: Upload compose logs artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: compose-logs
+          path: compose-logs.txt
 
       - name: Tear down environment
         if: always()
@@ -73,7 +85,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
       - name: Run Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: qlik-replicate-ci
           format: table
