@@ -21,9 +21,10 @@ jobs:
         include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
 
     env:
-      VERSION: ${{ matrix.version }}
+      RUN_DATETIME: ${{ github.event.workflow_run.created_at }}
       REPLICATE_URL: ${{ matrix.url }}
       BASELINE_BRANCH: security-baseline
+      BASELINE_DIR: devsecops/${{ matrix.version }}
 
     steps:
       - name: Checkout baseline branch
@@ -32,34 +33,10 @@ jobs:
           ref: ${{ env.BASELINE_BRANCH }}
           token: ${{ secrets.BASELINE_PAT }}
 
-      - name: Ensure baseline directory exists
-        run: mkdir -p devsecops/${{ env.VERSION }}
-
-      - name: Prepare filesystem for scan
-        run: |
-          set -euo pipefail
-
-          mkdir -p /tmp/replicate /tmp/rootfs
-
-          echo "Downloading $REPLICATE_URL"
-          curl -fSL -o /tmp/replicate.tar.gz "$REPLICATE_URL"
-
-          echo "Extracting tarball"
-          tar -xzf /tmp/replicate.tar.gz -C /tmp/replicate
-
-          echo "Locating RPM"
-          RPM_FILE=$(find /tmp/replicate -maxdepth 2 -type f -name '*.rpm' | head -n 1)
-
-          if [ -z "$RPM_FILE" ]; then
-            echo "No RPM found in extracted tarball"
-            exit 1
-          fi
-
-          echo "Extracting RPM payload"
-          rpm2cpio "$RPM_FILE" | (cd /tmp/rootfs && cpio -idmv)
-
-      - name: Run Trivy (filesystem)
-        run: trivy fs --quiet --format json --output trivy.json /tmp/rootfs
+      - name: Extract Qlik
+        uses: ./.github/actions/extract-qlik
+        with:
+          REPLICATE_URL: ${{ matrix.url }}
 
       - name: Run Grype (filesystem)
         run: grype dir:/tmp/rootfs -o json > grype.json || true
@@ -69,17 +46,23 @@ jobs:
 
       - name: Compute DevSecOps deltas
         run: |
-          BASE="devsecops/${VERSION}"
-          echo "## DevSecOps Delta for ${VERSION}" >> $GITHUB_STEP_SUMMARY
+          BASELINE_DIR="${{ env.BASELINE_DIR }}"
+          if [ ! -d "$BASELINE_DIR" ]; then
+            echo "No previous baseline — creating one." >> $GITHUB_STEP_SUMMARY
+            mkdir -p "$BASELINE_DIR"
+            exit 0
+
+          echo "## DevSecOps Delta for ${RUN_DATETIME}" >> $GITHUB_STEP_SUMMARY
 
           for FILE in trivy.json grype.json sbom.json; do
-            CUR="$FILE"
-            PREV="$BASE/$FILE"
+            PREV="$BASELINE_DIR/$FILE"
+            CUR="/tmp/rootfs/$FILE"
 
             echo "### ${FILE}" >> $GITHUB_STEP_SUMMARY
 
             if [ ! -f "$PREV" ]; then
               echo "No previous baseline — creating one." >> $GITHUB_STEP_SUMMARY
+              touch "$PREV"
               continue
             fi
 
@@ -88,11 +71,9 @@ jobs:
 
       - name: Update baseline
         run: |
-          BASE="devsecops/${VERSION}"
-          mkdir -p "$BASE"
-          cp trivy.json grype.json sbom.json "$BASE"/
+          cp /tmp/rootfs/trivy.json /tmp/rootfs/grype.json /tmp/rootfs/sbom.json "$BASELINE_DIR"/
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add "$BASE"
-          git commit -m "Update DevSecOps baseline for ${VERSION}" || echo "No changes"
+          git add "$BASELINE_DIR"
+          git commit -m "Update DevSecOps baseline for ${RUN_DATETIME}" || echo "No changes"
           git push origin ${{ env.BASELINE_BRANCH }}
