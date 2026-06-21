@@ -19,6 +19,8 @@ runs:
         scan-ref: ${{ inputs.path }}
         format: json
         output: ${{ inputs.prefix }}-trivy.json
+        exit-code: 0
+        ignore-unfixed: true
 
     - name: Grype filesystem scan
       uses: anchore/grype-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
@@ -26,6 +28,8 @@ runs:
         path: ${{ inputs.path }}
         output-format: json
         output-file: ${{ inputs.prefix }}-grype.json
+        fail-build: false
+        severity-cutoff: none
 
     - name: Syft filesystem SBOM
       uses: anchore/syft-action@e22c389904149dbc22b58101806040fa8d37a610

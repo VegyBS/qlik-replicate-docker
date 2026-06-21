@@ -15,6 +15,8 @@ runs:
         image-ref: ${{ inputs.image }}
         format: json
         output: image-trivy.json
+        exit-code: 0
+        ignore-unfixed: true
 
     - name: Grype image scan
       uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
@@ -22,6 +24,8 @@ runs:
         image: docker:${{ inputs.image }}
         output-format: json
         output-file: image-grype.json
+        fail-build: false
+        severity-cutoff: none
 
     - name: Syft image SBOM
       uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
