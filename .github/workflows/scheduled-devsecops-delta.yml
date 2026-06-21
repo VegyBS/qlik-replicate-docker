@@ -6,23 +6,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  extract:
-    name: Discover and Extract Qlik Replicate Versions
-    uses: ./.github/workflows/discover-and-extract.yml
+  discover-qlik-versions:
+    name: Discover Qlik Replicate Versions
+    uses: ./.github/workflows/discover-qlik-versions.yml
 
   devsecops:
     name: Scan for DevSecOps and Compute Delta
-    needs: extract
+    needs: discover-qlik-versions
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJson(needs.extract.outputs.matrix) }}
+        include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
 
     env:
       VERSION: ${{ matrix.version }}
-      PATH_TO_SCAN: ${{ matrix.path }}
+      REPLICATE_URL: ${{ matrix.url }}
       BASELINE_BRANCH: security-baseline
 
     steps:
@@ -35,14 +35,37 @@ jobs:
       - name: Ensure baseline directory exists
         run: mkdir -p devsecops/${{ env.VERSION }}
 
+      - name: Prepare filesystem for scan
+        run: |
+          set -euo pipefail
+
+          mkdir -p /tmp/replicate /tmp/rootfs
+
+          echo "Downloading $REPLICATE_URL"
+          curl -fSL -o /tmp/replicate.tar.gz "$REPLICATE_URL"
+
+          echo "Extracting tarball"
+          tar -xzf /tmp/replicate.tar.gz -C /tmp/replicate
+
+          echo "Locating RPM"
+          RPM_FILE=$(find /tmp/replicate -maxdepth 2 -type f -name '*.rpm' | head -n 1)
+
+          if [ -z "$RPM_FILE" ]; then
+            echo "No RPM found in extracted tarball"
+            exit 1
+          fi
+
+          echo "Extracting RPM payload"
+          rpm2cpio "$RPM_FILE" | (cd /tmp/rootfs && cpio -idmv)
+
       - name: Run Trivy (filesystem)
-        run: trivy fs --quiet --format json --output trivy.json "${PATH_TO_SCAN}"
+        run: trivy fs --quiet --format json --output trivy.json /tmp/rootfs
 
       - name: Run Grype (filesystem)
-        run: grype dir:"${PATH_TO_SCAN}" -o json > grype.json || true
+        run: grype dir:/tmp/rootfs -o json > grype.json || true
 
       - name: Generate SBOM (Syft)
-        run: syft dir:"${PATH_TO_SCAN}" -o json > sbom.json
+        run: syft dir:/tmp/rootfs -o json > sbom.json
 
       - name: Compute DevSecOps deltas
         run: |
