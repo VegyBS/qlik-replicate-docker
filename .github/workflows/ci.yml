@@ -32,7 +32,7 @@ jobs:
 
           while read -r URL; do
             VERSION=$(echo "$URL" | sed -n 's#.*/v\([0-9]\+\.[0-9]\+\.[0-9]\+\)/.*#\1#p')
-            MATRIX_ITEMS+=("{\"url\":\"$URL\",\"version\":\"$VERSION\"}")
+            MATRIX_ITEMS+=("{\"version\":\"$VERSION\",\"url\":\"$URL\"}")
           done <<< "$URLS"
 
           JSON=$(printf '%s\n' "${MATRIX_ITEMS[@]}" | jq -s -c .)
@@ -40,7 +40,7 @@ jobs:
           echo "matrix=$JSON" >> $GITHUB_OUTPUT
 
   build-test:
-    name: Build, test, and scan Docker image
+    name: Docker Build, test, and scan
     needs: discover-versions
     runs-on: ubuntu-latest
 
@@ -67,7 +67,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
 
-      - name: Get dockerfile location, build context, and image name
+      - name: Get build information
         run: |
           IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
           BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
@@ -125,8 +125,9 @@ jobs:
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} down
 
-      - name: Run Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+      - name: Run Trivy scan
+        if: matrix.version == fromJson(needs.discover-versions.outputs.matrix)[0].version
+        uses: aquasecurity/trivy-action@...
         with:
           image-ref: ${{ env.IMAGE_NAME }}
           format: table
