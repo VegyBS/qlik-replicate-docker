@@ -35,6 +35,4 @@ COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh && \
     chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
 
-USER root
-
 ENTRYPOINT ["/opt/attunity/replicate/bin/start_replicate.sh"]
