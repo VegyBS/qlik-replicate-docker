@@ -58,15 +58,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
-      - name: Add version info to summary
-        run: |
-          echo "## Qlik Replicate Versions Being Built" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **${{ matrix.version }}** → \`${{ env.IMAGE_BASE }}-${{ matrix.version }}:latest\`" >> $GITHUB_STEP_SUMMARY
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
-
       - name: Lint Dockerfile with Hadolint
         id: hadolint
         continue-on-error: true
@@ -89,6 +80,15 @@ jobs:
               echo "_No Hadolint output was generated._"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Add version info to summary
+        run: |
+          echo "## Qlik Replicate Versions Being Built" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **${{ matrix.version }}** → \`${{ env.IMAGE_BASE }}-${{ matrix.version }}:latest\`" >> $GITHUB_STEP_SUMMARY
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
 
       - name: Get dockerfile location, build context, and image name
         run: |
