@@ -109,13 +109,13 @@ jobs:
       - name: Vulnerability Scan install directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ build-and-scan.outputs.extract-directories.install_output }}
+          path: ${{ extract-directories.outputs.install_output }}
           prefix: install
 
       - name: Vulnerability Scan data directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ build-and-scan.outputs.extract-directories.data_output }}
+          path: ${{ extract-directories.outputs.data_output }}
           prefix: data
 
       - name: Tear down environment
