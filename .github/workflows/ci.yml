@@ -107,13 +107,13 @@ jobs:
           data_output: "out/data"
 
       - name: Vulnerability Scan install directory
-        uses: ./.github/actions/scan-directory
+        uses: ./.github/actions/scan-directories
         with:
           path: "${{ steps.extract-directories.outputs.install_output }}"
           prefix: install
 
       - name: Vulnerability Scan data directory
-        uses: ./.github/actions/scan-directory
+        uses: ./.github/actions/scan-directories
         with:
           path: "${{ steps.extract-directories.outputs.data_output }}"
           prefix: data
