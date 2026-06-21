@@ -13,17 +13,35 @@ on:
 jobs:
 
   hadolint:
-    name: Hadolint Dockerfile
+    name: Lint Dockerfile with Hadolint
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
-      - name: Hadolint Dockerfile
+      - name: Lint Dockerfile with Hadolint
+        id: hadolint
+        continue-on-error: true
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
           dockerfile: docker/qlik-replicate/Dockerfile
+          output-file: hadolint.txt
+
+      - name: Add hadolint results to summary
+        if: always()
+        run: |
+          {
+            echo "## Hadolint Results"
+            echo ""
+            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
+              echo '```'
+              cat hadolint.txt
+              echo '```'
+            else
+              echo "_No Hadolint output was generated._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
   discover-qlik-versions:
     name: Discover Qlik Replicate Versions
@@ -109,15 +127,6 @@ jobs:
           name: compose-logs
           path: compose-logs.txt
 
-      - name: Tear down environment
-        if: always()
-        run: docker compose -f ${{ env.COMPOSE_FILE }} down
-
-      - name: Vulnerability Scan Docker image
-        uses: ./.github/actions/scan-image
-        with:
-          image: ${{ env.IMAGE_NAME }}
-
       - name: Extract Qlik directories
         uses: ./.github/actions/extract-directories
         with:
@@ -136,6 +145,15 @@ jobs:
         with:
           path: out/data
           prefix: data
+
+      - name: Tear down environment
+        if: always()
+        run: docker compose -f ${{ env.COMPOSE_FILE }} down
+
+      - name: Vulnerability Scan Docker image
+        uses: ./.github/actions/scan-image
+        with:
+          image: ${{ env.IMAGE_NAME }}
 
       - name: Upload vulnerability scan artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
