@@ -12,7 +12,7 @@ jobs:
     name: Discover Qlik Replicate versions
     runs-on: ubuntu-latest
     outputs:
-      urls: ${{ steps.extract.outputs.urls }}
+      matrix: ${{ steps.extract.outputs.matrix }}
 
     steps:
       - name: Checkout repository
@@ -23,16 +23,21 @@ jobs:
         run: |
           chmod +x ./scripts/get-qlik-versions.sh
 
-          # Run script and capture only URLs (strip blank lines)
-          URLS_RAW=$(./scripts/get-qlik-versions.sh | grep '^https')
+          URLS=$(./scripts/get-qlik-versions.sh | grep '^https' | sed 's/^[[:space:]]*//')
 
           echo "Discovered URLs:"
-          echo "$URLS_RAW"
+          echo "$URLS"
 
-          # Convert to JSON array
-          JSON_ARRAY=$(printf '%s\n' "$URLS_RAW" | jq -R . | jq -s .)
+          MATRIX_ITEMS=()
 
-          echo "urls=$JSON_ARRAY" >> $GITHUB_OUTPUT
+          while read -r URL; do
+            VERSION=$(echo "$URL" | sed -n 's#.*/v\([0-9]\+\.[0-9]\+\.[0-9]\+\)/.*#\1#p')
+            MATRIX_ITEMS+=("{\"url\":\"$URL\",\"version\":\"$VERSION\"}")
+          done <<< "$URLS"
+
+          JSON=$(printf '%s\n' "${MATRIX_ITEMS[@]}" | jq -s -c .)
+
+          echo "matrix=$JSON" >> $GITHUB_OUTPUT
 
   build-test:
     name: Build, test, and scan Docker image
@@ -42,15 +47,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        replicate_url: ${{ fromJson(needs.discover-versions.outputs.urls) }}
+        include: ${{ fromJson(needs.discover-versions.outputs.matrix) }}
 
     env:
       COMPOSE_FILE: docker/docker-compose.yml
-      REPLICATE_URL: ${{ matrix.replicate_url }}
+      REPLICATE_URL: ${{ matrix.url }}
+      REPLICATE_VERSION: ${{ matrix.version }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Add version info to summary
+        run: |
+          echo "## Qlik Replicate Versions Being Built" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **${{ matrix.version }}** — ${{ matrix.url }}" >> $GITHUB_STEP_SUMMARY
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
@@ -69,7 +81,6 @@ jobs:
           {
             echo "## Hadolint Results"
             echo ""
-            # Check: file exists AND contains at least one non-whitespace character
             if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
               echo '```'
               cat hadolint.txt
@@ -95,12 +106,12 @@ jobs:
         with:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
-          tags: ${{ env.IMAGE_NAME }}-${{ matrix.replicate_url }}
+          tags: ${{ env.IMAGE_NAME }}:${{ matrix.version }}
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            REPLICATE_URL=${{ matrix.replicate_url }}
+            REPLICATE_URL=${{ matrix.url }}
 
       - name: Start services with Docker Compose
         run: |
@@ -140,7 +151,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: ${{ env.IMAGE_NAME }}-${{ matrix.replicate_url }}
+          image-ref: ${{ env.IMAGE_NAME }}:${{ matrix.version }}
           format: table
           exit-code: 0
           ignore-unfixed: true
