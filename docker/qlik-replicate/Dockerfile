@@ -20,14 +20,8 @@ RUN curl -L -o ${REPLICATE_FILE}.tar.gz \
     dnf clean all && \
     rm -f /tmp/${REPLICATE_FILE}.rpm
 
-COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
-
-RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh && \
-    chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
-
 # hadolint ignore=DL3041
-RUN dnf update -y && \
-    dnf install -y \
+RUN dnf install -y \
         util-linux \
         unixODBC \
         libnsl \
@@ -35,5 +29,12 @@ RUN dnf update -y && \
         inotify-tools \
         procps && \
     dnf clean all
+
+COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+
+RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh && \
+    chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
+
+USER root
 
 ENTRYPOINT ["/opt/attunity/replicate/bin/start_replicate.sh"]
