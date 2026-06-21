@@ -20,7 +20,7 @@ RUN curl -L -o ${REPLICATE_FILE}.tar.gz \
     dnf clean all && \
     rm -f /tmp/${REPLICATE_FILE}.rpm
 
-COPY ./qlik-replicate/scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 
 RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh && \
     chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
