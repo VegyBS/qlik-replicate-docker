@@ -17,13 +17,13 @@ runs:
         output: image-trivy.json
 
     - name: Grype filesystem scan
-      uses: anchore/grype-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
+      uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
       with:
         path: ${{ inputs.image }}
         output: image-grype.json
 
     - name: Syft filesystem SBOM
-      uses: anchore/syft-action@e22c389904149dbc22b58101806040fa8d37a610
+      uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
       with:
         image: ${{ inputs.image }}
         output: image-sbom.json
