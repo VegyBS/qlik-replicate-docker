@@ -34,15 +34,20 @@ jobs:
           {
             echo "## Hadolint Results"
             echo ""
-            echo '```'
-            cat "hadolint.txt"
-            echo '```'
+
+            if [ -s hadolint.txt ]; then
+              echo '```'
+              cat hadolint.txt
+              echo '```'
+            else
+              echo "_No Hadolint output was generated._"
+              echo ""
+              echo "This usually means:"
+              echo "- The Dockerfile had no lint issues, or"
+              echo "- Hadolint did not write to the output file (format mismatch)"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Get container name
-        run: |
-          CONTAINER_NAME=$(grep -E 'container_name:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
-          echo "QLIK_CONTAINER_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
       - name: Build Docker image
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} build
@@ -82,9 +87,14 @@ jobs:
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} down
 
+      - name: Get image name
+        run: |
+          CONTAINER_NAME=$(grep -E 'container_name:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
+          echo "IMAGE_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
+
       - name: Save Docker image
         run: |
-          docker save ${{ env.QLIK_CONTAINER_NAME }} -o image.tar
+          docker save ${{ env.IMAGE_NAME }} -o image.tar
 
       - name: Upload image artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -103,7 +113,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: ${{ env.QLIK_CONTAINER_NAME }}
+          image-ref: ${{ env.IMAGE_NAME }}
           format: table
           exit-code: 0
           ignore-unfixed: true
