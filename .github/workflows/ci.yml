@@ -10,6 +10,8 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: docker/docker-compose.yml
 
     steps:
       - name: Checkout repository
@@ -35,14 +37,18 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Get container name
+        run: |
+          CONTAINER_NAME=$(grep -E 'container_name:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
+          export QLIK_CONTAINER_NAME="$CONTAINER_NAME"
+
       - name: Build Docker image
         run: |
-          cd docker/
-          docker compose build
+          docker compose -f ${{ env.COMPOSE_FILE }} build
 
       - name: Start services with Docker Compose
         run: |
-          docker compose -f docker/docker-compose.yml up -d
+          docker compose -f ${{ env.COMPOSE_FILE }} up -d
 
       - name: Wait for service to become ready
         run: |
@@ -61,7 +67,7 @@ jobs:
       - name: Save compose logs
         if: always()
         run: |
-          docker compose -f docker/docker-compose.yml logs > compose-logs.txt
+          docker compose -f ${{ env.COMPOSE_FILE }} logs > compose-logs.txt
 
       - name: Upload compose logs artifact
         if: always()
@@ -73,11 +79,11 @@ jobs:
       - name: Tear down environment
         if: always()
         run: |
-          docker compose -f docker/docker-compose.yml down
+          docker compose -f ${{ env.COMPOSE_FILE }} down
 
       - name: Save Docker image
         run: |
-          docker save qlik-replicate -o image.tar
+          docker save ${{ env.QLIK_CONTAINER_NAME }} -o image.tar
 
       - name: Upload image artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
@@ -96,7 +102,7 @@ jobs:
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: qlik-replicate
+          image-ref: ${{ env.QLIK_CONTAINER_NAME }}
           format: table
           exit-code: 0
           ignore-unfixed: true
