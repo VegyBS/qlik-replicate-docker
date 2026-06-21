@@ -2,9 +2,9 @@ name: "Extract Qlik Directories"
 description: "Extract Qlik installation and data directories from the built image"
 
 inputs:
-  container:
+  container_name:
     required: true
-    description: "Docker container name"
+    description: "Name of the running container to extract directories from"
   data_dir:
     required: true
     description: "Replicate Data path inside the container"

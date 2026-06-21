@@ -100,7 +100,7 @@ jobs:
         id: extract-directories
         uses: ./.github/actions/extract-directories
         with:
-          container: ${{ env.CONTAINER_NAME }}
+          container_name: "${{ env.CONTAINER_NAME }}"
           install_dir: "/opt/attunity/replicate"
           install_output: "out/install"
           data_dir: "/replicate/data"
@@ -109,13 +109,13 @@ jobs:
       - name: Vulnerability Scan install directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ steps.extract-directories.outputs.install_output }}
+          path: "${{ steps.extract-directories.outputs.install_output }}"
           prefix: install
 
       - name: Vulnerability Scan data directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ steps.extract-directories.outputs.data_output }}
+          path: "${{ steps.extract-directories.outputs.data_output }}"
           prefix: data
 
       - name: Tear down environment
@@ -125,7 +125,7 @@ jobs:
       - name: Vulnerability Scan Docker image
         uses: ./.github/actions/scan-image
         with:
-          image: ${{ env.IMAGE_NAME }}
+          image: "${{ env.IMAGE_NAME }}"
 
       - name: Upload vulnerability scan artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
