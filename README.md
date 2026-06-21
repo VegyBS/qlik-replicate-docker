@@ -95,20 +95,18 @@ This makes it a strong foundation for production deployments and downstream cust
 
 ## Build Instructions
 
-```
 Clone the repository:
 
-git clone https://github.com/VegyBS/qlik-replicate-docker
-cd qlik-replicate-docker
+`git clone https://github.com/VegyBS/qlik-replicate-docker
+cd qlik-replicate-docker`
 
 Build the image:
 
-docker build -t qlik-replicate:latest .
+`docker build -t qlik-replicate:latest .`
 
 Force rebuild of the installer layer:
 
-docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .
-```
+`docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .`
 
 ---
 
