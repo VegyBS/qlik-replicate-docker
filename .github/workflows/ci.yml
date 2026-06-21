@@ -109,13 +109,13 @@ jobs:
       - name: Vulnerability Scan install directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ extract-directories.outputs.install_output }}
+          path: ${{ steps.extract-directories.outputs.install_output }}
           prefix: install
 
       - name: Vulnerability Scan data directory
         uses: ./.github/actions/scan-directory
         with:
-          path: ${{ extract-directories.outputs.data_output }}
+          path: ${{ steps.extract-directories.outputs.data_output }}
           prefix: data
 
       - name: Tear down environment
@@ -179,7 +179,7 @@ jobs:
    # -----------------------------
 
   deltas:
-    name: Unified Delta Engine
+    name: Check & Update Vulnerability Deltas
     needs: [discover-qlik-versions, build-and-scan]
     runs-on: ubuntu-latest
     if: github.event_name == 'schedule'
@@ -274,10 +274,10 @@ jobs:
             cp "$CUR" "$PREV"
           done
 
-      - name: Commit updated baselines
+      - name: Commit updated vulnerability baselines
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add baselines/${VERSION}
-          git commit -m "Update unified baselines for ${VERSION}" || echo "No changes"
-          git push origin ${{ env.BASELINE_BRANCH }}
+          git commit -m "Update unified baselines for ${VERSION}" || echo "No changes"; exit 0
+          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${VERSION}"
