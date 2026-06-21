@@ -9,6 +9,7 @@ on:
 
 jobs:
   extract:
+    name: Discover and Extract Qlik Replicate Versions
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
