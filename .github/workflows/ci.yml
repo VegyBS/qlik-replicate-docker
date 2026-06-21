@@ -36,16 +36,13 @@ jobs:
             echo "## Hadolint Results"
             echo ""
 
-            if [ -s hadolint.txt ]; then
+            # Check: file exists AND contains at least one non-whitespace character
+            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
               echo '```'
               cat hadolint.txt
               echo '```'
             else
               echo "_No Hadolint output was generated._"
-              echo ""
-              echo "This usually means:"
-              echo "- The Dockerfile had no lint issues, or"
-              echo "- Hadolint did not write to the output file (format mismatch)"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
 

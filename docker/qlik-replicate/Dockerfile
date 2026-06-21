@@ -2,7 +2,6 @@ FROM amazonlinux:2023@sha256:d09f1353c3c0844852cff7bf103498a205532f5bca444e1ed64
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# hadolint ignore=DL3041
 RUN dnf install -y \
         shadow-utils \
         tar \
@@ -11,7 +10,6 @@ RUN dnf install -y \
 
 ARG REPLICATE_FILE=areplicate-2026.5.0-169.x86_64
 
-# hadolint ignore=DL3059, DL3041
 RUN curl -L -o ${REPLICATE_FILE}.tar.gz \
         https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz && \
     tar -xzf ${REPLICATE_FILE}.tar.gz -C /tmp && \
@@ -20,7 +18,6 @@ RUN curl -L -o ${REPLICATE_FILE}.tar.gz \
     dnf clean all && \
     rm -f /tmp/${REPLICATE_FILE}.rpm
 
-# hadolint ignore=DL3041
 RUN dnf install -y \
         util-linux \
         unixODBC \
