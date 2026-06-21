@@ -2,9 +2,9 @@ name: "Extract Qlik Directories"
 description: "Extract Qlik installation and data directories from the built image"
 
 inputs:
-  image:
+  container:
     required: true
-    description: "Docker image name"
+    description: "Docker container name"
   data_dir:
     required: true
     description: "Replicate Data path inside the container"
@@ -21,14 +21,10 @@ runs:
         mkdir -p out/install
         mkdir -p out/data
 
-    - name: Extract installation directory
+    - name: Extract installation directory from running container
       shell: bash
-      run: |
-        docker run --rm -v $PWD/out:/out "${{ inputs.image }}" \
-          sh -c "cp -r '${{ inputs.install_dir }}' /out/install"
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" out/install
 
-    - name: Extract data directory
+    - name: Extract data directory from running container
       shell: bash
-      run: |
-        docker run --rm -v $PWD/out:/out "${{ inputs.image }}" \
-          sh -c "cp -r '${{ inputs.data_dir }}' /out/data || true"
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" out/data || true

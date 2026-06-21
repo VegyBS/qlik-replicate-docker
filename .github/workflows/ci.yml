@@ -12,37 +12,6 @@ on:
 
 jobs:
 
-  hadolint:
-    name: Lint Dockerfile with Hadolint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
-
-      - name: Lint Dockerfile with Hadolint
-        id: hadolint
-        continue-on-error: true
-        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
-        with:
-          dockerfile: docker/qlik-replicate/Dockerfile
-          output-file: hadolint.txt
-
-      - name: Add hadolint results to summary
-        if: always()
-        run: |
-          {
-            echo "## Hadolint Results"
-            echo ""
-            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
-              echo '```'
-              cat hadolint.txt
-              echo '```'
-            else
-              echo "_No Hadolint output was generated._"
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
-
   discover-qlik-versions:
     name: Discover Qlik Replicate Versions
     uses: ./.github/workflows/discover-qlik-versions.yml
@@ -59,8 +28,6 @@ jobs:
 
     env:
       COMPOSE_FILE: docker/docker-compose.yml
-      REPLICATE_URL: ${{ matrix.url }}
-      REPLICATE_VERSION: ${{ matrix.version }}
 
     steps:
 
@@ -78,11 +45,13 @@ jobs:
       - name: Get build information
         run: |
           IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
+          CONTAINER_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'container_name:' | awk '{print $2}')
           BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
           DOCKERFILE_RAW=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'dockerfile:' | awk '{print $2}')
           DOCKERFILE="$BUILD_CONTEXT/$DOCKERFILE_RAW"
 
           echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+          echo "CONTAINER_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
           echo "BUILD_CONTEXT=$BUILD_CONTEXT" >> $GITHUB_ENV
           echo "DOCKERFILE=$DOCKERFILE" >> $GITHUB_ENV
 
@@ -128,22 +97,25 @@ jobs:
           path: compose-logs.txt
 
       - name: Extract Qlik directories
+        id: extract-directories
         uses: ./.github/actions/extract-directories
         with:
-          image: ${{ env.IMAGE_NAME }}
+          container: ${{ env.CONTAINER_NAME }}
           install_dir: "/opt/attunity/replicate"
+          install_output: "out/install"
           data_dir: "/replicate/data"
+          data_output: "out/data"
 
       - name: Vulnerability Scan install directory
         uses: ./.github/actions/scan-directory
         with:
-          path: out/install
+          path: ${{ build-and-scan.outputs.extract-directories.install_output }}
           prefix: install
 
       - name: Vulnerability Scan data directory
         uses: ./.github/actions/scan-directory
         with:
-          path: out/data
+          path: ${{ build-and-scan.outputs.extract-directories.data_output }}
           prefix: data
 
       - name: Tear down environment
@@ -169,6 +141,38 @@ jobs:
             data-trivy.json
             data-grype.json
             data-sbom.json
+
+  hadolint:
+    needs: build-and-scan
+    name: Lint Dockerfile with Hadolint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Lint Dockerfile with Hadolint
+        id: hadolint
+        continue-on-error: true
+        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
+        with:
+          dockerfile: ${{ env.DOCKERFILE }}
+          output-file: hadolint.txt
+
+      - name: Add hadolint results to summary
+        if: always()
+        run: |
+          {
+            echo "## Hadolint Results"
+            echo ""
+            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
+              echo '```'
+              cat hadolint.txt
+              echo '```'
+            else
+              echo "_No Hadolint output was generated._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
    # -----------------------------
    # CI Pipeline Ends here. Delta runs for daily vulnerability scans are below.
@@ -251,11 +255,21 @@ jobs:
             comm -13 current.txt previous.txt > resolved.txt
 
             echo "### New" >> $GITHUB_STEP_SUMMARY
-            if [ -s new.txt ]; then cat new.txt >> $GITHUB_STEP_SUMMARY; else echo "_None_" >> $GITHUB_STEP_SUMMARY; fi
+            if [ -s new.txt ]; then
+              cat new.txt >> $GITHUB_STEP_SUMMARY
+              rm new.txt
+            else
+              echo "_None_" >> $GITHUB_STEP_SUMMARY
+            fi
 
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Resolved" >> $GITHUB_STEP_SUMMARY
-            if [ -s resolved.txt ]; then cat resolved.txt >> $GITHUB_STEP_SUMMARY; else echo "_None_" >> $GITHUB_STEP_SUMMARY; fi
+            if [ -s resolved.txt ]; then
+              cat resolved.txt >> $GITHUB_STEP_SUMMARY
+              rm resolved.txt
+            else
+              echo "_None_" >> $GITHUB_STEP_SUMMARY
+            fi
 
             cp "$CUR" "$PREV"
           done
