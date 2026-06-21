@@ -42,8 +42,7 @@ jobs:
       - name: Get container name
         run: |
           CONTAINER_NAME=$(grep -E 'container_name:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
-          export QLIK_CONTAINER_NAME="$CONTAINER_NAME" >> $GITHUB_ENV
-
+          echo "QLIK_CONTAINER_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
       - name: Build Docker image
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} build
