@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-test:
+    name: Build, test, and scan Docker image
     runs-on: ubuntu-latest
     env:
       COMPOSE_FILE: docker/docker-compose.yml
@@ -87,10 +88,15 @@ jobs:
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} down
 
+      - name: Get image name
+        run: |
+          IMAGE_NAME=$(grep -E 'image:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+
       - name: Run Trivy vulnerability scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
-          image-ref: $(grep -E 'image:' ${{ env.COMPOSE_FILE }} | awk '{print $2}')
+          image-ref: ${{ env.IMAGE_NAME }}
           format: table
           exit-code: 0
           ignore-unfixed: true
