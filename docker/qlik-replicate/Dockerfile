@@ -11,7 +11,7 @@ RUN dnf install -y \
 
 ARG REPLICATE_FILE=areplicate-2026.5.0-169.x86_64
 
-# hadolint ignore=DL3059
+# hadolint ignore=DL3059, DL3041
 RUN curl -L -o ${REPLICATE_FILE}.tar.gz \
         https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz && \
     tar -xzf ${REPLICATE_FILE}.tar.gz -C /tmp && \
