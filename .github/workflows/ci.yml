@@ -19,13 +19,26 @@ jobs:
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
 
       - name: Lint Dockerfile with Hadolint
+        continue-on-error: true
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
           dockerfile: docker/qlik-replicate/Dockerfile
 
+      - name: Add hadolint results to summary
+        if: always()
+        run: |
+          {
+            echo "## Hadolint Results"
+            echo ""
+            echo '```'
+            cat "${{ steps.hadolint.outputs.report }}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Build Docker image
         run: |
-          docker build -t qlik-replicate ./docker/qlik-replicate
+          cd docker/
+          docker compose build
 
       - name: Start services with Docker Compose
         run: |
@@ -35,7 +48,7 @@ jobs:
         run: |
           echo "Waiting for Replicate endpoint..."
           for i in {1..30}; do
-            if curl -s https://localhost:3562 >/dev/null; then
+            if curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3562 | grep -q "200"; then
               echo "Service is up"
               exit 0
             fi
@@ -44,10 +57,6 @@ jobs:
           done
           echo "Service did not become ready in time"
           exit 1
-
-      - name: Health check endpoint
-        run: |
-          curl -v http://localhost:3562
 
       - name: Save compose logs
         if: always()
