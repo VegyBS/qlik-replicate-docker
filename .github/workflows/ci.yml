@@ -26,6 +26,7 @@ jobs:
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
           dockerfile: docker/qlik-replicate/Dockerfile
+          output-file: hadolint.txt
 
       - name: Add hadolint results to summary
         if: always()
