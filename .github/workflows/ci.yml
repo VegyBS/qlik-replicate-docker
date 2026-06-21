@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - dev
+      - '**'
+  pull_request:
+
+jobs:
+  build-test:
+    name: Build, test, and scan Docker image
+    runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: docker/docker-compose.yml
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
+
+      - name: Lint Dockerfile with Hadolint
+        id: hadolint
+        continue-on-error: true
+        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
+        with:
+          dockerfile: docker/qlik-replicate/Dockerfile
+          output-file: hadolint.txt
+
+      - name: Add hadolint results to summary
+        if: always()
+        run: |
+          {
+            echo "## Hadolint Results"
+            echo ""
+
+            # Check: file exists AND contains at least one non-whitespace character
+            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
+              echo '```'
+              cat hadolint.txt
+              echo '```'
+            else
+              echo "_No Hadolint output was generated._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Get dockerfile location, build context, and image name
+        run: |
+          IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
+          BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
+          DOCKERFILE_RAW=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'dockerfile:' | awk '{print $2}')
+          DOCKERFILE="$BUILD_CONTEXT/$DOCKERFILE_RAW"
+
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+          echo "BUILD_CONTEXT=$BUILD_CONTEXT" >> $GITHUB_ENV
+          echo "DOCKERFILE=$DOCKERFILE" >> $GITHUB_ENV
+
+      - name: Build Docker image
+        uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf
+        with:
+          context: ${{ env.BUILD_CONTEXT }}
+          file: ${{ env.DOCKERFILE }}
+          tags: ${{ env.IMAGE_NAME }}
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Start services with Docker Compose
+        run: |
+          docker compose -f ${{ env.COMPOSE_FILE }} up -d
+
+      - name: Wait for service to become ready
+        run: |
+          echo "Waiting for Replicate endpoint..."
+          for i in {1..30}; do
+            if curl -o /dev/null -s -w "%{http_code}\n" http://localhost:3562 | grep -q "200"; then
+              echo "Service is up"
+              exit 0
+            fi
+            echo "Still waiting..."
+            sleep 5
+          done
+          echo "Service did not become ready in time"
+          exit 1
+
+      - name: Save compose logs
+        if: always()
+        run: |
+          docker compose -f ${{ env.COMPOSE_FILE }} logs > compose-logs.txt
+
+      - name: Upload compose logs artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: compose-logs
+          path: compose-logs.txt
+
+      - name: Tear down environment
+        if: always()
+        run: |
+          docker compose -f ${{ env.COMPOSE_FILE }} down
+
+      - name: Run Trivy vulnerability scan
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+        with:
+          image-ref: ${{ env.IMAGE_NAME }}
+          format: table
+          exit-code: 0
+          ignore-unfixed: true

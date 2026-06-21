@@ -97,21 +97,22 @@ This makes it a strong foundation for production deployments and downstream cust
 
 Clone the repository:
 
-git clone https://github.com/VegyBS/qlik-replicate-docker
-cd qlik-replicate-docker
+`git clone https://github.com/VegyBS/qlik-replicate-docker
+cd qlik-replicate-docker`
 
 Build the image:
 
-docker build -t qlik-replicate:latest .
+`docker build -t qlik-replicate:latest .`
 
 Force rebuild of the installer layer:
 
-docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .
+`docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .`
 
 ---
 
 ## Running Locally (Development Mode)
 
+```
 docker run \
   -p 3563:3563 \
   -e ReplicateDataFolder=/data \
@@ -119,6 +120,7 @@ docker run \
   -e ReplicateRestPort=3563 \
   -e ReplicateLicense="$(base64 -w0 license.txt)" \
   qlik-replicate:latest
+```
 
 Then open the Replicate UI:
 
@@ -128,6 +130,7 @@ http://localhost:3563
 
 ## Running with Docker Compose
 
+```
 services:
 
   replicate:
@@ -151,10 +154,11 @@ volumes:
 networks:
   default:
     name: replicate-network
+```
 
 Start the environment:
 
-docker compose up --build
+`docker compose up --build`
 
 Open the UI:
 
@@ -162,11 +166,11 @@ http://localhost:3562
 
 Stop the environment:
 
-docker compose down
+`docker compose down`
 
 Reset all data:
 
-docker compose down -v
+`docker compose down -v`
 
 ---
 
@@ -190,6 +194,7 @@ Future versions of this project will include:
 
 Example task definition snippet:
 
+```
 {
   "image": "your-ecr-repo/qlik-replicate:latest",
   "essential": true,
@@ -202,6 +207,7 @@ Example task definition snippet:
     { "name": "ReplicateRestPort", "value": "3563" }
   ]
 }
+```
 
 ---
 
@@ -330,22 +336,25 @@ https://community.qlik.com/t5/Qlik-Replicate/bd-p/qlik-replicate-discussions
 
 ## Repository Structure
 
-./docker
-./docker/docker-compose.yml
-./docker/qlik-replicate
-./docker/qlik-replicate/Dockerfile
-./docker/qlik-replicate/scripts
-./qlik-docker-example
-./qlik-docker-example/start_replicate.sh
-./qlik-docker-example/README.md
-./qlik-docker-example/README
-./qlik-docker-example/run_docker.sh
-./qlik-docker-example/db2client.rsp
-./qlik-docker-example/drivers
-./qlik-docker-example/create-dockerfile.sh
-./README.md
-./LICENSE
-./.gitignore
+```
+.
+├── docker
+│   ├── docker-compose.yml
+│   └── qlik-replicate
+│       ├── Dockerfile
+│       └── scripts
+├── qlik-docker-example
+│   ├── start_replicate.sh
+│   ├── README.md
+│   ├── README
+│   ├── run_docker.sh
+│   ├── db2client.rsp
+│   ├── drivers
+│   └── create-dockerfile.sh
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ---
 

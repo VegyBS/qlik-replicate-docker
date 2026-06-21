@@ -1,0 +1,45 @@
+name: Scheduled Update GitHub Action SHAs
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"   # Weekly at 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-shas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Run SHA pinning update script
+        run: |
+          chmod +x ./update-action-shas.sh
+          ./update-action-shas.sh
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if [[ -n "$(git.status --porcelain)" ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@5c6e0d6b6e3c0f0e2f6b6b7d2c1a3e4f5b6c7d8e
+        with:
+          commit-message: "chore: update GitHub Action SHAs"
+          title: "Update GitHub Action SHAs"
+          body: "Manual run of SHA pinning script."
+          branch: "update-action-shas"
+          labels: |
+            dependencies
+            security
