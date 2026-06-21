@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout baseline branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           token: ${{ secrets.BASELINE_PAT }}
