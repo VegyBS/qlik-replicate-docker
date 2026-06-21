@@ -10,3 +10,5 @@ updates:
       - "dependencies"
       - "security"
     open-pull-requests-limit: 10
+    ignore:
+    - dependency-name: "peter-evans/create-pull-request"

@@ -8,45 +8,66 @@ on:
   pull_request:
 
 jobs:
-  build-test:
-    name: Build, test, and scan Docker image
+  discover-versions:
+    name: Discover Qlik Replicate versions
     runs-on: ubuntu-latest
-    env:
-      COMPOSE_FILE: docker/docker-compose.yml
+    outputs:
+      matrix: ${{ steps.extract.outputs.matrix }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
+      - name: Run version discovery script
+        id: extract
+        run: |
+          chmod +x ./scripts/get-qlik-versions.sh
+
+          URLS=$(./scripts/get-qlik-versions.sh | grep '^https' | sed 's/^[[:space:]]*//')
+
+          echo "Discovered URLs:"
+          echo "$URLS"
+
+          MATRIX_ITEMS=()
+
+          while read -r URL; do
+            VERSION=$(echo "$URL" | sed -n 's#.*/v\([0-9]\+\.[0-9]\+\.[0-9]\+\)/.*#\1#p')
+            MATRIX_ITEMS+=("{\"version\":\"$VERSION\",\"url\":\"$URL\"}")
+          done <<< "$URLS"
+
+          JSON=$(printf '%s\n' "${MATRIX_ITEMS[@]}" | jq -s -c .)
+
+          echo "matrix=$JSON" >> $GITHUB_OUTPUT
+
+  build-test:
+    name: Docker Build, test, and scan
+    needs: discover-versions
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.discover-versions.outputs.matrix) }}
+
+    env:
+      COMPOSE_FILE: docker/docker-compose.yml
+      REPLICATE_URL: ${{ matrix.url }}
+      REPLICATE_VERSION: ${{ matrix.version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Add version info to summary
+        run: |
+          echo "## Qlik Replicate Versions Being Built" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **${{ matrix.version }}**" >> $GITHUB_STEP_SUMMARY
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
 
-      - name: Lint Dockerfile with Hadolint
-        id: hadolint
-        continue-on-error: true
-        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
-        with:
-          dockerfile: docker/qlik-replicate/Dockerfile
-          output-file: hadolint.txt
-
-      - name: Add hadolint results to summary
-        if: always()
-        run: |
-          {
-            echo "## Hadolint Results"
-            echo ""
-
-            # Check: file exists AND contains at least one non-whitespace character
-            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
-              echo '```'
-              cat hadolint.txt
-              echo '```'
-            else
-              echo "_No Hadolint output was generated._"
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Get dockerfile location, build context, and image name
+      - name: Get build information
         run: |
           IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
           BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
@@ -66,6 +87,8 @@ jobs:
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            REPLICATE_URL=${{ matrix.url }}
 
       - name: Start services with Docker Compose
         run: |
@@ -102,10 +125,42 @@ jobs:
         run: |
           docker compose -f ${{ env.COMPOSE_FILE }} down
 
-      - name: Run Trivy vulnerability scan
+      - name: Run Trivy scan
+        if: matrix.version == fromJson(needs.discover-versions.outputs.matrix)[0].version
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: ${{ env.IMAGE_NAME }}
           format: table
           exit-code: 0
           ignore-unfixed: true
+
+  hadolint:
+    name: Lint Dockerfile with Hadolint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+
+      - name: Lint Dockerfile with Hadolint
+        id: hadolint
+        continue-on-error: true
+        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
+        with:
+          dockerfile: docker/qlik-replicate/Dockerfile
+          output-file: hadolint.txt
+
+      - name: Add hadolint results to summary
+        if: always()
+        run: |
+          {
+            echo "## Hadolint Results"
+            echo ""
+            if [ -f hadolint.txt ] && grep -q '[^[:space:]]' hadolint.txt; then
+              echo '```'
+              cat hadolint.txt
+              echo '```'
+            else
+              echo "_No Hadolint output was generated._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
