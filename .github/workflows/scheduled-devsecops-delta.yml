@@ -1,0 +1,73 @@
+name: Scheduled DevSecOps Delta
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  extract:
+    uses: ./.github/workflows/discover-and-extract.yml
+
+  devsecops:
+    needs: extract
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.extract.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
+      PATH_TO_SCAN: ${{ matrix.path }}
+      BASELINE_BRANCH: security-baseline
+
+    steps:
+      - name: Checkout baseline branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASELINE_BRANCH }}
+          token: ${{ secrets.BASELINE_PAT }}
+
+      - name: Ensure baseline directory exists
+        run: mkdir -p devsecops/${{ env.VERSION }}
+
+      - name: Run Trivy (filesystem)
+        run: trivy fs --quiet --format json --output trivy.json "${PATH_TO_SCAN}"
+
+      - name: Run Grype (filesystem)
+        run: grype dir:"${PATH_TO_SCAN}" -o json > grype.json || true
+
+      - name: Generate SBOM (Syft)
+        run: syft dir:"${PATH_TO_SCAN}" -o json > sbom.json
+
+      - name: Compute DevSecOps deltas
+        run: |
+          BASE="devsecops/${VERSION}"
+          echo "## DevSecOps Delta for ${VERSION}" >> $GITHUB_STEP_SUMMARY
+
+          for FILE in trivy.json grype.json sbom.json; do
+            CUR="$FILE"
+            PREV="$BASE/$FILE"
+
+            echo "### ${FILE}" >> $GITHUB_STEP_SUMMARY
+
+            if [ ! -f "$PREV" ]; then
+              echo "No previous baseline — creating one." >> $GITHUB_STEP_SUMMARY
+              continue
+            fi
+
+            diff -u "$PREV" "$CUR" >> $GITHUB_STEP_SUMMARY || true
+          done
+
+      - name: Update baseline
+        run: |
+          BASE="devsecops/${VERSION}"
+          mkdir -p "$BASE"
+          cp trivy.json grype.json sbom.json "$BASE"/
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add "$BASE"
+          git commit -m "Update DevSecOps baseline for ${VERSION}" || echo "No changes"
+          git push origin ${{ env.BASELINE_BRANCH }}
