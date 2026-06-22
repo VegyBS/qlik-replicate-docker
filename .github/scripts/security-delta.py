@@ -71,11 +71,21 @@ def normalise_grype(data, source):
 # ------------------------------------------------------------------------------
 def normalise_file(path, source):
     data = load_json(path)
+
+    # Ignore empty files, lists, or unexpected formats
+    if not isinstance(data, dict):
+        print(f"Ignoring non-dict JSON file: {path}")
+        return []
+
     if "Results" in data:
         return normalise_trivy(data, source)
+
     if "matches" in data:
         return normalise_grype(data, source)
+
+    # Ignore SBOMs or unknown formats
     return []
+
 
 # ------------------------------------------------------------------------------
 # Convert a list of findings into a dict keyed by (CVE, package, source).
