@@ -1,0 +1,51 @@
+name: "Extract Qlik Directories"
+description: "Extract Qlik installation and data directories from the built image"
+
+inputs:
+  container_name:
+    required: true
+    description: "Name of the running container to extract directories from"
+  data_dir:
+    required: true
+    description: "Replicate Data path inside the container"
+  data_output:
+    required: true
+    description: "Output path for the extracted data directory"
+  install_dir:
+    required: true
+    description: "Installation directory path inside the container"
+  install_output:
+    required: true
+    description: "Output path for the extracted installation directory"
+
+outputs:
+  install_output:
+    description: "Output path for install directory"
+    value: ${{ steps.set-outputs.outputs.install_output }}
+  data_output:
+    description: "Output path for data directory"
+    value: ${{ steps.set-outputs.outputs.data_output }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Create output directories
+      shell: bash
+      run: |
+        mkdir -p ${{ inputs.install_output }}
+        mkdir -p ${{ inputs.data_output }}
+
+    - name: Extract installation directory from running container
+      shell: bash
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" ${{ inputs.install_output }}
+
+    - name: Extract data directory from running container
+      shell: bash
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" ${{ inputs.data_output }} || true
+
+    - id: set-outputs
+      name: Set outputs
+      shell: bash
+      run: |
+        echo "install_output=${{ inputs.install_output }}" >> "$GITHUB_OUTPUT"
+        echo "data_output=${{ inputs.data_output }}" >> "$GITHUB_OUTPUT"

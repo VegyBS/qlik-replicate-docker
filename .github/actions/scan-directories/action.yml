@@ -1,0 +1,38 @@
+name: "Scan Directory"
+description: "Run Trivy, Grype, and SBOM on a directory"
+
+inputs:
+  path:
+    required: true
+    description: "Directory to scan"
+  prefix:
+    required: true
+    description: "Prefix for output filenames"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Trivy filesystem scan
+      uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+      with:
+        scan-type: fs
+        scan-ref: ${{ inputs.path }}
+        format: json
+        output: ${{ inputs.prefix }}-trivy.json
+        exit-code: 0
+        ignore-unfixed: true
+
+    - name: Grype filesystem scan
+      uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
+      with:
+        path: ${{ inputs.path }}
+        output-format: json
+        output-file: ${{ inputs.prefix }}-grype.json
+        fail-build: false
+
+    - name: SBOM filesystem scan
+      uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
+      with:
+        path: ${{ inputs.path }}
+        format: json
+        output-file: ${{ inputs.prefix }}-sbom.json

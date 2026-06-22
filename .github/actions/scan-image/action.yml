@@ -1,0 +1,34 @@
+name: "Scan Image"
+description: "Run Trivy, Grype, and SBOM on a Docker image"
+
+inputs:
+  image:
+    required: true
+    description: "Docker image to scan"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Trivy image scan
+      uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+      with:
+        image-ref: ${{ inputs.image }}
+        format: json
+        output: image-trivy.json
+        exit-code: 0
+        ignore-unfixed: true
+
+    - name: Grype image scan
+      uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2
+      with:
+        image: docker:${{ inputs.image }}
+        output-format: json
+        output-file: image-grype.json
+        fail-build: false
+
+    - name: SBOM image scan
+      uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
+      with:
+        image: docker:${{ inputs.image }}
+        format: json
+        output-file: image-sbom.json

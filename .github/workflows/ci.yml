@@ -1,4 +1,4 @@
-name: CI
+name: Unified CI & Security Pipeline
 
 on:
   push:
@@ -6,62 +6,37 @@ on:
       - dev
       - '**'
   pull_request:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
 
 jobs:
-  discover-versions:
-    name: Discover Qlik Replicate versions
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.extract.outputs.matrix }}
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+  discover-qlik-versions:
+    name: Discover Qlik Replicate Versions
+    uses: ./.github/workflows/discover-qlik-versions.yml
 
-      - name: Run version discovery script
-        id: extract
-        run: |
-          chmod +x ./scripts/get-qlik-versions.sh
-
-          URLS=$(./scripts/get-qlik-versions.sh | grep '^https' | sed 's/^[[:space:]]*//')
-
-          echo "Discovered URLs:"
-          echo "$URLS"
-
-          MATRIX_ITEMS=()
-
-          while read -r URL; do
-            VERSION=$(echo "$URL" | sed -n 's#.*/v\([0-9]\+\.[0-9]\+\.[0-9]\+\)/.*#\1#p')
-            MATRIX_ITEMS+=("{\"version\":\"$VERSION\",\"url\":\"$URL\"}")
-          done <<< "$URLS"
-
-          JSON=$(printf '%s\n' "${MATRIX_ITEMS[@]}" | jq -s -c .)
-
-          echo "matrix=$JSON" >> $GITHUB_OUTPUT
-
-  build-test:
-    name: Docker Build, test, and scan
-    needs: discover-versions
+  build-and-scan:
+    name: Build, test, and security scan
+    needs: discover-qlik-versions
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJson(needs.discover-versions.outputs.matrix) }}
+        include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
 
     env:
       COMPOSE_FILE: docker/docker-compose.yml
-      REPLICATE_URL: ${{ matrix.url }}
-      REPLICATE_VERSION: ${{ matrix.version }}
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
       - name: Add version info to summary
         run: |
           echo "## Qlik Replicate Versions Being Built" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **${{ matrix.version }}**" >> $GITHUB_STEP_SUMMARY
 
       - name: Set up Docker Buildx
@@ -70,11 +45,13 @@ jobs:
       - name: Get build information
         run: |
           IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
+          CONTAINER_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'container_name:' | awk '{print $2}')
           BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
           DOCKERFILE_RAW=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'dockerfile:' | awk '{print $2}')
           DOCKERFILE="$BUILD_CONTEXT/$DOCKERFILE_RAW"
 
           echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+          echo "CONTAINER_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
           echo "BUILD_CONTEXT=$BUILD_CONTEXT" >> $GITHUB_ENV
           echo "DOCKERFILE=$DOCKERFILE" >> $GITHUB_ENV
 
@@ -89,10 +66,10 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             REPLICATE_URL=${{ matrix.url }}
+            REPLICATE_VERSION=${{ matrix.version }}
 
       - name: Start services with Docker Compose
-        run: |
-          docker compose -f ${{ env.COMPOSE_FILE }} up -d
+        run: docker compose -f ${{ env.COMPOSE_FILE }} up -d
 
       - name: Wait for service to become ready
         run: |
@@ -110,8 +87,7 @@ jobs:
 
       - name: Save compose logs
         if: always()
-        run: |
-          docker compose -f ${{ env.COMPOSE_FILE }} logs > compose-logs.txt
+        run: docker compose -f ${{ env.COMPOSE_FILE }} logs > compose-logs.txt
 
       - name: Upload compose logs artifact
         if: always()
@@ -120,21 +96,54 @@ jobs:
           name: compose-logs
           path: compose-logs.txt
 
+      - name: Extract Qlik directories
+        id: extract-directories
+        uses: ./.github/actions/extract-directories
+        with:
+          container_name: "${{ env.CONTAINER_NAME }}"
+          install_dir: "/opt/attunity/replicate"
+          install_output: "out/install"
+          data_dir: "/replicate/data"
+          data_output: "out/data"
+
+      - name: Vulnerability Scan install directory
+        uses: ./.github/actions/scan-directories
+        with:
+          path: "${{ steps.extract-directories.outputs.install_output }}"
+          prefix: install
+
+      - name: Vulnerability Scan data directory
+        uses: ./.github/actions/scan-directories
+        with:
+          path: "${{ steps.extract-directories.outputs.data_output }}"
+          prefix: data
+
       - name: Tear down environment
         if: always()
-        run: |
-          docker compose -f ${{ env.COMPOSE_FILE }} down
+        run: docker compose -f ${{ env.COMPOSE_FILE }} down
 
-      - name: Run Trivy scan
-        if: matrix.version == fromJson(needs.discover-versions.outputs.matrix)[0].version
-        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+      - name: Vulnerability Scan Docker image
+        uses: ./.github/actions/scan-image
         with:
-          image-ref: ${{ env.IMAGE_NAME }}
-          format: table
-          exit-code: 0
-          ignore-unfixed: true
+          image: "${{ env.IMAGE_NAME }}"
+
+      - name: Upload vulnerability scan artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: scan-results-${{ matrix.version }}
+          path: |
+            trivy-image.json
+            grype-image.json
+            sbom-image.json
+            install-trivy.json
+            install-grype.json
+            install-sbom.json
+            data-trivy.json
+            data-grype.json
+            data-sbom.json
 
   hadolint:
+    needs: build-and-scan
     name: Lint Dockerfile with Hadolint
     runs-on: ubuntu-latest
 
@@ -147,7 +156,7 @@ jobs:
         continue-on-error: true
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
-          dockerfile: docker/qlik-replicate/Dockerfile
+          dockerfile: ${{ env.DOCKERFILE }}
           output-file: hadolint.txt
 
       - name: Add hadolint results to summary
@@ -164,3 +173,111 @@ jobs:
               echo "_No Hadolint output was generated._"
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+   # -----------------------------
+   # CI Pipeline Ends here. Delta runs for daily vulnerability scans are below.
+   # -----------------------------
+
+  deltas:
+    name: Check & Update Vulnerability Deltas
+    needs: [discover-qlik-versions, build-and-scan]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
+      BASELINE_BRANCH: security-baseline
+
+    steps:
+      - name: Checkout baseline branch
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          ref: ${{ env.BASELINE_BRANCH }}
+          token: ${{ secrets.BASELINE_PAT }}
+
+      - name: Download scan artifacts
+        uses: actions/download-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: scan-results-${{ matrix.version }}
+
+      - name: Ensure baseline directories exist
+        run: mkdir -p baselines/${VERSION}
+
+      - name: Unified delta engine
+        run: |
+          set -euo pipefail
+
+          SCAN_FILES=(
+            "trivy-image.json"
+            "grype-image.json"
+            "sbom-image.json"
+            "install-trivy.json"
+            "install-grype.json"
+            "install-sbom.json"
+            "data-trivy.json"
+            "data-grype.json"
+            "data-sbom.json"
+          )
+
+          for FILE in "${SCAN_FILES[@]}"; do
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## Delta for ${FILE}" >> $GITHUB_STEP_SUMMARY
+
+            CUR="${FILE}"
+            PREV="baselines/${VERSION}/${FILE}"
+
+            if [ ! -f "$PREV" ]; then
+              echo "No baseline found — creating empty baseline" >> $GITHUB_STEP_SUMMARY
+              touch "$PREV"
+            fi
+
+            case "$FILE" in
+              *trivy*)
+                JQ_FILTER='.Results[].Vulnerabilities[].VulnerabilityID'
+                ;;
+              *grype*)
+                JQ_FILTER='.matches[].vulnerability.id'
+                ;;
+              *sbom*)
+                JQ_FILTER='.artifacts[].id'
+                ;;
+            esac
+
+            jq -r "$JQ_FILTER" "$CUR" | sort -u > current.txt || true
+            jq -r "$JQ_FILTER" "$PREV" | sort -u > previous.txt || true
+
+            comm -23 current.txt previous.txt > new.txt
+            comm -13 current.txt previous.txt > resolved.txt
+
+            echo "### New" >> $GITHUB_STEP_SUMMARY
+            if [ -s new.txt ]; then
+              cat new.txt >> $GITHUB_STEP_SUMMARY
+              rm new.txt
+            else
+              echo "_None_" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Resolved" >> $GITHUB_STEP_SUMMARY
+            if [ -s resolved.txt ]; then
+              cat resolved.txt >> $GITHUB_STEP_SUMMARY
+              rm resolved.txt
+            else
+              echo "_None_" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            cp "$CUR" "$PREV"
+          done
+
+      - name: Commit updated vulnerability baselines
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add baselines/${VERSION}
+          git commit -m "Update unified baselines for ${VERSION}" || echo "No changes"; exit 0
+          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${VERSION}"
