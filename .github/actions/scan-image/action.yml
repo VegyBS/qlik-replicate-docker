@@ -5,6 +5,9 @@ inputs:
   image:
     required: true
     description: "Docker image to scan"
+  version:
+    required: true
+    description: "Version of the software being scanned"
 
 runs:
   using: "composite"
@@ -14,7 +17,7 @@ runs:
       with:
         image-ref: ${{ inputs.image }}
         format: json
-        output: image-trivy.json
+        output: image-trivy-${{ inputs.version }}.json
         exit-code: 0
         ignore-unfixed: true
 
@@ -23,7 +26,7 @@ runs:
       with:
         image: docker:${{ inputs.image }}
         output-format: json
-        output-file: image-grype.json
+        output-file: image-grype-${{ inputs.version }}.json
         fail-build: false
 
     - name: SBOM image scan
@@ -31,4 +34,4 @@ runs:
       with:
         image: docker:${{ inputs.image }}
         format: json
-        output-file: image-sbom.json
+        output-file: image-sbom-${{ inputs.version }}.json

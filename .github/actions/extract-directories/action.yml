@@ -2,6 +2,9 @@ name: "Extract Qlik Directories"
 description: "Extract Qlik installation and data directories from the built image"
 
 inputs:
+  version:
+    required: true
+    description: "Version of the software being scanned"
   container_name:
     required: true
     description: "Name of the running container to extract directories from"
@@ -32,20 +35,20 @@ runs:
     - name: Create output directories
       shell: bash
       run: |
-        mkdir -p ${{ inputs.install_output }}
-        mkdir -p ${{ inputs.data_output }}
+        mkdir -p ${{ inputs.install_output }}-${{ inputs.version }}
+        mkdir -p ${{ inputs.data_output }}-${{ inputs.version }}
 
     - name: Extract installation directory from running container
       shell: bash
-      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" ${{ inputs.install_output }}
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" ${{ inputs.install_output }}-${{ inputs.version }} || true
 
     - name: Extract data directory from running container
       shell: bash
-      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" ${{ inputs.data_output }} || true
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" ${{ inputs.data_output }}-${{ inputs.version }} || true
 
     - id: set-outputs
       name: Set outputs
       shell: bash
       run: |
-        echo "install_output=${{ inputs.install_output }}" >> "$GITHUB_OUTPUT"
-        echo "data_output=${{ inputs.data_output }}" >> "$GITHUB_OUTPUT"
+        echo "install_output=${{ inputs.install_output }}-${{ inputs.version }}" >> "$GITHUB_OUTPUT"
+        echo "data_output=${{ inputs.data_output }}-${{ inputs.version }}" >> "$GITHUB_OUTPUT"
