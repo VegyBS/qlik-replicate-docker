@@ -131,19 +131,30 @@ jobs:
           image: "${{ env.IMAGE_NAME }}"
 
       - name: Upload vulnerability scan artifacts
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@v4
         with:
           name: scan-results-${{ matrix.version }}
           path: |
-            trivy-image-${{ matrix.version }}.json
-            grype-image-${{ matrix.version }}.json
-            sbom-image-${{ matrix.version }}.json
+            image-trivy-${{ matrix.version }}.json
+            image-grype-${{ matrix.version }}.json
             install-trivy-${{ matrix.version }}.json
             install-grype-${{ matrix.version }}.json
-            install-sbom-${{ matrix.version }}.json
             data-trivy-${{ matrix.version }}.json
             data-grype-${{ matrix.version }}.json
-            data-sbom-${{ matrix.version }}.json
+
+      - name: Generate security summary
+        run: |
+          python3 .github/scripts/security-summary.py \
+            --image image-trivy-${{ matrix.version }}.json image-grype-${{ matrix.version }}.json \
+            --install install-trivy-${{ matrix.version }}.json install-grype-${{ matrix.version }}.json \
+            --data data-trivy-${{ matrix.version }}.json data-grype-${{ matrix.version }}.json \
+            --output security-summary-${{ matrix.version }}.md
+
+      - name: Upload security summary
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: security-summary-${{ matrix.version }}
+          path: security-summary-${{ matrix.version }}.md
 
   hadolint:
     needs: build-and-scan
@@ -210,71 +221,32 @@ jobs:
       - name: Ensure baseline directories exist
         run: mkdir -p baselines/${{ matrix.version }}
 
-      - name: Unified delta engine
+      - name: Security delta engine
         run: |
-          set -euo pipefail
+          python3 .github/scripts/security-delta.py \
+            --current-dir . \
+            --baseline-dir baselines/${{ matrix.version }} \
+            --version ${{ matrix.version }}
 
-          SCAN_FILES=(
-            "trivy-image-${{ matrix.version }}.json"
-            "grype-image-${{ matrix.version }}.json"
-            "sbom-image-${{ matrix.version }}.json"
-            "install-trivy-${{ matrix.version }}.json"
-            "install-grype-${{ matrix.version }}.json"
-            "install-sbom-${{ matrix.version }}.json"
-            "data-trivy-${{ matrix.version }}.json"
-            "data-grype-${{ matrix.version }}.json"
-            "data-sbom-${{ matrix.version }}.json"
-          )
+      - name: Upload delta summary
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: delta-summary-${{ matrix.version }}
+          path: delta-summary-${{ matrix.version }}.md
 
-          for FILE in "${SCAN_FILES[@]}"; do
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "## Delta for ${FILE}" >> $GITHUB_STEP_SUMMARY
+      - name: Combine summary + delta
+        run: |
+          cat security-summary-${{ matrix.version }}.md > combined-${{ matrix.version }}.md
+          echo "" >> combined-${{ matrix.version }}.md
+          echo "---" >> combined-${{ matrix.version }}.md
+          echo "" >> combined-${{ matrix.version }}.md
+          cat delta-summary-${{ matrix.version }}.md >> combined-${{ matrix.version }}.md
 
-            CUR="${FILE}"
-            PREV="baselines/${{ matrix.version }}/${FILE}"
-
-            if [ ! -f "$PREV" ]; then
-              echo "No baseline found — creating empty baseline" >> $GITHUB_STEP_SUMMARY
-              touch "$PREV"
-            fi
-
-            case "$FILE" in
-              *trivy*)
-                JQ_FILTER='.Results[].Vulnerabilities[].VulnerabilityID'
-                ;;
-              *grype*)
-                JQ_FILTER='.matches[].vulnerability.id'
-                ;;
-              *sbom*)
-                JQ_FILTER='.artifacts[].id'
-                ;;
-            esac
-
-            jq -r "$JQ_FILTER" "$CUR" | sort -u > current.txt || true
-            jq -r "$JQ_FILTER" "$PREV" | sort -u > previous.txt || true
-
-            comm -23 current.txt previous.txt > new.txt
-            comm -13 current.txt previous.txt > resolved.txt
-
-            echo "### New" >> $GITHUB_STEP_SUMMARY
-            if [ -s new.txt ]; then
-              cat new.txt >> $GITHUB_STEP_SUMMARY
-              rm new.txt
-            else
-              echo "_None_" >> $GITHUB_STEP_SUMMARY
-            fi
-
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Resolved" >> $GITHUB_STEP_SUMMARY
-            if [ -s resolved.txt ]; then
-              cat resolved.txt >> $GITHUB_STEP_SUMMARY
-              rm resolved.txt
-            else
-              echo "_None_" >> $GITHUB_STEP_SUMMARY
-            fi
-
-            cp "$CUR" "$PREV"
-          done
+      - name: Upload combined report
+        uses: actions/upload-artifact@v4
+        with:
+          name: combined-security-report-${{ matrix.version }}
+          path: combined-${{ matrix.version }}.md
 
       - name: Commit updated vulnerability baselines
         run: |

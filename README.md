@@ -1,95 +1,102 @@
-# Qlik Replicate — Minimal Docker Image (Amazon Linux 2023)
-
-This repository builds a minimal, production‑ready Docker image for running Qlik Replicate 2026.x on Amazon Linux 2023.
-It is designed for two primary use cases:
-
-1. Local development using Docker
-2. AWS Fargate deployment using the exact same image
-
-This project is a work in progress.
-Right now, it is primarily geared toward **Docker‑based development and testing**, with ECS/Fargate support evolving over time.
-Future ECS‑focused enhancements will include **AWS Secrets Manager integration** to ensure sensitive values such as endpoint passwords, master key passwords, and other credentials are never exposed in environment variables or task definitions.
-
-This image is also intended to be used as a base image for downstream Dockerfiles that need to add endpoint drivers or custom integrations.
-By keeping this image minimal, clean, and secure, it provides a stable foundation for building more specialised Replicate containers.
 
 ---
 
-## Why is this minimal?
+# Qlik Replicate — Minimal Amazon Linux 2023 Image with Automated Security Pipeline
 
-This project intentionally focuses on minimalism and determinism:
+This repository provides two major capabilities:
 
-- Only the packages required for Replicate to run are installed
+1. A minimal, production‑ready Docker image for running Qlik Replicate 2026.x on Amazon Linux 2023
+2. A fully automated CI pipeline that discovers new Replicate versions, builds and tests them, performs vulnerability scanning, generates security reports, and maintains long‑term baselines
+
+The goal is to provide a secure, reproducible, and extensible foundation for running Qlik Replicate in Docker, AWS Fargate, and automated CI environments.
+
+---
+
+## Repository Overview
+
+This project contains:
+
+- A minimal Amazon Linux 2023–based Replicate image
+- A unified CI pipeline that:
+  - Discovers the latest Replicate versions
+  - Builds and tests each version
+  - Extracts install and data directories
+  - Runs Trivy, Grype, and SBOM scans
+  - Generates a security summary
+  - Computes daily deltas
+  - Updates long‑term baselines
+- Custom GitHub Actions for scanning and extraction
+- Python tooling for normalisation, classification, and reporting
+- A roadmap for endpoint driver support
+- Documentation on running locally, with Docker Compose, and on AWS Fargate
+
+This repository is designed for both development and production use.
+
+---
+
+## Why This Image Is Minimal
+
+The image intentionally includes only what Qlik Replicate requires to run:
+
+- Minimal Amazon Linux 2023 base
 - No systemd or init system
-- No unnecessary utilities or debugging tools
-- No endpoint drivers bundled by default
-- Clean, predictable build layers
+- No debugging tools or unnecessary utilities
+- No bundled endpoint drivers
 - Pinned base image digest for reproducibility
+- Clean, deterministic build layers
 
 A minimal image is smaller, more secure, faster to deploy, and easier to maintain.
-It provides a clean foundation that downstream Dockerfiles can extend with endpoint drivers or additional tooling.
+Downstream Dockerfiles can extend this base to add endpoint drivers or custom integrations.
 
 ---
 
-## Why Amazon Linux 2023?
+## Why Amazon Linux 2023
 
-Qlik’s official example uses CentOS 8, which is now end‑of‑life and receives no security updates.
-This makes it unsuitable for production workloads and causes vulnerability scanners to flag the image immediately.
+Qlik’s official example uses CentOS 8, which is end‑of‑life and unpatched.
 
 Amazon Linux 2023 provides:
 
 - Active security patching
-- A hardened, minimal base
+- Hardened, minimal base
 - Long‑term support
-- A modern glibc toolchain
-- Better compatibility with AWS services
-- A smaller attack surface
-- No systemd by default, making it ideal for containers
+- Modern glibc toolchain
+- No systemd by default
+- Smaller attack surface
+- Strong alignment with AWS Fargate
 
-For AWS Fargate, Amazon Linux 2023 is the natural, secure, and future‑proof choice.
+This makes it the natural choice for production workloads.
 
 ---
 
-## Security posture and vulnerability profile
+## Security Posture
 
 This project is designed with security as a first‑class concern:
 
-- Base image pinned by digest to prevent supply‑chain drift
-- Amazon Linux 2023 provides continuous CVE patching
-- Minimal dependency footprint reduces attack surface
-- No systemd, cron, SSH, or unnecessary daemons
+- Base image pinned by digest
+- Minimal dependency footprint
 - No legacy CentOS packages
-- No outdated libraries
-- No embedded drivers that may introduce vulnerabilities
+- No unnecessary daemons
+- No embedded drivers
+- Amazon Linux 2023 continuous CVE patching
 
-Compared to Qlik’s CentOS‑based example, this image:
-
-- Has dramatically fewer CVEs
-- Passes vulnerability scans more cleanly
-- Is suitable for regulated environments
-- Aligns with AWS security best practices
-
-This makes it a strong foundation for production deployments and downstream custom builds.
+Compared to Qlik’s CentOS‑based example, this image has significantly fewer vulnerabilities and is suitable for regulated environments.
 
 ---
 
 ## Features
 
-- Amazon Linux 2023 base image pinned by digest for reproducibility
-- Silent, non‑systemd installation of Qlik Replicate 2026.5.0
-- Minimal runtime dependencies only
-- Custom entrypoint script that:
-  - Creates the Replicate data directory
-  - Sets the admin password
-  - Imports a license if provided
-  - Starts the Replicate service on the configured port
-  - Dynamically tails all active log files
-  - Watches for new log files using inotify
-  - Keeps the container alive indefinitely
+- Minimal Amazon Linux 2023 base
+- Silent, non‑systemd Replicate installation
+- Custom entrypoint that:
+  - Creates data directory
+  - Sets admin password
+  - Imports license if provided
+  - Starts Replicate
+  - Tails logs and watches for new ones
 - Fully compatible with AWS Fargate
-- Includes official Qlik example files for reference
-- Designed to be used as a base image for adding endpoint drivers
-- ECS‑ready design, with future support for AWS Secrets Manager
+- Clean separation of install and data directories
+- Designed as a base image for downstream builds
+- Future support for AWS Secrets Manager
 
 ---
 
@@ -97,20 +104,26 @@ This makes it a strong foundation for production deployments and downstream cust
 
 Clone the repository:
 
-`git clone https://github.com/VegyBS/qlik-replicate-docker
-cd qlik-replicate-docker`
+```
+git clone https://github.com/VegyBS/qlik-replicate-docker
+cd qlik-replicate-docker
+```
 
 Build the image:
 
-`docker build -t qlik-replicate:latest .`
+```
+docker build -t qlik-replicate:latest .
+```
 
 Force rebuild of the installer layer:
 
-`docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .`
+```
+docker build --build-arg CACHE_BUST=$(date +%s) -t qlik-replicate:latest .
+```
 
 ---
 
-## Running Locally (Development Mode)
+## Running Locally
 
 ```
 docker run \
@@ -122,7 +135,7 @@ docker run \
   qlik-replicate:latest
 ```
 
-Then open the Replicate UI:
+Open the UI at:
 
 http://localhost:3563
 
@@ -132,7 +145,6 @@ http://localhost:3563
 
 ```
 services:
-
   replicate:
     image: qlik-replicate:latest
     build:
@@ -150,191 +162,196 @@ services:
 
 volumes:
   replicate-data:
-
-networks:
-  default:
-    name: replicate-network
 ```
 
-Start the environment:
+Start:
 
-`docker compose up --build`
+```
+docker compose up --build
+```
 
-Open the UI:
+Stop:
 
-http://localhost:3562
+```
+docker compose down
+```
 
-Stop the environment:
+Reset data:
 
-`docker compose down`
-
-Reset all data:
-
-`docker compose down -v`
+```
+docker compose down -v
+```
 
 ---
 
-## Running on AWS Fargate (Production Mode)
+## Running on AWS Fargate
 
 This image is designed to run as‑is on Fargate.
 
 Recommended configuration:
 
-- Store the license in AWS Secrets Manager
-- Mount persistent storage (EFS) for /data
-- Pass admin password via task environment variables
-- Expose the configured REST port in the task definition
+- Store license in AWS Secrets Manager
+- Mount EFS for `/data`
+- Pass admin password via environment variables
+- Expose the REST port
 
-Future versions of this project will include:
-
-- Native AWS Secrets Manager integration
-- Secure retrieval of endpoint passwords
-- Secure retrieval of master key passwords
-- Removal of all sensitive values from environment variables
-
-Example task definition snippet:
-
-```
-{
-  "image": "your-ecr-repo/qlik-replicate:latest",
-  "essential": true,
-  "portMappings": [
-    { "containerPort": 3563, "protocol": "tcp" }
-  ],
-  "environment": [
-    { "name": "ReplicateDataFolder", "value": "/data" },
-    { "name": "ReplicateAdminPassword", "value": "..." },
-    { "name": "ReplicateRestPort", "value": "3563" }
-  ]
-}
-```
+Future versions will include native Secrets Manager integration.
 
 ---
 
 ## Environment Variables
 
-ReplicateDataFolder
-Path where Replicate stores its data and logs. Must be writable.
-
-ReplicateAdminPassword
-Password for the Replicate UI.
-
-ReplicateRestPort
-REST API and UI port. Default is 3563.
-
-ReplicateLicense
-Optional. May be provided as a plain file path or as base64 text.
-If provided, it will be imported on startup.
+- **ReplicateDataFolder** – Path for data and logs
+- **ReplicateAdminPassword** – UI password
+- **ReplicateRestPort** – REST API/UI port
+- **ReplicateLicense** – Optional license (file path or base64 text)
 
 ---
 
 ## How the Entrypoint Works
 
-The entrypoint script performs the following steps:
+The entrypoint:
 
-1. Validates that ReplicateDataFolder, ReplicateAdminPassword, and ReplicateRestPort are set.
-2. Creates the data directory if it does not exist and assigns ownership to the attunity user.
-3. Sets the Replicate admin password using repctl.
-4. Imports a license if ReplicateLicense is provided.
-5. Starts the Replicate service on the configured port.
-6. Tails all existing log files in the data directory.
-7. Watches the log directory for new log files using inotify and tails them automatically.
-8. Keeps the container alive by waiting on background tail processes.
+1. Validates required environment variables
+2. Creates the data directory
+3. Sets the admin password
+4. Imports a license if provided
+5. Starts Replicate
+6. Tails all existing logs
+7. Watches for new logs
+8. Keeps the container alive
 
-This makes the container suitable for both local debugging and long‑running production workloads.
+This makes the container suitable for both development and production.
 
 ---
 
 ## Differences from Qlik’s Official Example
 
-This repository includes Qlik’s official qlik-docker-example folder for reference, but the build in this repository intentionally diverges from Qlik’s example in several important ways.
-
-### Uses Amazon Linux 2023 instead of CentOS 8
-Qlik’s example uses CentOS 8, which is end‑of‑life and full of unpatched vulnerabilities.
-This project uses Amazon Linux 2023, which is actively maintained, hardened, and secure.
-
-### Minimal, container‑native build
-Qlik’s example includes extra utilities and a heavier base image.
-This project installs only what Replicate needs, resulting in a smaller, more secure image.
-
-### Production‑oriented entrypoint
-Qlik’s example is designed for demonstration.
-This project’s entrypoint is designed for real workloads, including password setup, license import, log tailing, and long‑running stability.
-
-### Clean data separation
-This project enforces a dedicated ReplicateDataFolder and persistent volume, aligning with container best practices.
-
-### Designed as a base image
-This project is intentionally structured so that downstream Dockerfiles can extend it with endpoint drivers or custom integrations.
-
-In short:
-Qlik’s example shows how Replicate can run in Docker.
-This repository shows how Replicate should run in production.
+- Uses Amazon Linux 2023 instead of CentOS 8
+- Minimal, container‑native build
+- Production‑oriented entrypoint
+- Clean data separation
+- Designed as a base image
+- Suitable for real workloads, not just demos
 
 ---
 
 ## Roadmap for Endpoint Driver Support
 
-Future enhancements planned for this repository include:
+Planned enhancements:
 
-- Optional installation of common endpoint drivers
-- Modular driver installation system
-- Ability to mount drivers at runtime
-- Documentation for driver‑specific dependencies
-- Automated validation of installed drivers
-- Optional multi‑stage builds for driver‑heavy configurations
-- Example downstream Dockerfiles showing how to extend this base image
-- AWS Secrets Manager integration for secure credential retrieval
-
-The goal is to keep the base image minimal while providing a clean, extensible path for adding endpoint support when needed.
+- Optional driver installation
+- Modular driver system
+- Runtime‑mounted drivers
+- Multi‑stage builds
+- Automated validation
+- Example downstream Dockerfiles
+- AWS Secrets Manager integration
 
 ---
 
-## What This Project Cannot Provide (Legal and Licensing Boundaries)
+# Automated CI and Security Pipeline
 
-This repository focuses on containerisation, automation, and operational best practices for Qlik Replicate.
-However, there are strict legal boundaries around what can and cannot be included:
+This repository includes a unified CI pipeline that:
 
-### This project cannot provide:
-- Qlik Replicate binaries
-- Qlik Replicate licenses
-- Endpoint drivers that are licensed or distributed by Qlik
-- Any proprietary Qlik content not publicly available
-- Any mechanism to bypass licensing or activation
+1. Discovers the latest Qlik Replicate versions
+2. Builds and tests each version
+3. Extracts install and data directories
+4. Runs vulnerability scans
+5. Generates a security summary
+6. Computes daily deltas
+7. Updates long‑term baselines
 
-### This project can provide:
-- A minimal, secure, production‑ready container foundation
-- Examples of how to structure downstream Dockerfiles
-- Guidance on how to integrate your own licensed drivers
-- Operational best practices for running Replicate in Docker and Fargate
-
-### Important licensing note
-Qlik Replicate licenses are only available directly from Qlik or an authorised Qlik partner.
-They cannot be generated, downloaded, or obtained from this repository.
-You must supply your own valid license file when running the container.
+This provides continuous visibility into security posture and drift.
 
 ---
 
-## qlik-docker-example (Official Qlik Examples)
+## Version Discovery
 
-The qlik-docker-example folder contains the official example files provided by Qlik.
-These are included for reference only and are not used directly by this minimal build.
+The pipeline automatically:
 
-They demonstrate Qlik’s intended container workflow, but this repository provides a more modern, secure, and production‑oriented alternative.
+- Fetches all tags from `qlik-download/replicate`
+- Normalises and sorts versions
+- Extracts the latest two version families
+- Produces a CI matrix with version and download URL
 
----
-
-## Official Qlik Resources
-
-Qlik Replicate Documentation
-https://help.qlik.com/en-US/replicate/May2026/Content/Replicate/Main/Introduction/Home.htm
-
-Qlik Replicate Community Forums
-https://community.qlik.com/t5/Qlik-Replicate/bd-p/qlik-replicate-discussions
+This ensures new Replicate releases are scanned automatically.
 
 ---
 
-## Repository Structure
+## How the CI Pipeline Works
+
+The pipeline consists of three stages:
+
+### 1. Version Discovery
+Discovers the latest Replicate versions and generates a build matrix.
+
+### 2. Build, Test, and Scan
+For each version:
+
+- Build Docker image
+- Start service
+- Extract install and data directories
+- Run Trivy, Grype, and SBOM scans
+- Generate security summary
+
+### 3. Daily Delta Analysis
+On scheduled runs:
+
+- Compare latest scan with baseline
+- Generate delta report
+- Update baseline branch
+
+This provides daily vulnerability drift detection.
+
+---
+
+# Custom GitHub Actions
+
+This repository includes three custom composite actions:
+
+### scan-image
+Scans a Docker image with Trivy, Grype, and SBOM.
+
+### scan-directories
+Scans a filesystem directory with Trivy, Grype, and SBOM.
+
+### extract-directories
+Extracts install and data directories from a running container.
+
+Each action produces consistent JSON output for downstream processing.
+
+---
+
+# Repository Scripts
+
+This repository includes several utility scripts:
+
+- **get-qlik-versions.sh** – Discover latest Replicate versions
+- **security-summary.py** – Generate full security summary
+- **security-delta.py** – Compute new/resolved vulnerabilities
+- **update-action-shas.sh** – Pin GitHub Actions to commit SHAs
+
+These scripts support the CI pipeline and security automation.
+
+---
+
+# Baseline Branch Strategy
+
+The `security-baseline` branch stores long‑term vulnerability baselines.
+
+Daily scheduled runs:
+
+- Download latest scan results
+- Compare with baseline
+- Generate delta report
+- Commit updated baselines
+
+This provides historical tracking and drift detection.
+
+---
+
+# Repository Structure
 
 ```
 .
@@ -343,49 +360,34 @@ https://community.qlik.com/t5/Qlik-Replicate/bd-p/qlik-replicate-discussions
 │   └── qlik-replicate
 │       ├── Dockerfile
 │       └── scripts
+├── .github
+│   ├── workflows
+│   └── actions
 ├── qlik-docker-example
-│   ├── start_replicate.sh
-│   ├── README.md
-│   ├── README
-│   ├── run_docker.sh
-│   ├── db2client.rsp
-│   ├── drivers
-│   └── create-dockerfile.sh
+├── .github/scripts
 ├── README.md
-├── LICENSE
-└── .gitignore
+└── LICENSE
 ```
 
 ---
 
-## About the Author
+# Legal and Licensing Boundaries
 
-This project is maintained by an engineer with nearly three decades of experience working with data and databases, around fifteen years in ETL and ELT, and more than six years supporting and building Qlik Replicate in containerised environments using Docker, AWS Fargate, and CI/CD automation.
+This repository cannot provide:
 
-The intention behind this repository is not to claim authority, but to share practical experience and create a foundation others can build on.
-The best solutions come from collaboration, and contributions, suggestions, and improvements from the community are genuinely welcome.
+- Qlik Replicate binaries
+- Qlik licenses
+- Proprietary endpoint drivers
+- Any mechanism to bypass licensing
 
----
-
-## Troubleshooting
-
-Replicate UI not loading:
-- Ensure the correct port is exposed
-- Check container logs for missing dependencies
-
-License rejected:
-- Qlik Replicate licenses are only available directly from Qlik or an authorised Qlik partner
-- They cannot be generated, downloaded, or obtained from this repository
-- The license file may be supplied as a plain file or as base64 text
-- Ensure the license matches the installed Replicate version
-
-Installer fails on Amazon Linux 2023:
-- Ensure the RPM filename matches the version in the Dockerfile
-- AL2023 requires non‑systemd installation
+You must supply your own valid license.
 
 ---
 
-## License
+# About the Author
 
-This project is MIT licensed.
-Qlik Replicate is a commercial product and requires a valid license.
+This project is maintained by an engineer with decades of experience in data engineering, ETL/ELT, and Qlik Replicate in containerised environments.
+
+Contributions and improvements are welcome.
+
+---
