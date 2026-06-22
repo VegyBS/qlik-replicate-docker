@@ -193,7 +193,6 @@ jobs:
         include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
 
     env:
-      VERSION: ${{ matrix.version }}
       BASELINE_BRANCH: security-baseline
 
     steps:
@@ -209,7 +208,7 @@ jobs:
           name: scan-results-${{ matrix.version }}
 
       - name: Ensure baseline directories exist
-        run: mkdir -p baselines/${VERSION}
+        run: mkdir -p baselines/${{ matrix.version }}
 
       - name: Unified delta engine
         run: |
@@ -232,7 +231,7 @@ jobs:
             echo "## Delta for ${FILE}" >> $GITHUB_STEP_SUMMARY
 
             CUR="${FILE}"
-            PREV="baselines/${VERSION}/${FILE}"
+            PREV="baselines/${{ matrix.version }}/${FILE}"
 
             if [ ! -f "$PREV" ]; then
               echo "No baseline found — creating empty baseline" >> $GITHUB_STEP_SUMMARY
@@ -281,6 +280,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add baselines/${VERSION}
-          git commit -m "Update unified baselines for ${VERSION}" || echo "No changes"; exit 0
-          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${VERSION}"
+          git add baselines/${{ matrix.version }}
+          git commit -m "Update unified baselines for ${{ matrix.version }}" || echo "No changes"; exit 0
+          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${{ matrix.version }}"
