@@ -18,6 +18,14 @@ inputs:
     required: true
     description: "Output path for the extracted installation directory"
 
+outputs:
+  install_output:
+    description: "Output path for install directory"
+    value: ${{ steps.set-outputs.outputs.install_output }}
+  data_output:
+    description: "Output path for data directory"
+    value: ${{ steps.set-outputs.outputs.data_output }}
+
 runs:
   using: "composite"
   steps:
@@ -35,16 +43,8 @@ runs:
       shell: bash
       run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" ${{ inputs.data_output }} || true
 
-    - name: Debug extracted directories
-      shell: bash
-      if: always()
-      run: |
-        echo "Install output:"
-        ls -R out/install || true
-        echo "Data output:"
-        ls -R out/data || true
-
-    - name: Set outputs
+    - id: set-outputs
+      name: Set outputs
       shell: bash
       run: |
         echo "install_output=${{ inputs.install_output }}" >> "$GITHUB_OUTPUT"
