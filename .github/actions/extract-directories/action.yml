@@ -8,9 +8,15 @@ inputs:
   data_dir:
     required: true
     description: "Replicate Data path inside the container"
+  data_output:
+    required: true
+    description: "Output path for the extracted data directory"
   install_dir:
     required: true
     description: "Installation directory path inside the container"
+  install_output:
+    required: true
+    description: "Output path for the extracted installation directory"
 
 runs:
   using: "composite"
@@ -18,13 +24,19 @@ runs:
     - name: Create output directories
       shell: bash
       run: |
-        mkdir -p out/install
-        mkdir -p out/data
+        mkdir -p ${{ inputs.install_output }}
+        mkdir -p ${{ inputs.data_output }}
 
     - name: Extract installation directory from running container
       shell: bash
-      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" out/install
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.install_dir }}" ${{ inputs.install_output }}
 
     - name: Extract data directory from running container
       shell: bash
-      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" out/data || true
+      run: docker cp "${{ inputs.container_name }}:${{ inputs.data_dir }}" ${{ inputs.data_output }} || true
+
+    - name: List extracted files
+      shell: bash
+      run: |
+        echo "install_output=${{ inputs.install_output }}" >> "$GITHUB_OUTPUT"
+        echo "data_output=${{ inputs.data_output }}" >> "$GITHUB_OUTPUT"

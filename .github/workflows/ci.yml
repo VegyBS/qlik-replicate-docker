@@ -106,6 +106,7 @@ jobs:
           data_dir: "/replicate/data"
           data_output: "out/data"
 
+
       - name: Vulnerability Scan install directory
         uses: ./.github/actions/scan-directories
         with:

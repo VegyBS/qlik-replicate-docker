@@ -32,7 +32,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.git-check.outputs.changes == 'true'
-        uses: peter-evans/create-pull-request@5c6e0d6b6e3c0f0e2f6b6b7d2c1a3e4f5b6c7d8e
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           commit-message: "chore: update GitHub Action SHAs"
           title: "Update GitHub Action SHAs"

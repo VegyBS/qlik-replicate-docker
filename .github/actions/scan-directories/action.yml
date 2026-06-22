@@ -34,4 +34,5 @@ runs:
       uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
       with:
         path: ${{ inputs.path }}
-        output: ${{ inputs.prefix }}-sbom.json
+        format: json
+        output-file: ${{ inputs.prefix }}-sbom.json

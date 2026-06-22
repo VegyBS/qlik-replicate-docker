@@ -1,5 +1,5 @@
 name: "Scan Image"
-description: "Run Trivy, Grype, and Syft on a Docker image"
+description: "Run Trivy, Grype, and SBOM on a Docker image"
 
 inputs:
   image:
@@ -26,8 +26,9 @@ runs:
         output-file: image-grype.json
         fail-build: false
 
-    - name: Syft image SBOM
+    - name: SBOM image scan
       uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
       with:
         image: docker:${{ inputs.image }}
-        output: image-sbom.json
+        format: json
+        output-file: image-sbom.json
