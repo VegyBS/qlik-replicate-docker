@@ -2,6 +2,9 @@ name: "Scan Directory"
 description: "Run Trivy, Grype, and SBOM on a directory"
 
 inputs:
+  version:
+    required: true
+    description: "Version of the software being scanned"
   path:
     required: true
     description: "Directory to scan"
@@ -18,7 +21,7 @@ runs:
         scan-type: fs
         scan-ref: ${{ inputs.path }}
         format: json
-        output: ${{ inputs.prefix }}-trivy.json
+        output: ${{ inputs.prefix }}-trivy-${{ inputs.version }}.json
         exit-code: 0
         ignore-unfixed: true
 
@@ -27,7 +30,7 @@ runs:
       with:
         path: ${{ inputs.path }}
         output-format: json
-        output-file: ${{ inputs.prefix }}-grype.json
+        output-file: ${{ inputs.prefix }}-grype-${{ inputs.version }}.json
         fail-build: false
 
     - name: SBOM filesystem scan
@@ -35,4 +38,4 @@ runs:
       with:
         path: ${{ inputs.path }}
         format: json
-        output-file: ${{ inputs.prefix }}-sbom.json
+        output-file: ${{ inputs.prefix }}-sbom-${{ inputs.version }}.json
