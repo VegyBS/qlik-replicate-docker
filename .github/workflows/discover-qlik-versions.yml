@@ -21,9 +21,9 @@ jobs:
       - name: Run version discovery script
         id: extract
         run: |
-          chmod +x ./scripts/get-qlik-versions.sh
+          chmod +x .github/scripts/get-qlik-versions.sh
 
-          URLS=$(./scripts/get-qlik-versions.sh | grep '^https' | sed 's/^[[:space:]]*//')
+          URLS=$(.github/scripts/get-qlik-versions.sh | grep '^https' | sed 's/^[[:space:]]*//')
 
           MATRIX_ITEMS=()
 
