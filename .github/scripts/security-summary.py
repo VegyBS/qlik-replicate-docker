@@ -6,25 +6,32 @@ from enum import Enum, auto
 
 # ------------------------------------------------------------------------------
 # Script: security-summary.py
+#
 # Purpose:
-#   Aggregate and classify vulnerability findings from Trivy and Grype scans
-#   across three sources:
+#   Produce a unified, human‑readable security summary from multiple vulnerability
+#   scanners (Trivy, Grype, Syft) across three scan sources:
+#
 #       - Docker image
 #       - Qlik install directory
 #       - Qlik data directory
 #
 #   The script:
-#       1. Normalises scanner output into a unified structure
-#       2. Deduplicates findings
-#       3. Classifies ownership, fixability, and noise level
-#       4. Produces a structured Markdown security report
+#       1. Loads JSON output from all scanners
+#       2. Detects which scanner produced each file
+#       3. Normalises findings into a consistent internal structure
+#       4. Merges and deduplicates findings across scanners and sources
+#       5. Classifies ownership, fixability, and noise level
+#       6. Generates a structured Markdown report for CI consumption
 #
-#   This is the main human‑readable security summary used in CI.
+#   Syft SBOMs contain no vulnerabilities, but are accepted safely and ignored
+#   for vulnerability aggregation.
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
 # Classification enums used throughout the report
+# ------------------------------------------------------------------------------
 class Ownership(Enum):
-    MAINTAINER = auto()   # Fixable by you (base image / OS packages)
+    MAINTAINER = auto()   # Fixable by the image maintainer (OS/base image)
     VENDOR = auto()       # Qlik-owned components
     UNKNOWN = auto()
 
@@ -42,19 +49,38 @@ class NoiseLevel(Enum):
 SEVERITY_ORDER = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN"]
 
 # ------------------------------------------------------------------------------
-# Load JSON safely. Returns [] on failure to keep downstream logic simple.
+# Load JSON safely. Returns None on failure so caller can decide how to handle.
 # ------------------------------------------------------------------------------
 def load_json(path):
     try:
         with open(path, "r") as f:
             return json.load(f)
     except Exception:
-        return []
+        return None
 
 # ------------------------------------------------------------------------------
 # Normalise Trivy JSON into a consistent internal structure.
+#
+# Expected structure:
+#   {
+#     "Results": [
+#       {
+#         "Vulnerabilities": [
+#           {
+#             "VulnerabilityID": "...",
+#             "Severity": "...",
+#             "PkgName": "...",
+#             "InstalledVersion": "...",
+#             "FixedVersion": "..."
+#           }
+#         ]
+#       }
+#     ]
+#   }
 # ------------------------------------------------------------------------------
 def normalise_trivy(data, source):
+    if not isinstance(data, dict):
+        return []
     results = []
     for result in data.get("Results", []):
         for vuln in result.get("Vulnerabilities", []):
@@ -71,8 +97,20 @@ def normalise_trivy(data, source):
 
 # ------------------------------------------------------------------------------
 # Normalise Grype JSON into the same structure as Trivy.
+#
+# Expected structure:
+#   {
+#     "matches": [
+#       {
+#         "vulnerability": { "id": "...", "severity": "...", "fix": {...} },
+#         "artifact": { "name": "...", "version": "..." }
+#       }
+#     ]
+#   }
 # ------------------------------------------------------------------------------
 def normalise_grype(data, source):
+    if not isinstance(data, dict):
+        return []
     results = []
     for match in data.get("matches", []):
         vuln = match.get("vulnerability", {})
@@ -89,7 +127,37 @@ def normalise_grype(data, source):
     return results
 
 # ------------------------------------------------------------------------------
+# Normalise Syft SBOMs.
+#
+# Syft produces SBOMs, not vulnerability reports. These contain package metadata
+# but no CVEs. For the purposes of this script, Syft contributes zero findings.
+# ------------------------------------------------------------------------------
+def normalise_syft(data, source):
+    return []
+
+# ------------------------------------------------------------------------------
+# Detect which scanner produced a given JSON file.
+#
+# Rules:
+#   - Trivy: dict with "Results"
+#   - Grype: dict with "matches"
+#   - Syft:  list (SBOMs are always lists)
+#   - Unknown: anything else
+# ------------------------------------------------------------------------------
+def detect_scanner(data):
+    if isinstance(data, dict):
+        if "Results" in data:
+            return "trivy"
+        if "matches" in data:
+            return "grype"
+    if isinstance(data, list):
+        return "syft"
+    return "unknown"
+
+# ------------------------------------------------------------------------------
 # Merge findings from image/install/data scans and dedupe by (CVE, package, source).
+#
+# If both scanners report fixed versions, merge them into a unified list.
 # ------------------------------------------------------------------------------
 def merge_findings(image, install, data):
     all_findings = image + install + data
@@ -100,11 +168,70 @@ def merge_findings(image, install, data):
         if key not in deduped:
             deduped[key] = f
         else:
-            # Merge fixed-version lists if both scanners reported them
             if isinstance(f["fixed"], list):
                 deduped[key]["fixed"] = list(set(deduped[key]["fixed"] + f["fixed"]))
 
     return list(deduped.values())
+
+# ------------------------------------------------------------------------------
+# Qlik vendor heuristics used to classify ownership.
+# ------------------------------------------------------------------------------
+QLIK_VENDOR_PACKAGES = {
+    "libssl", "libcrypto", "libxml2", "libcurl",
+    "java", "jre", "jvm", "attunity", "replicate"
+}
+
+def is_likely_qlik_component(finding):
+    pkg = (finding.get("package") or "").lower()
+    return any(p in pkg for p in QLIK_VENDOR_PACKAGES)
+
+# ------------------------------------------------------------------------------
+# Ownership classification: determines whether a finding is yours or Qlik's.
+# ------------------------------------------------------------------------------
+def classify_ownership(finding):
+    source = finding.get("source")
+
+    # Install/data directories are always Qlik-owned
+    if source in ("install", "data"):
+        return Ownership.VENDOR
+
+    # Image scan but package matches Qlik patterns
+    if source == "image" and is_likely_qlik_component(finding):
+        return Ownership.VENDOR
+
+    # Otherwise, image findings belong to the maintainer
+    if source == "image":
+        return Ownership.MAINTAINER
+
+    return Ownership.UNKNOWN
+
+# ------------------------------------------------------------------------------
+# Fixability classification: determines whether a fix exists.
+# ------------------------------------------------------------------------------
+def classify_fixability(finding, ownership):
+    fixed = finding.get("fixed")
+
+    if not fixed or (isinstance(fixed, str) and not fixed.strip()):
+        return Fixability.UNFIXED
+
+    return Fixability.FIXABLE
+
+# ------------------------------------------------------------------------------
+# Noise classification: filters out low-severity, unfixed, vendor-owned issues.
+# ------------------------------------------------------------------------------
+def classify_noise(finding, ownership, fixability):
+    severity = finding.get("severity", "UNKNOWN").upper()
+
+    if severity in ("CRITICAL", "HIGH"):
+        return NoiseLevel.SIGNAL
+
+    if ownership == Ownership.VENDOR and fixability == Fixability.UNFIXED and severity in ("LOW", "UNKNOWN"):
+        return NoiseLevel.NOISY
+
+    if ownership == Ownership.MAINTAINER and fixability == Fixability.UNFIXED and severity == "LOW":
+        return NoiseLevel.NOISY
+
+    return NoiseLevel.UNKNOWN
 
 # ------------------------------------------------------------------------------
 # Apply ownership, fixability, and noise classification to each finding.
@@ -130,7 +257,6 @@ def generate_markdown(findings, output_path):
     for f in findings:
         by_severity[f["severity"]].append(f)
 
-    # Groupings for report sections
     maintainer_fixable = [
         f for f in findings
         if f["ownership"] == Ownership.MAINTAINER
@@ -210,67 +336,7 @@ def generate_markdown(findings, output_path):
             )
 
 # ------------------------------------------------------------------------------
-# Qlik vendor heuristics used to classify ownership.
-# ------------------------------------------------------------------------------
-QLIK_VENDOR_PACKAGES = {
-    "libssl", "libcrypto", "libxml2", "libcurl",
-    "java", "jre", "jvm", "attunity", "replicate"
-}
-
-def is_likely_qlik_component(finding):
-    pkg = (finding.get("package") or "").lower()
-    return any(p in pkg for p in QLIK_VENDOR_PACKAGES)
-
-# ------------------------------------------------------------------------------
-# Ownership classification: determines whether a finding is yours or Qlik's.
-# ------------------------------------------------------------------------------
-def classify_ownership(finding):
-    source = finding.get("source")
-
-    # Install/data directories are always Qlik-owned
-    if source in ("install", "data"):
-        return Ownership.VENDOR
-
-    # Image scan but package matches Qlik patterns
-    if source == "image" and is_likely_qlik_component(finding):
-        return Ownership.VENDOR
-
-    # Otherwise, image findings belong to the maintainer
-    if source == "image":
-        return Ownership.MAINTAINER
-
-    return Ownership.UNKNOWN
-
-# ------------------------------------------------------------------------------
-# Fixability classification: determines whether a fix exists.
-# ------------------------------------------------------------------------------
-def classify_fixability(finding, ownership):
-    fixed = finding.get("fixed")
-
-    if not fixed or (isinstance(fixed, str) and not fixed.strip()):
-        return Fixability.UNFIXED
-
-    return Fixability.FIXABLE
-
-# ------------------------------------------------------------------------------
-# Noise classification: filters out low-severity, unfixed, vendor-owned issues.
-# ------------------------------------------------------------------------------
-def classify_noise(finding, ownership, fixability):
-    severity = finding.get("severity", "UNKNOWN").upper()
-
-    if severity in ("CRITICAL", "HIGH"):
-        return NoiseLevel.SIGNAL
-
-    if ownership == Ownership.VENDOR and fixability == Fixability.UNFIXED and severity in ("LOW", "UNKNOWN"):
-        return NoiseLevel.NOISY
-
-    if ownership == Ownership.MAINTAINER and fixability == Fixability.UNFIXED and severity == "LOW":
-        return NoiseLevel.NOISY
-
-    return NoiseLevel.UNKNOWN
-
-# ------------------------------------------------------------------------------
-# Main entry point: load → normalise → merge → classify → report.
+# Main entry point: load → detect → normalise → merge → classify → report.
 # ------------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser()
@@ -284,21 +350,34 @@ def main():
     install_findings = []
     data_findings = []
 
-    # Load and normalise scanner outputs
+    # Helper to process a single file
+    def process(path, source):
+        data = load_json(path)
+        if data is None:
+            return []
+
+        scanner = detect_scanner(data)
+
+        if scanner == "trivy":
+            return normalise_trivy(data, source)
+        if scanner == "grype":
+            return normalise_grype(data, source)
+        if scanner == "syft":
+            return normalise_syft(data, source)
+
+        return []
+
+    # Process all image scan files
     for p in args.image:
-        data = load_json(p)
-        image_findings += normalise_trivy(data, "image")
-        image_findings += normalise_grype(data, "image")
+        image_findings += process(p, "image")
 
+    # Process install directory scan files
     for p in args.install:
-        data = load_json(p)
-        install_findings += normalise_trivy(data, "install")
-        install_findings += normalise_grype(data, "install")
+        install_findings += process(p, "install")
 
+    # Process data directory scan files
     for p in args.data:
-        data = load_json(p)
-        data_findings += normalise_trivy(data, "data")
-        data_findings += normalise_grype(data, "data")
+        data_findings += process(p, "data")
 
     # Merge, classify, and output
     findings = merge_findings(image_findings, install_findings, data_findings)
