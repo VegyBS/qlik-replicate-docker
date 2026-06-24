@@ -15,13 +15,6 @@ RUN dnf install -y \
 
 RUN mkdir -p /run/secrets
 
-COPY ./scripts/entrypoint.sh /opt/attunity/replicate/bin/entrypoint.sh
-COPY ./scripts/shutdown_handler.sh /opt/attunity/replicate/bin/shutdown_handler.sh
-COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
-COPY ./scripts/healthcheck.sh /opt/attunity/replicate/bin/healthcheck.sh
-
-RUN chmod 775 /opt/attunity/replicate/bin/*.sh
-
 ARG REPLICATE_URL="https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz"
 
 RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
@@ -33,6 +26,16 @@ RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
     rm -f "$RPM_FILE" && \
     dnf clean all
 
-RUN chown attunity:attunity /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/entrypoint.sh /opt/attunity/replicate/bin/entrypoint.sh
+COPY ./scripts/shutdown_handler.sh /opt/attunity/replicate/bin/shutdown_handler.sh
+COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/healthcheck.sh /opt/attunity/replicate/bin/healthcheck.sh
+COPY ./scripts/lib/common.sh /opt/attunity/replicate/bin/lib/common.sh
+
+RUN chmod 775 /opt/attunity/replicate/bin/*.sh
+RUN chmod 775 /opt/attunity/replicate/bin/lib/*.sh
+
+RUN chown attunity:attunity /opt/attunity/replicate/bin/*.sh
+RUN chown attunity:attunity /opt/attunity/replicate/bin/lib/*.sh
 
 ENTRYPOINT ["/opt/attunity/replicate/bin/start_replicate.sh"]

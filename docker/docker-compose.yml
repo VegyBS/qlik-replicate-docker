@@ -30,7 +30,7 @@ secrets:
   replicate_admin_password:
     file: ./secrets/replicate_admin_password.txt
   replicate_license:
-    file: ./secrets/replicate_license.yxy
+    file: ./secrets/replicate_license.txt
   replicate_master_key:
     file: ./secrets/replicate_master_key.txt
 
