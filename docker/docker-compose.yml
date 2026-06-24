@@ -6,15 +6,33 @@ services:
       context: ./qlik-replicate
       dockerfile: Dockerfile
     container_name: replicate
+    secrets:
+      - replicate_admin_password
+      - replicate_license
+      - replicate_master_key
+    environment:
+      REPLICATEDATAFOLDER: /replicate/data
+      REPLICATERESTPORT: 3562
+      REPLICATEADMINPASSWORDFILE: /run/secrets/replicate_admin_password
+      REPLICATELICENSEFILE: /run/secrets/replicate_license
+      REPLICATEMASTERKEYFILE: /run/secrets/replicate_master_key
     ports:
       - "3562:3562"
-    environment:
-      ReplicateDataFolder: /replicate/data
-      ReplicateAdminPassword: SomeLongPassword1
-      ReplicateRestPort: 3562
-      # REPLICATE_LICENSE_FILE: /tmp/replicate_license.txt
     volumes:
        - replicate-data:/replicate/data
+    healthcheck:
+      test: ["CMD", "/opt/attunity/replicate/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+secrets:
+  replicate_admin_password:
+    file: ./secrets/replicate_admin_password.txt
+  replicate_license:
+    file: ./secrets/replicate_license.yxy
+  replicate_master_key:
+    file: ./secrets/replicate_master_key.txt
 
 volumes:
   replicate-data:

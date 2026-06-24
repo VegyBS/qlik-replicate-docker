@@ -1,69 +1,111 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ -z "${ReplicateDataFolder:-}" || -z "${ReplicateAdminPassword:-}" || -z "${ReplicateRestPort:-}" ]]; then
-    echo "Usage: start-replicate.sh <Data folder> <Admin password> <Rest port> [<license file>]"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_PREFIX="start"
+# shellcheck source=lib/common.sh
+source "${script_dir}/lib/common.sh"
+
+if [[ -z "${REPLICATEDATAFOLDER:-}" ]]; then
+    error "REPLICATEDATAFOLDER is required"
     exit 1
 fi
 
-_ReplicateBin="/opt/attunity/replicate/bin"
-_ReplicateLogs="${ReplicateDataFolder}/logs"
+_replicate_data_folder="${REPLICATEDATAFOLDER}"
+_replicate_rest_port="${REPLICATERESTPORT:-3562}"
+_replicate_bin="${REPLICATEBIN:-/opt/attunity/replicate/bin}"
+_replicate_logs="${_replicate_data_folder}/logs"
 
-if [ ! -d "${_ReplicateBin}" ]; then
-  echo "Error: Replicate bin folder not found at ${_ReplicateBin}"
-  exit 1
+_admin_password_file="${REPLICATEADMINPASSWORDFILE:-/run/secrets/replicate_admin_password}"
+if [[ -n "${REPLICATEADMINPASSWORD:-}" ]]; then
+    _replicate_admin_password="${REPLICATEADMINPASSWORD}"
+elif [[ -r "${_admin_password_file}" ]]; then
+    read -r _replicate_admin_password < "${_admin_password_file}"
+else
+    error "REPLICATEADMINPASSWORD or readable ${_admin_password_file} is required"
+    exit 1
 fi
 
-if [ ! -d "${ReplicateDataFolder}" ]; then
-  echo "Creating data folder at ${ReplicateDataFolder} and granting ownership to user attunity"
-  mkdir -p "${ReplicateDataFolder}"
+# license can be passed as env path or default secret file
+_replicate_license="${REPLICATELICENSE:-}"
+if [[ -z "${_replicate_license}" && -r "/run/secrets/replicate_license" ]]; then
+    _replicate_license="/run/secrets/replicate_license"
+fi
+_replicate_master_key="${REPLICATEMASTERKEY:-}"
+if [[ -z "${_replicate_master_key}" && -r "/run/secrets/replicate_master_key" ]]; then
+    _replicate_master_key="/run/secrets/replicate_master_key"
+fi
+_replicate_bin="${REPLICATEBIN:-/opt/attunity/replicate/bin}"
+_replicate_logs="${_replicate_data_folder}/logs"
+_watcher_pid=""
+
+cleanup() {
+    if [[ -n "${_watcher_pid}" ]] && kill -0 "${_watcher_pid}" 2>/dev/null; then
+        kill "${_watcher_pid}" 2>/dev/null || true
+        wait "${_watcher_pid}" 2>/dev/null || true
+    fi
+}
+trap cleanup SIGTERM SIGINT EXIT
+
+for cmd in inotifywait tail sed; do
+    command -v "${cmd}" >/dev/null 2>&1 || {
+        error "missing command: ${cmd}"
+        exit 1
+    }
+done
+
+if [[ ! -d "${_replicate_bin}" ]]; then
+    error "Replicate bin folder not found at ${_replicate_bin}"
+    exit 1
 fi
 
-chown -R attunity:attunity "${ReplicateDataFolder}"
-
-echo "Setting Replicate admin password"
-su attunity -c "${_ReplicateBin}/repctl.sh -d ${ReplicateDataFolder} setserverpassword ${ReplicateAdminPassword}"
-
-if [ ! -z "${ReplicateLicense:-}" ]; then
-  echo "Importing Replicate license from ${ReplicateLicense}"
-	su attunity -c "${_ReplicateBin}/repctl.sh -d ${ReplicateDataFolder} importlicense license_file=${ReplicateLicense}"
+if [[ ! -d "${_replicate_data_folder}" ]]; then
+    log "Creating data folder at ${_replicate_data_folder}"
+    mkdir -p "${_replicate_data_folder}"
 fi
 
-# Run Attunity Replicate
-echo "Starting Replicate service on port ${ReplicateRestPort}"
-su attunity -c "${_ReplicateBin}/repctl.sh -d ${ReplicateDataFolder} service start rest_port=${ReplicateRestPort}"
+mkdir -p "${_replicate_logs}"
+chown -R attunity:attunity "${_replicate_data_folder}"
 
-declare -A tailed
+log "Setting Replicate admin password"
+printf "%s" "${_replicate_admin_password}" | \
+    run_as_attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" setserverpassword -
+
+if [[ -n "${_replicate_license}" ]]; then
+    log "Importing Replicate license from ${_replicate_license}"
+    run_as_attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" importlicense "license_file=${_replicate_license}"
+fi
+
+if [[ -n "${_replicate_master_key}" ]]; then
+    log "Setting Replicate master key"
+    printf "%s" "${_replicate_master_key}" | \
+        run_as_attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" setmasterkey -
+fi
+
+log "Starting Replicate service on port ${_replicate_rest_port}"
+run_as_attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" service start "rest_port=${_replicate_rest_port}"
+
+declare -A _tailed
 start_tail() {
     local logfile="$1"
 
-    # Skip archived logs
-    if [[ "$logfile" == *__*.log ]]; then
-        return
-    fi
+    [[ "${logfile}" == *__*.log ]] && return
+    [[ -n "${_tailed["$logfile"]+x}" ]] && return
+    _tailed["$logfile"]=1
 
-    # Skip if already tailed
-    if [[ -n "${tailed["$logfile"]+x}" ]]; then
-        return
-    fi
-    tailed["$logfile"]=1
-
-    echo "Tailing log file: $logfile"
-    tail -F "$logfile" 2>/dev/null | sed -u "s|^|$(basename "$logfile"): |" &
+    log "Tailing log file: ${logfile}"
+    tail -F "${logfile}" 2>/dev/null | sed -u "s|^|$(basename "${logfile}"): |" &
 }
 
-# Tail all existing active logs
-for logfile in "$_ReplicateLogs"/*.log; do
-    start_tail "$logfile"
+shopt -s nullglob
+for logfile in "${_replicate_logs}"/*.log; do
+    start_tail "${logfile}"
 done
+shopt -u nullglob
 
-# Watch for new log files
-inotifywait -m -e create "$_ReplicateLogs" |
-while read -r path action file; do
-    if [[ "$file" == *.log ]]; then
-        start_tail "$_ReplicateLogs/$file"
-    fi
-done &
+while read -r file; do
+    [[ "${file}" == *.log ]] && start_tail "${_replicate_logs}/${file}"
+done < <(inotifywait -m -e create --format '%f' "${_replicate_logs}") &
 
-# Keep container alive forever
-wait -n
+_watcher_pid=$!
+wait "${_watcher_pid}"

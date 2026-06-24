@@ -6,7 +6,6 @@ RUN dnf install -y \
         shadow-utils \
         tar \
         gzip \
-        util-linux \
         unixODBC \
         libnsl \
         unzip \
@@ -14,9 +13,14 @@ RUN dnf install -y \
         procps && \
     dnf clean all
 
-COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+RUN mkdir -p /run/secrets
 
-RUN chmod 775 /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/entrypoint.sh /opt/attunity/replicate/bin/entrypoint.sh
+COPY ./scripts/shutdown_handler.sh /opt/attunity/replicate/bin/shutdown_handler.sh
+COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
+COPY ./scripts/healthcheck.sh /opt/attunity/replicate/bin/healthcheck.sh
+
+RUN chmod 775 /opt/attunity/replicate/bin/*.sh
 
 ARG REPLICATE_URL="https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz"
 
