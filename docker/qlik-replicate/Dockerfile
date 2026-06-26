@@ -29,7 +29,7 @@ RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
 COPY ./scripts/ /opt/attunity/replicate/bin/
 
 RUN mkdir -p /run/secrets && \
-    chmod 775 /opt/attunity/replicate/bin/**/*.sh && \
-    chown attunity:attunity /opt/attunity/replicate/bin/**/*.sh
+    chmod 775 /opt/attunity/replicate/bin/*.sh && \
+    chown attunity:attunity /opt/attunity/replicate/bin/*.sh
 
 ENTRYPOINT ["/opt/attunity/replicate/bin/entrypoint.sh"]
