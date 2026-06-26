@@ -26,16 +26,10 @@ RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
     rm -f "$RPM_FILE" && \
     dnf clean all
 
-COPY ./scripts/entrypoint.sh /opt/attunity/replicate/bin/entrypoint.sh
-COPY ./scripts/shutdown_handler.sh /opt/attunity/replicate/bin/shutdown_handler.sh
-COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
-COPY ./scripts/healthcheck.sh /opt/attunity/replicate/bin/healthcheck.sh
-COPY ./scripts/lib/common.sh /opt/attunity/replicate/bin/lib/common.sh
+COPY ./scripts/ /opt/attunity/replicate/bin/
 
 RUN mkdir -p /run/secrets && \
-    chmod 775 /opt/attunity/replicate/bin/*.sh \
-        /opt/attunity/replicate/bin/lib/*.sh && \
-    chown attunity:attunity /opt/attunity/replicate/bin/*.sh \
-        /opt/attunity/replicate/bin/lib/*.sh
+    chmod 775 /opt/attunity/replicate/bin/**/*.sh && \
+    chown attunity:attunity /opt/attunity/replicate/bin/**/*.sh
 
 ENTRYPOINT ["/opt/attunity/replicate/bin/entrypoint.sh"]

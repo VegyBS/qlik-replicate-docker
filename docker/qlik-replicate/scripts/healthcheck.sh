@@ -2,9 +2,9 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_PREFIX="healthcheck"
-# shellcheck source=lib/common.sh
-source "${script_dir}/lib/common.sh"
+LOG_PREFIX="$(basename "${BASH_SOURCE[0]}" .sh)"
+# shellcheck source=/common.sh
+source "${script_dir}/common.sh"
 
 _replicate_rest_port="${REPLICATERESTPORT:-3562}"
 _secret_file="/run/secrets/replicate_admin_password"

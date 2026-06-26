@@ -2,10 +2,9 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_PREFIX="start"
-# shellcheck source=lib/common.sh
-source "${script_dir}/lib/common.sh"
-log "Loading common functions from ${script_dir}/lib/common.sh"
+LOG_PREFIX="$(basename "${BASH_SOURCE[0]}" .sh)"
+# shellcheck source=/common.sh
+source "${script_dir}/common.sh"
 
 if [[ -z "${REPLICATEDATAFOLDER:-}" ]]; then
     error "REPLICATEDATAFOLDER is required"
@@ -31,11 +30,7 @@ if [[ -n "${REPLICATEADMINPASSWORD:-}" ]]; then
     log "Using REPLICATEADMINPASSWORD from environment"
     _replicate_admin_password="${REPLICATEADMINPASSWORD}"
 elif [[ -r "${_admin_password_file}" ]]; then
-    log "Reading Replicate admin password from secret file: ${_admin_password_file}"
     IFS= read -r _replicate_admin_password < "${_admin_password_file}" || [[ -n "${_replicate_admin_password:-}" ]]
-
-    log "Replicate admin password read from secret file (length: ${#_replicate_admin_password})"
-    log "Replicate admin password read from secret file ${_replicate_admin_password}"
 
     # Normalize common file artifacts (Windows CRLF / UTF-8 BOM)
     _replicate_admin_password="${_replicate_admin_password#$'\xEF\xBB\xBF'}"
@@ -50,12 +45,10 @@ fi
 # license can be passed as env path or default secret file
 _replicate_license="${REPLICATELICENSE:-}"
 if [[ -z "${_replicate_license}" && -r "/run/secrets/replicate_license" ]]; then
-    log "Reading Replicate license from secret file: /run/secrets/replicate_license"
     _replicate_license="/run/secrets/replicate_license"
 fi
 _replicate_master_key="${REPLICATEMASTERKEY:-}"
 if [[ -z "${_replicate_master_key}" && -r "/run/secrets/replicate_master_key" ]]; then
-    log "Reading Replicate master key from secret file: /run/secrets/replicate_master_key"
     _replicate_master_key="/run/secrets/replicate_master_key"
 fi
 
@@ -97,19 +90,16 @@ printf "%s" "${_replicate_admin_password}" | \
     }
 
 if [[ -n "${_replicate_license}" ]]; then
-    log "Importing Replicate license from ${_replicate_license}"
     run_as_user attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" importlicense "license_file=${_replicate_license}" || \
         warn "License import failed — continuing without valid license"
 fi
 
 if [[ -n "${_replicate_master_key}" ]]; then
-    log "Setting Replicate master key"
     printf "%s" "${_replicate_master_key}" | \
         run_as_user attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" setmasterkey ${_replicate_master_key} || \
         warn "Master key import failed — continuing without master key"
 fi
 
-log "Starting Replicate service on port ${_replicate_rest_port}"
 run_as_user attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" service start "rest_port=${_replicate_rest_port}"
 
 declare -A _tailed

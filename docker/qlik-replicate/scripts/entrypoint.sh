@@ -2,9 +2,9 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_PREFIX="entrypoint"
-# shellcheck source=lib/common.sh
-source "${script_dir}/lib/common.sh"
+LOG_PREFIX="$(basename "${BASH_SOURCE[0]}" .sh)"
+# shellcheck source=/common.sh
+source "${script_dir}/common.sh"
 
 _start_script="${script_dir}/start_replicate.sh"
 _shutdown_script="${script_dir}/shutdown_handler.sh"

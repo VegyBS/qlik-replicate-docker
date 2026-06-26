@@ -2,9 +2,9 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_PREFIX="shutdown"
-# shellcheck source=lib/common.sh
-source "${script_dir}/lib/common.sh"
+LOG_PREFIX="$(basename "${BASH_SOURCE[0]}" .sh)"
+# shellcheck source=/common.sh
+source "${script_dir}/common.sh"
 
 _replicate_bin="${REPLICATEBIN:-/opt/attunity/replicate/bin}"
 _replicate_data_folder="${REPLICATEDATAFOLDER:-/replicate/data}"
