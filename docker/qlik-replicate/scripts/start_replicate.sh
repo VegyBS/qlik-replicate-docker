@@ -82,7 +82,6 @@ fi
 mkdir -p "${_replicate_logs}"
 chown -R attunity:attunity "${_replicate_data_folder}"
 
-log "Setting Replicate admin password"
 printf "%s" "${_replicate_admin_password}" | \
     run_as_user attunity "${_replicate_bin}/repctl.sh" -d "${_replicate_data_folder}" setserverpassword ${_replicate_admin_password} || {
         error "Failed to set admin password"
