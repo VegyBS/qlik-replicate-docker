@@ -110,7 +110,7 @@ start_tail() {
     _tailed["$logfile"]=1
 
     log "Tailing log file: ${logfile}"
-    tail -F "${logfile}" 2>/dev/null | sed -u "s|^|$(basename "${logfile}"): |" &
+    tail -F "${logfile}" 2>/dev/null | sed -u "s|^|[$(basename "${logfile}")]: |" &
 }
 
 shopt -s nullglob
