@@ -4,16 +4,16 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN dnf install -y \
         shadow-utils \
+        jq \
         tar \
         gzip \
         unixODBC \
+        util-linux \
         libnsl \
         unzip \
         inotify-tools \
         procps && \
     dnf clean all
-
-RUN mkdir -p /run/secrets
 
 ARG REPLICATE_URL="https://github.com/qlik-download/replicate/releases/download/v2026.5.0/QlikReplicate_2026_5_0_Linux_X64.tar.gz"
 
@@ -32,10 +32,10 @@ COPY ./scripts/start_replicate.sh /opt/attunity/replicate/bin/start_replicate.sh
 COPY ./scripts/healthcheck.sh /opt/attunity/replicate/bin/healthcheck.sh
 COPY ./scripts/lib/common.sh /opt/attunity/replicate/bin/lib/common.sh
 
-RUN chmod 775 /opt/attunity/replicate/bin/*.sh
-RUN chmod 775 /opt/attunity/replicate/bin/lib/*.sh
+RUN mkdir -p /run/secrets && \
+    chmod 775 /opt/attunity/replicate/bin/*.sh \
+        /opt/attunity/replicate/bin/lib/*.sh && \
+    chown attunity:attunity /opt/attunity/replicate/bin/*.sh \
+        /opt/attunity/replicate/bin/lib/*.sh
 
-RUN chown attunity:attunity /opt/attunity/replicate/bin/*.sh
-RUN chown attunity:attunity /opt/attunity/replicate/bin/lib/*.sh
-
-ENTRYPOINT ["/opt/attunity/replicate/bin/start_replicate.sh"]
+ENTRYPOINT ["/opt/attunity/replicate/bin/entrypoint.sh"]

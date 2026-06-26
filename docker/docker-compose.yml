@@ -25,6 +25,7 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+    entrypoint: ["/opt/attunity/replicate/bin/entrypoint.sh"]
 
 secrets:
   replicate_admin_password:
