@@ -224,6 +224,12 @@ jobs:
         with:
           name: scan-results-${{ matrix.version }}
 
+      - name: Download security summary artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: security-summary-${{ matrix.version }}
+          path: .
+
       - name: Ensure baseline directories exist
         run: mkdir -p baselines/${{ matrix.version }}
 
@@ -242,6 +248,8 @@ jobs:
 
       - name: Combine summary + delta
         run: |
+          test -f security-summary-${{ matrix.version }}.md
+          test -f delta-summary-${{ matrix.version }}.md
           cat security-summary-${{ matrix.version }}.md > combined-${{ matrix.version }}.md
           echo "" >> combined-${{ matrix.version }}.md
           echo "---" >> combined-${{ matrix.version }}.md
