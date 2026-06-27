@@ -229,7 +229,7 @@ jobs:
 
       - name: Security delta engine
         run: |
-          python3 .github/scripts/security-delta.py \
+          python3 scripts-src/.github/scripts/security-delta.py \
             --current-dir . \
             --baseline-dir baselines/${{ matrix.version }} \
             --version ${{ matrix.version }}
