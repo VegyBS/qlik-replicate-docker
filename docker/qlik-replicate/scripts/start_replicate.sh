@@ -46,10 +46,12 @@ fi
 _replicate_license="${REPLICATELICENSE:-}"
 if [[ -z "${_replicate_license}" && -r "/run/secrets/replicate_license" ]]; then
     _replicate_license="/run/secrets/replicate_license"
+    log "Replicate license read from secret file"
 fi
 _replicate_master_key="${REPLICATEMASTERKEY:-}"
 if [[ -z "${_replicate_master_key}" && -r "/run/secrets/replicate_master_key" ]]; then
     _replicate_master_key="/run/secrets/replicate_master_key"
+    log "Replicate master key read from secret file"
 fi
 
 _watcher_pid=""
@@ -79,7 +81,6 @@ if [[ ! -d "${_replicate_data_folder}" ]]; then
     mkdir -p "${_replicate_data_folder}"
 fi
 
-mkdir -p "${_replicate_logs}"
 chown -R attunity:attunity "${_replicate_data_folder}"
 
 printf "%s" "${_replicate_admin_password}" | \
@@ -110,7 +111,7 @@ start_tail() {
     _tailed["$logfile"]=1
 
     log "Tailing log file: ${logfile}"
-    tail -F "${logfile}" 2>/dev/null | sed -u "s|^|[$(basename "${logfile}")]: |" &
+    tail -F "${logfile}" 2>/dev/null | sed -u "s|^|[$(basename "${logfile}")] |" &
 }
 
 shopt -s nullglob

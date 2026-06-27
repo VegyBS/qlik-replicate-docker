@@ -34,7 +34,10 @@ fi
 if [[ -n "${REPLICATEADMINPASSWORD:-}" ]]; then
     _replicate_admin_password="${REPLICATEADMINPASSWORD}"
 elif [[ -r "${_secret_file}" ]]; then
-    read -r _replicate_admin_password < "${_secret_file}"
+    IFS= read -r _replicate_admin_password < "${_secret_file}" || [[ -n "${_replicate_admin_password:-}" ]]
+
+    _replicate_admin_password="${_replicate_admin_password#$'\xEF\xBB\xBF'}"
+    _replicate_admin_password="${_replicate_admin_password%$'\r'}"
 else
     warn "No admin password provided (env or readable secret file). Using fallback stop."
     stop_service_fallback
