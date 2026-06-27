@@ -240,6 +240,11 @@ jobs:
             --baseline-dir baselines/${{ matrix.version }} \
             --version ${{ matrix.version }}
 
+      - name: Debug baseline changes
+        run: |
+          ls -la baselines/${{ matrix.version }} || true
+          git status -- baselines/${{ matrix.version }}
+
       - name: Upload delta summary
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
@@ -267,5 +272,11 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add baselines/${{ matrix.version }}
-          git commit -m "Update unified baselines for ${{ matrix.version }}" || echo "No changes"; exit 0
-          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${{ matrix.version }}"
+
+          if git diff --cached --quiet; then
+            echo "No baseline changes for ${{ matrix.version }}"
+          else
+            git commit -m "Update unified baselines for ${{ matrix.version }}"
+            git push origin ${{ env.BASELINE_BRANCH }}
+            echo "Pushed updated baselines for ${{ matrix.version }}"
+          fi
