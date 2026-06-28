@@ -1,0 +1,240 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.70.0"
+  },
+  "ReportID": "019f0ba0-7705-71a0-82f5-1e9f18e30593",
+  "CreatedAt": "2026-06-28T00:28:13.445108585Z",
+  "ArtifactName": "out/install-2025.11.0",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "replicate/addons/samples/MyPasswordProvider/MyPasswordProvider.c",
+      "Class": "secret",
+      "Secrets": [
+        {
+          "RuleID": "aws-access-key-id",
+          "Category": "AWS",
+          "Severity": "CRITICAL",
+          "Title": "AWS Access Key ID",
+          "StartLine": 111,
+          "EndLine": 111,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 109,
+                "Content": "\telse if (STREQ(name, \"s3SecretKey\"))",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\telse if (STREQ(name, \"s3SecretKey\"))",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 110,
+                "Content": "\t{",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t{",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 111,
+                "Content": "\t\t// Override the principal defined in the endpoint settings to ********************,",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t// Override the principal defined in the endpoint settings to ********************,",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 112,
+                "Content": "\t\t// and set the password.",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t// and set the password.",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "\t\t// Override the principal defined in the endpoint settings to ********************,",
+          "Offset": 5110
+        },
+        {
+          "RuleID": "aws-access-key-id",
+          "Category": "AWS",
+          "Severity": "CRITICAL",
+          "Title": "AWS Access Key ID",
+          "StartLine": 113,
+          "EndLine": 113,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 111,
+                "Content": "\t\t// Override the principal defined in the endpoint settings to ********************,",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t// Override the principal defined in the endpoint settings to ********************,",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 112,
+                "Content": "\t\t// and set the password.",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t// and set the password.",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 113,
+                "Content": "\t\tstring_copy(principal, \"********************\", principal_len);",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\tstring_copy(principal, \"********************\", principal_len);",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 114,
+                "Content": "\t\tstring_copy(secret, \"v014GZaAAvAeLJwsmZZmkBj7iUKkT/s+ZhmWW5L\", secret_len);",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\tstring_copy(secret, \"v014GZaAAvAeLJwsmZZmkBj7iUKkT/s+ZhmWW5L\", secret_len);",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "\t\tstring_copy(principal, \"********************\", principal_len);",
+          "Offset": 5187
+        }
+      ]
+    },
+    {
+      "Target": "replicate/webroot/scripts/endpoints_gen/endpoints_reg.js",
+      "Class": "secret",
+      "Secrets": [
+        {
+          "RuleID": "aws-access-key-id",
+          "Category": "AWS",
+          "Severity": "CRITICAL",
+          "Title": "AWS Access Key ID",
+          "StartLine": 51281,
+          "EndLine": 51281,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 51279,
+                "Content": "\t\t\tvisible_exp: \"model.accessType == 'KEY_PAIR'\",",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tvisible_exp: \"model.accessType == 'KEY_PAIR'\",",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 51280,
+                "Content": "\t\t\tdisplay_order: 95,",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tdisplay_order: 95,",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 51281,
+                "Content": "\t\t\tplaceholder: \"e.g. ********************\",",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tplaceholder: \"e.g. ********************\",",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 51282,
+                "Content": "\t\t\tversion: \"6.6\"",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tversion: \"6.6\"",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "\t\t\tplaceholder: \"e.g. ********************\",",
+          "Offset": 1094355
+        },
+        {
+          "RuleID": "aws-access-key-id",
+          "Category": "AWS",
+          "Severity": "CRITICAL",
+          "Title": "AWS Access Key ID",
+          "StartLine": 60808,
+          "EndLine": 60808,
+          "Code": {
+            "Lines": [
+              {
+                "Number": 60806,
+                "Content": "\t\t\tvisible_exp: \"model.storageType == 'AMAZON_S3' \u0026\u0026 model.s3AccessType == 'KEY_PAIR'\",",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tvisible_exp: \"model.storageType == 'AMAZON_S3' \u0026\u0026 model.s3AccessType == 'KEY_PAIR'\",",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 60807,
+                "Content": "\t\t\tdisplay_order: 95,",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tdisplay_order: 95,",
+                "FirstCause": false,
+                "LastCause": false
+              },
+              {
+                "Number": 60808,
+                "Content": "\t\t\tplaceholder: \"e.g. ********************\",",
+                "IsCause": true,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tplaceholder: \"e.g. ********************\",",
+                "FirstCause": true,
+                "LastCause": true
+              },
+              {
+                "Number": 60809,
+                "Content": "\t\t\tversion: \"2022.11\"",
+                "IsCause": false,
+                "Annotation": "",
+                "Truncated": false,
+                "Highlighted": "\t\t\tversion: \"2022.11\"",
+                "FirstCause": false,
+                "LastCause": false
+              }
+            ]
+          },
+          "Match": "\t\t\tplaceholder: \"e.g. ********************\",",
+          "Offset": 1295902
+        }
+      ]
+    }
+  ]
+}
