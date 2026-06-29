@@ -5,6 +5,10 @@ on:
     - cron: "0 3 * * 1"   # Weekly at 03:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-shas:
     runs-on: ubuntu-latest
@@ -20,13 +24,13 @@ jobs:
 
       - name: Run SHA pinning update script
         run: |
-          chmod +x .github/script/update-action-shas.sh
+          chmod +x .github/scripts/update-action-shas.sh
           .github/scripts/update-action-shas.sh
 
       - name: Check for changes
         id: git-check
         run: |
-          if [[ -n "$(git.status --porcelain)" ]]; then
+          if [[ -n "$(git status --porcelain)" ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
