@@ -27,7 +27,7 @@ RUN curl -L -o /tmp/replicate.tar.gz "$REPLICATE_URL" && \
     dnf clean all
 
 ARG DRIVER_PROFILE="mssql,snowflake"
-ARG ALLOW_ONLINE_FALLBACK="false"
+ARG ALLOW_ONLINE_FALLBACK="true"
 ARG MSSQL_VERSION="18"
 ARG SNOWFLAKE_ODBC_VERSION="3.17.0"
 ARG SNOWFLAKE_RPM_URL=""
