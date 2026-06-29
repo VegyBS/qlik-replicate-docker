@@ -5,6 +5,10 @@ on:
     - cron: "0 3 * * 1"   # Weekly at 03:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-shas:
     runs-on: ubuntu-latest
