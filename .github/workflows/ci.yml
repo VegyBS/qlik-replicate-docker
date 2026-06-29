@@ -200,8 +200,13 @@ jobs:
 
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         include: ${{ fromJson(needs.discover-qlik-versions.outputs.matrix) }}
+
+    concurrency:
+      group: security-baseline-updates
+      cancel-in-progress: false
 
     env:
       BASELINE_BRANCH: security-baseline
@@ -212,6 +217,7 @@ jobs:
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           token: ${{ secrets.BASELINE_PAT }}
+          fetch-depth: 0
 
       - name: Checkout scripts from default branch
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
@@ -240,6 +246,11 @@ jobs:
             --baseline-dir baselines/${{ matrix.version }} \
             --version ${{ matrix.version }}
 
+      - name: Debug baseline changes
+        run: |
+          ls -la baselines/${{ matrix.version }} || true
+          git status -- baselines/${{ matrix.version }}
+
       - name: Upload delta summary
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
@@ -267,5 +278,30 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add baselines/${{ matrix.version }}
-          git commit -m "Update unified baselines for ${{ matrix.version }}" || echo "No changes"; exit 0
-          git push origin ${{ env.BASELINE_BRANCH }}; echo "Pushed updated baselines for ${{ matrix.version }}"
+
+          if git diff --cached --quiet; then
+            echo "No baseline changes for ${{ matrix.version }}"
+            exit 0
+          fi
+
+          git commit -m "Update unified baselines for ${{ matrix.version }}"
+
+          for i in 1 2 3; do
+            git fetch origin ${{ env.BASELINE_BRANCH }}
+            git rebase origin/${{ env.BASELINE_BRANCH }} || {
+              git rebase --abort
+              echo "Rebase failed on attempt $i"
+              exit 1
+            }
+
+            if git push origin HEAD:${{ env.BASELINE_BRANCH }}; then
+              echo "Pushed updated baselines for ${{ matrix.version }}"
+              exit 0
+            fi
+
+            echo "Push failed (attempt $i), retrying..."
+            sleep 3
+          done
+
+          echo "Failed to push after retries"
+          exit 1

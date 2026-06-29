@@ -3,6 +3,7 @@ import json
 import argparse
 from pathlib import Path
 from collections import defaultdict
+import shutil
 
 # ------------------------------------------------------------------------------
 # Script: security-delta.py
@@ -130,6 +131,22 @@ def generate_markdown(new, resolved, version, output_path):
                 out.write(f"| {f['cve']} | {f['package']} | {f['source']} |\n")
             out.write("\n")
 
+def persist_baseline(current_files, baseline_dir: Path):
+    baseline_dir.mkdir(parents=True, exist_ok=True)
+
+    # Keep only scanner JSON files in baseline
+    scanner_files = [f for f in current_files if ("trivy" in f.name or "grype" in f.name)]
+
+    # Remove old scanner files not present anymore
+    keep = {f.name for f in scanner_files}
+    for old in baseline_dir.glob("*.json"):
+        if ("trivy" in old.name or "grype" in old.name) and old.name not in keep:
+            old.unlink()
+
+    # Copy current scanner results into baseline
+    for src in scanner_files:
+        shutil.copy2(src, baseline_dir / src.name)
+
 # ------------------------------------------------------------------------------
 # Main entry point:
 #   - Load current and baseline JSON files
@@ -176,9 +193,11 @@ def main():
     current_index = index_by_key(current_findings)
     baseline_index = index_by_key(baseline_findings)
 
-    # Compute deltas
     new = [v for k, v in current_index.items() if k not in baseline_index]
     resolved = [v for k, v in baseline_index.items() if k not in current_index]
+
+    # Persist current scans as next baseline
+    persist_baseline(current_files, baseline_dir)
 
     # Write Markdown report
     output_path = f"delta-summary-{args.version}.md"
