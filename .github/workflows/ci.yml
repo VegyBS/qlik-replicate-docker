@@ -28,6 +28,7 @@ jobs:
 
     env:
       COMPOSE_FILE: docker/docker-compose.yml
+      TARGET_SERVICE: replicate
 
     steps:
 
@@ -43,17 +44,65 @@ jobs:
         uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5
 
       - name: Get build information
+        shell: bash
         run: |
-          IMAGE_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'image:' | awk '{print $2}')
-          CONTAINER_NAME=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'container_name:' | awk '{print $2}')
-          BUILD_CONTEXT=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'context:' | awk '{print $2}')
-          DOCKERFILE_RAW=$(docker compose -f ${{ env.COMPOSE_FILE }} config | grep -m 1 'dockerfile:' | awk '{print $2}')
-          DOCKERFILE="$BUILD_CONTEXT/$DOCKERFILE_RAW"
+          set -euo pipefail
 
-          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
-          echo "CONTAINER_NAME=$CONTAINER_NAME" >> $GITHUB_ENV
-          echo "BUILD_CONTEXT=$BUILD_CONTEXT" >> $GITHUB_ENV
-          echo "DOCKERFILE=$DOCKERFILE" >> $GITHUB_ENV
+          COMPOSE_JSON="$(docker compose -f "${{ env.COMPOSE_FILE }}" config --format json)"
+
+          # If TARGET_SERVICE is set, use it; otherwise pick first service (sorted) that has a build section.
+          SERVICE="${TARGET_SERVICE:-}"
+          if [ -z "$SERVICE" ]; then
+            SERVICE="$(jq -r '
+              .services
+              | to_entries
+              | map(select(.value.build != null))
+              | sort_by(.key)
+              | .[0].key // empty
+            ' <<< "$COMPOSE_JSON")"
+          fi
+
+          if [ -z "$SERVICE" ] || [ "$SERVICE" = "null" ]; then
+            echo "No buildable service found in compose file."
+            exit 1
+          fi
+
+          IMAGE_NAME="$(jq -r --arg s "$SERVICE" '.services[$s].image // empty' <<< "$COMPOSE_JSON")"
+          CONTAINER_NAME="$(jq -r --arg s "$SERVICE" '.services[$s].container_name // empty' <<< "$COMPOSE_JSON")"
+
+          BUILD_TYPE="$(jq -r --arg s "$SERVICE" '.services[$s].build | type' <<< "$COMPOSE_JSON")"
+          if [ "$BUILD_TYPE" = "string" ]; then
+            BUILD_CONTEXT="$(jq -r --arg s "$SERVICE" '.services[$s].build' <<< "$COMPOSE_JSON")"
+            DOCKERFILE_RAW="Dockerfile"
+          elif [ "$BUILD_TYPE" = "object" ]; then
+            BUILD_CONTEXT="$(jq -r --arg s "$SERVICE" '.services[$s].build.context // "."' <<< "$COMPOSE_JSON")"
+            DOCKERFILE_RAW="$(jq -r --arg s "$SERVICE" '.services[$s].build.dockerfile // "Dockerfile"' <<< "$COMPOSE_JSON")"
+          else
+            echo "Service '$SERVICE' has no valid build definition."
+            exit 1
+          fi
+
+          if [ -z "$IMAGE_NAME" ]; then
+            echo "Service '$SERVICE' has no image tag configured."
+            exit 1
+          fi
+
+          if [[ "$DOCKERFILE_RAW" = /* ]]; then
+            DOCKERFILE="$DOCKERFILE_RAW"
+          else
+            DOCKERFILE="${BUILD_CONTEXT%/}/$DOCKERFILE_RAW"
+          fi
+
+          echo "SERVICE_NAME=$SERVICE" >> "$GITHUB_ENV"
+          echo "IMAGE_NAME=$IMAGE_NAME" >> "$GITHUB_ENV"
+          echo "CONTAINER_NAME=$CONTAINER_NAME" >> "$GITHUB_ENV"
+          echo "BUILD_CONTEXT=$BUILD_CONTEXT" >> "$GITHUB_ENV"
+          echo "DOCKERFILE=$DOCKERFILE" >> "$GITHUB_ENV"
+
+          echo "Selected service: $SERVICE"
+          echo "Image: $IMAGE_NAME"
+          echo "Context: $BUILD_CONTEXT"
+          echo "Dockerfile: $DOCKERFILE"
 
       - name: Build Docker image
         uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf
@@ -62,14 +111,25 @@ jobs:
           file: ${{ env.DOCKERFILE }}
           tags: ${{ env.IMAGE_NAME }}
           load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          pull: false
+          cache-from: |
+            type=gha,scope=qlik-replicate
+            type=gha,scope=qlik-replicate-${{ matrix.version }}
+          cache-to: |
+            type=gha,scope=qlik-replicate,mode=max
+            type=gha,scope=qlik-replicate-${{ matrix.version }},mode=max
           build-args: |
             REPLICATE_URL=${{ matrix.url }}
             REPLICATE_VERSION=${{ matrix.version }}
 
+      - name: Verify built image exists locally
+        run: docker image inspect "${{ env.IMAGE_NAME }}" > /dev/null
+
+      - name: Pull runtime images (non-buildable services)
+        run: docker compose -f ${{ env.COMPOSE_FILE }} pull --ignore-buildable
+
       - name: Start services with Docker Compose
-        run: docker compose -f ${{ env.COMPOSE_FILE }} up -d
+        run: docker compose -f ${{ env.COMPOSE_FILE }} up -d --no-build --pull never
 
       - name: Wait for service to become ready
         run: |
@@ -196,7 +256,7 @@ jobs:
     name: Check & Update Vulnerability Deltas
     needs: [discover-qlik-versions, build-and-scan]
     runs-on: ubuntu-latest
-    # if: github.event_name == 'schedule'
+    if: github.event_name == 'schedule'
 
     strategy:
       fail-fast: false
