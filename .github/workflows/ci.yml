@@ -62,14 +62,22 @@ jobs:
           file: ${{ env.DOCKERFILE }}
           tags: ${{ env.IMAGE_NAME }}
           load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          pull: false
+          cache-from: |
+            type=gha,scope=qlik-replicate
+            type=gha,scope=qlik-replicate-${{ matrix.version }}
+          cache-to: |
+            type=gha,scope=qlik-replicate,mode=max
+            type=gha,scope=qlik-replicate-${{ matrix.version }},mode=max
           build-args: |
             REPLICATE_URL=${{ matrix.url }}
             REPLICATE_VERSION=${{ matrix.version }}
 
+      - name: Verify built image exists locally
+        run: docker image inspect "${{ env.IMAGE_NAME }}" > /dev/null
+
       - name: Start services with Docker Compose
-        run: docker compose -f ${{ env.COMPOSE_FILE }} up -d
+        run: docker compose -f ${{ env.COMPOSE_FILE }} up -d --no-build --pull never
 
       - name: Wait for service to become ready
         run: |
