@@ -6,6 +6,7 @@ on:
       - dev
       - '**'
   pull_request:
+    types: [opened, synchronize, reopened]
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
@@ -230,7 +231,7 @@ jobs:
         continue-on-error: true
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
-          dockerfile: ${{ env.DOCKERFILE }}
+          dockerfile: docker/qlik-replicate/Dockerfile
           output-file: hadolint.txt
 
       - name: Add hadolint results to summary
