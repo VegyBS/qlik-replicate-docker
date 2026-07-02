@@ -6,6 +6,7 @@ on:
       - dev
       - '**'
   pull_request:
+    types: [opened, synchronize, reopened]
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
