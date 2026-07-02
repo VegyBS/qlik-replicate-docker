@@ -20,8 +20,6 @@ jobs:
     name: Build, test, and security scan
     needs: discover-qlik-versions
     runs-on: ubuntu-latest
-    outputs:
-      dockerfile: ${{ env.DOCKERFILE }}
 
     strategy:
       fail-fast: false
@@ -232,7 +230,7 @@ jobs:
         continue-on-error: true
         uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
         with:
-          dockerfile: ${{ needs.build-and-scan.outputs.dockerfile }}
+          dockerfile: docker/qlik-replicate/Dockerfile
           output-file: hadolint.txt
 
       - name: Add hadolint results to summary
