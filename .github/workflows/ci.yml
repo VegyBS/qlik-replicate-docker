@@ -111,7 +111,7 @@ jobs:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
           tags: ${{ env.IMAGE_NAME }}
-          load: true
+          load: false
           pull: false
           push: false
           sbom: true
@@ -125,7 +125,7 @@ jobs:
           build-args: |
             REPLICATE_URL=${{ matrix.url }}
             REPLICATE_VERSION=${{ matrix.version }}
-            
+
       - name: Load Docker image into daemon
         run: docker load --input /tmp/image.tar
 
