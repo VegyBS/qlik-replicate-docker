@@ -154,8 +154,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: compose-logs
+          name: compose-logs-${{ matrix.version }}
           path: compose-logs-${{ matrix.version }}.txt
+          compression-level: 0
 
       - name: Extract Qlik directories
         id: extract-directories
@@ -191,18 +192,6 @@ jobs:
         with:
           image: "${{ env.IMAGE_NAME }}"
 
-      - name: Upload vulnerability scan artifacts
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: scan-results-${{ matrix.version }}
-          path: |
-            image-trivy-${{ matrix.version }}.json
-            image-grype-${{ matrix.version }}.json
-            install-trivy-${{ matrix.version }}.json
-            install-grype-${{ matrix.version }}.json
-            data-trivy-${{ matrix.version }}.json
-            data-grype-${{ matrix.version }}.json
-
       - name: Generate security summary
         run: |
           python3 .github/scripts/security-summary.py \
@@ -211,11 +200,19 @@ jobs:
             --data data-trivy-${{ matrix.version }}.json data-grype-${{ matrix.version }}.json \
             --output security-summary-${{ matrix.version }}.md
 
+      - name: Add security summary to workflow summary
+        if: always()
+        run: |
+          echo "## Security Summary for ${{ matrix.version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          cat security-summary-${{ matrix.version }}.md >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload security summary
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: security-summary-${{ matrix.version }}
           path: security-summary-${{ matrix.version }}.md
+          compression-level: 0
 
   hadolint:
     needs: build-and-scan
@@ -327,6 +324,13 @@ jobs:
           echo "---" >> combined-${{ matrix.version }}.md
           echo "" >> combined-${{ matrix.version }}.md
           cat delta-summary-${{ matrix.version }}.md >> combined-${{ matrix.version }}.md
+
+      - name: Add combined report to workflow summary
+        if: always()
+        run: |
+          echo "## Combined Security Report for ${{ matrix.version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          cat combined-${{ matrix.version }}.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload combined report
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a

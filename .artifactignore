@@ -1,0 +1,9 @@
+**/*.dockerbuild
+**/*.syft.json
+docker-qlik-replicate-latest.syft.json
+qlik-replicate-docker-build-and-scan-*.syft.json
+*
+!compose-logs-*.txt
+!security-summary-*.md
+!delta-summary-*.md
+!combined-*.md
