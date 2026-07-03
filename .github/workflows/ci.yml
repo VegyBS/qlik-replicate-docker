@@ -115,7 +115,6 @@ jobs:
           load: false
           pull: false
           push: false
-          sbom: true
           outputs: type=docker,dest=/tmp/image.tar
           cache-from: |
             type=gha,scope=qlik-replicate
