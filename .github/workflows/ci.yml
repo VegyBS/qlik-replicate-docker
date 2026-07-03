@@ -111,6 +111,7 @@ jobs:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
           tags: ${{ env.IMAGE_NAME }}
+          platforms: linux/amd64
           load: false
           pull: false
           push: false
