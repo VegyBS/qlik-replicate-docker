@@ -111,11 +111,8 @@ jobs:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
           tags: ${{ env.IMAGE_NAME }}
-          platforms: linux/amd64
-          load: false
+          load: true
           pull: false
-          push: false
-          outputs: type=docker,dest=/tmp/image.tar
           cache-from: |
             type=gha,scope=qlik-replicate
             type=gha,scope=qlik-replicate-${{ matrix.version }}
@@ -125,9 +122,6 @@ jobs:
           build-args: |
             REPLICATE_URL=${{ matrix.url }}
             REPLICATE_VERSION=${{ matrix.version }}
-
-      - name: Load Docker image into daemon
-        run: docker load --input /tmp/image.tar
 
       - name: Verify built image exists locally
         run: docker image inspect "${{ env.IMAGE_NAME }}" > /dev/null
