@@ -194,6 +194,7 @@ jobs:
         uses: ./.github/actions/scan-image
         with:
           image: "${{ env.IMAGE_NAME }}"
+          version: "${{ matrix.version }}"
 
       - name: Generate security summary
         run: |
