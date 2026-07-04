@@ -58,33 +58,37 @@ echo "$LATEST_TWO_BASES"
 echo
 
 # ------------------------------------------------------------------------------
-# 6. For each version family, enumerate all patch versions and extract ONLY
-#    the Linux installer tarball URLs.
+# 6. For each latest version family, select ONLY the latest patch version and
+#    extract ONLY the Linux installer tarball URLs.
 #
 #    Rules:
 #      - Must end with .tar.gz
 #      - Must contain 'Linux' OR start with 'areplicate-'
-#    This filters out Windows installers and unrelated assets.
 # ------------------------------------------------------------------------------
 for BASE in $LATEST_TWO_BASES; do
   echo "Version family: $BASE"
 
-  # All versions matching the base (e.g., 2025.11.*)
-  MATCHING=$(echo "$VERSIONS" | grep "^$BASE")
+  # Pick latest patch version for this family (VERSIONS is already sorted desc)
+  LATEST_VERSION=$(echo "$VERSIONS" | awk -F. -v b="$BASE" '$1"."$2==b { print; exit }')
 
-  for VERSION in $MATCHING; do
-    TAG="v$VERSION"
+  if [[ -z "${LATEST_VERSION:-}" ]]; then
+    echo "No version found for family $BASE"
+    echo
+    continue
+  fi
 
-    # Fetch release metadata for this specific tag
-    RELEASE_JSON=$(curl -s "https://api.github.com/repos/$REPO/releases/tags/$TAG")
+  echo "Selected latest version: $LATEST_VERSION"
+  TAG="v$LATEST_VERSION"
 
-    # Extract Linux installer URLs
-    echo "$RELEASE_JSON" \
-      | grep -oE '"browser_download_url":\s*"[^"]+\.tar\.gz"' \
-      | sed -E 's/"browser_download_url":\s*"([^"]+)"/\1/' \
-      | grep -E 'Linux|areplicate-' \
-      || true
-  done
+  # Fetch release metadata for this specific tag
+  RELEASE_JSON=$(curl -s "https://api.github.com/repos/$REPO/releases/tags/$TAG")
+
+  # Extract Linux installer URLs
+  echo "$RELEASE_JSON" \
+    | grep -oE '"browser_download_url":\s*"[^"]+\.tar\.gz"' \
+    | sed -E 's/"browser_download_url":\s*"([^"]+)"/\1/' \
+    | grep -E 'Linux|areplicate-' \
+    || true
 
   echo
 done
