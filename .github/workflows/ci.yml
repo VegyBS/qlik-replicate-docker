@@ -107,6 +107,9 @@ jobs:
 
       - name: Build Docker image
         uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf
+        env:
+          DOCKER_BUILD_RECORD_UPLOAD: "false"
+          DOCKER_BUILD_SUMMARY: "false"
         with:
           context: ${{ env.BUILD_CONTEXT }}
           file: ${{ env.DOCKERFILE }}
@@ -200,6 +203,37 @@ jobs:
             --data data-trivy-${{ matrix.version }}.json data-grype-${{ matrix.version }}.json \
             --output security-summary-${{ matrix.version }}.md
 
+      - name: Create scan bundle zip
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=(
+            "image-trivy-${{ matrix.version }}.json"
+            "image-grype-${{ matrix.version }}.json"
+            "install-trivy-${{ matrix.version }}.json"
+            "install-grype-${{ matrix.version }}.json"
+            "data-trivy-${{ matrix.version }}.json"
+            "data-grype-${{ matrix.version }}.json"
+          )
+
+          for f in "${files[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "Missing expected scan file: $f"
+              exit 1
+            fi
+          done
+
+          zip -q "scan-results-${{ matrix.version }}.zip" "${files[@]}"
+
+      - name: Upload scan bundle
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: scan-results-${{ matrix.version }}
+          path: scan-results-${{ matrix.version }}.zip
+          compression-level: 0
+
       - name: Add security summary to workflow summary
         if: always()
         run: |
@@ -287,6 +321,11 @@ jobs:
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: scan-results-${{ matrix.version }}
+          path: .
+
+      - name: Extract scan artifacts
+        run: |
+          unzip -o "scan-results-${{ matrix.version }}.zip" -d .
 
       - name: Download security summary artifact
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
