@@ -1,10 +1,6 @@
 name: Unified CI & Security Pipeline
 
 on:
-  push:
-    branches:
-      - dev
-      - '**'
   pull_request:
     types: [opened, synchronize, reopened]
   schedule:
