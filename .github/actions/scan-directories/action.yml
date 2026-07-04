@@ -1,5 +1,5 @@
 name: "Scan Directory"
-description: "Run Trivy, Grype, and SBOM on a directory"
+description: "Run Trivy and Grype on a directory"
 
 inputs:
   version:
@@ -21,7 +21,7 @@ runs:
         scan-type: fs
         scan-ref: ${{ inputs.path }}
         format: json
-        output: ${{ inputs.prefix }}-trivy-${{ inputs.version }}.json
+        output: ${{ github.workspace }}/${{ inputs.prefix }}-trivy-${{ inputs.version }}.json
         exit-code: 0
         ignore-unfixed: true
 
@@ -30,12 +30,14 @@ runs:
       with:
         path: ${{ inputs.path }}
         output-format: json
-        output-file: ${{ inputs.prefix }}-grype-${{ inputs.version }}.json
+        output-file: ${{ github.workspace }}/${{ inputs.prefix }}-grype-${{ inputs.version }}.json
         fail-build: false
+        upload-sarif: false
 
-    - name: SBOM filesystem scan
-      uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
-      with:
-        path: ${{ inputs.path }}
-        format: json
-        output-file: ${{ inputs.prefix }}-sbom-${{ inputs.version }}.json
+    - name: Verify scan outputs exist
+      shell: bash
+      run: |
+        set -euo pipefail
+        ls -la "${{ github.workspace }}"
+        test -f "${{ github.workspace }}/${{ inputs.prefix }}-trivy-${{ inputs.version }}.json"
+        test -f "${{ github.workspace }}/${{ inputs.prefix }}-grype-${{ inputs.version }}.json"
