@@ -32,7 +32,6 @@ runs:
         output-format: json
         output-file: ${{ github.workspace }}/${{ inputs.prefix }}-grype-${{ inputs.version }}.json
         fail-build: false
-        upload-sarif: false
 
     - name: Verify scan outputs exist
       shell: bash
