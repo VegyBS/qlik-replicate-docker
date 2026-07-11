@@ -254,6 +254,7 @@ jobs:
           name: scan-results-${{ matrix.version }}
           path: scan-results-${{ matrix.version }}.zip
           compression-level: 0
+          if-no-files-found: warn
 
       - name: Add security summary to workflow summary
         if: always()
