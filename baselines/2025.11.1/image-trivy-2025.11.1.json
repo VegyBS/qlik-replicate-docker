@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f5a01-06e3-7cfb-ad5c-4c1d8c5855ae",
-  "CreatedAt": "2026-07-13T05:44:04.579852548Z",
+  "ReportID": "019f5efc-a34c-7603-a766-69c2b12569e9",
+  "CreatedAt": "2026-07-14T04:57:23.020395242Z",
   "ArtifactID": "sha256:04db53c73c5ac76f7d3bafcb9b99506b2dd7d2f615a268290a8df49f250f07a4",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -24015,6 +24015,8 @@
             "https://access.redhat.com/errata/RHSA-2026:35996",
             "https://access.redhat.com/errata/RHSA-2026:35997",
             "https://access.redhat.com/errata/RHSA-2026:36012",
+            "https://access.redhat.com/errata/RHSA-2026:38514",
+            "https://access.redhat.com/errata/RHSA-2026:38796",
             "https://access.redhat.com/errata/RHSA-2026:7109",
             "https://access.redhat.com/errata/RHSA-2026:7380",
             "https://access.redhat.com/security/cve/CVE-2025-67030",
@@ -24031,7 +24033,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2025-67030"
           ],
           "PublishedDate": "2026-03-25T18:16:25.88Z",
-          "LastModifiedDate": "2026-07-07T12:16:27.96Z"
+          "LastModifiedDate": "2026-07-13T13:16:25.503Z"
         },
         {
           "VulnerabilityID": "CVE-2026-2332",
