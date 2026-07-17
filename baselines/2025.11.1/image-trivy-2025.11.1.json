@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f695b-cb77-706f-a610-bfbaea1acb46",
-  "CreatedAt": "2026-07-16T05:17:31.383030664Z",
+  "ReportID": "019f6e85-e64d-7037-bd9e-5a073b09b645",
+  "CreatedAt": "2026-07-17T05:21:36.845015282Z",
   "ArtifactID": "sha256:04db53c73c5ac76f7d3bafcb9b99506b2dd7d2f615a268290a8df49f250f07a4",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -21651,7 +21651,7 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
-            "https://access.redhat.com/errata/RHSA-2025:9166",
+            "https://access.redhat.com/errata/RHSA-2025:9114",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
             "https://bugzilla.redhat.com/2368956",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1767483",
@@ -21659,7 +21659,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/10/ALSA-2025-9166.html",
+            "https://errata.almalinux.org/9/ALSA-2025-9114.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -21886,7 +21886,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-07-15T02:21:36.827Z"
+          "LastModifiedDate": "2026-07-16T12:17:52.323Z"
         },
         {
           "VulnerabilityID": "CVE-2025-67735",
@@ -22519,7 +22519,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-07-15T02:21:36.827Z"
+          "LastModifiedDate": "2026-07-16T12:17:52.323Z"
         },
         {
           "VulnerabilityID": "CVE-2026-47244",
@@ -24020,13 +24020,14 @@
             "https://access.redhat.com/errata/RHSA-2026:38500",
             "https://access.redhat.com/errata/RHSA-2026:38514",
             "https://access.redhat.com/errata/RHSA-2026:38796",
+            "https://access.redhat.com/errata/RHSA-2026:40841",
             "https://access.redhat.com/errata/RHSA-2026:7109",
             "https://access.redhat.com/errata/RHSA-2026:7380",
             "https://access.redhat.com/security/cve/CVE-2025-67030",
             "https://bugzilla.redhat.com/2451409",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/10/ALSA-2026-38514.html",
+            "https://errata.almalinux.org/9/ALSA-2026-38796.html",
             "https://errata.rockylinux.org/RLSA-2026:38500",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
@@ -24040,7 +24041,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2025-67030"
           ],
           "PublishedDate": "2026-03-25T18:16:25.88Z",
-          "LastModifiedDate": "2026-07-15T02:17:48.457Z"
+          "LastModifiedDate": "2026-07-16T12:16:58.357Z"
         },
         {
           "VulnerabilityID": "CVE-2026-2332",
