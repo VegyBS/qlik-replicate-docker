@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f695d-6dd8-76a9-b5d2-48fc84c81c6a",
-  "CreatedAt": "2026-07-16T05:19:18.488437988Z",
+  "ReportID": "019f6e85-7c08-7205-9fe6-7a6d76016855",
+  "CreatedAt": "2026-07-17T05:21:09.640135008Z",
   "ArtifactID": "sha256:5c1e58bcde247e5deb255a80c0063f26151d563cb9e3d9001468cf2e54a185de",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -23752,7 +23752,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-07-15T02:21:36.827Z"
+          "LastModifiedDate": "2026-07-16T12:17:52.323Z"
         },
         {
           "VulnerabilityID": "CVE-2026-41417",
@@ -24197,7 +24197,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-07-15T02:21:36.827Z"
+          "LastModifiedDate": "2026-07-16T12:17:52.323Z"
         },
         {
           "VulnerabilityID": "CVE-2026-47244",
@@ -24418,7 +24418,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:4ae949955aa6dd5e3dbf7626369d77fad58c5ebcccb14041e617db7d29bf9077",
-          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
+          "Title": "netty: io.netty/netty-codec-http3: Netty: Denial of Service due to improper length validation in header block decoding",
           "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.2.13.Final, when decoding header blocks, the non-Huffman branch of io.netty.handler.codec.http3.QpackDecoder#decodeHuffmanEncodedLiteral may execute new byte[length] for a string literal before verifying that length bytes are actually present in the compressed field section. The wire encoding allows a very large length to be expressed in few bytes. There is no check that length \u003c= in.readableBytes() before new byte[length]. This vulnerability is fixed in 4.2.13.Final.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -24426,18 +24426,25 @@
             "CWE-789"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
               "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42582",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/security/advisories/GHSA-2c5c-chwr-9hqw",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-42582"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42582",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42582"
           ],
           "PublishedDate": "2026-05-13T19:17:23.763Z",
           "LastModifiedDate": "2026-07-10T13:44:19.907Z"
