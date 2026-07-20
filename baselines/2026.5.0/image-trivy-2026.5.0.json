@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f78d8-f443-7a19-9290-e35f91130277",
-  "CreatedAt": "2026-07-19T05:28:32.06766338Z",
+  "ReportID": "019f7e10-70f9-766a-a0d9-7319653c6893",
+  "CreatedAt": "2026-07-20T05:47:14.553423774Z",
   "ArtifactID": "sha256:08d386947e74a6373eb5b8d68cd4d11bcf3bb1ab20497aff4045992301f736f7",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -24969,7 +24969,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:d45900d58c8299e5237b56e088103a508bbeaf3563fd6e286a0b2be81ded23ec",
-          "Title": "Netty: Denial of Service via Unbounded Headers in StompSubframeDecoder",
+          "Title": "Netty is a network application framework for development of protocol s ...",
           "Description": "Netty is a network application framework for development of protocol servers and clients. Prior to 4.1.136.Final and 4.2.16.Final, io.netty.handler.codec.stomp.StompSubframeDecoder fails to limit the total number of headers or their cumulative size per frame, and the maxLineLength parameter only restricts individual header lines. An attacker can send a large number of short headers that are accumulated in memory inside DefaultStompHeadersSubframe until the JVM throws an OutOfMemoryError, causing denial of service for servers exposing a STOMP endpoint based on StompSubframeDecoder. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
           "CweIDs": [
