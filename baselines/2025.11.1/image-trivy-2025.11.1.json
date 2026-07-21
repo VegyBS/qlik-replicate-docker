@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f7e0f-f964-7832-b91e-5bd0e5738b89",
-  "CreatedAt": "2026-07-20T05:46:43.940538854Z",
+  "ReportID": "019f8323-dbd4-7b7e-9e8c-64f53e401866",
+  "CreatedAt": "2026-07-21T05:26:33.172754207Z",
   "ArtifactID": "sha256:4fc83a376003aadfc9117ae19a7c34a1d3c2077df0ea937ed1c28cb355ee9cdb",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16375,6 +16375,1192 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-58010",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58010",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5ada6f10b148515d959c84b65ba5c8c36f1c2d851fd49ff43d502573e57bda6b",
+          "Title": "glib: buffer over-read in glib/gvariant-serialiser.c via gvs_tuple_is_normal()",
+          "Description": "A flaw was found in GLib. An off-by-one error can occur in the gvs_tuple_is_normal function in the glib/gvariant-serialiser.c file when doing an alignment padding check because the bounds check uses \u003e instead of \u003e=, causing an out-of-bounds read of only 1 byte. This issue can cause a minor information disclosure of 1 byte and a denial of service when the out-of-bounds read crosses a page boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492243",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3915",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58010",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58010"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.067Z",
+          "LastModifiedDate": "2026-07-02T19:09:20.803Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58011",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58011",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:71f1428c7a7e3430738c0551479ce1c960013e9599eb306cc87bb2532a02fa2c",
+          "Title": "glib: out-of-bounds read in glib/gdatetime.c:g_date_time_get_ymd via invalid GDateTime",
+          "Description": "A flaw was found in GLib. An out-of-bounds read of only 2 bytes can occur in the g_date_time_get_ymd function in the glib/gdatetime.c file when an invalid GDateTime object produced by the g_date_time_add_full function is processed. This flaw can corrupt the date output and potentially cause logic errors that may lead to a denial of service.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58011",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492245",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3917",
+            "https://gitlab.gnome.org/GNOME/glib/-/work_items/3917",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58011",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58011"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.2Z",
+          "LastModifiedDate": "2026-07-02T19:20:39.03Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58012",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58012",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:fe7ec2c19c41c4c20cdd773a4482a04d827a5f647bada2216954c47a859f0932",
+          "Title": "glib: buffer over-read in g_regex_replace() via glib/gregex.c:string_append() and g_utf8_next_char()",
+          "Description": "A flaw was found in GLib. A buffer over-read can occur in the g_regex_replace function when used with the `G_REGEX_RAW` compile flag and case-change replacement escapes because the string_append function processes matched substrings using UTF-8 functions that assume valid UTF-8 input, even when the string is treated as raw bytes. This vulnerability can cause a minor information disclosure of 1-5 bytes and a denial of service when the buffer over-read crosses a page boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58012",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492247",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3918",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58012",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58012"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.33Z",
+          "LastModifiedDate": "2026-07-02T19:28:31.943Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58013",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58013",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:fe1b6979bb0e732da7259899777d3f232b6f5dfb0838478bb2bd7537a9a0d6ef",
+          "Title": "glib: buffer over-read in glib/giochannel.c via \"g_io_channel_read_line_backend\"",
+          "Description": "A flaw was found in GLib. A buffer over-read can occur in g_io_channel_read_line_backend() in the giochannel.c file when a custom line terminator with a length greater than one is set, causing memcmp to read past the GString buffer. This vulnerability can cause a minor information disclosure of 7 bytes or a denial of service when the buffer over-read crosses a page boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58013",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492248",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3925",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58013",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58013"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.457Z",
+          "LastModifiedDate": "2026-07-02T19:29:25.16Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58014",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58014",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:79b1a6b1132a228c0d870b07308d4675a2c088497e19c1221ebccf6376ed733d",
+          "Title": "glib: off-by-one error in glib/gkeyfile.c via \"g_key_file_get_locale_string_list\"",
+          "Description": "A flaw was found in GLib. An off-by-one error can occur in the g_key_file_get_locale_string_list function in the gkeyfile.c file when loading a key file with an empty value. This flaw can cause an out-of-bounds access of 1 byte or a denial of service when the out-of-bounds access crosses a page boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-193"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 3,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 8.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 7.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58014",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492255",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3930",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58014",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58014"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.58Z",
+          "LastModifiedDate": "2026-07-01T17:58:21.36Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58015",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58015",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:771f2cae25af94819552e9a387da54630aa194af98cc42f1c686cfe1c5c1315b",
+          "Title": "glib: path traversal in glib/gio/gdbusauthmechanismsha1.c via keyring_lookup_entry and mechanism_client_data_receive",
+          "Description": "A flaw was found in GLib. The D-Bus client-side implementation of the DBUS_COOKIE_SHA1 SASL authentication mechanism does not validate the cookie_context parameter received from the server. A malicious D-Bus server can supply a cookie_context containing path traversal sequences, causing the client to read an arbitrary file and exfiltrate sensitive data by verifying guessed file contents against a generated hash.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-58015",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492256",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3931",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58015",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58015"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.707Z",
+          "LastModifiedDate": "2026-07-02T02:16:28.58Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-58016",
+          "PkgID": "glib2@2.82.2-769.amzn2023.x86_64",
+          "PkgName": "glib2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glib2@2.82.2-769.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "c3b67ab2fd5a151a"
+          },
+          "InstalledVersion": "2.82.2-769.amzn2023",
+          "FixedVersion": "2.82.2-770.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-58016",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:7f4ebfdae928609c4842762c7c6701c8a5f7c5a0b243f43d45a0fa0ceaf86f38",
+          "Title": "glib: integer underflow in gio/gdbusintrospection.c via \"g_dbus_node_info_new_for_xml\"",
+          "Description": "A flaw was found in GLib. A state confusion issue exists in g_dbus_node_info_new_for_xml() in the gio/gdbusintrospection.c file when processing malformed D-Bus introspection XML, specifically with a \u003cnode\u003e element nested within other elements like \u003cmethod\u003e, \u003csignal\u003e, \u003cproperty\u003e or \u003carg\u003e. This issue can cause an unsigned integer overflow and lead to an out-of-bounds read, resulting in a denial of service.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-191"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "nvd": 4,
+            "redhat": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:42063",
+            "https://access.redhat.com/errata/RHSA-2026:42090",
+            "https://access.redhat.com/security/cve/CVE-2026-58016",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492257",
+            "https://gitlab.gnome.org/GNOME/glib/-/issues/3932",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-58016",
+            "https://www.cve.org/CVERecord?id=CVE-2026-58016"
+          ],
+          "PublishedDate": "2026-06-30T13:19:17.84Z",
+          "LastModifiedDate": "2026-07-20T22:17:17.383Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-11850",
+          "PkgID": "krb5-libs@1.21.3-7.amzn2023.0.1.x86_64",
+          "PkgName": "krb5-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/krb5-libs@1.21.3-7.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "66369609fd2cd162"
+          },
+          "InstalledVersion": "1.21.3-7.amzn2023.0.1",
+          "FixedVersion": "1.21.3-8.amzn2023.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11850",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:d53f4affeee2c1d43b37334e6b4e6fa26b18778c3379eeb9595b12ad6dc93026",
+          "Title": "krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read",
+          "Description": "An integer underflow vulnerability was found in MIT krb5 in the berval2tl_data() function in plugins/kdb/ldap/libkdb_ldap/ldap_principal2.c. The function performs an unsigned subtraction (bv_len - 2) without a prior bounds check. When bv_len is 0 or 1, the subtraction wraps to a large value which is then truncated to uint16_t, yielding 0xFFFE (65534) or 0xFFFF (65535). The subsequent malloc succeeds and memcpy reads up to 65534 bytes from a 0-1 byte buffer, resulting in a heap out-of-bounds read.\nThe attack vector involves a malicious or compromised LDAP KDB backend returning a krbExtraData attribute with bv_len \u003c 2, triggering the underflow when the KDC or kadmind reads principal data.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-191"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:25520",
+            "https://access.redhat.com/security/cve/CVE-2026-11850",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2459970",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-11850",
+            "https://www.cve.org/CVERecord?id=CVE-2026-11850"
+          ],
+          "PublishedDate": "2026-06-11T10:16:21.217Z",
+          "LastModifiedDate": "2026-06-17T10:14:30.383Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54369",
+          "PkgID": "libacl@2.3.1-2.amzn2023.0.2.x86_64",
+          "PkgName": "libacl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libacl@2.3.1-2.amzn2023.0.2?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "a8ff87c35d30f940"
+          },
+          "InstalledVersion": "2.3.1-2.amzn2023.0.2",
+          "FixedVersion": "2.4.0-1.amzn2023.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54369",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:c2b9a090dddf0b659d51b7e423ad7a4123a0bc4e82c4594b37a38d827855e1c3",
+          "Title": "acl: Symlink traversal privilege escalation via libacl functions",
+          "Description": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:34351",
+            "https://access.redhat.com/security/cve/CVE-2026-54369",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2490277",
+            "https://cgit.git.savannah.nongnu.org/cgit/acl.git/commit/?id=24a227d0ab8576612194f8a56c2314389adc74a5",
+            "https://cgit.git.savannah.nongnu.org/cgit/acl.git/commit/?id=3589787cd589b34bdd9265936e17190b6d3f17d1",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54369",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-54369.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54369",
+            "https://www.vulncheck.com/advisories/acl-symlink-traversal-privilege-escalation-via-libacl-functions"
+          ],
+          "PublishedDate": "2026-06-29T14:16:57.487Z",
+          "LastModifiedDate": "2026-07-15T01:16:35.277Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54370",
+          "PkgID": "libacl@2.3.1-2.amzn2023.0.2.x86_64",
+          "PkgName": "libacl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libacl@2.3.1-2.amzn2023.0.2?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "a8ff87c35d30f940"
+          },
+          "InstalledVersion": "2.3.1-2.amzn2023.0.2",
+          "FixedVersion": "2.4.0-1.amzn2023.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54370",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:863956e139c2c1af7183a4af8683255d7a8a1f3b0ea602c6fdd49d71af2246d1",
+          "Title": "acl: TOCTOU Symlink Traversal via getfacl/setfacl",
+          "Description": "acl before version 2.4.0 contains a time-of-check to time-of-use (TOCTOU) race condition vulnerability that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link between an lstat() check and subsequent symlink-following operations such as stat(), chown(), chmod(), acl_get_file(), and acl_set_file(). Attackers who control a pathname component can redirect file access control list operations to arbitrary files when getfacl, setfacl, or chacl is invoked by a privileged process over an attacker-controlled path, resulting in local privilege escalation.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 6.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54370",
+            "https://cgit.git.savannah.nongnu.org/cgit/acl.git/commit/?id=24a227d0ab8576612194f8a56c2314389adc74a5",
+            "https://cgit.git.savannah.nongnu.org/cgit/acl.git/commit/?id=3589787cd589b34bdd9265936e17190b6d3f17d1",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54370",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54370",
+            "https://www.vulncheck.com/advisories/acl-toctou-symlink-traversal-via-getfacl-setfacl-chacl"
+          ],
+          "PublishedDate": "2026-06-29T14:16:57.67Z",
+          "LastModifiedDate": "2026-06-29T19:22:57.46Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-0864",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "484e5b5d7fb34544"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0864",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:4a2b8efeac891bfa801a7fc796f33a2ded5ba188bc42b08bd35f19d7fa98c889",
+          "Title": "python: cpython: Python configparser: Configuration injection via crafted multi-line input",
+          "Description": "When using the \"configparser\" module to write configuration files\ncontaining multi-line text values with carriage return characters (\\r) the\nresulting file could be injected with unexpected keys and values if the\nattacker controls the written value.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-74"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:P/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 4.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-0864",
+            "https://github.com/python/cpython/commit/0adb386f6e68eb2e73d32e19f235d012df009528",
+            "https://github.com/python/cpython/commit/5858e42c539dac8394636a6e9b30472b8994851f",
+            "https://github.com/python/cpython/commit/71f2e02a52d47417a6fd69f456346cd8aa7aca98",
+            "https://github.com/python/cpython/commit/aaf850fd333cd89e9aada03d92aaa788a6cb1bb8",
+            "https://github.com/python/cpython/issues/143927",
+            "https://github.com/python/cpython/pull/151559",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/CV4NE6AFCRJL7XQOHX7J5TSDHUWVWGJS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-0864",
+            "https://www.cve.org/CVERecord?id=CVE-2026-0864"
+          ],
+          "PublishedDate": "2026-06-23T18:17:41.243Z",
+          "LastModifiedDate": "2026-06-25T19:51:26.187Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-11940",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "484e5b5d7fb34544"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11940",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:eec81ba91c81a185da6c18ad62d90f60da29eaac7934e604978a99b9bfff6568",
+          "Title": "tarfile.extractall() with the 'data' or 'tar'  filter could be bypasse ...",
+          "Description": "tarfile.extractall() with the 'data' or 'tar'\n filter could be bypassed by a crafted archive where a hardlink \nreferences a symlink stored at a deeper name than the hardlink itself.  \nThe extraction fallback validated the symlink at it's archived location \nbut recreated it at the hardlink's shallower\npath, letting a relative\n target the filter judged contained escape the destination directory.  \nThis allowed a malicious tar archive to create a symlink pointing \noutside the destination, enabling out-of-destination file reads or \nwrites. This was an incomplete fix of CVE-2025-4330.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22",
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "photon": 4
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N",
+              "V40Score": 7.8
+            }
+          },
+          "References": [
+            "https://github.com/python/cpython/commit/27dd970bf6b17ebca7c8ed486a40ab043ed7af8f",
+            "https://github.com/python/cpython/commit/672825e2f36a57e173959b0d9d409d4560dab8df",
+            "https://github.com/python/cpython/commit/771d12dda5140313db0ac550292987975651bbde",
+            "https://github.com/python/cpython/commit/79c06bd5c6afa3c440d50faf7ee1b147c8832b4c",
+            "https://github.com/python/cpython/commit/be13e86f6b9788a6f4d0419dffef72cbae5865c9",
+            "https://github.com/python/cpython/issues/151558",
+            "https://github.com/python/cpython/pull/151559",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/LD6QIISNQFQYOIEPJNEUIPV7S3V76FZH/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-11940"
+          ],
+          "PublishedDate": "2026-06-23T17:16:40.847Z",
+          "LastModifiedDate": "2026-06-30T16:16:35.487Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-11972",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "484e5b5d7fb34544"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11972",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:6add5bf6e5079825b6b985065fa7dbfffdca907cd917a362de5387f5ed15ea9f",
+          "Title": "python: Python tarfile module: Denial of Service via improper EOF handling in streaming mode",
+          "Description": "When using the \"tarfile\" module with a file opened in \"streaming mode\" (mode=\"r|\") the tarfile module did not properly handle EOF, making archive parsing take exponentially longer.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-252",
+            "CWE-606",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "photon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-11972",
+            "https://github.com/python/cpython/commit/3f031d431f80668e14f3bc066bbf4369cd9281b9",
+            "https://github.com/python/cpython/commit/4ce6bf7c8aa7725828a38981c306f214c1f29365",
+            "https://github.com/python/cpython/commit/7f0dc59c9a70f8f3b4da33d7c4a2ba552a7acc21",
+            "https://github.com/python/cpython/commit/e86666c9dd256d52d0fbef6feb1ea4a51768fdec",
+            "https://github.com/python/cpython/commit/eb63c0f94dfcbea7fda8eab6213818e134d67192",
+            "https://github.com/python/cpython/commit/f50bf13566189c8d0ce5a814f33eff3d89951896",
+            "https://github.com/python/cpython/issues/151981",
+            "https://github.com/python/cpython/pull/151982",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/AXPSKKTSRKXTTJULW3XSIC74WZNAAPPB/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-11972",
+            "https://www.cve.org/CVERecord?id=CVE-2026-11972"
+          ],
+          "PublishedDate": "2026-06-23T23:16:49.033Z",
+          "LastModifiedDate": "2026-06-30T16:16:43.19Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3276",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "484e5b5d7fb34544"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3276",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:190569961951a705bd8cfba6e0d05e9594415600351519b9da6413a9e19f5e2b",
+          "Title": "python: Python unicodedata: Denial of Service due to excessive CPU consumption",
+          "Description": "unicodedata.normalize() can take excessive CPU time when processing\nspecially crafted Unicode input containing long runs of combining characters\nwith alternating Canonical Combining Class values.\nThis affects all normalization forms.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "V40Score": 6.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/06/03/15",
+            "https://access.redhat.com/security/cve/CVE-2026-3276",
+            "https://github.com/python/cpython/commit/6b505d1f41f8f3ea0fe5a4786d3a8fff1875cfc0",
+            "https://github.com/python/cpython/commit/90748760d38ca3ac5fc6788a69becab905c95598",
+            "https://github.com/python/cpython/commit/991224b1e8311c85f198f6dd8208bf8cff7fc26f",
+            "https://github.com/python/cpython/commit/ba785b88add96acbf403d65cb157fb2743a33a32",
+            "https://github.com/python/cpython/commit/c5512bd7c1dc28055660565275012766941d3066",
+            "https://github.com/python/cpython/issues/149079",
+            "https://github.com/python/cpython/pull/149080",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/PP5HB4K7727OBBM76KA2ILID76K3OZGZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3276",
+            "https://ubuntu.com/security/notices/USN-8509-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3276",
+            "https://www.openwall.com/lists/oss-security/2026/06/03/15"
+          ],
+          "PublishedDate": "2026-06-03T16:16:29.253Z",
+          "LastModifiedDate": "2026-06-17T10:43:19.58Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-9669",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "484e5b5d7fb34544"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-9669",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:b8cbf970af5c6c08c25beed21525a3e114f1d0392707a01547579f09b9a0e3b7",
+          "Title": "python: Python: Denial of Service via out-of-bounds write in BZ2 decompression",
+          "Description": "bz2.BZ2Decompressor objects could be reused after a decompression error. If an application caught the resulting OSError and retried with the same decompressor, crafted input could cause the decompressor to resume from an invalid internal state and perform out-of-bounds writes to a stack buffer. This could crash the process when processing untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/06/08/17",
+            "https://access.redhat.com/security/cve/CVE-2026-9669",
+            "https://github.com/python/cpython/commit/157a5df8cb5d82b33f918a7489e72ce95ceb12b6",
+            "https://github.com/python/cpython/commit/5755d0f083949ff3c5bf3a37e673e24e306b036e",
+            "https://github.com/python/cpython/commit/619a12b2e545391dc436b3af79dda22337382a6f",
+            "https://github.com/python/cpython/commit/938ec030e90c5e53f1faac6fab1643f14e4f4a79",
+            "https://github.com/python/cpython/commit/d3ca26983dfbccdf609f24ff5877dc3118e4702d",
+            "https://github.com/python/cpython/issues/150599",
+            "https://github.com/python/cpython/pull/150600",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-9669",
+            "https://ubuntu.com/security/notices/USN-8509-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-9669"
+          ],
+          "PublishedDate": "2026-06-08T23:17:25.17Z",
+          "LastModifiedDate": "2026-07-07T18:16:40.553Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-0864",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "aef1ddb8f2d3627d"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0864",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:dac636eadc78c1d01246f3b22a8bed5413e770c314e057ff6e92a867db18cc24",
+          "Title": "python: cpython: Python configparser: Configuration injection via crafted multi-line input",
+          "Description": "When using the \"configparser\" module to write configuration files\ncontaining multi-line text values with carriage return characters (\\r) the\nresulting file could be injected with unexpected keys and values if the\nattacker controls the written value.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-74"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:P/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 4.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-0864",
+            "https://github.com/python/cpython/commit/0adb386f6e68eb2e73d32e19f235d012df009528",
+            "https://github.com/python/cpython/commit/5858e42c539dac8394636a6e9b30472b8994851f",
+            "https://github.com/python/cpython/commit/71f2e02a52d47417a6fd69f456346cd8aa7aca98",
+            "https://github.com/python/cpython/commit/aaf850fd333cd89e9aada03d92aaa788a6cb1bb8",
+            "https://github.com/python/cpython/issues/143927",
+            "https://github.com/python/cpython/pull/151559",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/CV4NE6AFCRJL7XQOHX7J5TSDHUWVWGJS/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-0864",
+            "https://www.cve.org/CVERecord?id=CVE-2026-0864"
+          ],
+          "PublishedDate": "2026-06-23T18:17:41.243Z",
+          "LastModifiedDate": "2026-06-25T19:51:26.187Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-11940",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "aef1ddb8f2d3627d"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11940",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:c8440edeb7d76a669d6a923aac9d30a9b9fd2c390d93f955331be09161388dda",
+          "Title": "tarfile.extractall() with the 'data' or 'tar'  filter could be bypasse ...",
+          "Description": "tarfile.extractall() with the 'data' or 'tar'\n filter could be bypassed by a crafted archive where a hardlink \nreferences a symlink stored at a deeper name than the hardlink itself.  \nThe extraction fallback validated the symlink at it's archived location \nbut recreated it at the hardlink's shallower\npath, letting a relative\n target the filter judged contained escape the destination directory.  \nThis allowed a malicious tar archive to create a symlink pointing \noutside the destination, enabling out-of-destination file reads or \nwrites. This was an incomplete fix of CVE-2025-4330.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22",
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "photon": 4
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:H/SI:H/SA:N",
+              "V40Score": 7.8
+            }
+          },
+          "References": [
+            "https://github.com/python/cpython/commit/27dd970bf6b17ebca7c8ed486a40ab043ed7af8f",
+            "https://github.com/python/cpython/commit/672825e2f36a57e173959b0d9d409d4560dab8df",
+            "https://github.com/python/cpython/commit/771d12dda5140313db0ac550292987975651bbde",
+            "https://github.com/python/cpython/commit/79c06bd5c6afa3c440d50faf7ee1b147c8832b4c",
+            "https://github.com/python/cpython/commit/be13e86f6b9788a6f4d0419dffef72cbae5865c9",
+            "https://github.com/python/cpython/issues/151558",
+            "https://github.com/python/cpython/pull/151559",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/LD6QIISNQFQYOIEPJNEUIPV7S3V76FZH/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-11940"
+          ],
+          "PublishedDate": "2026-06-23T17:16:40.847Z",
+          "LastModifiedDate": "2026-06-30T16:16:35.487Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-11972",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "aef1ddb8f2d3627d"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-11972",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e84a6a11776a017645e32e9298fe45f9fe9da3d86510777de285102d5cbfdb74",
+          "Title": "python: Python tarfile module: Denial of Service via improper EOF handling in streaming mode",
+          "Description": "When using the \"tarfile\" module with a file opened in \"streaming mode\" (mode=\"r|\") the tarfile module did not properly handle EOF, making archive parsing take exponentially longer.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-252",
+            "CWE-606",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "photon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-11972",
+            "https://github.com/python/cpython/commit/3f031d431f80668e14f3bc066bbf4369cd9281b9",
+            "https://github.com/python/cpython/commit/4ce6bf7c8aa7725828a38981c306f214c1f29365",
+            "https://github.com/python/cpython/commit/7f0dc59c9a70f8f3b4da33d7c4a2ba552a7acc21",
+            "https://github.com/python/cpython/commit/e86666c9dd256d52d0fbef6feb1ea4a51768fdec",
+            "https://github.com/python/cpython/commit/eb63c0f94dfcbea7fda8eab6213818e134d67192",
+            "https://github.com/python/cpython/commit/f50bf13566189c8d0ce5a814f33eff3d89951896",
+            "https://github.com/python/cpython/issues/151981",
+            "https://github.com/python/cpython/pull/151982",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/AXPSKKTSRKXTTJULW3XSIC74WZNAAPPB/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-11972",
+            "https://www.cve.org/CVERecord?id=CVE-2026-11972"
+          ],
+          "PublishedDate": "2026-06-23T23:16:49.033Z",
+          "LastModifiedDate": "2026-06-30T16:16:43.19Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3276",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "aef1ddb8f2d3627d"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3276",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1b9d87acc169b3069f36e361d99678fc5c3b4f02d31c8b03a721f063e2527da3",
+          "Title": "python: Python unicodedata: Denial of Service due to excessive CPU consumption",
+          "Description": "unicodedata.normalize() can take excessive CPU time when processing\nspecially crafted Unicode input containing long runs of combining characters\nwith alternating Canonical Combining Class values.\nThis affects all normalization forms.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "V40Score": 6.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/06/03/15",
+            "https://access.redhat.com/security/cve/CVE-2026-3276",
+            "https://github.com/python/cpython/commit/6b505d1f41f8f3ea0fe5a4786d3a8fff1875cfc0",
+            "https://github.com/python/cpython/commit/90748760d38ca3ac5fc6788a69becab905c95598",
+            "https://github.com/python/cpython/commit/991224b1e8311c85f198f6dd8208bf8cff7fc26f",
+            "https://github.com/python/cpython/commit/ba785b88add96acbf403d65cb157fb2743a33a32",
+            "https://github.com/python/cpython/commit/c5512bd7c1dc28055660565275012766941d3066",
+            "https://github.com/python/cpython/issues/149079",
+            "https://github.com/python/cpython/pull/149080",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/PP5HB4K7727OBBM76KA2ILID76K3OZGZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3276",
+            "https://ubuntu.com/security/notices/USN-8509-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3276",
+            "https://www.openwall.com/lists/oss-security/2026/06/03/15"
+          ],
+          "PublishedDate": "2026-06-03T16:16:29.253Z",
+          "LastModifiedDate": "2026-06-17T10:43:19.58Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-9669",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.7.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "aef1ddb8f2d3627d"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.7",
+          "FixedVersion": "3.9.25-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7b5c02c8680ff39f140a7fd3e28eaca90b5eadd2a2e53d73127a40286d9d8aa7"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-9669",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:15137b5b02a5a6fb438295eabf4257c6077e73c30656da30257a46fd3f65e85a",
+          "Title": "python: Python: Denial of Service via out-of-bounds write in BZ2 decompression",
+          "Description": "bz2.BZ2Decompressor objects could be reused after a decompression error. If an application caught the resulting OSError and retried with the same decompressor, crafted input could cause the decompressor to resume from an invalid internal state and perform out-of-bounds writes to a stack buffer. This could crash the process when processing untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/06/08/17",
+            "https://access.redhat.com/security/cve/CVE-2026-9669",
+            "https://github.com/python/cpython/commit/157a5df8cb5d82b33f918a7489e72ce95ceb12b6",
+            "https://github.com/python/cpython/commit/5755d0f083949ff3c5bf3a37e673e24e306b036e",
+            "https://github.com/python/cpython/commit/619a12b2e545391dc436b3af79dda22337382a6f",
+            "https://github.com/python/cpython/commit/938ec030e90c5e53f1faac6fab1643f14e4f4a79",
+            "https://github.com/python/cpython/commit/d3ca26983dfbccdf609f24ff5877dc3118e4702d",
+            "https://github.com/python/cpython/issues/150599",
+            "https://github.com/python/cpython/pull/150600",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/DBJZETMGUIFK7DVUWMOXHD3Z6IX2QPSX/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-9669",
+            "https://ubuntu.com/security/notices/USN-8509-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-9669"
+          ],
+          "PublishedDate": "2026-06-08T23:17:25.17Z",
+          "LastModifiedDate": "2026-07-07T18:16:40.553Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-40034",
+          "PkgID": "rust-toolset-srpm-macros@1.96.0-1.amzn2023.0.2.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.96.0-1.amzn2023.0.2?arch=noarch\u0026distro=amazon-2023.12.20260710%20%28Amazon%20Linux%29",
+            "UID": "dfecfaa3517c8b0f"
+          },
+          "InstalledVersion": "1.96.0-1.amzn2023.0.2",
+          "FixedVersion": "1.97.0-1.amzn2023.0.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:35e05200c7286da4ec9dd2c144802c6584ea5924a958cc21f760c2d7ef5712f1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40034",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:2b8b81289abcfb2a20da8750b28d8bd0a8f44a9e61e0c5f6ecf5e713df71d9c2",
+          "Title": "gix-submodule before 0.29.0 (gitoxide before 0.5.21, gix before 0.84.0 ...",
+          "Description": "gix-submodule before 0.29.0 (gitoxide before 0.5.21, gix before 0.84.0) incorrectly validates the update field in .gitmodules, allowing attackers to bypass the CommandForbiddenInModulesConfiguration guard when a submodule has been initialized with only partial configuration in .git/config. An attacker can inject arbitrary shell commands via the update field in .gitmodules that will be executed when Submodule::update() is called on a previously-initialized submodule, enabling remote code execution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-77"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 3,
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 7.8,
+              "V40Score": 8.5
+            }
+          },
+          "References": [
+            "https://github.com/GitoxideLabs/gitoxide",
+            "https://github.com/GitoxideLabs/gitoxide/commit/6a2e6a436f76c8bbf2487f9967413a51356667a0",
+            "https://github.com/GitoxideLabs/gitoxide/commit/dd5c18d9e526e8de462fa40aa047acd097cfa7dc",
+            "https://github.com/GitoxideLabs/gitoxide/security/advisories/GHSA-f26g-jm89-4g65",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-40034",
+            "https://red.anthropic.com/2026/cvd/findings/ANT-2026-6SNS6KMP",
+            "https://www.vulncheck.com/advisories/gitoxide-command-injection-via-partial-gitmodules-override-in-gix-submodule"
+          ],
+          "PublishedDate": "2026-05-26T15:16:35.087Z",
+          "LastModifiedDate": "2026-06-17T10:44:38.51Z"
+        }
       ]
     },
     {
@@ -20688,6 +21874,8 @@
             "CWE-502"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -20702,7 +21890,11 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -20745,6 +21937,8 @@
             "CWE-184"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -20762,7 +21956,10 @@
             "https://access.redhat.com/errata/RHSA-2026:36839",
             "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -20809,6 +22006,7 @@
             "CWE-918"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -20866,6 +22064,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -20925,6 +22124,8 @@
             "CWE-502"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -20939,7 +22140,11 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -20982,6 +22187,8 @@
             "CWE-184"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -20999,7 +22206,10 @@
             "https://access.redhat.com/errata/RHSA-2026:36839",
             "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21046,6 +22256,7 @@
             "CWE-918"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -21103,6 +22314,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -21162,6 +22374,8 @@
             "CWE-502"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21176,7 +22390,11 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21220,6 +22438,8 @@
             "CWE-502"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21234,7 +22454,11 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21277,6 +22501,8 @@
             "CWE-184"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21294,7 +22520,10 @@
             "https://access.redhat.com/errata/RHSA-2026:36839",
             "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21341,6 +22570,8 @@
             "CWE-184"
           ],
           "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21358,7 +22589,10 @@
             "https://access.redhat.com/errata/RHSA-2026:36839",
             "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
+            "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21405,6 +22639,7 @@
             "CWE-918"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -21462,6 +22697,7 @@
             "CWE-918"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -21519,6 +22755,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -21577,6 +22814,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22785,7 +24023,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-07-15T02:21:51.14Z"
+          "LastModifiedDate": "2026-07-20T12:19:22.997Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -22850,7 +24088,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-07-15T02:22:03.987Z"
+          "LastModifiedDate": "2026-07-20T12:19:30.243Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -22915,7 +24153,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-07-15T01:16:15.657Z"
+          "LastModifiedDate": "2026-07-20T12:19:41.03Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
@@ -24126,7 +25364,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-2332"
           ],
           "PublishedDate": "2026-04-14T12:16:21.333Z",
-          "LastModifiedDate": "2026-07-15T02:19:29.803Z"
+          "LastModifiedDate": "2026-07-20T12:18:26.483Z"
         },
         {
           "VulnerabilityID": "CVE-2024-6763",
