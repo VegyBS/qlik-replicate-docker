@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019f9296-9b35-7814-8ad9-06b118bbc1cb",
-  "CreatedAt": "2026-07-24T05:26:11.509531776Z",
+  "ReportID": "019f97b8-5145-76d3-8b8b-6a26b3693b2e",
+  "CreatedAt": "2026-07-25T05:21:06.885449038Z",
   "ArtifactID": "sha256:4fc83a376003aadfc9117ae19a7c34a1d3c2077df0ea937ed1c28cb355ee9cdb",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16759,7 +16759,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492257",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58016",
             "https://errata.almalinux.org/9/ALSA-2026-42089.html",
-            "https://errata.rockylinux.org/RLSA-2026:42063",
+            "https://errata.rockylinux.org/RLSA-2026:42089",
             "https://gitlab.gnome.org/GNOME/glib/-/issues/3932",
             "https://linux.oracle.com/cve/CVE-2026-58016.html",
             "https://linux.oracle.com/errata/ELSA-2026-42090.html",
@@ -16767,7 +16767,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-58016"
           ],
           "PublishedDate": "2026-06-30T13:19:17.84Z",
-          "LastModifiedDate": "2026-07-23T14:17:27.133Z"
+          "LastModifiedDate": "2026-07-24T19:16:59.35Z"
         },
         {
           "VulnerabilityID": "CVE-2026-11850",
@@ -16866,6 +16866,7 @@
             "https://access.redhat.com/errata/RHSA-2026:42736",
             "https://access.redhat.com/errata/RHSA-2026:42739",
             "https://access.redhat.com/errata/RHSA-2026:43420",
+            "https://access.redhat.com/errata/RHSA-2026:44481",
             "https://access.redhat.com/security/cve/CVE-2026-54369",
             "https://bugzilla.redhat.com/2490277",
             "https://bugzilla.redhat.com/2490279",
@@ -16876,16 +16877,16 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54369",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54370",
             "https://errata.almalinux.org/9/ALSA-2026-42736.html",
-            "https://errata.rockylinux.org/RLSA-2026:42739",
+            "https://errata.rockylinux.org/RLSA-2026:42736",
             "https://linux.oracle.com/cve/CVE-2026-54369.html",
-            "https://linux.oracle.com/errata/ELSA-2026-42739.html",
+            "https://linux.oracle.com/errata/ELSA-2026-43420.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54369",
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-54369.json",
             "https://www.cve.org/CVERecord?id=CVE-2026-54369",
             "https://www.vulncheck.com/advisories/acl-symlink-traversal-privilege-escalation-via-libacl-functions"
           ],
           "PublishedDate": "2026-06-29T14:16:57.487Z",
-          "LastModifiedDate": "2026-07-22T12:18:13.81Z"
+          "LastModifiedDate": "2026-07-24T13:18:27.353Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54370",
@@ -16940,9 +16941,9 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54369",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54370",
             "https://errata.almalinux.org/9/ALSA-2026-42736.html",
-            "https://errata.rockylinux.org/RLSA-2026:42739",
+            "https://errata.rockylinux.org/RLSA-2026:42736",
             "https://linux.oracle.com/cve/CVE-2026-54370.html",
-            "https://linux.oracle.com/errata/ELSA-2026-42739.html",
+            "https://linux.oracle.com/errata/ELSA-2026-43420.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54370",
             "https://www.cve.org/CVERecord?id=CVE-2026-54370",
             "https://www.vulncheck.com/advisories/acl-toctou-symlink-traversal-via-getfacl-setfacl-chacl"
@@ -17601,7 +17602,7 @@
             "https://www.vulncheck.com/advisories/gitoxide-command-injection-via-partial-gitmodules-override-in-gix-submodule"
           ],
           "PublishedDate": "2026-05-26T15:16:35.087Z",
-          "LastModifiedDate": "2026-06-17T10:44:38.51Z"
+          "LastModifiedDate": "2026-07-24T11:10:00.17Z"
         }
       ]
     },
@@ -26435,7 +26436,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
             "https://errata.almalinux.org/9/ALSA-2026-38796.html",
-            "https://errata.rockylinux.org/RLSA-2026:38514",
+            "https://errata.rockylinux.org/RLSA-2026:38500",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
             "https://github.com/codehaus-plexus/plexus-utils/commit/6d780b3378829318ba5c2d29547e0012d5b29642",
@@ -26444,7 +26445,7 @@
             "https://github.com/codehaus-plexus/plexus-utils/pull/296",
             "https://github.com/codehaus-plexus/plexus-utils/releases/tag/plexus-utils-4.0.3",
             "https://linux.oracle.com/cve/CVE-2025-67030.html",
-            "https://linux.oracle.com/errata/ELSA-2026-38796.html",
+            "https://linux.oracle.com/errata/ELSA-2026-40841.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-67030",
             "https://security.access.redhat.com/data/csaf/v2/vex/2025/cve-2025-67030.json",
             "https://www.cve.org/CVERecord?id=CVE-2025-67030"
