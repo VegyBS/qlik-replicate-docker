@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fac59-8e91-7391-bc6c-429d8eb8d7fa",
-  "CreatedAt": "2026-07-29T05:29:38.193236755Z",
+  "ReportID": "019fb173-3312-7aa5-b32c-29434890b544",
+  "CreatedAt": "2026-07-30T05:15:44.786698851Z",
   "ArtifactID": "sha256:e4546a66cd1e280a81f0ce2914df754181dad0d4d2bee5b5624a6c58b800a857",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -21674,7 +21674,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21747,7 +21747,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21830,7 +21830,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21917,7 +21917,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22532,7 +22532,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22615,7 +22615,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22867,7 +22867,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22940,7 +22940,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -23013,7 +23013,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -23096,7 +23096,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23183,7 +23183,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23270,7 +23270,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -24816,8 +24816,11 @@
           },
           "Fingerprint": "sha256:d55a44701a0aa0d712339ef78f828f3d13a019a4c236260b25fa831ad576baa6",
           "Title": "io.netty/netty-codec-compression: Netty: Infinite loop in netty-codec-compression (bzip2)",
-          "Description": "A flaw was found in the netty-codec-compression component of Netty. This vulnerability, caused by a logic error in the bzip2 decoder, allows a remote attacker to send specially crafted bzip2-compressed data. Processing this malformed data can trigger an infinite loop, causing the decoder thread to consume excessive CPU resources. This leads to a denial of service (DoS), requiring manual intervention to restore service.",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to versions 4.1.136.Final and 4.2.16.Final, the `Bzip2Decoder` handler in Netty's compression codec pipeline is vulnerable to a denial-of-service attack through a malformed bzip2 stream that permanently captures the event-loop thread in an infinite loop. The vulnerability exists in the run-length encoding (RLE) state machine within [`Bzip2BlockDecompressor.read()`]. This issue has been fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
           "VendorSeverity": {
             "ghsa": 3,
             "redhat": 3
@@ -24840,7 +24843,9 @@
             "https://github.com/netty/netty/security/advisories/GHSA-558v-64gr-wgg4",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59901",
             "https://www.cve.org/CVERecord?id=CVE-2026-59901"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T18:16:56.467Z",
+          "LastModifiedDate": "2026-07-29T19:16:48.997Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42579",
@@ -25190,8 +25195,11 @@
           },
           "Fingerprint": "sha256:86788f86685e777964fb6919740fa06b43c57305c9973b8d87aa0d538aae086d",
           "Title": "io.netty/netty-codec-haproxy: Netty: Improper CR/LF neutralization in netty-codec-haproxy",
-          "Description": "A flaw was found in the netty-codec-haproxy component, part of the Netty network application framework. This vulnerability allows a remote attacker to perform protocol-level injection attacks by crafting malformed HAProxy protocol frames that contain embedded carriage return (CR) and line feed (LF) sequences. This can lead to the injection of arbitrary content, potentially disrupting network communication or enabling further attacks.",
+          "Description": "Netty is an asynchronous, event-driven network application framework. In versions prior to 4.1.136.Final and 4.2.16.Final, Netty's HAProxy encoder ( HAProxyMessageEncoder ) writes AF_UNIX source and destination socket addresses into the HAProxy V1 text protocol without validating them for CRLF characters, so an attacker who controls an AF_UNIX address can inject  \\r\\n  sequences and split the single PROXY header into multiple lines. This is possible because the V1 protocol uses CRLF as its line terminator and, unlike IPv4/IPv6 addresses whose format checks implicitly reject CRLF, AF_UNIX addresses are only validated for length (up to 108 bytes), allowing a forged second PROXY header line that spoofs the client source/destination IP to a downstream server or load balancer. The issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-93"
+          ],
           "VendorSeverity": {
             "ghsa": 2,
             "redhat": 2
@@ -25214,7 +25222,9 @@
             "https://github.com/netty/netty/security/advisories/GHSA-wh89-7897-x99h",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59919",
             "https://www.cve.org/CVERecord?id=CVE-2026-59919"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T18:16:56.61Z",
+          "LastModifiedDate": "2026-07-29T19:16:49.127Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42584",
@@ -25918,8 +25928,11 @@
           },
           "Fingerprint": "sha256:104446427e79e74d05c7dff283444cb3974ca7b241a25d6c6f48160d620c8a49",
           "Title": "io.netty/netty-codec-http: Netty: Protocol version confusion in netty-codec-http (WebSocket)",
-          "Description": "A flaw was found in netty-codec-http. The WebSocket handshaker in this component fails to properly validate protocol version information during the WebSocket upgrade process. A remote attacker can exploit this vulnerability by manipulating the WebSocket handshake, leading to a bypass of security checks or the negotiation of unexpected protocol versions. This could potentially enable protocol-level attacks.",
+          "Description": "Netty is an asynchronous, event-driven network application framework.  Prior to versions 4.1.136.Final and 4.2.16.Final, ab attacker can force WebSocket upgrade via the lax V07 (or V08) handshaker by sending `Sec-WebSocket-Version: 7` and omitting `Connection: Upgrade` / `Upgrade: websocket` headers, completing a protocol switch that a proxy would not recognize as an Upgrade request and enabling HTTP request smuggling / protocol-confusion attacks. This issue has been fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-444"
+          ],
           "VendorSeverity": {
             "ghsa": 2,
             "redhat": 2
@@ -25942,7 +25955,9 @@
             "https://github.com/netty/netty/security/advisories/GHSA-4mp9-239f-g9hg",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59898",
             "https://www.cve.org/CVERecord?id=CVE-2026-59898"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T19:16:48.74Z",
+          "LastModifiedDate": "2026-07-29T19:16:48.74Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59899",
@@ -25970,8 +25985,11 @@
           },
           "Fingerprint": "sha256:b581ccc4fe859fcc02a151371958532c1299aeb33eeb84d7c68173b4ee916cb9",
           "Title": "io.netty/netty-codec-http: Netty: Memory exhaustion in netty-codec-http (decompression bomb)",
-          "Description": "A flaw was found in the Netty netty-codec-http component. A remote attacker can send HTTP requests containing highly compressed data. The HTTP decoder in netty-codec-http fails to properly limit the decompression of this content, causing the system to consume excessive memory. This can lead to memory exhaustion and a denial of service (DoS), making the service unavailable to legitimate users.",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to versions 4.1.136.Final and 4.2.16.Final, `HttpContentEncoder` (the superclass of the production handler `HttpContentCompressor`) maintains a per-channel `ArrayDeque\u003cCharSequence\u003e` named `acceptEncodingQueue` that accumulates attacker-controlled data without any size limit. The queue is filled on the I/O thread for every inbound HTTP request and drained only when the application later writes a non-1xx response. This creates a resource exhaustion vulnerability when an attacker exploits HTTP/1.1 pipelining to flood the connection with requests faster than the application produces responses. This issue has been fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
           "VendorSeverity": {
             "ghsa": 2,
             "redhat": 3
@@ -25995,7 +26013,9 @@
             "https://netty.io/news/2026/07/09/4-1-136-Final.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59899",
             "https://www.cve.org/CVERecord?id=CVE-2026-59899"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T18:16:56.137Z",
+          "LastModifiedDate": "2026-07-29T18:16:56.137Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59921",
@@ -26052,7 +26072,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59921"
           ],
           "PublishedDate": "2026-07-28T23:17:09.923Z",
-          "LastModifiedDate": "2026-07-28T23:17:09.923Z"
+          "LastModifiedDate": "2026-07-29T18:16:56.897Z"
         },
         {
           "VulnerabilityID": "CVE-2026-33871",
@@ -26420,8 +26440,11 @@
           },
           "Fingerprint": "sha256:cb5e1c60f2647647c7ab57d023e8ce4473e669702ae3affc1a64d89d33d142b4",
           "Title": "io.netty/netty-codec-http2: Netty: Improper header neutralization in netty-codec-http2",
-          "Description": "A flaw was found in Netty's netty-codec-http2 component. The HTTP/2 encoder does not properly handle special characters in HTTP headers. This vulnerability allows a remote attacker to craft specific HTTP/2 requests, leading to HTTP response splitting and header injection attacks. Such attacks can enable an attacker to manipulate web content or inject malicious headers.",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to versions 4.1.136.Final and 4.2.16.Final, Netty's HTTP/2-to-HTTP/1.x translation layer (`Http2StreamFrameToHttpObjectCodec` and `InboundHttp2ToHttpAdapter`) fails to deduplicate or validate `Host` headers when an HTTP/2 client supplies both the `:authority` pseudo-header and a literal `host` header in a single HEADERS frame. The translator maps `:authority` to `Host` and separately copies the literal `host` header, producing an `HttpRequest` object containing two `Host` headers with attacker-controlled differing values. This issue has been fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-444"
+          ],
           "VendorSeverity": {
             "ghsa": 2,
             "redhat": 2
@@ -26444,7 +26467,9 @@
             "https://github.com/netty/netty/security/advisories/GHSA-c69g-56f8-xwqj",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59900",
             "https://www.cve.org/CVERecord?id=CVE-2026-59900"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T18:16:56.32Z",
+          "LastModifiedDate": "2026-07-29T19:16:48.883Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42582",
@@ -27134,8 +27159,11 @@
           },
           "Fingerprint": "sha256:a830903de03db4e920230237df94ef1ec4daf030e542ea4c9879d07a80bc5a00",
           "Title": "io.netty/netty-codec-stomp: Netty: Improper CR/LF neutralization in netty-codec-stomp",
-          "Description": "A flaw was found in the Netty STOMP (Streaming Text Oriented Messaging Protocol) decoder. This vulnerability allows a remote attacker to inject arbitrary protocol frames by crafting malformed STOMP commands that contain embedded carriage return (CR) and line feed (LF) sequences. This bypasses message boundary checks and can lead to command injection, potentially compromising the integrity of the system.",
+          "Description": "Netty is an asynchronous, event-driven network application framework. In versions prior to 4.1.136.Final and 4.2.16.Final, Netty's STOMP encoder ( StompSubframeEncoder ) does not escape or validate header values in  CONNECT  and  CONNECTED  frames, so raw newline ( \\n ) characters in a header value are written directly to the wire, allowing an attacker who controls a header value to inject additional STOMP headers. This happens because the encoder intentionally skips escaping for CONNECT/CONNECTED frames per the STOMP 1.2 specification but never rejects the raw newlines, and since a broker parses each line as a separate header, an attacker controlling a value such as a user-supplied login or passcode can overwrite connection parameters or add authentication/role headers to bypass authentication or escalate privileges (the actual impact is broker-dependent). The issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-93"
+          ],
           "VendorSeverity": {
             "ghsa": 2,
             "redhat": 2
@@ -27158,7 +27186,9 @@
             "https://github.com/netty/netty/security/advisories/GHSA-3g8r-4pfx-jmfh",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-59920",
             "https://www.cve.org/CVERecord?id=CVE-2026-59920"
-          ]
+          ],
+          "PublishedDate": "2026-07-29T18:16:56.757Z",
+          "LastModifiedDate": "2026-07-29T20:17:05.223Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56817",
@@ -27654,7 +27684,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-56821"
           ],
           "PublishedDate": "2026-07-29T00:16:38.573Z",
-          "LastModifiedDate": "2026-07-29T00:16:38.573Z"
+          "LastModifiedDate": "2026-07-29T18:16:55.3Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56822",
@@ -27711,7 +27741,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-56822"
           ],
           "PublishedDate": "2026-07-29T00:16:38.717Z",
-          "LastModifiedDate": "2026-07-29T00:16:38.717Z"
+          "LastModifiedDate": "2026-07-29T18:16:55.703Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45674",
@@ -28480,7 +28510,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:36a37178f9fd2bbd576b6040c702dcb53e99a3f5b2bd8c91db88fda5a6d2a2a2",
-          "Title": "Eclipse Jetty: Cross-Request Leakage for trailers on HTTP/1.1 keep-alive connections",
+          "Title": "In Eclipse Jetty, a first HTTP/1.1 request with trailers causes the se ...",
           "Description": "In Eclipse Jetty, a first HTTP/1.1 request with trailers causes the server to retain the trailers in subsequent requests performed over the same connection.\nSubsequent request that do not have trailers report the trailers of the first request.\nSubsequent request that do have trailers report the union of trailers of the first request and the current request.",
           "Severity": "MEDIUM",
           "CweIDs": [
