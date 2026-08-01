@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fb6b2-45b7-7af2-907e-56f510e7a4fa",
-  "CreatedAt": "2026-07-31T05:42:44.407719454Z",
+  "ReportID": "019fbbd0-ef9d-7387-a9ce-9c690d8be8e4",
+  "CreatedAt": "2026-08-01T05:34:20.061233744Z",
   "ArtifactID": "sha256:8fbe3e5115fe761f02a91adc3fc08e9c61c398aa220819584aea7c491c844c12",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -23762,6 +23762,67 @@
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
           "LastModifiedDate": "2026-07-22T12:17:56.94Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-56819",
+          "VendorIDs": [
+            "GHSA-93wv-jw9v-4972"
+          ],
+          "PkgName": "io.netty:netty-codec-http2",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-codec-http2@4.1.123.Final",
+            "UID": "9c1bfbcc8f551472"
+          },
+          "InstalledVersion": "4.1.123.Final",
+          "FixedVersion": "4.2.16.Final, 4.1.136.Final",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0f304f3fbb1b9029fa7df32d07124b9bd7327db0c2ec4a2519735bd338edfd3d"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56819",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:6dea069118cb60c3ce7e36746eb51530d678f0e391e04ba3bf63ecefbcb112d7",
+          "Title": "io.netty/netty-codec-http2: Netty: Denial of Service via HTTP/2 DATA frame memory leak",
+          "Description": "Netty is a network application framework for development of protocol servers and clients. In versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, a remote unauthenticated peer can leak one direct `ByteBuf` per HTTP/2 `DATA` frame in applications that enable HTTP/2 content decompression via `DelegatingDecompressorFrameListener`. When a `DATA` frame is processed for a stream whose decompressor has already been closed, `Http2Decompressor.decompress(...)` calls `decompressor.writeInbound(data.retain())` and does not release the retained buffer on the error path, eventually exhausting direct memory and crashing the JVM. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400",
+            "CWE-401"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56819",
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003b",
+            "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003bhttps://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
+            "https://github.com/netty/netty/commit/bb2ff68a1fb71cb4b0eb9a9e17b66c52aff680c6",
+            "https://github.com/netty/netty/releases/tag/netty-4.1.136.Final",
+            "https://github.com/netty/netty/releases/tag/netty-4.2.16.Final",
+            "https://github.com/netty/netty/security/advisories/GHSA-93wv-jw9v-4972",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56819",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56819"
+          ],
+          "PublishedDate": "2026-07-21T23:17:52.263Z",
+          "LastModifiedDate": "2026-07-30T14:46:35.563Z"
         },
         {
           "VulnerabilityID": "CVE-2026-47244",
