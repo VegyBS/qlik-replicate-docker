@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fbbd0-ef9d-7387-a9ce-9c690d8be8e4",
-  "CreatedAt": "2026-08-01T05:34:20.061233744Z",
+  "ReportID": "019fc0f7-50f8-7574-9fd1-4808d4b1d452",
+  "CreatedAt": "2026-08-02T05:34:21.432358974Z",
   "ArtifactID": "sha256:8fbe3e5115fe761f02a91adc3fc08e9c61c398aa220819584aea7c491c844c12",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -25414,7 +25414,7 @@
             "https://github.com/codehaus-plexus/plexus-utils/pull/296",
             "https://github.com/codehaus-plexus/plexus-utils/releases/tag/plexus-utils-4.0.3",
             "https://linux.oracle.com/cve/CVE-2025-67030.html",
-            "https://linux.oracle.com/errata/ELSA-2026-40841.html",
+            "https://linux.oracle.com/errata/ELSA-2026-41948.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-67030",
             "https://security.access.redhat.com/data/csaf/v2/vex/2025/cve-2025-67030.json",
             "https://www.cve.org/CVERecord?id=CVE-2025-67030"
