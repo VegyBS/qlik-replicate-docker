@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fcb39-744f-7c2f-aa83-6cc312ccde91",
-  "CreatedAt": "2026-08-04T05:22:48.015800324Z",
+  "ReportID": "019fd05c-6cda-755f-9faa-42c74d229760",
+  "CreatedAt": "2026-08-05T05:19:05.946353236Z",
   "ArtifactName": "out/data-2025.11.1",
   "ArtifactType": "filesystem",
   "Results": [
@@ -303,11 +303,11 @@
               },
               {
                 "Number": 29,
-                "Content": "************************",
+                "Content": "********************************************",
                 "IsCause": true,
                 "Annotation": "",
                 "Truncated": false,
-                "Highlighted": "************************",
+                "Highlighted": "********************************************",
                 "FirstCause": false,
                 "LastCause": true
               },
