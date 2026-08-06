@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fd05e-084d-73c8-9a74-d16e08836ac4",
-  "CreatedAt": "2026-08-05T05:20:51.277249012Z",
+  "ReportID": "019fd589-b84a-759e-b650-9d0738eb0e83",
+  "CreatedAt": "2026-08-06T05:26:40.458370341Z",
   "ArtifactID": "sha256:a390f441eca38d2d2f651d0ce47529409ef9d2cfe779a40d64128864abb07b2f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16725,14 +16725,15 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:40856",
+            "https://access.redhat.com/errata/RHSA-2026:39893",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/10/ALSA-2026-40856.html",
-            "https://errata.rockylinux.org/RLSA-2026:39183",
+            "https://errata.almalinux.org/8/ALSA-2026-39893.html",
+            "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
+            "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
             "https://github.com/python/cpython/commit/7933f4bf7131aa4140750f9404f5de0aa2969ced",
             "https://github.com/python/cpython/commit/bcf98ddbc40ec9b3ee87da0124a5660b19b7e606",
             "https://github.com/python/cpython/commit/e9f92ac0b298292e7ff998e52cb8ccacfb27a0bd",
@@ -16745,7 +16746,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-15308"
           ],
           "PublishedDate": "2026-07-09T17:16:58.26Z",
-          "LastModifiedDate": "2026-07-23T19:16:53.247Z"
+          "LastModifiedDate": "2026-08-05T14:17:03.09Z"
         },
         {
           "VulnerabilityID": "CVE-2026-4360",
@@ -16797,6 +16798,7 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-4360",
+            "https://github.com/python/cpython/commit/0367912be336348b30572f8029cec4a282782d92",
             "https://github.com/python/cpython/commit/5e0ef3f1afe892e4f64eb83368db57ac4c40cba0",
             "https://github.com/python/cpython/commit/7b57e8d51446297b8c7c482d224bc5f1938e4301",
             "https://github.com/python/cpython/commit/7ccdbaba2c54250a70d7f25632152df7655a5e0a",
@@ -16810,7 +16812,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-4360"
           ],
           "PublishedDate": "2026-06-30T15:16:57.193Z",
-          "LastModifiedDate": "2026-07-23T19:16:54.537Z"
+          "LastModifiedDate": "2026-08-05T14:17:06.903Z"
         },
         {
           "VulnerabilityID": "CVE-2026-7774",
@@ -16931,14 +16933,15 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:40856",
+            "https://access.redhat.com/errata/RHSA-2026:39893",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/10/ALSA-2026-40856.html",
-            "https://errata.rockylinux.org/RLSA-2026:39183",
+            "https://errata.almalinux.org/8/ALSA-2026-39893.html",
+            "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
+            "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
             "https://github.com/python/cpython/commit/7933f4bf7131aa4140750f9404f5de0aa2969ced",
             "https://github.com/python/cpython/commit/bcf98ddbc40ec9b3ee87da0124a5660b19b7e606",
             "https://github.com/python/cpython/commit/e9f92ac0b298292e7ff998e52cb8ccacfb27a0bd",
@@ -16951,7 +16954,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-15308"
           ],
           "PublishedDate": "2026-07-09T17:16:58.26Z",
-          "LastModifiedDate": "2026-07-23T19:16:53.247Z"
+          "LastModifiedDate": "2026-08-05T14:17:03.09Z"
         },
         {
           "VulnerabilityID": "CVE-2026-4360",
@@ -17003,6 +17006,7 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-4360",
+            "https://github.com/python/cpython/commit/0367912be336348b30572f8029cec4a282782d92",
             "https://github.com/python/cpython/commit/5e0ef3f1afe892e4f64eb83368db57ac4c40cba0",
             "https://github.com/python/cpython/commit/7b57e8d51446297b8c7c482d224bc5f1938e4301",
             "https://github.com/python/cpython/commit/7ccdbaba2c54250a70d7f25632152df7655a5e0a",
@@ -17016,7 +17020,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-4360"
           ],
           "PublishedDate": "2026-06-30T15:16:57.193Z",
-          "LastModifiedDate": "2026-07-23T19:16:54.537Z"
+          "LastModifiedDate": "2026-08-05T14:17:06.903Z"
         },
         {
           "VulnerabilityID": "CVE-2026-7774",
@@ -17107,8 +17111,11 @@
           },
           "Fingerprint": "sha256:6876d07521de8289cfc4e686793446cabb20800cebe55e28dd8570eb9d6ea9d1",
           "Title": "rpm: heap buffer overflow in NDB slot table parsing",
-          "Description": "No description is available for this CVE.",
+          "Description": "A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations during file parsing, leading to an incorrect memory allocation. An attacker could leverage this to cause a denial of service, making the system unavailable.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
           "VendorSeverity": {
             "amazon": 3,
             "redhat": 1
@@ -17120,10 +17127,14 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:33507",
             "https://access.redhat.com/security/cve/CVE-2026-44605",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482481",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-44605",
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
-          ]
+          ],
+          "PublishedDate": "2026-08-05T18:17:11.173Z",
+          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17148,8 +17159,11 @@
           },
           "Fingerprint": "sha256:8b850a928ac1407b141a49f3a23556c39d8c09b57d28e8ac2f8cc008e19a96ff",
           "Title": "rpm: heap buffer overflow in NDB slot table parsing",
-          "Description": "No description is available for this CVE.",
+          "Description": "A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations during file parsing, leading to an incorrect memory allocation. An attacker could leverage this to cause a denial of service, making the system unavailable.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
           "VendorSeverity": {
             "amazon": 3,
             "redhat": 1
@@ -17161,10 +17175,14 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:33507",
             "https://access.redhat.com/security/cve/CVE-2026-44605",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482481",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-44605",
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
-          ]
+          ],
+          "PublishedDate": "2026-08-05T18:17:11.173Z",
+          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17189,8 +17207,11 @@
           },
           "Fingerprint": "sha256:6948c9c3a5db94b66d04ba87c1d9dd5fb9ca10f9c2f13171ddeaaf1c4073aeaa",
           "Title": "rpm: heap buffer overflow in NDB slot table parsing",
-          "Description": "No description is available for this CVE.",
+          "Description": "A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations during file parsing, leading to an incorrect memory allocation. An attacker could leverage this to cause a denial of service, making the system unavailable.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
           "VendorSeverity": {
             "amazon": 3,
             "redhat": 1
@@ -17202,10 +17223,14 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:33507",
             "https://access.redhat.com/security/cve/CVE-2026-44605",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482481",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-44605",
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
-          ]
+          ],
+          "PublishedDate": "2026-08-05T18:17:11.173Z",
+          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17230,8 +17255,11 @@
           },
           "Fingerprint": "sha256:978a7671293d00e82a43b350e1e1be59e5ef782550702d60b49988c1a330281e",
           "Title": "rpm: heap buffer overflow in NDB slot table parsing",
-          "Description": "No description is available for this CVE.",
+          "Description": "A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations during file parsing, leading to an incorrect memory allocation. An attacker could leverage this to cause a denial of service, making the system unavailable.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
           "VendorSeverity": {
             "amazon": 3,
             "redhat": 1
@@ -17243,10 +17271,14 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:33507",
             "https://access.redhat.com/security/cve/CVE-2026-44605",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482481",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-44605",
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
-          ]
+          ],
+          "PublishedDate": "2026-08-05T18:17:11.173Z",
+          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17271,8 +17303,11 @@
           },
           "Fingerprint": "sha256:c17242e76eee0aa6fd73482a970a07ee71df9d82ad746a3299a78b9238161777",
           "Title": "rpm: heap buffer overflow in NDB slot table parsing",
-          "Description": "No description is available for this CVE.",
+          "Description": "A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations during file parsing, leading to an incorrect memory allocation. An attacker could leverage this to cause a denial of service, making the system unavailable.",
           "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
           "VendorSeverity": {
             "amazon": 3,
             "redhat": 1
@@ -17284,10 +17319,14 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:33507",
             "https://access.redhat.com/security/cve/CVE-2026-44605",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482481",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-44605",
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
-          ]
+          ],
+          "PublishedDate": "2026-08-05T18:17:11.173Z",
+          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
         }
       ]
     },
@@ -21854,7 +21893,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21933,13 +21972,12 @@
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22285,7 +22323,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22364,13 +22402,12 @@
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22716,7 +22753,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22789,7 +22826,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22868,13 +22905,12 @@
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22957,13 +22993,12 @@
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23382,15 +23417,16 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
-            "https://access.redhat.com/errata/RHSA-2025:9166",
+            "https://access.redhat.com/errata/RHSA-2025:9318",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
+            "https://bugzilla.redhat.com/1767483",
             "https://bugzilla.redhat.com/2368956",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1767483",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2368956",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/10/ALSA-2025-9166.html",
+            "https://errata.almalinux.org/8/ALSA-2025-9318.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -23611,6 +23647,7 @@
             "https://access.redhat.com/errata/RHSA-2026:37390",
             "https://access.redhat.com/errata/RHSA-2026:41951",
             "https://access.redhat.com/errata/RHSA-2026:42644",
+            "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/security/cve/CVE-2026-42587",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2477220",
             "https://github.com/netty/netty",
@@ -23620,7 +23657,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-08-03T13:18:30.623Z"
+          "LastModifiedDate": "2026-08-05T13:22:27.9Z"
         },
         {
           "VulnerabilityID": "CVE-2026-55831",
@@ -24659,6 +24696,7 @@
             "https://access.redhat.com/errata/RHSA-2026:37390",
             "https://access.redhat.com/errata/RHSA-2026:41951",
             "https://access.redhat.com/errata/RHSA-2026:42644",
+            "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/security/cve/CVE-2026-42587",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2477220",
             "https://github.com/netty/netty",
@@ -24668,7 +24706,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-08-03T13:18:30.623Z"
+          "LastModifiedDate": "2026-08-05T13:22:27.9Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56819",
@@ -24850,6 +24888,7 @@
             "https://access.redhat.com/errata/RHSA-2026:41951",
             "https://access.redhat.com/errata/RHSA-2026:48124",
             "https://access.redhat.com/errata/RHSA-2026:48151",
+            "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/security/cve/CVE-2026-48043",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2488442",
             "https://github.com/netty/netty",
@@ -24861,7 +24900,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-48043"
           ],
           "PublishedDate": "2026-06-12T16:16:30.587Z",
-          "LastModifiedDate": "2026-07-30T12:18:54.527Z"
+          "LastModifiedDate": "2026-08-05T13:23:20.75Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50560",
@@ -26321,8 +26360,8 @@
             "https://bugzilla.redhat.com/2451409",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/10/ALSA-2026-38514.html",
-            "https://errata.rockylinux.org/RLSA-2026:38514",
+            "https://errata.almalinux.org/8/ALSA-2026-41948.html",
+            "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
             "https://github.com/codehaus-plexus/plexus-utils/commit/6d780b3378829318ba5c2d29547e0012d5b29642",
@@ -26399,6 +26438,10 @@
             "https://access.redhat.com/errata/RHSA-2026:21773",
             "https://access.redhat.com/errata/RHSA-2026:22453",
             "https://access.redhat.com/errata/RHSA-2026:25089",
+            "https://access.redhat.com/errata/RHSA-2026:50221",
+            "https://access.redhat.com/errata/RHSA-2026:50222",
+            "https://access.redhat.com/errata/RHSA-2026:50223",
+            "https://access.redhat.com/errata/RHSA-2026:50263",
             "https://access.redhat.com/security/cve/CVE-2026-2332",
             "https://bugzilla.redhat.com/2419500",
             "https://bugzilla.redhat.com/2458187",
@@ -26415,7 +26458,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-2332"
           ],
           "PublishedDate": "2026-04-14T12:16:21.333Z",
-          "LastModifiedDate": "2026-08-03T13:17:39.167Z"
+          "LastModifiedDate": "2026-08-05T13:21:20.487Z"
         },
         {
           "VulnerabilityID": "CVE-2024-6763",
