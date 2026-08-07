@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fd589-b84a-759e-b650-9d0738eb0e83",
-  "CreatedAt": "2026-08-06T05:26:40.458370341Z",
+  "ReportID": "019fda7e-233f-7d77-b8fd-7b2e2e318f3c",
+  "CreatedAt": "2026-08-07T04:32:07.487883618Z",
   "ArtifactID": "sha256:a390f441eca38d2d2f651d0ce47529409ef9d2cfe779a40d64128864abb07b2f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16725,12 +16725,12 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:39893",
+            "https://access.redhat.com/errata/RHSA-2026:41949",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/8/ALSA-2026-39893.html",
+            "https://errata.almalinux.org/9/ALSA-2026-41949.html",
             "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
@@ -16746,7 +16746,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-15308"
           ],
           "PublishedDate": "2026-07-09T17:16:58.26Z",
-          "LastModifiedDate": "2026-08-05T14:17:03.09Z"
+          "LastModifiedDate": "2026-08-06T01:16:29.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-4360",
@@ -16812,7 +16812,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-4360"
           ],
           "PublishedDate": "2026-06-30T15:16:57.193Z",
-          "LastModifiedDate": "2026-08-05T14:17:06.903Z"
+          "LastModifiedDate": "2026-08-06T01:16:29.773Z"
         },
         {
           "VulnerabilityID": "CVE-2026-7774",
@@ -16933,12 +16933,12 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:39893",
+            "https://access.redhat.com/errata/RHSA-2026:41949",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/8/ALSA-2026-39893.html",
+            "https://errata.almalinux.org/9/ALSA-2026-41949.html",
             "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
@@ -16954,7 +16954,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-15308"
           ],
           "PublishedDate": "2026-07-09T17:16:58.26Z",
-          "LastModifiedDate": "2026-08-05T14:17:03.09Z"
+          "LastModifiedDate": "2026-08-06T01:16:29.267Z"
         },
         {
           "VulnerabilityID": "CVE-2026-4360",
@@ -17020,7 +17020,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-4360"
           ],
           "PublishedDate": "2026-06-30T15:16:57.193Z",
-          "LastModifiedDate": "2026-08-05T14:17:06.903Z"
+          "LastModifiedDate": "2026-08-06T01:16:29.773Z"
         },
         {
           "VulnerabilityID": "CVE-2026-7774",
@@ -17134,7 +17134,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
-          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
+          "LastModifiedDate": "2026-08-06T15:37:22.093Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17182,7 +17182,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
-          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
+          "LastModifiedDate": "2026-08-06T15:37:22.093Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17230,7 +17230,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
-          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
+          "LastModifiedDate": "2026-08-06T15:37:22.093Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17278,7 +17278,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
-          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
+          "LastModifiedDate": "2026-08-06T15:37:22.093Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44605",
@@ -17326,7 +17326,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44605"
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
-          "LastModifiedDate": "2026-08-05T19:17:30.223Z"
+          "LastModifiedDate": "2026-08-06T15:37:22.093Z"
         }
       ]
     },
@@ -21884,7 +21884,7 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:43400",
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21892,7 +21892,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -21970,13 +21970,18 @@
             "https://access.redhat.com/errata/RHSA-2026:44271",
             "https://access.redhat.com/errata/RHSA-2026:48095",
             "https://access.redhat.com/errata/RHSA-2026:48151",
+            "https://access.redhat.com/errata/RHSA-2026:50846",
+            "https://access.redhat.com/errata/RHSA-2026:50847",
+            "https://access.redhat.com/errata/RHSA-2026:50848",
+            "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -21992,7 +21997,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-30T12:19:02.307Z"
+          "LastModifiedDate": "2026-08-06T13:18:20.053Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22314,7 +22319,7 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:43400",
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22322,7 +22327,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22400,13 +22405,18 @@
             "https://access.redhat.com/errata/RHSA-2026:44271",
             "https://access.redhat.com/errata/RHSA-2026:48095",
             "https://access.redhat.com/errata/RHSA-2026:48151",
+            "https://access.redhat.com/errata/RHSA-2026:50846",
+            "https://access.redhat.com/errata/RHSA-2026:50847",
+            "https://access.redhat.com/errata/RHSA-2026:50848",
+            "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22422,7 +22432,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-30T12:19:02.307Z"
+          "LastModifiedDate": "2026-08-06T13:18:20.053Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22744,7 +22754,7 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:43400",
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22752,7 +22762,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22817,7 +22827,7 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:43400",
+            "https://access.redhat.com/errata/RHSA-2026:40895",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22825,7 +22835,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22903,13 +22913,18 @@
             "https://access.redhat.com/errata/RHSA-2026:44271",
             "https://access.redhat.com/errata/RHSA-2026:48095",
             "https://access.redhat.com/errata/RHSA-2026:48151",
+            "https://access.redhat.com/errata/RHSA-2026:50846",
+            "https://access.redhat.com/errata/RHSA-2026:50847",
+            "https://access.redhat.com/errata/RHSA-2026:50848",
+            "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22925,7 +22940,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-30T12:19:02.307Z"
+          "LastModifiedDate": "2026-08-06T13:18:20.053Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -22991,13 +23006,18 @@
             "https://access.redhat.com/errata/RHSA-2026:44271",
             "https://access.redhat.com/errata/RHSA-2026:48095",
             "https://access.redhat.com/errata/RHSA-2026:48151",
+            "https://access.redhat.com/errata/RHSA-2026:50846",
+            "https://access.redhat.com/errata/RHSA-2026:50847",
+            "https://access.redhat.com/errata/RHSA-2026:50848",
+            "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23013,7 +23033,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-07-30T12:19:02.307Z"
+          "LastModifiedDate": "2026-08-06T13:18:20.053Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -23417,16 +23437,15 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
-            "https://access.redhat.com/errata/RHSA-2025:9318",
+            "https://access.redhat.com/errata/RHSA-2025:9114",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
-            "https://bugzilla.redhat.com/1767483",
             "https://bugzilla.redhat.com/2368956",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1767483",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2368956",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/8/ALSA-2025-9318.html",
+            "https://errata.almalinux.org/9/ALSA-2025-9114.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -24291,12 +24310,17 @@
           ],
           "VendorSeverity": {
             "ghsa": 2,
+            "nvd": 3,
             "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
               "V40Score": 6.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
@@ -24313,7 +24337,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59898"
           ],
           "PublishedDate": "2026-07-29T19:16:48.74Z",
-          "LastModifiedDate": "2026-07-30T16:33:59.58Z"
+          "LastModifiedDate": "2026-08-06T20:35:23.36Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59899",
@@ -24348,12 +24372,17 @@
           ],
           "VendorSeverity": {
             "ghsa": 2,
+            "nvd": 3,
             "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
               "V40Score": 6.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -24371,7 +24400,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59899"
           ],
           "PublishedDate": "2026-07-29T18:16:56.137Z",
-          "LastModifiedDate": "2026-07-30T16:33:59.58Z"
+          "LastModifiedDate": "2026-08-06T20:25:31.51Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59921",
@@ -24406,12 +24435,17 @@
           ],
           "VendorSeverity": {
             "ghsa": 2,
+            "nvd": 2,
             "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
               "V3Score": 5.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
@@ -24428,7 +24462,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59921"
           ],
           "PublishedDate": "2026-07-28T23:17:09.923Z",
-          "LastModifiedDate": "2026-07-30T16:33:59.58Z"
+          "LastModifiedDate": "2026-08-06T19:35:14.32Z"
         },
         {
           "VulnerabilityID": "CVE-2025-58056",
@@ -25000,12 +25034,17 @@
           ],
           "VendorSeverity": {
             "ghsa": 2,
+            "nvd": 2,
             "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
               "V40Score": 6.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N",
@@ -25022,7 +25061,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59900"
           ],
           "PublishedDate": "2026-07-29T18:16:56.32Z",
-          "LastModifiedDate": "2026-07-30T16:33:59.58Z"
+          "LastModifiedDate": "2026-08-06T20:29:01.66Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44249",
@@ -26360,7 +26399,7 @@
             "https://bugzilla.redhat.com/2451409",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/8/ALSA-2026-41948.html",
+            "https://errata.almalinux.org/9/ALSA-2026-38796.html",
             "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
@@ -26672,22 +26711,28 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:dc33daaa0396b658ee227ec0c3493b7c6cb001d578efa7718e54eb7f3616e862",
-          "Title": "In Eclipse Jetty, for HTTP/1, HTTP/2 and HTTP/3 requests, there is no  ...",
+          "Title": "jetty: Jetty: Improper Host header validation can lead to request routing issues",
           "Description": "In Eclipse Jetty, for HTTP/1, HTTP/2 and HTTP/3 requests, there is no strict check that the request authority (host and port) matches what provided in the Host header (if present).\n\n\n\n\nThis was not enforced in earlier HTTP RFC (for example, in RFC 2616), but it is in the latest RFC (9110 and 9112).\n\n\n\n\nThis mismatch can cause a number of problems that may be classified as vulnerabilities such as:\n\n\n\n  *  \n        \n      URI constructions (for example, for redirects -- this is typical for login pages)\n\n  *  \n        \n      Virtual host selection\n\n  *  \n        \n      Reverse proxying\n\n  *  \n        \n      Misleading logs\n\n  *  \n        \n      Etc.\n\n\n\n\n\n\nGiven that the latest RFCs require that request authority and Host header must match, Jetty should enforce this invariant.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-20"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
               "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-6790",
             "https://github.com/jetty/jetty.project",
             "https://github.com/jetty/jetty.project/commit/3e5a4daec196859b8886b6f67b1157dab47cdb6f",
             "https://github.com/jetty/jetty.project/commit/67ba9e6b39661810123680d9c894e99a7940c73d",
@@ -26700,7 +26745,8 @@
             "https://github.com/jetty/jetty.project/releases/tag/jetty-12.1.9",
             "https://github.com/jetty/jetty.project/security/advisories/GHSA-7p3p-8qv8-m2vh",
             "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/99",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-6790"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6790",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6790"
           ],
           "PublishedDate": "2026-07-14T09:16:41.93Z",
           "LastModifiedDate": "2026-07-14T18:35:54.793Z"
