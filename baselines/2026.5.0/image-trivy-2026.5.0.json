@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fda7f-e521-7c2c-bf67-046060999355",
-  "CreatedAt": "2026-08-07T04:34:02.657800331Z",
+  "ReportID": "019fdf6f-aee5-7ba9-86b2-013547cf45f1",
+  "CreatedAt": "2026-08-08T03:34:26.277765716Z",
   "ArtifactID": "sha256:961d15607c2ec585c869b7d2fc72ed273befb21615c1fed2002bbf9c2ad5d3bf",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -26359,7 +26359,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-08-05T13:22:27.9Z"
+          "LastModifiedDate": "2026-08-07T12:17:54.133Z"
         },
         {
           "VulnerabilityID": "CVE-2026-55831",
@@ -26725,7 +26725,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42581"
           ],
           "PublishedDate": "2026-05-13T19:17:23.627Z",
-          "LastModifiedDate": "2026-07-21T12:18:38.593Z"
+          "LastModifiedDate": "2026-08-07T12:17:53.723Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42585",
@@ -27089,7 +27089,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59921"
           ],
           "PublishedDate": "2026-07-28T23:17:09.923Z",
-          "LastModifiedDate": "2026-08-06T19:35:14.32Z"
+          "LastModifiedDate": "2026-08-07T15:05:47.99Z"
         },
         {
           "VulnerabilityID": "CVE-2026-33871",
@@ -27235,7 +27235,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-08-05T13:22:27.9Z"
+          "LastModifiedDate": "2026-08-07T12:17:54.133Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56819",
@@ -27771,7 +27771,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56816"
           ],
           "PublishedDate": "2026-07-21T22:17:14.803Z",
-          "LastModifiedDate": "2026-07-30T14:48:10.5Z"
+          "LastModifiedDate": "2026-08-07T20:47:16.297Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44248",
@@ -28164,6 +28164,65 @@
           "LastModifiedDate": "2026-06-17T10:48:05.893Z"
         },
         {
+          "VulnerabilityID": "CVE-2026-56818",
+          "VendorIDs": [
+            "GHSA-p9jm-q85p-7mcp"
+          ],
+          "PkgName": "io.netty:netty-codec-redis",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-codec-redis@4.2.10.Final",
+            "UID": "e2c71e59f072ae62"
+          },
+          "InstalledVersion": "4.2.10.Final",
+          "FixedVersion": "4.1.136.Final, 4.2.16.Final",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:4dae86e7e5b3221ded41879ee1c9f718187207e63b89e8ad399d42bd3243d2ab"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56818",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:bb26c916d08af036077f237e6954ec4de6ea645bb41e2887544be649d6b0d4f9",
+          "Title": "io.netty/netty-codec-redis: Netty: Memory leak in netty-codec-redis",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.136.Final and 4.2.16.Final, the RedisArrayAggregator Redis codec clears retained partial aggregate state when the maxNestedArrayDepth limit is exceeded, but it does not clear the same state when the sibling maxElements limit is exceeded. A peer can start a valid RESP array, send a bulk string child, then send a nested array header longer than the configured maxElements. Netty throws a decoder exception in decodeRedisArrayHeader, but the existing partial aggregate remains retained in the handler. If the application leaves the channel alive after the exception, later messages are still consumed into the pre-error aggregate, allowing an unauthenticated peer to keep attacker-controlled aggregate state alive across a security-limit exception and pin retained pooled buffers. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-401",
+            "CWE-703"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-56818",
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/commit/5b68c61f37aa4a3045cba624cbea239655c9003b",
+            "https://github.com/netty/netty/commit/bb2ff68a1fb71cb4b0eb9a9e17b66c52aff680c6",
+            "https://github.com/netty/netty/pull/17065",
+            "https://github.com/netty/netty/security/advisories/GHSA-p9jm-q85p-7mcp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56818",
+            "https://www.cve.org/CVERecord?id=CVE-2026-56818"
+          ],
+          "PublishedDate": "2026-08-07T18:17:19.1Z",
+          "LastModifiedDate": "2026-08-07T18:17:19.1Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-44891",
           "VendorIDs": [
             "GHSA-vhch-2wf3-m8rp"
@@ -28464,7 +28523,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-08-04T13:18:43.48Z"
+          "LastModifiedDate": "2026-08-07T12:17:55.373Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -28533,7 +28592,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-08-04T13:18:47.81Z"
+          "LastModifiedDate": "2026-08-07T12:17:57.987Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -28602,7 +28661,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-08-04T13:18:54.583Z"
+          "LastModifiedDate": "2026-08-07T12:18:01.003Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
@@ -28796,7 +28855,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-56821"
           ],
           "PublishedDate": "2026-07-29T00:16:38.573Z",
-          "LastModifiedDate": "2026-08-06T19:27:22.527Z"
+          "LastModifiedDate": "2026-08-07T15:05:53.92Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56822",
@@ -28853,7 +28912,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-56822"
           ],
           "PublishedDate": "2026-07-29T00:16:38.717Z",
-          "LastModifiedDate": "2026-08-06T19:24:50.623Z"
+          "LastModifiedDate": "2026-08-07T15:05:31.17Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45674",
