@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019fdf6f-aee5-7ba9-86b2-013547cf45f1",
-  "CreatedAt": "2026-08-08T03:34:26.277765716Z",
+  "ReportID": "019fe4a4-2778-70ff-8d98-342d86349ee8",
+  "CreatedAt": "2026-08-09T03:49:51.096066515Z",
   "ArtifactID": "sha256:961d15607c2ec585c869b7d2fc72ed273befb21615c1fed2002bbf9c2ad5d3bf",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -28220,7 +28220,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-56818"
           ],
           "PublishedDate": "2026-08-07T18:17:19.1Z",
-          "LastModifiedDate": "2026-08-07T18:17:19.1Z"
+          "LastModifiedDate": "2026-08-08T04:17:47.493Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44891",
@@ -29647,12 +29647,17 @@
             "CWE-303"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "nvd": 4
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
               "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
             }
           },
           "References": [
@@ -29668,7 +29673,7 @@
             "https://gitlab.eclipse.org/security/cve-assignment/-/work_items/120"
           ],
           "PublishedDate": "2026-08-04T11:22:43.883Z",
-          "LastModifiedDate": "2026-08-04T14:52:54.493Z"
+          "LastModifiedDate": "2026-08-08T00:38:56.66Z"
         },
         {
           "VulnerabilityID": "CVE-2026-10051",
