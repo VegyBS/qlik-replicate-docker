@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019ffe7c-d410-7e7f-885d-ce4f0e494700",
-  "CreatedAt": "2026-08-14T04:17:01.456951682Z",
+  "ReportID": "01a0035a-bc69-7239-a9dc-eae437d249b9",
+  "CreatedAt": "2026-08-15T02:57:53.257147886Z",
   "ArtifactID": "sha256:961d15607c2ec585c869b7d2fc72ed273befb21615c1fed2002bbf9c2ad5d3bf",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -22788,6 +22788,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22812,7 +22813,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -22883,6 +22884,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22907,7 +22909,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -23590,6 +23592,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -23614,7 +23617,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -24082,6 +24085,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -24106,7 +24110,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -24177,6 +24181,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -24201,7 +24206,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -24272,6 +24277,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -24296,7 +24302,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -25966,7 +25972,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:64d3174101d416eb60bfc8e5b87667093d20d9c23db17f08968bd836d1b0c52c",
-          "Title": "Netty: Memory Leak in DNS Record Decoder via Malformed Domain Names",
+          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
           "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.136.Final and 4.2.16.Final, io.netty.handler.codec.dns.AbstractDnsRecord, io.netty.handler.codec.dns.DefaultDnsRecordDecoder.decodeRecord(), and io.netty.handler.codec.dns.DnsCodecUtil.decompressDomainName() failed to release retained or newly allocated ByteBuf objects when IDN.toASCII() or encodeDomainName() rejected a malformed domain name, allowing unauthenticated remote DNS packets to leak direct memory incrementally until denial of service. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "MEDIUM",
           "CweIDs": [
@@ -28498,7 +28504,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:07b9d7c5d43bd770d16edab551fe96316237d9581973b4f8ef986368da094d8f",
-          "Title": "Netty: Denial of Service in XmlFrameDecoder via CPU Exhaustion",
+          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
           "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.136.Final and 4.2.16.Final, io.netty.handler.codec.xml.XmlFrameDecoder.decode() failed to preserve closing-tag parser state across invocations, so an unauthenticated remote attacker could trickle-feed repeated \u003c/ sequences that repeatedly rescanned the accumulated buffer and exhausted an EventLoop thread's CPU, causing denial of service with a maxFrameLength of 1 MB. This issue is fixed in versions 4.1.136.Final and 4.2.16.Final.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -28600,7 +28606,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-08-13T13:18:57.817Z"
+          "LastModifiedDate": "2026-08-14T13:18:50.577Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -28672,7 +28678,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-08-13T13:19:05.92Z"
+          "LastModifiedDate": "2026-08-14T13:18:57.597Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -28743,7 +28749,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-08-12T12:19:40.19Z"
+          "LastModifiedDate": "2026-08-14T13:19:00.45Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
