@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019ffe7c-3425-7b45-818f-f4aea44f9c8c",
-  "CreatedAt": "2026-08-14T04:16:20.517739797Z",
+  "ReportID": "01a00359-f6e3-7069-9484-f4ab9548284d",
+  "CreatedAt": "2026-08-15T02:57:02.691028333Z",
   "ArtifactID": "sha256:a390f441eca38d2d2f651d0ce47529409ef9d2cfe779a40d64128864abb07b2f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -21987,6 +21987,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22011,7 +22012,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22425,6 +22426,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22449,7 +22451,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22937,6 +22939,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22961,7 +22964,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -23032,6 +23035,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50848",
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -23056,7 +23060,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-13T13:19:12.537Z"
+          "LastModifiedDate": "2026-08-14T13:19:03.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -25178,7 +25182,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-08-13T13:18:57.817Z"
+          "LastModifiedDate": "2026-08-14T13:18:50.577Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -25250,7 +25254,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-08-13T13:19:05.92Z"
+          "LastModifiedDate": "2026-08-14T13:18:57.597Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -25321,7 +25325,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-08-12T12:19:40.19Z"
+          "LastModifiedDate": "2026-08-14T13:19:00.45Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
@@ -26852,7 +26856,7 @@
             "UID": "ada860e4df5b3c3a"
           },
           "InstalledVersion": "11.0.25",
-          "FixedVersion": "12.1.7, 12.0.33",
+          "FixedVersion": "12.1.7, 12.0.33, 11.0.29, 10.0.28, 9.4.60",
           "Status": "fixed",
           "Layer": {
             "DiffID": "sha256:5c1b340a76e5f2568b53a997e832b0d6d0e66268a96f122ae1bc874cc95a23db"
@@ -26920,7 +26924,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-2332"
           ],
           "PublishedDate": "2026-04-14T12:16:21.333Z",
-          "LastModifiedDate": "2026-08-10T13:18:40.93Z"
+          "LastModifiedDate": "2026-08-14T13:17:52.237Z"
         },
         {
           "VulnerabilityID": "CVE-2024-6763",
