@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0035a-bc69-7239-a9dc-eae437d249b9",
-  "CreatedAt": "2026-08-15T02:57:53.257147886Z",
+  "ReportID": "01a00888-65c3-7e9a-975a-7de646d788b9",
+  "CreatedAt": "2026-08-16T03:05:51.811958937Z",
   "ArtifactID": "sha256:961d15607c2ec585c869b7d2fc72ed273befb21615c1fed2002bbf9c2ad5d3bf",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -28530,7 +28530,7 @@
             "https://github.com/netty/netty/security/advisories/GHSA-v74w-7mr3-4qg3"
           ],
           "PublishedDate": "2026-08-13T15:20:17.287Z",
-          "LastModifiedDate": "2026-08-13T15:20:17.287Z"
+          "LastModifiedDate": "2026-08-15T04:18:25.613Z"
         },
         {
           "VulnerabilityID": "CVE-2026-44249",
