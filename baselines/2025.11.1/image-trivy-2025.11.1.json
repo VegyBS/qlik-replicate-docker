@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a012d1-8132-7c64-885c-c22902b91e25",
-  "CreatedAt": "2026-08-18T03:01:55.122814757Z",
+  "ReportID": "01a017f8-f2c7-7116-bde4-2669361dd8ae",
+  "CreatedAt": "2026-08-19T03:03:06.183072674Z",
   "ArtifactID": "sha256:a390f441eca38d2d2f651d0ce47529409ef9d2cfe779a40d64128864abb07b2f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16478,7 +16478,7 @@
             "amazon": 3,
             "julia": 1,
             "nvd": 4,
-            "photon": 4,
+            "photon": 2,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -16726,7 +16726,7 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:39320",
+            "https://access.redhat.com/errata/RHSA-2026:39798",
             "https://access.redhat.com/errata/RHSA-2026:41949",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
@@ -16734,7 +16734,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
             "https://errata.almalinux.org/9/ALSA-2026-41949.html",
-            "https://errata.rockylinux.org/RLSA-2026:39320",
+            "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/1e7956f1a722df9aabc509c30f8fbdc3a2b4fdc7",
             "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
@@ -16939,7 +16939,7 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
-            "https://access.redhat.com/errata/RHSA-2026:39320",
+            "https://access.redhat.com/errata/RHSA-2026:39798",
             "https://access.redhat.com/errata/RHSA-2026:41949",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
@@ -16947,7 +16947,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
             "https://errata.almalinux.org/9/ALSA-2026-41949.html",
-            "https://errata.rockylinux.org/RLSA-2026:39320",
+            "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/1e7956f1a722df9aabc509c30f8fbdc3a2b4fdc7",
             "https://github.com/python/cpython/commit/785df8f743800661961528970f8598edcd291c14",
@@ -17338,6 +17338,289 @@
           ],
           "PublishedDate": "2026-08-05T18:17:11.173Z",
           "LastModifiedDate": "2026-08-06T15:37:22.093Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-45784",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45784",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:a535ddc47c0eea46f4bf443db3ae63256817e28202d34be46cf4c8ed913c2fa8",
+          "Title": "rust-openssl: rust-openssl: Heap Corruption from Incorrect Buffer Sizing",
+          "Description": "rust-openssl provides OpenSSL bindings for the Rust programming language. From 0.10.50 until 0.10.80, CipherCtxRef::cipher_update_inplace in openssl/src/cipher_ctx.rs incorrectly sized output buffers when used with AES key-wrap-with-padding ciphers EVP_aes_{128,192,256}_wrap_pad. For a non-multiple-of-8 input, OpenSSL writes up to 7 bytes past the end of the caller's buffer or Vec, producing attacker-controllable heap corruption when the plaintext length is attacker-influenced. This issue is fixed in version 0.10.80.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-131",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 2,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+              "V40Score": 5.1
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "V3Score": 5.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-45784",
+            "https://github.com/rust-openssl/rust-openssl",
+            "https://github.com/rust-openssl/rust-openssl/commit/19eceb26f2404aae187e5444e65c404ebc1348a7",
+            "https://github.com/rust-openssl/rust-openssl/pull/2638",
+            "https://github.com/rust-openssl/rust-openssl/releases/tag/openssl-v0.10.80",
+            "https://github.com/rust-openssl/rust-openssl/security/advisories/GHSA-phqj-4mhp-q6mq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-45784",
+            "https://www.cve.org/CVERecord?id=CVE-2026-45784"
+          ],
+          "PublishedDate": "2026-07-17T21:17:06.503Z",
+          "LastModifiedDate": "2026-07-29T15:43:54.22Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-50185",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50185",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:a896f9a811c23e949c78d17bcd02ac41f04bae4f0c87a8427d97e6043e889bb8",
+          "Title": "RustCrypto CMOV provides conditional move CPU intrinsics which are gua ...",
+          "Description": "RustCrypto CMOV provides conditional move CPU intrinsics which are guaranteed on major platforms to execute in constant-time and not be rewritten as branches by the compiler. From 0.1.1 until 0.5.4, the aarch64 implementations of Cmov and CmovEq in cmov/src/backends/aarch64.rs assume high bits are zero-extended when loading values smaller than a register, so set high bits such as [8..] in a Cmov selector or [16..] of self or other in the u16 and i16 CmovEq implementations can cause left.cmovz(\u0026right, condition) to produce incorrect output. This issue is fixed in version 0.5.4.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-758"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 2,
+            "nvd": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+              "V40Score": 5.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://github.com/RustCrypto/utils",
+            "https://github.com/RustCrypto/utils/commit/dba6c355c9f241e3726d5ec2a68f9f3b519f6063",
+            "https://github.com/RustCrypto/utils/releases/tag/cmov-v0.5.4",
+            "https://github.com/RustCrypto/utils/security/advisories/GHSA-3rjw-m598-pq24"
+          ],
+          "PublishedDate": "2026-07-17T19:17:16.37Z",
+          "LastModifiedDate": "2026-08-18T16:03:43.31Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53583",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53583",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3c822f7bc026f4e3a9a444ade8b61c9c51c1e5909c7dc86d1ed80b2ebf16cf7a",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
+          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53587:\n\tlibgit2 version 1.9.4 and below is vulnerable to a heap out-of-bounds read in set_data() in src/libgit2/transports/smart_pkt.c.\n\nThe vulnerable code uses a fixed-size strncmp (smart_pkt.c:239) against the unvalidated capability buffer of a smart-protocol pkt-line. When the bytes following the pkt-line in the contiguous receive buffer happen to continue with \"ct-format=\", the comparison spuriously matches, advancing format_str past the pkt-line boundary. The following memchr(format_str, ' ', len - (format_str - line)) (smart_pkt.c:246) then underflows its size_t size argument to ~SIZE_MAX and walks the heap looking for a space byte. An unauthenticated remote attacker who controls (or man-in-the-middles) a Git server reached over HTTP/HTTPS/SSH/git:// can trigger this on the FIRST ref-pkt of the refs advertisement, before any capability negotiation has taken place. The OOB walk causes a process crash (SIGSEGV) when memchr enters an unmapped page, and -- on heap layouts where memchr finds a stray space byte before crashing -- can additionally drive the git_error_set(\"...'%.*s'\", format_len, format_str) formatter to copy a large window of heap memory into the error string.\n\nCVE-2026-53586:\n\tlibgit2's builtin HTTP transport follows offsite redirects for the initial smart HTTP request by default. If the redirected server then returns 401 Unauthorized, libgit2 asks the application credential callback for credentials using the original remote URL, not the redirected URL. The returned credential is then attached to the next request to the redirected host as an Authorization header.\n\nCVE-2026-53585:\n\tUnbounded Memory Allocation via Delta Object Result-Size Header\n\nCVE-2026-53584:\n\tlibgit2 Submodule path traversal\n\nCVE-2026-53583:\n\tlibgit2 Inverted IP SubjectAltName Comparison in OpenSSL Backend ( vuln_1_1_1 )\n\nCVE-2026-50185:\n\tRustCrypto CMOV provides conditional move CPU intrinsics which are guaranteed on major platforms to execute in constant-time and not be rewritten as branches by the compiler. From 0.1.1 until 0.5.4, the aarch64 implementations of Cmov and CmovEq in cmov/src/backends/aarch64.rs assume high bits are zero-extended when loading values smaller than a register, so set high bits such as [8..] in a Cmov selector or [16..] of self or other in the u16 and i16 CmovEq implementations can cause left.cmovz(\u0026right, condition) to produce incorrect output. This issue is fixed in version 0.5.4.\n\nCVE-2026-45784:\n\trust-openssl provides OpenSSL bindings for the Rust programming language. From 0.10.50 until 0.10.80, CipherCtxRef::cipher_update_inplace in openssl/src/cipher_ctx.rs incorrectly sized output buffers when used with AES key-wrap-with-padding ciphers EVP_aes_{128,192,256}_wrap_pad. For a non-multiple-of-8 input, OpenSSL writes up to 7 bytes past the end of the caller's buffer or Vec, producing attacker-controllable heap corruption when the plaintext length is attacker-influenced. This issue is fixed in version 0.10.80.\n",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3
+          }
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53584",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53584",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:f8975047b75375c8089d731d345eb1db29cdc1367742eee0e3a3dcd3a37ea517",
+          "Title": "Title Not Available",
+          "Description": "[Unknown description]",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3,
+            "ubuntu": 2
+          },
+          "References": [
+            "https://github.com/libgit2/libgit2/security/advisories/GHSA-cw77-j82w-mchm",
+            "https://ubuntu.com/security/notices/USN-8628-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53584"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53585",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53585",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:87affb125bf9f9948b9af696f57e8ae7a6a229ce2da86f667f46fca882800e1b",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2064: Important priority package update for rust-cargo-c",
+          "Description": "[Unknown description]",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3,
+            "ubuntu": 2
+          },
+          "References": [
+            "https://github.com/libgit2/libgit2/security/advisories/GHSA-27m5-gxxh-x79j",
+            "https://ubuntu.com/security/notices/USN-8628-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53585"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53586",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53586",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:8513b95a51a0bb9645ed5be8ec75d3bd77f8cddbc8fd2210b250401ea84e934e",
+          "Title": "Title Not Available",
+          "Description": "[Unknown description]",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3,
+            "ubuntu": 2
+          },
+          "References": [
+            "https://github.com/libgit2/libgit2/security/advisories/GHSA-2889-x8f6-mc4x",
+            "https://ubuntu.com/security/notices/USN-8628-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53586"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53587",
+          "PkgID": "rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.97.0-1.amzn2023.0.1?arch=noarch\u0026distro=amazon-2023.12.20260727%20%28Amazon%20Linux%29",
+            "UID": "da4a8174c1f64913"
+          },
+          "InstalledVersion": "1.97.0-1.amzn2023.0.1",
+          "FixedVersion": "1.97.0-2.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:67f04da8ff0d651604ed6566fe468d666788362bea09f77e98deaaf051ae9f7b"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53587",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:cf20593f0edb2627f291bd190e4d52df3bdb3376f11d435e9737d12bb7437853",
+          "Title": "Amazon Linux 2 2017.12 - ALAS2-2026-3865: important priority package update for rust",
+          "Description": "[Unknown description]",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "amazon": 3,
+            "ubuntu": 2
+          },
+          "References": [
+            "https://github.com/libgit2/libgit2/security/advisories/GHSA-pm24-4jhq-3xvm",
+            "https://ubuntu.com/security/notices/USN-8628-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53587"
+          ]
         }
       ]
     },
@@ -21896,7 +22179,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21906,7 +22188,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -21993,10 +22275,12 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22334,7 +22618,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22344,7 +22627,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22431,10 +22714,12 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22772,7 +23057,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22782,7 +23066,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22847,7 +23131,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22857,7 +23140,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22944,10 +23227,12 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23038,10 +23323,12 @@
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43218",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -24461,7 +24748,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:62be284f90512e0096019e7072de384e1c63db1ea59de007ce8ebbb4814248af",
-          "Title": "Netty Vulnerable to Cache Poisoning and Information Disclosure via CORS Vary Header Overwrite",
+          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
           "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.137.Final and 4.2.17.Final, io.netty.handler.codec.http.cors.CorsHandler setVaryHeader replaces application Vary headers such as Authorization or Cookie with Origin, allowing a caching proxy or CDN to reuse authenticated responses across users and disclose sensitive information. This issue is fixed in versions 4.1.137.Final and 4.2.17.Final.",
           "Severity": "MEDIUM",
           "CweIDs": [
@@ -24757,7 +25044,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-33871"
           ],
           "PublishedDate": "2026-03-27T20:16:34.833Z",
-          "LastModifiedDate": "2026-08-04T13:18:20.467Z"
+          "LastModifiedDate": "2026-08-18T12:18:25.923Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42587",
@@ -26874,7 +27161,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
             "https://errata.almalinux.org/9/ALSA-2026-38796.html",
-            "https://errata.rockylinux.org/RLSA-2026:41948",
+            "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
             "https://github.com/codehaus-plexus/plexus-utils/commit/6d780b3378829318ba5c2d29547e0012d5b29642",
