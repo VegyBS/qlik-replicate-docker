@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a017f8-f2c7-7116-bde4-2669361dd8ae",
-  "CreatedAt": "2026-08-19T03:03:06.183072674Z",
+  "ReportID": "01a01d23-abb3-7e6d-8696-4acf6bed074f",
+  "CreatedAt": "2026-08-20T03:07:52.11594746Z",
   "ArtifactID": "sha256:a390f441eca38d2d2f651d0ce47529409ef9d2cfe779a40d64128864abb07b2f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16414,6 +16414,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "julia": 2,
             "nvd": 3,
             "redhat": 2,
@@ -16476,9 +16477,10 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "julia": 1,
             "nvd": 4,
-            "photon": 2,
+            "photon": 4,
             "redhat": 2,
             "ubuntu": 2
           },
@@ -16539,6 +16541,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "julia": 2,
             "nvd": 3,
             "redhat": 2,
@@ -16707,6 +16710,7 @@
             "bitnami": 3,
             "nvd": 3,
             "oracle-oval": 3,
+            "photon": 3,
             "redhat": 3,
             "rocky": 3
           },
@@ -16727,13 +16731,13 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
             "https://access.redhat.com/errata/RHSA-2026:39798",
-            "https://access.redhat.com/errata/RHSA-2026:41949",
+            "https://access.redhat.com/errata/RHSA-2026:40856",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/9/ALSA-2026-41949.html",
+            "https://errata.almalinux.org/10/ALSA-2026-40856.html",
             "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/1e7956f1a722df9aabc509c30f8fbdc3a2b4fdc7",
@@ -16920,6 +16924,7 @@
             "bitnami": 3,
             "nvd": 3,
             "oracle-oval": 3,
+            "photon": 3,
             "redhat": 3,
             "rocky": 3
           },
@@ -16940,13 +16945,13 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/07/09/4",
             "https://access.redhat.com/errata/RHSA-2026:39798",
-            "https://access.redhat.com/errata/RHSA-2026:41949",
+            "https://access.redhat.com/errata/RHSA-2026:40856",
             "https://access.redhat.com/security/cve/CVE-2026-15308",
             "https://bugzilla.redhat.com/2498608",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2498608",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-15308",
-            "https://errata.almalinux.org/9/ALSA-2026-41949.html",
+            "https://errata.almalinux.org/10/ALSA-2026-40856.html",
             "https://errata.rockylinux.org/RLSA-2026:39798",
             "https://github.com/python/cpython/commit/07efb08123ba9367a7107325adb9d5626dca1ca9",
             "https://github.com/python/cpython/commit/1e7956f1a722df9aabc509c30f8fbdc3a2b4fdc7",
@@ -17475,7 +17480,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:3c822f7bc026f4e3a9a444ade8b61c9c51c1e5909c7dc86d1ed80b2ebf16cf7a",
-          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
+          "Title": "CVE-2026-53583",
           "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53587:\n\tlibgit2 version 1.9.4 and below is vulnerable to a heap out-of-bounds read in set_data() in src/libgit2/transports/smart_pkt.c.\n\nThe vulnerable code uses a fixed-size strncmp (smart_pkt.c:239) against the unvalidated capability buffer of a smart-protocol pkt-line. When the bytes following the pkt-line in the contiguous receive buffer happen to continue with \"ct-format=\", the comparison spuriously matches, advancing format_str past the pkt-line boundary. The following memchr(format_str, ' ', len - (format_str - line)) (smart_pkt.c:246) then underflows its size_t size argument to ~SIZE_MAX and walks the heap looking for a space byte. An unauthenticated remote attacker who controls (or man-in-the-middles) a Git server reached over HTTP/HTTPS/SSH/git:// can trigger this on the FIRST ref-pkt of the refs advertisement, before any capability negotiation has taken place. The OOB walk causes a process crash (SIGSEGV) when memchr enters an unmapped page, and -- on heap layouts where memchr finds a stray space byte before crashing -- can additionally drive the git_error_set(\"...'%.*s'\", format_len, format_str) formatter to copy a large window of heap memory into the error string.\n\nCVE-2026-53586:\n\tlibgit2's builtin HTTP transport follows offsite redirects for the initial smart HTTP request by default. If the redirected server then returns 401 Unauthorized, libgit2 asks the application credential callback for credentials using the original remote URL, not the redirected URL. The returned credential is then attached to the next request to the redirected host as an Authorization header.\n\nCVE-2026-53585:\n\tUnbounded Memory Allocation via Delta Object Result-Size Header\n\nCVE-2026-53584:\n\tlibgit2 Submodule path traversal\n\nCVE-2026-53583:\n\tlibgit2 Inverted IP SubjectAltName Comparison in OpenSSL Backend ( vuln_1_1_1 )\n\nCVE-2026-50185:\n\tRustCrypto CMOV provides conditional move CPU intrinsics which are guaranteed on major platforms to execute in constant-time and not be rewritten as branches by the compiler. From 0.1.1 until 0.5.4, the aarch64 implementations of Cmov and CmovEq in cmov/src/backends/aarch64.rs assume high bits are zero-extended when loading values smaller than a register, so set high bits such as [8..] in a Cmov selector or [16..] of self or other in the u16 and i16 CmovEq implementations can cause left.cmovz(\u0026right, condition) to produce incorrect output. This issue is fixed in version 0.5.4.\n\nCVE-2026-45784:\n\trust-openssl provides OpenSSL bindings for the Rust programming language. From 0.10.50 until 0.10.80, CipherCtxRef::cipher_update_inplace in openssl/src/cipher_ctx.rs incorrectly sized output buffers when used with AES key-wrap-with-padding ciphers EVP_aes_{128,192,256}_wrap_pad. For a non-multiple-of-8 input, OpenSSL writes up to 7 bytes past the end of the caller's buffer or Vec, producing attacker-controllable heap corruption when the plaintext length is attacker-influenced. This issue is fixed in version 0.10.80.\n",
           "Severity": "HIGH",
           "VendorSeverity": {
@@ -17504,7 +17509,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:f8975047b75375c8089d731d345eb1db29cdc1367742eee0e3a3dcd3a37ea517",
-          "Title": "Title Not Available",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
           "Description": "[Unknown description]",
           "Severity": "HIGH",
           "VendorSeverity": {
@@ -17539,7 +17544,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:87affb125bf9f9948b9af696f57e8ae7a6a229ce2da86f667f46fca882800e1b",
-          "Title": "Amazon Linux 2023 - ALAS2023-2026-2064: Important priority package update for rust-cargo-c",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
           "Description": "[Unknown description]",
           "Severity": "HIGH",
           "VendorSeverity": {
@@ -17574,7 +17579,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:8513b95a51a0bb9645ed5be8ec75d3bd77f8cddbc8fd2210b250401ea84e934e",
-          "Title": "Title Not Available",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
           "Description": "[Unknown description]",
           "Severity": "HIGH",
           "VendorSeverity": {
@@ -17609,7 +17614,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:cf20593f0edb2627f291bd190e4d52df3bdb3376f11d435e9737d12bb7437853",
-          "Title": "Amazon Linux 2 2017.12 - ALAS2-2026-3865: important priority package update for rust",
+          "Title": "Amazon Linux 2023 - ALAS2023-2026-2065: Important priority package update for rust",
           "Description": "[Unknown description]",
           "Severity": "HIGH",
           "VendorSeverity": {
@@ -22179,6 +22184,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22187,7 +22193,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22279,7 +22285,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22618,6 +22624,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22626,7 +22633,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22718,7 +22725,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23057,6 +23064,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -23065,7 +23073,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -23131,6 +23139,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -23139,7 +23148,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -23231,7 +23240,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23327,7 +23336,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23747,7 +23756,7 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
-            "https://access.redhat.com/errata/RHSA-2025:9114",
+            "https://access.redhat.com/errata/RHSA-2025:9166",
             "https://access.redhat.com/errata/RHSA-2025:9318",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
             "https://bugzilla.redhat.com/2368956",
@@ -23757,7 +23766,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/9/ALSA-2025-9114.html",
+            "https://errata.almalinux.org/10/ALSA-2025-9166.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -27160,7 +27169,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/9/ALSA-2026-38796.html",
+            "https://errata.almalinux.org/10/ALSA-2026-38514.html",
             "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
