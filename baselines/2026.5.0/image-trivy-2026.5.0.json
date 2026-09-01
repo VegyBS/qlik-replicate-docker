@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a056e7-65d8-7df3-b086-3bf3d125087a",
-  "CreatedAt": "2026-08-31T08:20:00.600916716Z",
+  "ReportID": "01a05bdf-40ae-7c59-b250-ee15eed66541",
+  "CreatedAt": "2026-09-01T07:29:12.878811951Z",
   "ArtifactID": "sha256:5280d45d144186ceb3948434ecf097aa4ef8c05fcf196eebb99921f14f738cf2",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16386,6 +16386,246 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-14456",
+          "PkgID": "openssl@3.5.7-2.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.7-2.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260817%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "f3219d10342ea976"
+          },
+          "InstalledVersion": "1:3.5.7-2.amzn2023.0.1",
+          "FixedVersion": "1:3.5.7-2.amzn2023.0.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8f15e1bf519b480ff3bf1752f3ec5e513f04e64db59c51fbc2bebf1e406f84ca"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:9e9644feb77af2d925108043cf0dce9b983ca4f54f9d296e78d4295fce65220b",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://access.redhat.com/security/cve/CVE-2026-14456",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-14456",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "LastModifiedDate": "2026-08-28T19:46:29.323Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-14456",
+          "PkgID": "openssl-fips-provider-latest@3.5.7-2.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.7-2.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260817%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "62dfeca4353d2e14"
+          },
+          "InstalledVersion": "1:3.5.7-2.amzn2023.0.1",
+          "FixedVersion": "1:3.5.7-2.amzn2023.0.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bba25e797da6bc876f61cea046790498b59e58b3ea18ae746cb620e5302fcc3d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:98e2b71cbf1c52a6603fe21456947b9259cc9b1111dda5f9207f60b75a92525b",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://access.redhat.com/security/cve/CVE-2026-14456",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-14456",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "LastModifiedDate": "2026-08-28T19:46:29.323Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-14456",
+          "PkgID": "openssl-libs@3.5.7-2.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.7-2.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260817%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "b1af5f0ef4c6f1a5"
+          },
+          "InstalledVersion": "1:3.5.7-2.amzn2023.0.1",
+          "FixedVersion": "1:3.5.7-2.amzn2023.0.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bba25e797da6bc876f61cea046790498b59e58b3ea18ae746cb620e5302fcc3d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-14456",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:f8f9ee72e22d3ea5facdbd9902467237ad03186b1ec637fa7ec1b6424d81764d",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/08/13/4",
+            "https://access.redhat.com/security/cve/CVE-2026-14456",
+            "https://github.com/openssl/openssl/commit/08e7756c3900bcfd77a720e7b74e27d6e4ed01a9",
+            "https://github.com/openssl/openssl/commit/4084152e040329ca0194c4c1750b9b46d00a5b6b",
+            "https://github.com/openssl/openssl/commit/f2f1465f2d2e5c61dfeac4d20fd093797d821139",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-14456",
+            "https://openssl-library.org/news/secadv/20260813.txt",
+            "https://ubuntu.com/security/notices/USN-8678-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-14456"
+          ],
+          "PublishedDate": "2026-08-13T15:19:31.82Z",
+          "LastModifiedDate": "2026-08-28T19:46:29.323Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-45409",
+          "PkgID": "python3-pip-wheel@21.3.1-2.amzn2023.0.20.noarch",
+          "PkgName": "python3-pip-wheel",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-pip-wheel@21.3.1-2.amzn2023.0.20?arch=noarch\u0026distro=amazon-2023.12.20260817%20%28Amazon%20Linux%29",
+            "UID": "b73828e6b3318ee2"
+          },
+          "InstalledVersion": "21.3.1-2.amzn2023.0.20",
+          "FixedVersion": "21.3.1-2.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bba25e797da6bc876f61cea046790498b59e58b3ea18ae746cb620e5302fcc3d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-45409",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:65f80a9aa5298482f6ec0752a0782cd7e026b560d666a35e2b5abf6fd4b5a76f",
+          "Title": "python-idna: idna: Denial of Service via specially crafted long inputs",
+          "Description": "Internationalized Domain Names in Applications (IDNA) for Python provides support for Internationalized Domain Names in Applications (IDNA) and Unicode IDNA Compatibility Processing. In versions prior to 3.15, payloads such as `\"\\u0660\" * N` or `\"\\u30fb\" * N + \"\\u6f22\"` utilize the `valid_contexto` function prior to length rejection, and for high values of `N` will take a long time to process. This is the same issue as CVE-2024-3651, however the original remediation in 2024 was not a complete fix. A specially crafted argument to the `idna.encode()` function could consume significant resources. This may lead to a denial-of-service. Starting in version 3.14, the function rejects long inputs as soon as practicable prior to any further processing to minimize resource consumption. In version 3.15, this approach was extended to lesser used alternate functions (i.e. per-label conversions and codec support). A workaround is available. Domain names cannot exceed 253 characters in length. If this length limit is enforced prior to passing the domain to the `idna.encode()` function, it should no longer consume significant resources. This is triggered by arbitrarily large inputs that would not occur in normal usage, but may be passed to the library assuming there is no preliminary input validation by the higher-level application.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-1333"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "ghsa": 2,
+            "nvd": 2,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "V3Score": 5.3,
+              "V40Score": 6.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:54290",
+            "https://access.redhat.com/errata/RHSA-2026:54481",
+            "https://access.redhat.com/security/cve/CVE-2026-45409",
+            "https://bugzilla.redhat.com/2485616",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2485616",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-45409",
+            "https://errata.almalinux.org/10/ALSA-2026-54481.html",
+            "https://errata.rockylinux.org/RLSA-2026:54290",
+            "https://github.com/kjd/idna",
+            "https://github.com/kjd/idna/security/advisories/GHSA-65pc-fj4g-8rjx",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/idna/PYSEC-2026-215.yaml",
+            "https://linux.oracle.com/cve/CVE-2026-45409.html",
+            "https://linux.oracle.com/errata/ELSA-2026-54484.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-45409",
+            "https://ubuntu.com/security/notices/USN-8549-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-45409"
+          ],
+          "PublishedDate": "2026-06-05T23:16:43.343Z",
+          "LastModifiedDate": "2026-07-23T07:10:00.113Z"
+        }
       ]
     },
     {
@@ -21843,10 +22083,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -21936,10 +22177,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22223,6 +22465,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22281,6 +22524,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22339,6 +22583,7 @@
             "CWE-863"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2
           },
           "CVSS": {
@@ -22390,6 +22635,7 @@
             "CWE-863"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2
           },
           "CVSS": {
@@ -22641,10 +22887,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22811,6 +23058,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -23131,10 +23379,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23224,10 +23473,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23317,10 +23567,11 @@
             "https://access.redhat.com/errata/RHSA-2026:54622",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:43218",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -24252,6 +24503,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24310,6 +24562,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24368,6 +24621,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24426,6 +24680,7 @@
             "CWE-863"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2
           },
           "CVSS": {
@@ -24477,6 +24732,7 @@
             "CWE-863"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2
           },
           "CVSS": {
@@ -24528,6 +24784,7 @@
             "CWE-863"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2
           },
           "CVSS": {
@@ -28630,30 +28887,37 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:4ce0772faf4c9354b457c28d827cd22e26d4f1504a66455c9074c610ea68b215",
-          "Title": "Apache HttpComponents Client: Connection Leak on Content-Encoding Decode Error Leads to Pool Exhaustion DoS",
+          "Title": "org.apache.httpcomponents/httpclient5: Apache HttpComponents Client: Denial of Service due to connection leak",
           "Description": "HttpClient based on the classic i/o model fails to correctly release the underlying connection back to the connection manager if it encounters an invalid or unsupported `Content-Encoding` header value in the response message. Please note this defect does not affect HttpClient based on the async i/o model.\n\nThis issue affects Apache HttpComponents Client: from 5.0-alpha1 through 5.6.2.",
           "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-772"
           ],
           "VendorSeverity": {
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
               "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             }
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/08/13/5",
+            "https://access.redhat.com/security/cve/CVE-2026-64607",
             "https://github.com/apache/httpcomponents-client",
             "https://github.com/apache/httpcomponents-client/commit/55733f4121f7ba26ddf04fe12739d9c15962cb94",
             "https://github.com/apache/httpcomponents-client/commit/ebac9512f555c4a355cad3f59ef2db69b597cc97",
             "https://github.com/apache/httpcomponents-client/releases/tag/rel/v5.6.3",
             "https://github.com/apache/httpcomponents-client/releases/tag/rel/v5.7-alpha1",
             "https://lists.apache.org/thread/qqfzo3fqcdk4l5496vz95ppvl4ty511q",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-64607"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-64607",
+            "https://www.cve.org/CVERecord?id=CVE-2026-64607"
           ],
           "PublishedDate": "2026-07-31T11:17:11.71Z",
           "LastModifiedDate": "2026-08-13T17:17:33.733Z"
@@ -28867,6 +29131,7 @@
             "CWE-116"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "nvd": 2,
             "redhat": 2
@@ -28934,6 +29199,7 @@
             "CWE-116"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "nvd": 2,
             "redhat": 2
