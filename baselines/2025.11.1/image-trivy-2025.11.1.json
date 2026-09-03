@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a060e9-c101-7be3-aa22-9c09bfcd1108",
-  "CreatedAt": "2026-09-02T06:58:47.169780897Z",
+  "ReportID": "01a06614-0403-71fd-96c2-7340702d833c",
+  "CreatedAt": "2026-09-03T07:03:02.915132255Z",
   "ArtifactID": "sha256:cb7a749ee30f505c0a540da7f41098c394e60e42d3f32252dd2eed5c76cbdf78",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -21349,6 +21349,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54622",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21373,7 +21374,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-26T13:19:15.917Z"
+          "LastModifiedDate": "2026-09-02T13:18:02.49Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -21576,7 +21577,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:e419efc8de3150bd4d3e7d4a1b17cc82ae4f89cd4ab31f3d8e56a3a652a3ad57",
-          "Title": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Privilege escalation via improper handling of @JsonUnwrapped properties",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.18.0 until 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1, UnwrappedPropertyHandler.processUnwrapped() replays buffered JSON for a @JsonUnwrapped property and calls prop.deserializeAndSet() without a prop.visibleInView(ctxt.getActiveView()) guard, allowing a property annotated with both @JsonView and @JsonUnwrapped to be written from attacker JSON under a less-privileged active view. This issue is fixed in versions 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1.",
           "Severity": "MEDIUM",
           "CweIDs": [
@@ -21584,21 +21585,28 @@
           ],
           "VendorSeverity": {
             "amazon": 2,
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59889",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/d627a8a86fcb062429282f79f3f256f181ed2c7b",
             "https://github.com/FasterXML/jackson-databind/issues/6060",
             "https://github.com/FasterXML/jackson-databind/pull/6056",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5gvw-p9qm-jgwh",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59889"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59889",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
           "LastModifiedDate": "2026-07-16T16:19:15.79Z"
@@ -21790,6 +21798,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54622",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21814,7 +21823,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-26T13:19:15.917Z"
+          "LastModifiedDate": "2026-09-02T13:18:02.49Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -22017,7 +22026,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:e419efc8de3150bd4d3e7d4a1b17cc82ae4f89cd4ab31f3d8e56a3a652a3ad57",
-          "Title": "jackson-databind: @JsonView bypassed for @JsonUnwrapped container properties on deserialization",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Privilege escalation via improper handling of @JsonUnwrapped properties",
           "Description": "jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.18.0 until 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1, UnwrappedPropertyHandler.processUnwrapped() replays buffered JSON for a @JsonUnwrapped property and calls prop.deserializeAndSet() without a prop.visibleInView(ctxt.getActiveView()) guard, allowing a property annotated with both @JsonView and @JsonUnwrapped to be written from attacker JSON under a less-privileged active view. This issue is fixed in versions 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1.",
           "Severity": "MEDIUM",
           "CweIDs": [
@@ -22025,21 +22034,28 @@
           ],
           "VendorSeverity": {
             "amazon": 2,
-            "ghsa": 2
+            "ghsa": 2,
+            "redhat": 2
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
               "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-59889",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/d627a8a86fcb062429282f79f3f256f181ed2c7b",
             "https://github.com/FasterXML/jackson-databind/issues/6060",
             "https://github.com/FasterXML/jackson-databind/pull/6056",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5gvw-p9qm-jgwh",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-59889"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59889",
+            "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
           "LastModifiedDate": "2026-07-16T16:19:15.79Z"
@@ -22305,6 +22321,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54622",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22329,7 +22346,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-26T13:19:15.917Z"
+          "LastModifiedDate": "2026-09-02T13:18:02.49Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54513",
@@ -22401,6 +22418,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50849",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:54622",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22425,7 +22443,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-54513"
           ],
           "PublishedDate": "2026-06-23T21:17:02.333Z",
-          "LastModifiedDate": "2026-08-26T13:19:15.917Z"
+          "LastModifiedDate": "2026-09-02T13:18:02.49Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54514",
@@ -24408,7 +24426,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-48043"
           ],
           "PublishedDate": "2026-06-12T16:16:30.587Z",
-          "LastModifiedDate": "2026-08-13T13:19:08.647Z"
+          "LastModifiedDate": "2026-09-02T13:17:58.697Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50560",
@@ -24613,7 +24631,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-08-24T13:18:48.087Z"
+          "LastModifiedDate": "2026-09-02T13:17:52.953Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -24675,6 +24693,7 @@
             "https://access.redhat.com/errata/RHSA-2026:53644",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-45416",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2488391",
             "https://github.com/netty/netty",
@@ -24686,7 +24705,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-08-24T13:18:54.967Z"
+          "LastModifiedDate": "2026-09-02T13:17:53.993Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -24747,6 +24766,7 @@
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
             "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-50010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2488429",
             "https://github.com/netty/netty",
@@ -24758,7 +24778,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-08-24T13:19:11.207Z"
+          "LastModifiedDate": "2026-09-02T13:17:59.82Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
@@ -24901,6 +24921,7 @@
             "https://access.redhat.com/errata/RHSA-2026:53644",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-45674",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2488400",
             "https://github.com/netty/netty",
@@ -24912,7 +24933,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45674"
           ],
           "PublishedDate": "2026-06-12T15:16:27.55Z",
-          "LastModifiedDate": "2026-08-21T13:18:02.737Z"
+          "LastModifiedDate": "2026-09-02T13:17:55.03Z"
         },
         {
           "VulnerabilityID": "CVE-2026-47691",
@@ -24979,6 +25000,7 @@
             "https://access.redhat.com/errata/RHSA-2026:53644",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
+            "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/security/cve/CVE-2026-47691",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2488439",
             "https://github.com/netty/netty",
@@ -24990,7 +25012,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-47691"
           ],
           "PublishedDate": "2026-06-12T16:16:30.31Z",
-          "LastModifiedDate": "2026-08-21T13:18:06.297Z"
+          "LastModifiedDate": "2026-09-02T13:17:57.547Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45673",
