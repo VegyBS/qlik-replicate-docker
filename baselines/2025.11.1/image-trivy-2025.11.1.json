@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a07fd5-5977-71c3-9660-22c9bc6926fb",
-  "CreatedAt": "2026-09-08T07:04:43.639117342Z",
+  "ReportID": "01a08505-d15d-7077-b27b-9d14240dbb8c",
+  "CreatedAt": "2026-09-09T07:15:46.141033205Z",
   "ArtifactID": "sha256:cb7a749ee30f505c0a540da7f41098c394e60e42d3f32252dd2eed5c76cbdf78",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -20791,7 +20791,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-18401"
           ],
           "PublishedDate": "2026-08-04T15:16:29.9Z",
-          "LastModifiedDate": "2026-08-04T19:16:43.657Z"
+          "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
           "VulnerabilityID": "GHSA-r7wm-3cxj-wff9",
@@ -20894,7 +20894,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-18401"
           ],
           "PublishedDate": "2026-08-04T15:16:29.9Z",
-          "LastModifiedDate": "2026-08-04T19:16:43.657Z"
+          "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
           "VulnerabilityID": "GHSA-r7wm-3cxj-wff9",
@@ -20997,7 +20997,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-18401"
           ],
           "PublishedDate": "2026-08-04T15:16:29.9Z",
-          "LastModifiedDate": "2026-08-04T19:16:43.657Z"
+          "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
           "VulnerabilityID": "GHSA-r7wm-3cxj-wff9",
@@ -21145,7 +21145,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-18401"
           ],
           "PublishedDate": "2026-08-04T15:16:29.9Z",
-          "LastModifiedDate": "2026-08-04T19:16:43.657Z"
+          "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
           "VulnerabilityID": "CVE-2026-18401",
@@ -21203,7 +21203,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-18401"
           ],
           "PublishedDate": "2026-08-04T15:16:29.9Z",
-          "LastModifiedDate": "2026-08-04T19:16:43.657Z"
+          "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
           "VulnerabilityID": "CVE-2026-54512",
@@ -24561,6 +24561,60 @@
           "LastModifiedDate": "2026-08-06T20:29:01.66Z"
         },
         {
+          "VulnerabilityID": "CVE-2026-75595",
+          "VendorIDs": [
+            "GHSA-c4c3-7fpv-j4q5"
+          ],
+          "PkgName": "io.netty:netty-handler",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-handler@4.1.123.Final",
+            "UID": "93442aa07bfeeffe"
+          },
+          "InstalledVersion": "4.1.123.Final",
+          "FixedVersion": "4.2.17.Final, 4.1.137.Final",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8a12561ea4e18c1e5bcc61afa77c70cf67553896fdf8f11cfc59fc28bcb83b57"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75595",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:efc14b1a06b6fc337b63baab384723948186a701fcee8a46dcbd614fb96161a0",
+          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.137.Fina and 4.2.17.Final, io.netty.handler.ssl.SslClientHelloHandler#decode checks the wrong offset before reading the four-byte TLS handshake header, so a ClientHello whose handshake header spans records can cause an IndexOutOfBoundsException and invoke select(ctx, null). This selects the default SslContext instead of the SNI-specific context. In deployments where per-SNI clientAuth=REQUIRE is the sole mutual TLS gate, the default SslContext uses clientAuth=NONE or clientAuth=OPTIONAL, and no application-layer certificate verification exists, an unauthenticated remote attacker can bypass the protected route's mutual TLS requirement. This issue is fixed in versions 4.1.137.Final and 4.2.17.Final.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-754"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 9.1
+            }
+          },
+          "References": [
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/commit/1b5abc6443b63726c72cdd285af2feb7ddbb8ff7",
+            "https://github.com/netty/netty/commit/9e0519239108a69b7e9bbc5e9182ee139a0d7961",
+            "https://github.com/netty/netty/pull/17213",
+            "https://github.com/netty/netty/pull/17217",
+            "https://github.com/netty/netty/releases/tag/netty-4.1.137.Final",
+            "https://github.com/netty/netty/releases/tag/netty-4.2.17.Final",
+            "https://github.com/netty/netty/security/advisories/GHSA-c4c3-7fpv-j4q5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75595"
+          ],
+          "PublishedDate": "2026-08-19T21:17:37.563Z",
+          "LastModifiedDate": "2026-08-20T15:18:38.243Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-44249",
           "VendorIDs": [
             "GHSA-3qp7-7mw8-wx86"
@@ -24783,6 +24837,60 @@
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
           "LastModifiedDate": "2026-09-07T13:20:22.21Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75596",
+          "VendorIDs": [
+            "GHSA-fccg-mwvh-qqg4"
+          ],
+          "PkgName": "io.netty:netty-handler",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/io.netty/netty-handler@4.1.123.Final",
+            "UID": "93442aa07bfeeffe"
+          },
+          "InstalledVersion": "4.1.123.Final",
+          "FixedVersion": "4.2.17.Final, 4.1.137.Final",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8a12561ea4e18c1e5bcc61afa77c70cf67553896fdf8f11cfc59fc28bcb83b57"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75596",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:a0198c94d706e30c1bf6c11f6511a3f7587d3ce1f94ae31cad00bd15cde6c8ee",
+          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
+          "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.137.Final and 4.2.17.Final, the default io.netty.handler.ssl.SniHandler constructors use the pre-handshake ClientHello aggregation path in handler/src/main/java/io/netty/handler/ssl/SslClientHelloHandler.java at io.netty.handler.ssl.SslClientHelloHandler#decode, where handshakeBuffer.clear() and writeBytes() recopy all previously received body bytes for every additional TLS record. An unauthenticated remote peer can advertise a large ClientHello and deliver its body in thousands of tiny records, causing quadratic CPU work on the event loop before the TLS handshake completes and degrading TLS handling for other clients. This issue is fixed in versions 4.1.137.Final and 4.2.17.Final.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "V40Score": 6.9
+            }
+          },
+          "References": [
+            "https://github.com/netty/netty",
+            "https://github.com/netty/netty/commit/1b5abc6443b63726c72cdd285af2feb7ddbb8ff7",
+            "https://github.com/netty/netty/commit/9e0519239108a69b7e9bbc5e9182ee139a0d7961",
+            "https://github.com/netty/netty/pull/17213",
+            "https://github.com/netty/netty/pull/17217",
+            "https://github.com/netty/netty/releases/tag/netty-4.1.137.Final",
+            "https://github.com/netty/netty/releases/tag/netty-4.2.17.Final",
+            "https://github.com/netty/netty/security/advisories/GHSA-fccg-mwvh-qqg4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75596"
+          ],
+          "PublishedDate": "2026-08-19T21:17:37.74Z",
+          "LastModifiedDate": "2026-08-20T20:17:46.81Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42578",
