@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a08a27-1f11-783e-bb6d-e597dbfae923",
-  "CreatedAt": "2026-09-10T07:10:14.801541541Z",
+  "ReportID": "01a08f4c-bc60-7070-885b-4899d86a006c",
+  "CreatedAt": "2026-09-11T07:09:25.984030588Z",
   "ArtifactID": "sha256:cb7a749ee30f505c0a540da7f41098c394e60e42d3f32252dd2eed5c76cbdf78",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -23891,7 +23891,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59903"
           ],
           "PublishedDate": "2026-08-17T18:17:36.25Z",
-          "LastModifiedDate": "2026-08-17T19:16:32.89Z"
+          "LastModifiedDate": "2026-09-10T20:43:19.26Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59921",
@@ -24697,7 +24697,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-09-09T13:20:06.74Z"
+          "LastModifiedDate": "2026-09-10T13:20:11.367Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -24772,7 +24772,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-09-09T13:20:13.317Z"
+          "LastModifiedDate": "2026-09-10T13:20:17.77Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -24846,7 +24846,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-09-09T13:20:25.79Z"
+          "LastModifiedDate": "2026-09-10T13:20:25.037Z"
         },
         {
           "VulnerabilityID": "CVE-2026-75596",
@@ -25095,7 +25095,8 @@
           "VendorSeverity": {
             "ghsa": 3,
             "nvd": 4,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -25135,6 +25136,7 @@
             "https://github.com/netty/netty/security/advisories/GHSA-5pvg-856g-cp85",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-47691",
             "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-47691.json",
+            "https://ubuntu.com/security/notices/USN-8742-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-47691"
           ],
           "PublishedDate": "2026-06-12T16:16:30.31Z",
@@ -26539,7 +26541,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-2332"
           ],
           "PublishedDate": "2026-04-14T12:16:21.333Z",
-          "LastModifiedDate": "2026-09-09T13:19:12.39Z"
+          "LastModifiedDate": "2026-09-10T13:18:03.987Z"
         },
         {
           "VulnerabilityID": "CVE-2024-6763",
