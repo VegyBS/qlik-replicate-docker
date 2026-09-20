@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0b35d-4770-7150-94af-51f7181274db",
-  "CreatedAt": "2026-09-18T07:13:49.936087348Z",
+  "ReportID": "01a0bdbf-4084-71c1-9d33-b86084b8e962",
+  "CreatedAt": "2026-09-20T07:37:02.852116584Z",
   "ArtifactID": "sha256:11f0b36169a55ff93ca166c5a0054c202094e23928625d0bdf3e5c053475de5a",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -17900,7 +17900,7 @@
             "https://www.vulncheck.com/advisories/expat-denial-of-service-via-storeatts-quadratic-complexity"
           ],
           "PublishedDate": "2026-08-18T15:16:57Z",
-          "LastModifiedDate": "2026-08-20T16:17:40.66Z"
+          "LastModifiedDate": "2026-09-18T15:07:24.37Z"
         },
         {
           "VulnerabilityID": "CVE-2026-76957",
@@ -27676,7 +27676,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49700",
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -27691,7 +27692,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42584"
           ],
           "PublishedDate": "2026-05-13T19:17:24.043Z",
-          "LastModifiedDate": "2026-09-17T12:18:18.47Z"
+          "LastModifiedDate": "2026-09-18T13:18:20.81Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42587",
@@ -27753,7 +27754,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -27767,7 +27769,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-09-17T12:18:19.003Z"
+          "LastModifiedDate": "2026-09-18T13:18:21.533Z"
         },
         {
           "VulnerabilityID": "CVE-2026-55831",
@@ -28184,7 +28186,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49700",
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -28199,7 +28202,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42581"
           ],
           "PublishedDate": "2026-05-13T19:17:23.627Z",
-          "LastModifiedDate": "2026-09-17T12:18:17.95Z"
+          "LastModifiedDate": "2026-09-18T13:18:20.12Z"
         },
         {
           "VulnerabilityID": "CVE-2026-42585",
@@ -28897,7 +28900,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -28911,7 +28915,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42587"
           ],
           "PublishedDate": "2026-05-13T19:17:24.46Z",
-          "LastModifiedDate": "2026-09-17T12:18:19.003Z"
+          "LastModifiedDate": "2026-09-18T13:18:21.533Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56819",
@@ -29095,6 +29099,8 @@
             "https://access.redhat.com/errata/RHSA-2026:48151",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
@@ -29110,7 +29116,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-48043"
           ],
           "PublishedDate": "2026-06-12T16:16:30.587Z",
-          "LastModifiedDate": "2026-09-11T13:18:13.18Z"
+          "LastModifiedDate": "2026-09-18T13:18:30.04Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50560",
@@ -29265,22 +29271,28 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:1ab5c57f11adf7996ccba97d777eb60ebdef084b6619f5ded15d6db530dd8b98",
-          "Title": "Netty is an asynchronous, event-driven network application framework.  ...",
+          "Title": "io.netty/netty-handler: Netty: SNI Routing Bypass via Fragmented TLS ClientHello Causing Fallback to Default SslContext",
           "Description": "Netty is an asynchronous, event-driven network application framework. Prior to 4.1.137.Fina and 4.2.17.Final, io.netty.handler.ssl.SslClientHelloHandler#decode checks the wrong offset before reading the four-byte TLS handshake header, so a ClientHello whose handshake header spans records can cause an IndexOutOfBoundsException and invoke select(ctx, null). This selects the default SslContext instead of the SNI-specific context. In deployments where per-SNI clientAuth=REQUIRE is the sole mutual TLS gate, the default SslContext uses clientAuth=NONE or clientAuth=OPTIONAL, and no application-layer certificate verification exists, an unauthenticated remote attacker can bypass the protected route's mutual TLS requirement. This issue is fixed in versions 4.1.137.Final and 4.2.17.Final.",
           "Severity": "CRITICAL",
           "CweIDs": [
             "CWE-754"
           ],
           "VendorSeverity": {
-            "ghsa": 4
+            "ghsa": 4,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
               "V40Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75595",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/commit/1b5abc6443b63726c72cdd285af2feb7ddbb8ff7",
             "https://github.com/netty/netty/commit/9e0519239108a69b7e9bbc5e9182ee139a0d7961",
@@ -29289,7 +29301,8 @@
             "https://github.com/netty/netty/releases/tag/netty-4.1.137.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.17.Final",
             "https://github.com/netty/netty/security/advisories/GHSA-c4c3-7fpv-j4q5",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-75595"
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75595",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75595"
           ],
           "PublishedDate": "2026-08-19T21:17:37.563Z",
           "LastModifiedDate": "2026-09-09T21:19:49.197Z"
@@ -29356,7 +29369,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -29372,7 +29386,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
-          "LastModifiedDate": "2026-09-11T13:18:04.87Z"
+          "LastModifiedDate": "2026-09-18T13:18:23.463Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45416",
@@ -29432,7 +29446,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/errata/RHSA-2026:65126",
@@ -29449,7 +29464,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
-          "LastModifiedDate": "2026-09-11T13:18:10.31Z"
+          "LastModifiedDate": "2026-09-18T13:18:25.647Z"
         },
         {
           "VulnerabilityID": "CVE-2026-50010",
@@ -29509,7 +29524,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:62260",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -29525,7 +29541,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-50010"
           ],
           "PublishedDate": "2026-06-12T16:16:31.18Z",
-          "LastModifiedDate": "2026-09-11T13:18:15.037Z"
+          "LastModifiedDate": "2026-09-18T13:18:31.64Z"
         },
         {
           "VulnerabilityID": "CVE-2026-75596",
@@ -29644,7 +29660,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49700",
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:53644",
-            "https://access.redhat.com/errata/RHSA-2026:53806",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:65126",
             "https://access.redhat.com/errata/RHSA-2026:66488",
@@ -29660,7 +29677,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-42578"
           ],
           "PublishedDate": "2026-05-13T19:17:23.21Z",
-          "LastModifiedDate": "2026-09-17T12:18:16.91Z"
+          "LastModifiedDate": "2026-09-18T13:18:18.427Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45674",
@@ -29725,6 +29742,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:62260",
@@ -29740,7 +29759,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-45674"
           ],
           "PublishedDate": "2026-06-12T15:16:27.55Z",
-          "LastModifiedDate": "2026-09-09T13:20:13.883Z"
+          "LastModifiedDate": "2026-09-18T13:18:26.863Z"
         },
         {
           "VulnerabilityID": "CVE-2026-47691",
@@ -29806,6 +29825,8 @@
             "https://access.redhat.com/errata/RHSA-2026:49701",
             "https://access.redhat.com/errata/RHSA-2026:50085",
             "https://access.redhat.com/errata/RHSA-2026:53644",
+            "https://access.redhat.com/errata/RHSA-2026:53645",
+            "https://access.redhat.com/errata/RHSA-2026:53646",
             "https://access.redhat.com/errata/RHSA-2026:53806",
             "https://access.redhat.com/errata/RHSA-2026:54435",
             "https://access.redhat.com/errata/RHSA-2026:62260",
@@ -29822,7 +29843,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-47691"
           ],
           "PublishedDate": "2026-06-12T16:16:30.31Z",
-          "LastModifiedDate": "2026-09-09T13:20:19.013Z"
+          "LastModifiedDate": "2026-09-18T13:18:28.497Z"
         },
         {
           "VulnerabilityID": "CVE-2026-45673",
@@ -30969,6 +30990,232 @@
           ],
           "PublishedDate": "2026-04-10T16:16:31.463Z",
           "LastModifiedDate": "2026-06-17T10:39:07.087Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-8763",
+          "VendorIDs": [
+            "GHSA-9pwp-9qqc-pr26"
+          ],
+          "PkgName": "org.bouncycastle:bc-fips",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/bc-fips-2.1.1.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.bouncycastle/bc-fips@2.1.1",
+            "UID": "81fc377b757706e6"
+          },
+          "InstalledVersion": "2.1.1",
+          "FixedVersion": "1.0.2.7, 2.0.2, 2.1.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:667304c39aee3ce0d30e3511536098a81b942b86eeaaeb6c925bb006f8a0ab07"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8763",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:3670e4683d447ce1a9717a1e83f1f921d8422fef8ef15822ec9540c170b9d9fe",
+          "Title": "org.bouncycastle/bcprov-jdk15on: org.bouncycastle/bcpkix-jdk15on: Bouncy Castle for Java: Name Constraints bypass via trailing dot in rfc822Name and URI",
+          "Description": "In Bouncy Castle for Java before 1.85, Name Constraints bypass via trailing dot in rfc822Name and URI. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 1.0.2.7 (1.0.X series), 2.0.2 (2.0.X series) and 2.1.3 (2.1.X series).",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 4,
+            "nvd": 4,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/U:Amber",
+              "V3Score": 9.1,
+              "V40Score": 9.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-8763",
+            "https://github.com/bcgit/bc-java",
+            "https://github.com/bcgit/bc-java/commit/2c28b253a44681fbbc562561eab6ad383d2ae558",
+            "https://github.com/bcgit/bc-java/releases/tag/r1rv85v2",
+            "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902026%E2%80%908763",
+            "https://github.com/bcgit/bc-java/wiki/CVE-2026-8763",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8763",
+            "https://www.cve.org/CVERecord?id=CVE-2026-8763"
+          ],
+          "PublishedDate": "2026-08-03T01:16:45.807Z",
+          "LastModifiedDate": "2026-09-02T14:28:48.94Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-13505",
+          "VendorIDs": [
+            "GHSA-98j2-6v39-78w8"
+          ],
+          "PkgName": "org.bouncycastle:bc-fips",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/bc-fips-2.1.1.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.bouncycastle/bc-fips@2.1.1",
+            "UID": "81fc377b757706e6"
+          },
+          "InstalledVersion": "2.1.1",
+          "FixedVersion": "1.0.2.7, 2.0.2, 2.1.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:667304c39aee3ce0d30e3511536098a81b942b86eeaaeb6c925bb006f8a0ab07"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13505",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:b0c7f764207389d1ca47bca79610e940dcfaca168cfcd69914c45b087672ec9d",
+          "Title": "Bouncy Castle: Zeroisation of sensitive key material on garbage collection relies on finalization.",
+          "Description": "In Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 1.0.2.7 (1.0.X series), 2.0.2 (2.0.X series) and 2.1.3 (2.1.X series), sensitive key material held by the AES and DESede engines, the SP 800-90A DRBGs, SymmetricSecretKey and the PBKD and scrypt parameter classes was zeroised on garbage collection by overriding Object.finalize. Finalization runs at an unspecified time and in an unspecified order and is serviced by a single finalizer thread, so where objects carrying a finalizer are allocated faster than that thread retires them the pending-finalization queue grows without bound: disposal falls arbitrarily far behind, which can contribute to an OutOfMemoryError under load, and the key material those objects hold stays resident in the heap for as long as they are queued, defeating the purpose of the zeroisation. The behaviour was not a problem on Java 8 or Java 11; it is later JVMs, on which finalization has been deprecated and progressively de-emphasised, where it becomes one. Disposal of these classes now runs from a java.lang.ref.Cleaner registered in the multi-release jdk1.9 overlay, so on Java 9 and later it no longer depends on the finalizer being scheduled. Bouncy Castle for Java (bcprov) and Bouncy Castle for Java LTS are not affected, as neither implements the finalizer-based zeroisation scheme.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-772"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/U:Amber",
+              "V40Score": 8.7
+            }
+          },
+          "References": [
+            "https://github.com/bcgit/bc-java",
+            "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902026%E2%80%9013505",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-13505"
+          ],
+          "PublishedDate": "2026-08-08T02:17:16.52Z",
+          "LastModifiedDate": "2026-09-03T16:44:20.217Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-13506",
+          "VendorIDs": [
+            "GHSA-qp49-qgx5-5m26"
+          ],
+          "PkgName": "org.bouncycastle:bc-fips",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/bc-fips-2.1.1.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.bouncycastle/bc-fips@2.1.1",
+            "UID": "81fc377b757706e6"
+          },
+          "InstalledVersion": "2.1.1",
+          "FixedVersion": "1.0.2.7, 2.0.2, 2.1.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:667304c39aee3ce0d30e3511536098a81b942b86eeaaeb6c925bb006f8a0ab07"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13506",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:164a40d6fd05342cb2623d508fcae35d20d1bd97030cec98a6295567d0423715",
+          "Title": "bouncycastle: Bouncy Castle for Java: Denial of Service via lazy ASN.1 sequence processing",
+          "Description": "In Bouncy Castle for Java before 1.85, Lazy ASN.1 sequence forcing resets nesting-depth guard. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 1.0.2.7 (1.0.X series), 2.0.2 (2.0.X series) and 2.1.3 (2.1.X series).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/U:Amber",
+              "V3Score": 7.5,
+              "V40Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-13506",
+            "https://github.com/bcgit/bc-java",
+            "https://github.com/bcgit/bc-java/commit/77454da9b3dcaaa2991412d1c3c1a6e1a338ff84",
+            "https://github.com/bcgit/bc-java/wiki/CVE-2026-13506",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-13506",
+            "https://www.cve.org/CVERecord?id=CVE-2026-13506"
+          ],
+          "PublishedDate": "2026-08-03T04:16:39.957Z",
+          "LastModifiedDate": "2026-08-28T16:41:22.84Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-8798",
+          "VendorIDs": [
+            "GHSA-v6w3-qrh8-qccc"
+          ],
+          "PkgName": "org.bouncycastle:bc-fips",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/bc-fips-2.1.1.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.bouncycastle/bc-fips@2.1.1",
+            "UID": "81fc377b757706e6"
+          },
+          "InstalledVersion": "2.1.1",
+          "FixedVersion": "2.1.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:667304c39aee3ce0d30e3511536098a81b942b86eeaaeb6c925bb006f8a0ab07"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8798",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:0f13abc28c50741d40688e1e166548fbbf6ce6d9fe2bb918ef7048f7fd3c5355",
+          "Title": "Bouncy Castle: the native entropy source used on Intel platforms retried the CPU entropy instructions without any bound",
+          "Description": "In Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 2.1.3, the native entropy source used on Intel platforms retried the CPU entropy instructions without any bound. RDSEED and RDRAND report failure through their carry flag, and the JNI seeding routine spun re-issuing the instruction for as long as that flag stayed clear, so a persistent failure of the on-chip entropy source - whether from a hardware fault, from the underlying DRBG being exhausted by contention across many cores, or from a hypervisor that does not provide the instruction - left the calling thread looping indefinitely inside the JNI call, where it could be neither interrupted nor timed out. Any operation drawing from the native entropy source could therefore hang, denying service to the application. The retry loops are now bounded (200 attempts for RDSEED and 20 for RDRAND, twice the baselines given in Intel's Digital Random Number Generator software implementation guide), pausing between attempts and, on exhaustion, clearing any partially written buffer and throwing rather than continuing to spin. The clear is performed by an un-elidable memzero, which uses a volatile pointer and an assembly memory barrier so that a compiler cannot optimise the erase away as a dead store. Bouncy Castle for Java (bcprov) is not affected, as it has no native entropy source; the 1.0.X and 2.0.X FIPS series are not affected.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/U:Amber",
+              "V40Score": 8.7
+            }
+          },
+          "References": [
+            "https://github.com/bcgit/bc-java",
+            "https://github.com/bcgit/bc-java/wiki/CVE%E2%80%902026%E2%80%908798",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-8798"
+          ],
+          "PublishedDate": "2026-08-08T01:16:31.393Z",
+          "LastModifiedDate": "2026-09-03T16:44:20.217Z"
         },
         {
           "VulnerabilityID": "CVE-2025-12194",
