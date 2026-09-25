@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0d24e-a23e-7007-a5d8-191960cfb6ad",
-  "CreatedAt": "2026-09-24T07:26:03.838003605Z",
+  "ReportID": "01a0d771-128d-75f1-bddf-6b735c12dffa",
+  "CreatedAt": "2026-09-25T07:21:46.893392285Z",
   "ArtifactID": "sha256:c7be7400fa84feb44985be2825fee9239c226e54cb9521604b29183f979ae32e",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -17621,6 +17621,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-56131",
             "https://github.com/libexpat/libexpat/pull/1267",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56131",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-56131"
           ],
           "PublishedDate": "2026-06-19T06:17:10.107Z",
@@ -17838,6 +17839,7 @@
           "References": [
             "https://github.com/libexpat/libexpat/pull/1259",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56409",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-56409"
           ],
           "PublishedDate": "2026-06-21T16:16:28.23Z",
@@ -17892,6 +17894,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-56410",
             "https://github.com/libexpat/libexpat/pull/1252",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56410",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-56410"
           ],
           "PublishedDate": "2026-06-21T16:16:28.36Z",
@@ -17946,6 +17949,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-56411",
             "https://github.com/libexpat/libexpat/pull/1263",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-56411",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-56411"
           ],
           "PublishedDate": "2026-06-21T17:16:44.523Z",
@@ -18055,6 +18059,7 @@
             "https://access.redhat.com/security/cve/CVE-2026-66046",
             "https://github.com/libexpat/libexpat/pull/1321",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-66046",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-66046",
             "https://www.vulncheck.com/advisories/expat-denial-of-service-via-storeatts-quadratic-complexity"
           ],
@@ -18111,6 +18116,7 @@
             "https://github.com/libexpat/libexpat/pull/1322",
             "https://github.com/libexpat/libexpat/pull/1329",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-76957",
+            "https://ubuntu.com/security/notices/USN-8813-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-76957"
           ],
           "PublishedDate": "2026-08-20T05:16:29.747Z",
