@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0d771-128d-75f1-bddf-6b735c12dffa",
-  "CreatedAt": "2026-09-25T07:21:46.893392285Z",
+  "ReportID": "01a0dc95-22c1-7e99-8940-cdec73110eee",
+  "CreatedAt": "2026-09-26T07:19:16.417959384Z",
   "ArtifactID": "sha256:c7be7400fa84feb44985be2825fee9239c226e54cb9521604b29183f979ae32e",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -17118,6 +17118,7 @@
             "https://linux.oracle.com/errata/ELSA-2026-69126.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8927",
             "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-8927"
           ],
           "PublishedDate": "2026-07-03T07:16:25.123Z",
@@ -17353,6 +17354,7 @@
             "https://hackerone.com/reports/3749204",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-9080",
             "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-9080"
           ],
           "PublishedDate": "2026-07-03T07:16:25.713Z",
@@ -18851,6 +18853,7 @@
             "https://linux.oracle.com/errata/ELSA-2026-69126.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8927",
             "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-8927"
           ],
           "PublishedDate": "2026-07-03T07:16:25.123Z",
@@ -19086,6 +19089,7 @@
             "https://hackerone.com/reports/3749204",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-9080",
             "https://ubuntu.com/security/notices/USN-8487-1",
+            "https://ubuntu.com/security/notices/USN-8820-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-9080"
           ],
           "PublishedDate": "2026-07-03T07:16:25.713Z",
