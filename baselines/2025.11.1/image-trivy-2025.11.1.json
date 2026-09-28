@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0dc92-a6a7-7d65-9080-9fab822d2adb",
-  "CreatedAt": "2026-09-26T07:16:33.575880519Z",
+  "ReportID": "01a0e720-16cb-7da3-9e92-be18a3873e36",
+  "CreatedAt": "2026-09-28T08:27:15.019895401Z",
   "ArtifactID": "sha256:11f0b36169a55ff93ca166c5a0054c202094e23928625d0bdf3e5c053475de5a",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16421,7 +16421,6 @@
             "amazon": 2,
             "azure": 2,
             "julia": 4,
-            "photon": 4,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18156,7 +18155,6 @@
             "amazon": 2,
             "azure": 2,
             "julia": 4,
-            "photon": 4,
             "redhat": 2,
             "ubuntu": 1
           },
