@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0ec37-ed53-7511-a11c-4270b2613aab",
-  "CreatedAt": "2026-09-29T08:11:23.347333648Z",
+  "ReportID": "01a0f161-a75c-7033-aa84-14c52e999dd0",
+  "CreatedAt": "2026-09-30T08:15:04.028015849Z",
   "ArtifactID": "sha256:31b2d535fa023d80f2538e52a2c73008fb33c7da6769e44595ccd13561e6c279",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16388,6 +16388,1302 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-80230",
+          "PkgID": "curl-minimal@8.21.0-5.amzn2023.0.1.x86_64",
+          "PkgName": "curl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/curl-minimal@8.21.0-5.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "fe6695434c3b5f40"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.1",
+          "FixedVersion": "8.21.0-5.amzn2023.0.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:ce465b329a415cc3dfdc404acee468def4648eab86abb9f4d06dd4b170712d5f",
+          "Title": "curl: curl: Public key pinning bypass allows unauthenticated connections",
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-80230",
+            "https://curl.se/docs/CVE-2026-80230.html",
+            "https://curl.se/docs/CVE-2026-80230.json",
+            "https://github.com/curl/curl/commit/5267ed859d545534d0c21",
+            "https://hackerone.com/reports/3969300",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-80230",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-80230"
+          ],
+          "PublishedDate": "2026-09-06T18:17:22.327Z",
+          "LastModifiedDate": "2026-09-15T07:16:30.337Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-80230",
+          "PkgID": "libcurl-minimal@8.21.0-5.amzn2023.0.1.x86_64",
+          "PkgName": "libcurl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcurl-minimal@8.21.0-5.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "4894a6626dfc4837"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.1",
+          "FixedVersion": "8.21.0-5.amzn2023.0.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80230",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:14bd03a39c0d1f6da551c91adaec598fa2bcbe2c18d899d8e5a31bb4755d2059",
+          "Title": "curl: curl: Public key pinning bypass allows unauthenticated connections",
+          "Description": "When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable\nstandard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and\n`CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on\nconnections established without a presented server certificate. Bypassing the\npinning check under these disabled-verification conditions allows\nunauthenticated connections to succeed when they should be rejected.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "photon": 3,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-80230",
+            "https://curl.se/docs/CVE-2026-80230.html",
+            "https://curl.se/docs/CVE-2026-80230.json",
+            "https://github.com/curl/curl/commit/5267ed859d545534d0c21",
+            "https://hackerone.com/reports/3969300",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-80230",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-80230"
+          ],
+          "PublishedDate": "2026-09-06T18:17:22.327Z",
+          "LastModifiedDate": "2026-09-15T07:16:30.337Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-74860",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-74860",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:90e4636d6a7272ab05fefa8e9ee7aa82fc66d778772454bfa7397ec4f5f2f54e",
+          "Title": "libxml2: double-free/UAF in libxml2 Python bindings",
+          "Description": "A flaw was found in libxml2 with Python bindings enabled. A remote attacker could exploit this vulnerability by providing a specially crafted XML document containing a Document Type Definition (DTD) with enumerated attribute values. This triggers a double-free error in the SAX attributeDecl callback handler, where a string is freed twice. This flaw can lead to a denial of service (DoS) due to a reproducible crash in Python applications using the libxml2 SAX bindings.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-763"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:64463",
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
+            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/errata/RHSA-2026:72470",
+            "https://access.redhat.com/errata/RHSA-2026:72475",
+            "https://access.redhat.com/errata/RHSA-2026:72476",
+            "https://access.redhat.com/security/cve/CVE-2026-74860",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://linux.oracle.com/cve/CVE-2026-74860.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71641.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-74860",
+            "https://ubuntu.com/security/notices/USN-8787-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-74860"
+          ],
+          "PublishedDate": "2026-09-08T12:16:58.083Z",
+          "LastModifiedDate": "2026-09-28T15:17:23.507Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86137",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86137",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:cc7c21582b5718e357a22dea7b625655970312add93c3479c5d104a0a3af30e9",
+          "Title": "libxml2: libxml2: Denial of Service via out-of-bounds read in xmlFAParsePosCharGroup",
+          "Description": "In libxml2 before 2.15.4, xmlFAParsePosCharGroup has an out-of-bounds read, aka an out-of-bounds read in the NXT macro in xmlregexp.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 1,
+            "nvd": 2,
+            "photon": 2,
+            "redhat": 1
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+              "V3Score": 6.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 2.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-86137",
+            "https://github.com/GNOME/libxml2/commit/76fe08d97de88bfaef2f7d5cd27f11954cc5bee2",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1099",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86137",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86137"
+          ],
+          "PublishedDate": "2026-09-05T05:17:11.49Z",
+          "LastModifiedDate": "2026-09-15T19:46:11.827Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86138",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86138",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:a8c24c6ff7a26cfd3d8f85fe012d1ef6acf4929e074a9d6b22b18cbf196fdf71",
+          "Title": "libxml2: libxml2: Arbitrary code execution via heap-based buffer overflow",
+          "Description": "In libxml2 before 2.15.4, xmlDictAddQString in dict.c has an integer overflow and resultant heap-based buffer overflow.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L",
+              "V3Score": 6.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/security/cve/CVE-2026-86138",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://github.com/GNOME/libxml2/commit/a4cba4b5b5a8c42e155ed42d2d2a44955465a2e4",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://linux.oracle.com/cve/CVE-2026-86138.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71641.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86138",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86138"
+          ],
+          "PublishedDate": "2026-09-05T05:17:12.6Z",
+          "LastModifiedDate": "2026-09-15T19:40:47.56Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86140",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86140",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:cefc974aa66265fcbf319661b15f04d0554a199b11fdf886f4d04df7463be6e9",
+          "Title": "libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements",
+          "Description": "In libxml2 before 2.15.4, xmlSnprintfElements in valid.c has a strcat stack-based buffer overflow.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/security/cve/CVE-2026-86140",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://github.com/GNOME/libxml2/commit/d1686f91dbda141a752200419d35639fd6b38340",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://linux.oracle.com/cve/CVE-2026-86140.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71641.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86140",
+            "https://ubuntu.com/security/notices/USN-8787-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86140"
+          ],
+          "PublishedDate": "2026-09-05T05:17:12.877Z",
+          "LastModifiedDate": "2026-09-15T19:39:17.01Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86142",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86142",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:ea6ec77b652152e0835f3831bcb3aec0e5dbb6f281ab5c761310d9e3d31a2bdf",
+          "Title": "libxml2: libxml2: Heap-based buffer overflow in xmlXPtrEval due to xpointer length saturation",
+          "Description": "In libxml2 before 2.15.4, there is a heap-based buffer overflow in xmlXPtrEvalXPtrPart because of xmlXPtrEval xpointer length saturation.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L",
+              "V3Score": 6.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
+            "https://access.redhat.com/security/cve/CVE-2026-86142",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/10/ALSA-2026-71586.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://github.com/GNOME/libxml2/commit/6b3a736c0edc74ceec3d82f5252499d7911b3a58",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1113",
+            "https://linux.oracle.com/cve/CVE-2026-86142.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71586.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86142",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86142"
+          ],
+          "PublishedDate": "2026-09-05T05:17:13.133Z",
+          "LastModifiedDate": "2026-09-15T19:35:48.663Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86143",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86143",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:83c53ea9d00fbb3fff6a535b85fe21fc14bbd810da93a582cd3f71ac4c2d94eb",
+          "Title": "libxml2: libxml2: Data integrity issues due to integer overflow in write callbacks",
+          "Description": "In xmlIO in libxml2 before 2.15.4, an inconsistency in xmlOutputWriteCallback and xmlBufUse causes negative lengths to reach write callbacks, aka a lack of a check for integer overflow before calling writecallback. This has security relevance for many types of uses of that length value within a callback.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-192"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L",
+              "V3Score": 7.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L",
+              "V3Score": 6.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/security/cve/CVE-2026-86143",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://github.com/GNOME/libxml2/commit/90f293ba74d28b1d570920382e707586f68ebf35",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1111",
+            "https://linux.oracle.com/cve/CVE-2026-86143.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71641.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86143",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86143"
+          ],
+          "PublishedDate": "2026-09-05T05:17:13.27Z",
+          "LastModifiedDate": "2026-09-15T19:31:15.857Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86144",
+          "PkgID": "libxml2@2.10.4-1.amzn2023.0.20.x86_64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libxml2@2.10.4-1.amzn2023.0.20?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "76eacee52281e69c"
+          },
+          "InstalledVersion": "2.10.4-1.amzn2023.0.20",
+          "FixedVersion": "2.10.4-1.amzn2023.0.21",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86144",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1105c9c5386ca0b21092d81b54b32a8bb9324da0de7b0af15d1a65c34f806dec",
+          "Title": "libxml2: libxml2: Information disclosure, SSRF, or denial of service due to improper parseFlags propagation.",
+          "Description": "In xinclude in libxml2 before 2.15.4, xmlXIncludeProcess and xmlXIncludeProcessTree do not propagate parseFlags. This has security relevance for, for example, the XML_PARSE_NONET flag, if (without it) a custom resource loader accesses the internet and triggers XML external entity injection, SSRF, or a denial of service (e.g., for an attacker-controlled internet resource that is intentionally slow).",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-669"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "azure": 2,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 2,
+            "rocky": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:71585",
+            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/security/cve/CVE-2026-86144",
+            "https://bugzilla.redhat.com/2528986",
+            "https://bugzilla.redhat.com/2528987",
+            "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528992",
+            "https://bugzilla.redhat.com/2529697",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528987",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528989",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528990",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528992",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-74860",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86138",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86140",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
+            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
+            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://github.com/GNOME/libxml2/commit/b63cd517afecb76582dd9488c55e54ceaf50de61",
+            "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
+            "https://linux.oracle.com/cve/CVE-2026-86144.html",
+            "https://linux.oracle.com/errata/ELSA-2026-71641.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86144",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86144"
+          ],
+          "PublishedDate": "2026-09-05T05:17:13.407Z",
+          "LastModifiedDate": "2026-09-15T19:20:15.06Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89161",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.3.x86_64",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2@10.40-1.amzn2023.0.3?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "3239117b575010ad"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.3",
+          "FixedVersion": "10.40-1.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89161",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1f9227e9fe1cde29ee86a9dfc98e28ee70ad470c6c0cdce5cb5b09985b416614",
+          "Title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match",
+          "Description": "In PCRE2 before 10.48, pcre2_jit_match mishandles a previously copied subject being passed in as a context. An incorrect free operation can occur.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-590"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "nvd": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-89161",
+            "https://github.com/PCRE2Project/pcre2/commit/1dcd0cf42a6a7cb62cc9a7c024196733abcfda95%20%28pcre2-10.48-RC1%29",
+            "https://github.com/PCRE2Project/pcre2/pull/937",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89161"
+          ],
+          "PublishedDate": "2026-09-11T04:18:04.47Z",
+          "LastModifiedDate": "2026-09-16T19:10:47.78Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89161",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.3.noarch",
+          "PkgName": "pcre2-syntax",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2-syntax@10.40-1.amzn2023.0.3?arch=noarch\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "55c584d3b2b76e0"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.3",
+          "FixedVersion": "10.40-1.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89161",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:190ad818f79dd9ff77973f6c0a9c718213c68234e8ca1605b0e37622f6308efb",
+          "Title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match",
+          "Description": "In PCRE2 before 10.48, pcre2_jit_match mishandles a previously copied subject being passed in as a context. An incorrect free operation can occur.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-590"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "nvd": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-89161",
+            "https://github.com/PCRE2Project/pcre2/commit/1dcd0cf42a6a7cb62cc9a7c024196733abcfda95%20%28pcre2-10.48-RC1%29",
+            "https://github.com/PCRE2Project/pcre2/pull/937",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89161",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89161"
+          ],
+          "PublishedDate": "2026-09-11T04:18:04.47Z",
+          "LastModifiedDate": "2026-09-16T19:10:47.78Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78367",
+          "PkgID": "python3-rpm@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "python3-rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-rpm@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "37036fce73197aba"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78367",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:0919633e112d19fb89f76b56ec75d8c1aabae9e8e06b99c36d839ca5c42e287d",
+          "Title": "rpm: rpmbuild getTarSpec() crafted tar member name → macro injection",
+          "Description": "A vulnerability was found in RPM's rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...} macro expression. A specially crafted .spec member name can therefore inject RPM macros, including Lua expressions, resulting in arbitrary code execution with the privileges of the user running rpmbuild. This can be exploited when a victim or automated build system processes an attacker-controlled source tarball using rpmbuild tarball mode (such as -ts, -ta, or -tb).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-94"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2521857",
+            "https://github.com/rpm-software-management/rpm/issues/4314",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78367",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78367"
+          ],
+          "PublishedDate": "2026-08-24T14:17:04.767Z",
+          "LastModifiedDate": "2026-09-04T12:17:19.023Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84233",
+          "PkgID": "python3-rpm@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "python3-rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-rpm@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "37036fce73197aba"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84233",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:12cbe7c83a421bec1b971f1298ad70ed2ead7ac412c3555f21a9c22092612948",
+          "Title": "rpm: Command Execution via Macro Expansion in `rpmuncompress -x` for Crafted `.gem` Filenames",
+          "Description": "A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction. This allows the attacker to execute arbitrary commands with the privileges of the invoking account, leading to a compromise of confidentiality, integrity, and availability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84233",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478409",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84233",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84233"
+          ],
+          "PublishedDate": "2026-09-01T15:17:43.853Z",
+          "LastModifiedDate": "2026-09-04T02:17:19.897Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78367",
+          "PkgID": "rpm@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "15e0902a095df28f"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78367",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:172c3702ea1f8aafbd92cc44dc964d79ef705ce2271bc8dc68e2f826b966f5aa",
+          "Title": "rpm: rpmbuild getTarSpec() crafted tar member name → macro injection",
+          "Description": "A vulnerability was found in RPM's rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...} macro expression. A specially crafted .spec member name can therefore inject RPM macros, including Lua expressions, resulting in arbitrary code execution with the privileges of the user running rpmbuild. This can be exploited when a victim or automated build system processes an attacker-controlled source tarball using rpmbuild tarball mode (such as -ts, -ta, or -tb).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-94"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2521857",
+            "https://github.com/rpm-software-management/rpm/issues/4314",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78367",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78367"
+          ],
+          "PublishedDate": "2026-08-24T14:17:04.767Z",
+          "LastModifiedDate": "2026-09-04T12:17:19.023Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84233",
+          "PkgID": "rpm@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "15e0902a095df28f"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84233",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:616775e08aa06b7693227f2be34435c66a47f6360e43440e9ad64b429362302d",
+          "Title": "rpm: Command Execution via Macro Expansion in `rpmuncompress -x` for Crafted `.gem` Filenames",
+          "Description": "A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction. This allows the attacker to execute arbitrary commands with the privileges of the invoking account, leading to a compromise of confidentiality, integrity, and availability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84233",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478409",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84233",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84233"
+          ],
+          "PublishedDate": "2026-09-01T15:17:43.853Z",
+          "LastModifiedDate": "2026-09-04T02:17:19.897Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78367",
+          "PkgID": "rpm-build-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-build-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-build-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "1fef7b03689e0057"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78367",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1cd7e4aa705542aa2efa4ccd58915359f1f4d39ae948eef99a27f06948df5a5a",
+          "Title": "rpm: rpmbuild getTarSpec() crafted tar member name → macro injection",
+          "Description": "A vulnerability was found in RPM's rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...} macro expression. A specially crafted .spec member name can therefore inject RPM macros, including Lua expressions, resulting in arbitrary code execution with the privileges of the user running rpmbuild. This can be exploited when a victim or automated build system processes an attacker-controlled source tarball using rpmbuild tarball mode (such as -ts, -ta, or -tb).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-94"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2521857",
+            "https://github.com/rpm-software-management/rpm/issues/4314",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78367",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78367"
+          ],
+          "PublishedDate": "2026-08-24T14:17:04.767Z",
+          "LastModifiedDate": "2026-09-04T12:17:19.023Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84233",
+          "PkgID": "rpm-build-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-build-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-build-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "1fef7b03689e0057"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84233",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:2918dabe77ac76947f807b950f77c84838984b95b7984873c31f7cb8512a36fe",
+          "Title": "rpm: Command Execution via Macro Expansion in `rpmuncompress -x` for Crafted `.gem` Filenames",
+          "Description": "A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction. This allows the attacker to execute arbitrary commands with the privileges of the invoking account, leading to a compromise of confidentiality, integrity, and availability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84233",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478409",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84233",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84233"
+          ],
+          "PublishedDate": "2026-09-01T15:17:43.853Z",
+          "LastModifiedDate": "2026-09-04T02:17:19.897Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78367",
+          "PkgID": "rpm-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "356a60e60b4994b9"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78367",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:25a255d1d603db401c48c5d00724873ed5d10c97a1506669c8d5a861912ec463",
+          "Title": "rpm: rpmbuild getTarSpec() crafted tar member name → macro injection",
+          "Description": "A vulnerability was found in RPM's rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...} macro expression. A specially crafted .spec member name can therefore inject RPM macros, including Lua expressions, resulting in arbitrary code execution with the privileges of the user running rpmbuild. This can be exploited when a victim or automated build system processes an attacker-controlled source tarball using rpmbuild tarball mode (such as -ts, -ta, or -tb).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-94"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2521857",
+            "https://github.com/rpm-software-management/rpm/issues/4314",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78367",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78367"
+          ],
+          "PublishedDate": "2026-08-24T14:17:04.767Z",
+          "LastModifiedDate": "2026-09-04T12:17:19.023Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84233",
+          "PkgID": "rpm-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "356a60e60b4994b9"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84233",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1b71221dd3f8d255f847161f7108728fa9ed1a0c7c1501d9b27bd198026d13a7",
+          "Title": "rpm: Command Execution via Macro Expansion in `rpmuncompress -x` for Crafted `.gem` Filenames",
+          "Description": "A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction. This allows the attacker to execute arbitrary commands with the privileges of the invoking account, leading to a compromise of confidentiality, integrity, and availability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84233",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478409",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84233",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84233"
+          ],
+          "PublishedDate": "2026-09-01T15:17:43.853Z",
+          "LastModifiedDate": "2026-09-04T02:17:19.897Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78367",
+          "PkgID": "rpm-sign-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-sign-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-sign-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "d4b073e747388d4a"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78367",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e02c2808f3e2c9c527e9de81102a6bc95f8bb2d33c0abbcaaf46743a8ac63fff",
+          "Title": "rpm: rpmbuild getTarSpec() crafted tar member name → macro injection",
+          "Description": "A vulnerability was found in RPM's rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...} macro expression. A specially crafted .spec member name can therefore inject RPM macros, including Lua expressions, resulting in arbitrary code execution with the privileges of the user running rpmbuild. This can be exploited when a victim or automated build system processes an attacker-controlled source tarball using rpmbuild tarball mode (such as -ts, -ta, or -tb).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-94"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-78367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2521857",
+            "https://github.com/rpm-software-management/rpm/issues/4314",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78367",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78367"
+          ],
+          "PublishedDate": "2026-08-24T14:17:04.767Z",
+          "LastModifiedDate": "2026-09-04T12:17:19.023Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84233",
+          "PkgID": "rpm-sign-libs@4.16.1.3-29.amzn2023.0.7.x86_64",
+          "PkgName": "rpm-sign-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-sign-libs@4.16.1.3-29.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "d4b073e747388d4a"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.7",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:0e9824973385c48763dedb8edb474474787f52236925e1a3a67d2a975426cbb2"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84233",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5867379c88174c22ed38ea33aef380ce0ca54984acb1f44599e6e535cf50f94f",
+          "Title": "rpm: Command Execution via Macro Expansion in `rpmuncompress -x` for Crafted `.gem` Filenames",
+          "Description": "A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction. This allows the attacker to execute arbitrary commands with the privileges of the invoking account, leading to a compromise of confidentiality, integrity, and availability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84233",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478409",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84233",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84233"
+          ],
+          "PublishedDate": "2026-09-01T15:17:43.853Z",
+          "LastModifiedDate": "2026-09-04T02:17:19.897Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-16742",
+          "PkgID": "systemd-libs@252.23-12.amzn2023.x86_64",
+          "PkgName": "systemd-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/systemd-libs@252.23-12.amzn2023?arch=x86_64\u0026distro=amazon-2023.12.20260918%20%28Amazon%20Linux%29",
+            "UID": "ff4de75414adcfb8"
+          },
+          "InstalledVersion": "252.23-12.amzn2023",
+          "FixedVersion": "252.23-13.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:7daa1dc4e4af1edb0afad192f533714281238e26aa12d91d0af2b66c4ee341b6"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:71ee9c1a78bd0c9cf5bf37f48ce9c17ad0dd3931ec1c63f9562f1d0f4408a345",
+          "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+          "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-269",
+            "CWE-347"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-16742",
+            "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-16742",
+            "https://ubuntu.com/security/notices/USN-8626-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-16742"
+          ],
+          "PublishedDate": "2026-08-10T14:17:21.277Z",
+          "LastModifiedDate": "2026-09-01T20:54:51.287Z"
+        }
       ]
     },
     {
@@ -21020,6 +22316,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21028,7 +22325,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -21117,13 +22414,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -21726,6 +23022,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21734,7 +23031,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -21823,13 +23120,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22432,6 +23728,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22440,7 +23737,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22506,6 +23803,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22514,7 +23812,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22603,13 +23901,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22702,13 +23999,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -23640,9 +24936,9 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
-            "https://access.redhat.com/errata/RHSA-2025:9114",
             "https://access.redhat.com/errata/RHSA-2025:9318",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
+            "https://bugzilla.redhat.com/1767483",
             "https://bugzilla.redhat.com/2368956",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1767483",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2368956",
@@ -23650,7 +24946,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/9/ALSA-2025-9114.html",
+            "https://errata.almalinux.org/8/ALSA-2025-9318.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -27515,7 +28811,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/9/ALSA-2026-38796.html",
+            "https://errata.almalinux.org/8/ALSA-2026-41948.html",
             "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
