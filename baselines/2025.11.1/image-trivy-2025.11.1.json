@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a0f161-a75c-7033-aa84-14c52e999dd0",
-  "CreatedAt": "2026-09-30T08:15:04.028015849Z",
+  "ReportID": "01a0f698-cc3b-7903-9c8e-77ccb5da90a4",
+  "CreatedAt": "2026-10-01T08:33:24.027591636Z",
   "ArtifactID": "sha256:31b2d535fa023d80f2538e52a2c73008fb33c7da6769e44595ccd13561e6c279",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16551,6 +16551,7 @@
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
             "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
             "https://bugzilla.redhat.com/2528992",
             "https://bugzilla.redhat.com/2529697",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
@@ -16566,8 +16567,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://linux.oracle.com/cve/CVE-2026-74860.html",
             "https://linux.oracle.com/errata/ELSA-2026-71641.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-74860",
@@ -16683,11 +16684,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:71585",
-            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
             "https://access.redhat.com/security/cve/CVE-2026-86138",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
             "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
             "https://bugzilla.redhat.com/2528992",
             "https://bugzilla.redhat.com/2529697",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
@@ -16703,8 +16705,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://github.com/GNOME/libxml2/commit/a4cba4b5b5a8c42e155ed42d2d2a44955465a2e4",
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://linux.oracle.com/cve/CVE-2026-86138.html",
@@ -16766,11 +16768,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:71585",
-            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
             "https://access.redhat.com/security/cve/CVE-2026-86140",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
             "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
             "https://bugzilla.redhat.com/2528992",
             "https://bugzilla.redhat.com/2529697",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
@@ -16786,8 +16789,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://github.com/GNOME/libxml2/commit/d1686f91dbda141a752200419d35639fd6b38340",
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://linux.oracle.com/cve/CVE-2026-86140.html",
@@ -16870,8 +16873,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/10/ALSA-2026-71586.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://github.com/GNOME/libxml2/commit/6b3a736c0edc74ceec3d82f5252499d7911b3a58",
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1113",
@@ -16933,11 +16936,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:71585",
-            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
             "https://access.redhat.com/security/cve/CVE-2026-86143",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
             "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
             "https://bugzilla.redhat.com/2528992",
             "https://bugzilla.redhat.com/2529697",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
@@ -16953,8 +16957,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://github.com/GNOME/libxml2/commit/90f293ba74d28b1d570920382e707586f68ebf35",
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1111",
@@ -17016,11 +17020,12 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:71585",
-            "https://access.redhat.com/errata/RHSA-2026:71641",
+            "https://access.redhat.com/errata/RHSA-2026:71586",
             "https://access.redhat.com/security/cve/CVE-2026-86144",
             "https://bugzilla.redhat.com/2528986",
             "https://bugzilla.redhat.com/2528987",
             "https://bugzilla.redhat.com/2528989",
+            "https://bugzilla.redhat.com/2528990",
             "https://bugzilla.redhat.com/2528992",
             "https://bugzilla.redhat.com/2529697",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2528986",
@@ -17036,8 +17041,8 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86142",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86143",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86144",
-            "https://errata.almalinux.org/8/ALSA-2026-71641.html",
-            "https://errata.rockylinux.org/RLSA-2026:71585",
+            "https://errata.almalinux.org/9/ALSA-2026-71585.html",
+            "https://errata.rockylinux.org/RLSA-2026:71586",
             "https://github.com/GNOME/libxml2/commit/b63cd517afecb76582dd9488c55e54ceaf50de61",
             "https://github.com/GNOME/libxml2/compare/v2.15.3...v2.15.4",
             "https://linux.oracle.com/cve/CVE-2026-86144.html",
@@ -22325,8 +22330,8 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -22414,13 +22419,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22499,6 +22505,117 @@
           ],
           "PublishedDate": "2026-09-11T16:17:39.61Z",
           "LastModifiedDate": "2026-09-18T19:34:36.657Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91776",
+          "VendorIDs": [
+            "GHSA-wv8q-qhhj-9h54"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/Salesforce/arep-salesforce.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.18.0",
+            "UID": "1cbda002cd2dad90"
+          },
+          "InstalledVersion": "2.18.0",
+          "FixedVersion": "2.18.11, 2.21.7, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91776",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:d6853c26050354418b90206b64d71ebd6aa04b95b237d723255939b739ea5c5c",
+          "Title": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind ...",
+          "Description": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind caches the resolved deserializer under the raw, attacker-supplied type ID. When name-based polymorphism is configured with a fallback, for example @JsonTypeInfo(use = Id.NAME, defaultImpl = ...), every distinct unrecognized type ID resolves to the same fallback deserializer but is retained as its own key in the _deserializers map. That map has no configurable bound and lives for the lifetime of the type deserializer, so an attacker who can repeatedly supply fresh unknown type IDs causes monotonic memory retention across requests. The reporter observed 10,000 retained entries from 10,000 distinct unknown IDs, against a single entry for a control that repeated one unknown ID the same number of times, isolating attacker-controlled key cardinality from request volume. Exploitation requires an application that enables name-based polymorphism with a defaultImpl or equivalent fallback, accepts attacker-influenced type IDs, and reuses a long-lived ObjectMapper across requests. The fix stops caching fallback resolutions for unrecognized IDs and bounds both the number of cached entries and the length of a cacheable type ID.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
+            "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91776"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.62Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91777",
+          "VendorIDs": [
+            "GHSA-cxp5-3px4-pw24"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/Salesforce/arep-salesforce.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.18.0",
+            "UID": "1cbda002cd2dad90"
+          },
+          "InstalledVersion": "2.18.0",
+          "FixedVersion": "2.21.7, 2.18.11, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91777",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:c93d5b9f315dabaf2ed37f084eb91f326a393e6c3f35737dd306598c3461b3ea",
+          "Title": "Forward-reference completion for @JsonIdentityInfo object IDs in Faste ...",
+          "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/37ad9b81712cbb9fb62c2d2c1813593252a24b67",
+            "https://github.com/FasterXML/jackson-databind/issues/6204",
+            "https://github.com/FasterXML/jackson-databind/pull/6204",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91777"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.783Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
         },
         {
           "VulnerabilityID": "CVE-2026-19032",
@@ -23031,8 +23148,8 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -23120,13 +23237,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23205,6 +23323,117 @@
           ],
           "PublishedDate": "2026-09-11T16:17:39.61Z",
           "LastModifiedDate": "2026-09-18T19:34:36.657Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91776",
+          "VendorIDs": [
+            "GHSA-wv8q-qhhj-9h54"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.18.4",
+            "UID": "5c0387fffbcdf8ad"
+          },
+          "InstalledVersion": "2.18.4",
+          "FixedVersion": "2.18.11, 2.21.7, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91776",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:d6853c26050354418b90206b64d71ebd6aa04b95b237d723255939b739ea5c5c",
+          "Title": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind ...",
+          "Description": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind caches the resolved deserializer under the raw, attacker-supplied type ID. When name-based polymorphism is configured with a fallback, for example @JsonTypeInfo(use = Id.NAME, defaultImpl = ...), every distinct unrecognized type ID resolves to the same fallback deserializer but is retained as its own key in the _deserializers map. That map has no configurable bound and lives for the lifetime of the type deserializer, so an attacker who can repeatedly supply fresh unknown type IDs causes monotonic memory retention across requests. The reporter observed 10,000 retained entries from 10,000 distinct unknown IDs, against a single entry for a control that repeated one unknown ID the same number of times, isolating attacker-controlled key cardinality from request volume. Exploitation requires an application that enables name-based polymorphism with a defaultImpl or equivalent fallback, accepts attacker-influenced type IDs, and reuses a long-lived ObjectMapper across requests. The fix stops caching fallback resolutions for unrecognized IDs and bounds both the number of cached entries and the length of a cacheable type ID.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
+            "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91776"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.62Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91777",
+          "VendorIDs": [
+            "GHSA-cxp5-3px4-pw24"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/java/arep-event-hubs.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.18.4",
+            "UID": "5c0387fffbcdf8ad"
+          },
+          "InstalledVersion": "2.18.4",
+          "FixedVersion": "2.21.7, 2.18.11, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91777",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:c93d5b9f315dabaf2ed37f084eb91f326a393e6c3f35737dd306598c3461b3ea",
+          "Title": "Forward-reference completion for @JsonIdentityInfo object IDs in Faste ...",
+          "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/37ad9b81712cbb9fb62c2d2c1813593252a24b67",
+            "https://github.com/FasterXML/jackson-databind/issues/6204",
+            "https://github.com/FasterXML/jackson-databind/pull/6204",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91777"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.783Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
         },
         {
           "VulnerabilityID": "CVE-2026-19032",
@@ -23737,8 +23966,8 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -23812,8 +24041,8 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/issues/5988",
@@ -23901,13 +24130,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23999,13 +24229,14 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
+            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -24147,6 +24378,228 @@
           ],
           "PublishedDate": "2026-09-11T16:17:39.61Z",
           "LastModifiedDate": "2026-09-18T19:34:36.657Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91776",
+          "VendorIDs": [
+            "GHSA-wv8q-qhhj-9h54"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/SalesforceIL/salesforce-source-endpoint.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2",
+            "UID": "9e85c77e84ed769e"
+          },
+          "InstalledVersion": "2.19.2",
+          "FixedVersion": "2.18.11, 2.21.7, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91776",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:d6853c26050354418b90206b64d71ebd6aa04b95b237d723255939b739ea5c5c",
+          "Title": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind ...",
+          "Description": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind caches the resolved deserializer under the raw, attacker-supplied type ID. When name-based polymorphism is configured with a fallback, for example @JsonTypeInfo(use = Id.NAME, defaultImpl = ...), every distinct unrecognized type ID resolves to the same fallback deserializer but is retained as its own key in the _deserializers map. That map has no configurable bound and lives for the lifetime of the type deserializer, so an attacker who can repeatedly supply fresh unknown type IDs causes monotonic memory retention across requests. The reporter observed 10,000 retained entries from 10,000 distinct unknown IDs, against a single entry for a control that repeated one unknown ID the same number of times, isolating attacker-controlled key cardinality from request volume. Exploitation requires an application that enables name-based polymorphism with a defaultImpl or equivalent fallback, accepts attacker-influenced type IDs, and reuses a long-lived ObjectMapper across requests. The fix stops caching fallback resolutions for unrecognized IDs and bounds both the number of cached entries and the length of a cacheable type ID.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
+            "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91776"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.62Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91776",
+          "VendorIDs": [
+            "GHSA-wv8q-qhhj-9h54"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/jackson-databind-2.19.2.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2",
+            "UID": "47cbc998f693767c"
+          },
+          "InstalledVersion": "2.19.2",
+          "FixedVersion": "2.18.11, 2.21.7, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91776",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:d6853c26050354418b90206b64d71ebd6aa04b95b237d723255939b739ea5c5c",
+          "Title": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind ...",
+          "Description": "TypeDeserializerBase._findDeserializer() in FasterXML jackson-databind caches the resolved deserializer under the raw, attacker-supplied type ID. When name-based polymorphism is configured with a fallback, for example @JsonTypeInfo(use = Id.NAME, defaultImpl = ...), every distinct unrecognized type ID resolves to the same fallback deserializer but is retained as its own key in the _deserializers map. That map has no configurable bound and lives for the lifetime of the type deserializer, so an attacker who can repeatedly supply fresh unknown type IDs causes monotonic memory retention across requests. The reporter observed 10,000 retained entries from 10,000 distinct unknown IDs, against a single entry for a control that repeated one unknown ID the same number of times, isolating attacker-controlled key cardinality from request volume. Exploitation requires an application that enables name-based polymorphism with a defaultImpl or equivalent fallback, accepts attacker-influenced type IDs, and reuses a long-lived ObjectMapper across requests. The fix stops caching fallback resolutions for unrecognized IDs and bounds both the number of cached entries and the length of a cacheable type ID.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
+            "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91776"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.62Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91777",
+          "VendorIDs": [
+            "GHSA-cxp5-3px4-pw24"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/SalesforceIL/salesforce-source-endpoint.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2",
+            "UID": "9e85c77e84ed769e"
+          },
+          "InstalledVersion": "2.19.2",
+          "FixedVersion": "2.21.7, 2.18.11, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91777",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:c93d5b9f315dabaf2ed37f084eb91f326a393e6c3f35737dd306598c3461b3ea",
+          "Title": "Forward-reference completion for @JsonIdentityInfo object IDs in Faste ...",
+          "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/37ad9b81712cbb9fb62c2d2c1813593252a24b67",
+            "https://github.com/FasterXML/jackson-databind/issues/6204",
+            "https://github.com/FasterXML/jackson-databind/pull/6204",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91777"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.783Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-91777",
+          "VendorIDs": [
+            "GHSA-cxp5-3px4-pw24"
+          ],
+          "PkgName": "com.fasterxml.jackson.core:jackson-databind",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/jackson-databind-2.19.2.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2",
+            "UID": "47cbc998f693767c"
+          },
+          "InstalledVersion": "2.19.2",
+          "FixedVersion": "2.21.7, 2.18.11, 2.22.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:086ad8cd49eedea089b6cf4bff01590e2d3f54329ddee09a6da1281d6a8e4701"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-91777",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:c93d5b9f315dabaf2ed37f084eb91f326a393e6c3f35737dd306598c3461b3ea",
+          "Title": "Forward-reference completion for @JsonIdentityInfo object IDs in Faste ...",
+          "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/FasterXML/jackson-databind",
+            "https://github.com/FasterXML/jackson-databind/commit/37ad9b81712cbb9fb62c2d2c1813593252a24b67",
+            "https://github.com/FasterXML/jackson-databind/issues/6204",
+            "https://github.com/FasterXML/jackson-databind/pull/6204",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.1.7",
+            "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
+            "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-91777"
+          ],
+          "PublishedDate": "2026-09-23T03:17:04.783Z",
+          "LastModifiedDate": "2026-09-24T20:43:32.537Z"
         },
         {
           "VulnerabilityID": "CVE-2026-19032",
@@ -24936,9 +25389,9 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2025/05/28/6",
+            "https://access.redhat.com/errata/RHSA-2025:9114",
             "https://access.redhat.com/errata/RHSA-2025:9318",
             "https://access.redhat.com/security/cve/CVE-2025-48734",
-            "https://bugzilla.redhat.com/1767483",
             "https://bugzilla.redhat.com/2368956",
             "https://bugzilla.redhat.com/show_bug.cgi?id=1767483",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2368956",
@@ -24946,7 +25399,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48734",
             "https://dlcdn.apache.org/commons/beanutils/RELEASE-NOTES.txt",
-            "https://errata.almalinux.org/8/ALSA-2025-9318.html",
+            "https://errata.almalinux.org/9/ALSA-2025-9114.html",
             "https://errata.rockylinux.org/RLSA-2025:9318",
             "https://github.com/advisories/GHSA-wxr5-93ph-8wr9",
             "https://github.com/apache/commons-beanutils",
@@ -28811,8 +29264,8 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2451409",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
-            "https://errata.almalinux.org/8/ALSA-2026-41948.html",
-            "https://errata.rockylinux.org/RLSA-2026:38796",
+            "https://errata.almalinux.org/9/ALSA-2026-38796.html",
+            "https://errata.rockylinux.org/RLSA-2026:38514",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/codehaus-plexus/plexus-utils",
             "https://github.com/codehaus-plexus/plexus-utils/commit/6d780b3378829318ba5c2d29547e0012d5b29642",
