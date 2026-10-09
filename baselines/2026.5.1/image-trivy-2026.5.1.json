@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a11aa9-8aa3-7870-b78e-7402571de134",
-  "CreatedAt": "2026-10-08T08:38:01.123554079Z",
+  "ReportID": "01a11fd4-1345-7370-89e1-4770912a8fd9",
+  "CreatedAt": "2026-10-09T08:42:34.693227336Z",
   "ArtifactID": "sha256:89205b113a0a13c2eef0387f46bf9ddc0735062fb1dfd34f773f963702188c83",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -20376,6 +20376,235 @@
       ],
       "Vulnerabilities": [
         {
+          "VulnerabilityID": "CVE-2026-106451",
+          "VendorIDs": [
+            "GHSA-mcr4-qmvw-px4g"
+          ],
+          "PkgName": "at.yawk.lz4:lz4-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/lz4-java-1.10.3.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/at.yawk.lz4/lz4-java@1.10.3",
+            "UID": "59c7771800067d39"
+          },
+          "InstalledVersion": "1.10.3",
+          "FixedVersion": "1.11.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:3e73410b348e505f41737769cf62e45c9c99126fe9cafada22f97146f4526feb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-106451",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:e9ce4e398d1f095114a8c25b75166afc22fcd5a44f0aab067db729c207fcf57a",
+          "Title": "org.lz4/lz4-java: lz4-java: Arbitrary code execution via insecure temporary file handling",
+          "Description": "yawkat LZ4 Java provides LZ4 compression for Java. From 1.7.0 until 1.11.4, net.jpountz.util.Native.load() uses File.createTempFile to create an exclusive temporary .lck file but derives the native-library path by removing the suffix, then FileOutputStream opens that predictable path without exclusive creation, allowing another local user with access to the same shared temporary directory to create or replace the library file before System.load() uses it. Successful exploitation depends on shared-directory permissions, host protections, and winning the race, and can execute native code as the victim; hardened systems may instead cause library loading to fail and fall back to Java implementations. Configurations using a system library, a private java.io.tmpdir, or Java-only implementations are not affected. This issue is fixed in version 1.11.4.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367",
+            "CWE-377"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "V40Score": 7.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-106451",
+            "https://github.com/yawkat/lz4-java",
+            "https://github.com/yawkat/lz4-java/commit/7a48b7f6b8099b9dab6541e4ac2ee0979dc55aa3",
+            "https://github.com/yawkat/lz4-java/releases/tag/v1.11.4",
+            "https://github.com/yawkat/lz4-java/security/advisories/GHSA-mcr4-qmvw-px4g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-106451",
+            "https://www.cve.org/CVERecord?id=CVE-2026-106451"
+          ],
+          "PublishedDate": "2026-10-06T20:17:27.173Z",
+          "LastModifiedDate": "2026-10-07T19:17:32.463Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-106450",
+          "VendorIDs": [
+            "GHSA-gm45-99xc-r7wv"
+          ],
+          "PkgName": "at.yawk.lz4:lz4-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/lz4-java-1.10.3.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/at.yawk.lz4/lz4-java@1.10.3",
+            "UID": "59c7771800067d39"
+          },
+          "InstalledVersion": "1.10.3",
+          "FixedVersion": "1.11.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:3e73410b348e505f41737769cf62e45c9c99126fe9cafada22f97146f4526feb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-106450",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:79643d46c52c162a2efc960e757b6a541fc55f95cc883faef35bdc80ce8d9050",
+          "Title": "org.lz4/lz4-java: lz4-java: Denial of Service via excessive memory allocation from crafted compressed streams",
+          "Description": "yawkat LZ4 Java provides LZ4 compression for Java. Prior to 1.11.4, net.jpountz.lz4.LZ4FrameInputStream readHeader() allocates two new 4 MiB block buffers whenever a maximum-block-size frame header is read, and the default concatenated-frame mode allows attacker-controlled streams containing many minimal empty frames to trigger roughly 8 MiB of allocation for every 11 input bytes. The stream produces no decompressed output while consuming CPU and garbage-collection time, so decompressed-size limits do not mitigate the issue; readSingleFrame mode is not affected. This issue is fixed in version 1.11.4.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-106450",
+            "https://github.com/yawkat/lz4-java",
+            "https://github.com/yawkat/lz4-java/commit/2acc0ec1ead226145c62a817c18c8ed49233a283",
+            "https://github.com/yawkat/lz4-java/releases/tag/v1.11.4",
+            "https://github.com/yawkat/lz4-java/security/advisories/GHSA-gm45-99xc-r7wv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-106450",
+            "https://www.cve.org/CVERecord?id=CVE-2026-106450"
+          ],
+          "PublishedDate": "2026-10-06T20:17:27.037Z",
+          "LastModifiedDate": "2026-10-09T02:16:59.843Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-106452",
+          "VendorIDs": [
+            "GHSA-4v53-57pg-c464"
+          ],
+          "PkgName": "at.yawk.lz4:lz4-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/lz4-java-1.10.3.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/at.yawk.lz4/lz4-java@1.10.3",
+            "UID": "59c7771800067d39"
+          },
+          "InstalledVersion": "1.10.3",
+          "FixedVersion": "1.11.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:3e73410b348e505f41737769cf62e45c9c99126fe9cafada22f97146f4526feb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-106452",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:aa0989b2f02eeb7cd0ba80f35861ea0fc0c5d9ce18b9ab64aac019ae6f05e1c3",
+          "Title": "org.lz4/lz4-java: lz4-java: Denial of Service via excessive memory allocation",
+          "Description": "yawkat LZ4 Java provides LZ4 compression for Java. Prior to 1.11.2, net.jpountz.lz4.LZ4BlockInputStream refill() validates that the compressedLen field in a legacy LZ4Block header is nonnegative but allocates a compressed-input buffer of that attacker-controlled size before reading payload data, allowing a header-only stream to request a near-2 GiB allocation and exhaust the JVM heap. Canonical writers emit raw blocks when compression is not smaller than the original block, but vulnerable readers accept non-canonical oversized compressed blocks. This issue is fixed in version 1.11.2.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-789"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-106452",
+            "https://github.com/yawkat/lz4-java",
+            "https://github.com/yawkat/lz4-java/commit/bb83dd16163cdb71231af06b0a5651881148a634",
+            "https://github.com/yawkat/lz4-java/releases/tag/v1.11.2",
+            "https://github.com/yawkat/lz4-java/security/advisories/GHSA-4v53-57pg-c464",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-106452",
+            "https://www.cve.org/CVERecord?id=CVE-2026-106452"
+          ],
+          "PublishedDate": "2026-10-06T20:17:27.317Z",
+          "LastModifiedDate": "2026-10-07T13:58:29.527Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-106453",
+          "VendorIDs": [
+            "GHSA-6cx8-rjf8-pr8g"
+          ],
+          "PkgName": "at.yawk.lz4:lz4-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/lz4-java-1.10.3.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/at.yawk.lz4/lz4-java@1.10.3",
+            "UID": "59c7771800067d39"
+          },
+          "InstalledVersion": "1.10.3",
+          "FixedVersion": "1.11.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:3e73410b348e505f41737769cf62e45c9c99126fe9cafada22f97146f4526feb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-106453",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:7d8456934cc455e158684ce726811a74246caa6ca036d9bbc6b39a8777378955",
+          "Title": "org.lz4/lz4-java: lz4-java: Denial of Service via untrusted decompressed length header",
+          "Description": "yawkat LZ4 Java provides LZ4 compression for Java. Prior to 1.11.2, LZ4DecompressorWithLength uses getDecompressedLength to trust the four-byte decompressed-length header before validating the compressed input, allowing a five-byte attacker-supplied input whose header declares a large output size to request up to approximately 2 GiB and exhaust the JVM heap. Convenience overloads backed by LZ4FastDecompressor or LZ4SafeDecompressor allocate the untrusted size, while overloads that write to a caller-provided destination buffer are not affected because the caller controls the destination size. This issue is fixed in version 1.11.2.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-789"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-106453",
+            "https://github.com/yawkat/lz4-java",
+            "https://github.com/yawkat/lz4-java/commit/6492ce5aca6bd03ff9e08ee18a2beb94c431371a",
+            "https://github.com/yawkat/lz4-java/releases/tag/v1.11.2",
+            "https://github.com/yawkat/lz4-java/security/advisories/GHSA-6cx8-rjf8-pr8g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-106453",
+            "https://www.cve.org/CVERecord?id=CVE-2026-106453"
+          ],
+          "PublishedDate": "2026-10-06T20:17:27.457Z",
+          "LastModifiedDate": "2026-10-07T17:16:48.007Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-59949",
           "VendorIDs": [
             "GHSA-xx22-p4ch-683r"
@@ -20427,6 +20656,63 @@
           ],
           "PublishedDate": "2026-08-18T15:16:56.16Z",
           "LastModifiedDate": "2026-09-18T20:09:01.757Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-106449",
+          "VendorIDs": [
+            "GHSA-343h-94h5-c4wr"
+          ],
+          "PkgName": "at.yawk.lz4:lz4-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/lz4-java-1.10.3.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/at.yawk.lz4/lz4-java@1.10.3",
+            "UID": "59c7771800067d39"
+          },
+          "InstalledVersion": "1.10.3",
+          "FixedVersion": "1.11.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:3e73410b348e505f41737769cf62e45c9c99126fe9cafada22f97146f4526feb"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-106449",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:576594403bd1f520554af01f21cbafbbee4172d31b6531189bd7de9dde60d369",
+          "Title": "org.lz4/lz4-java: lz4-java: Denial of Service via stack exhaustion from empty blocks",
+          "Description": "yawkat LZ4 Java provides LZ4 compression for Java. Prior to 1.11.4, net.jpountz.lz4.LZ4BlockInputStream configured with stopOnEmptyBlock set to false handles each well-formed empty LZ4Block by recursively calling refill(), allowing a long sequence of empty blocks in an attacker-controlled compressed stream to exhaust the decoding thread's stack and throw StackOverflowError. The default stopOnEmptyBlock setting is true and is not affected, and the issue does not cause memory corruption. This issue is fixed in version 1.11.4.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-674"
+          ],
+          "VendorSeverity": {
+            "ghsa": 1,
+            "redhat": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-106449",
+            "https://github.com/yawkat/lz4-java",
+            "https://github.com/yawkat/lz4-java/commit/c8ebf97d504fb34434fda46fc761e8202570e0d8",
+            "https://github.com/yawkat/lz4-java/releases/tag/v1.11.4",
+            "https://github.com/yawkat/lz4-java/security/advisories/GHSA-343h-94h5-c4wr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-106449",
+            "https://www.cve.org/CVERecord?id=CVE-2026-106449"
+          ],
+          "PublishedDate": "2026-10-06T20:17:26.887Z",
+          "LastModifiedDate": "2026-10-07T17:16:47.877Z"
         },
         {
           "VulnerabilityID": "CVE-2026-68494",
@@ -21326,6 +21612,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -21334,7 +21621,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -21424,13 +21711,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -21482,7 +21768,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -21598,7 +21885,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:204e8a0bb3417685dc3a07ed64d7666f6029f58398ab2b0e6397a66387671685",
-          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core:jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
           "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -22159,6 +22446,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
             "https://bugzilla.redhat.com/2492015",
@@ -22167,7 +22455,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/10/ALSA-2026-43400.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
@@ -22257,13 +22545,12 @@
             "https://access.redhat.com/errata/RHSA-2026:66545",
             "https://access.redhat.com/security/cve/CVE-2026-54513",
             "https://bugzilla.redhat.com/2492010",
-            "https://bugzilla.redhat.com/2492015",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492010",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2492015",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
-            "https://errata.almalinux.org/9/ALSA-2026-40895.html",
+            "https://errata.almalinux.org/8/ALSA-2026-43218.html",
             "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
@@ -22315,7 +22602,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22431,7 +22719,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:204e8a0bb3417685dc3a07ed64d7666f6029f58398ab2b0e6397a66387671685",
-          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core:jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
           "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -22871,7 +23159,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22934,7 +23223,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22997,7 +23287,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23237,7 +23528,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:204e8a0bb3417685dc3a07ed64d7666f6029f58398ab2b0e6397a66387671685",
-          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core:jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
           "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -23300,7 +23591,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:204e8a0bb3417685dc3a07ed64d7666f6029f58398ab2b0e6397a66387671685",
-          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core:jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
           "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -23363,7 +23654,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:204e8a0bb3417685dc3a07ed64d7666f6029f58398ab2b0e6397a66387671685",
-          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core:jackson-databind: Jackson-databind: Denial of Service via quadratic forward-reference completion",
           "Description": "Forward-reference completion for @JsonIdentityInfo object IDs in FasterXML jackson-databind performs a linear scan of the pending-reference accumulator for every resolved ID. The affected paths are CollectionDeserializer.CollectionReferringAccumulator.resolveForwardReference() and the equivalent implementation in MapDeserializer. When a document first creates N unresolved object-ID references in an identity-enabled collection or map and then defines those same IDs in reverse order, completion performs on the order of N * (N + 1) / 2 identity comparisons, so a shallow document whose size grows linearly causes quadratic CPU work during deserialization. The reporter instrumented equals() calls on the ID class and measured exactly 2,003,000 comparisons at N = 2,000, against zero comparisons in the pending-reference lookup path for an equally sized control in which every reference was already resolved. The input requires no deep nesting and no syntactically unusual JSON. Exploitation requires an application that deserializes attacker-influenced JSON into an identity-enabled collection or map. The fix replaces the repeated linear lookup with a keyed pending-reference structure.",
           "Severity": "HIGH",
           "CweIDs": [
