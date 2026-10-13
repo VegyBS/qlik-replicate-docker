@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a12f4f-4d01-7b9b-92d4-6d818a923179",
-  "CreatedAt": "2026-10-12T08:51:28.641763209Z",
+  "ReportID": "01a13488-d9b5-7995-99a3-f0882b907f49",
+  "CreatedAt": "2026-10-13T09:12:26.293629667Z",
   "ArtifactID": "sha256:14ff1a08b834bc22eb94071bd029045c022f93f3d43e643f88f2f28d850fd50c",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16388,6 +16388,1916 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-35189",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35189",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:72248e4e1d0194c569c17e4c81434b2cbbb64366f49ef38cc08d18ed1d1d9a82",
+          "Title": "openssl: openssl: Denial of Service via excessive memory allocation in CRL distribution point processing",
+          "Description": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL\ndistribution points causes disproportionate heap growth when OpenSSL caches\nX.509 extensions.\n\nImpact summary: Receiving a crafted certificate from a malicious peer can lead\nto significant memory pressure and possible Denial of Service in clients or\nin servers that solicit client certificates.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: A certificate or a set of certificates that fits under the limit for\nsize of certificates accepted from the peer (~100 KiB) can result in allocation\nof several hundred MiB of resident memory on the receiving side\nduring a normal TLS handshake.  This may be enough to crash the client or\nserver, if multiple concurrent connections lead to similarly large memory\nallocations.\n\nThe fix postpones processing of the CRL distribution points extensions in\ncertificates to the time when the processed value is required for CRL processing.\nThis avoids keeping large memory allocations for a long time when such\ncertificates are received.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35189",
+            "https://github.com/openssl/openssl/commit/2b93c73b2c70ddc4c61c5e4bfaaa6bd71379eb84",
+            "https://github.com/openssl/openssl/commit/3842516cc15e8b2cf55747011045e77547e71d89",
+            "https://github.com/openssl/openssl/commit/8e0efc7549b7ff8246d40e585e3fd604f728473f",
+            "https://github.com/openssl/openssl/commit/c72ae182cac17a82e4246c6ecd4e9c4ec3586ec9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35189",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35189"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.33Z",
+          "LastModifiedDate": "2026-10-08T01:01:54.577Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-35191",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35191",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:10690f00d26b7b6950505978af7fc0b1dc555ad17f184111e21a32915f68fa5f",
+          "Title": "openssl: openssl: Traffic amplification Denial of Service via QUIC packet over-accounting",
+          "Description": "Issue summary: The OpenSSL QUIC server, when configured to not preform address\nvalidation, can be forced to count incoming packets multiple times in its\nunvalidated credit computation, leading to a violation of the RFC 9000\nunvalidated connection amplification limit of 3 times the amount of data\nreceived.\n\nImpact summary: A remote attacker able to spoof packets to a server using the\nOpenSSL QUIC implementation might use the server for an amplification of\na DDoS attack.\n\nCWE: CWE-440: Expected Behavior Violation \n\nDescription: OpenSSL's QUIC stack, when operating as a server, enforces client\naddress validation (RFC 9000, Section 8), to confirm the peer address is not\nused for a traffic amplification attack.  If this feature is disabled on the\nserver, the QUIC stack limits the amount of server data that can be sent to 3\ntimes the amount of data received from the peer address, until such time as the\nTLS handshake is completed.\n\nThe OpenSSL QUIC server, when operating in non-validation mode, adds the\nlength of the whole datagram received to the unvalidated credit limit when\nprocessing each QUIC packet in the datagram. A remote peer may,\nafter establishing a connection with an initial client hello frame, send a\nsubsequent datagram containing multiple QUIC packets, leading the server to\naccount the entire datagram length for each packet in the datagram, resulting\nin the server believing that the peer has sent more data than it actually has,\nthereby violating the 3x amplification limit mandated by the RFC.\n\nFIPS impact: no\nAs the QUIC stack lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-440"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35191",
+            "https://github.com/openssl/openssl/commit/0fe4442d4f8ea3af8a174046dae176e0d4717239",
+            "https://github.com/openssl/openssl/commit/2de4c35fb13fc58f43fd8dc1d261700472ce72e5",
+            "https://github.com/openssl/openssl/commit/e44292e58b090014232ef75bd400393851b24d1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35191",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35191"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.49Z",
+          "LastModifiedDate": "2026-10-08T01:02:06.293Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42772",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42772",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3791dc87fae305f3e29aa42c3ebd25e2c42656b8956c563a953ae14c0bf76cd6",
+          "Title": "openssl: openssl: Denial of Service via inefficient QUIC stream reassembly",
+          "Description": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates\nprogressively as packets are arriving out of order. The worst case has\na quadratic complexity proportional to the number of stream frames kept in\nthe buffer for the received stream data.\n\nImpact summary: A remote QUIC peer that completes the handshake can create\na connection-scoped CPU pressure and potentially a Denial of Service using\ncompliant STREAM frames inside the advertised receive window, with low\nattacker bandwidth.\n\nCWE: CWE-407: Inefficient Algorithmic Complexity\n\nDescription: OpenSSL manages received QUIC stream fragments using a\ndoubly-linked list. While it optimizes for append operations (at the end of\nthe list), it falls back to a head-to-tail linear search for any fragment\nthat does not immediately follow the current `tail`.\n\nBy manipulating the sequence of offsets, an attacker can force the server\nto perform O(n^2) operations, consuming excessive CPU time for the\nQUIC process.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42772",
+            "https://github.com/openssl/openssl/commit/32d0ed8afe1b8c3e7ece725b44663da3d7087a09",
+            "https://github.com/openssl/openssl/commit/ca8402e273af4de5b3f04fa61a0f0c02ce3ae20e",
+            "https://github.com/openssl/openssl/commit/eb2becc0a4baea7f3050a247834d0e5c2ebe1773",
+            "https://github.com/openssl/openssl/commit/f42ae513bbda513b3c121d54834040ee4a0eae1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42772",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42772"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.64Z",
+          "LastModifiedDate": "2026-10-08T01:18:57.547Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54872",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54872",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1c20660f9fcf6d6077f02a8459998a48ca038b66e26517eca09c28510d4e43af",
+          "Title": "openssl: OpenSSL: Private key recovery via timing side-channel in generic elliptic curve operations",
+          "Description": "Issue summary: The generic elliptic-curve scalar multiplication used for\nECDSA and SM2 signature operations with curves that do not have a dedicated\nimplementation leaks information about the secret nonce through timing.\n\nImpact summary: An attacker able to measure signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: The generic elliptic-curve scalar multiplication used for\ncurves that do not have a dedicated constant-time implementation pads the\nsecret scalar with non-constant-time BIGNUM operations, so the time taken\ndepends on the value of the secret scalar derived from the ECDSA and SM2 nonce.\n\nThe leak is very small; observing it requires a large number of\nmeasurements. The effect is largest for curves whose group order lies\non a machine-word boundary, such as brainpoolP384r1.\n\nApplications using ECDSA signing over the Brainpool and other generic prime\ncurves, and SM2 signing on platforms that use the generic implementation,\nare vulnerable to this issue.\n\nThe NIST curves P-256, P-384 and P-521 use dedicated constant-time\nimplementations and are not affected.\n\nFIPS Impact: no\nThe FIPS modules are not affected: the approved NIST curves used in the FIPS\nprovider have dedicated constant-time implementations and do not use the\naffected code path.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54872",
+            "https://github.com/openssl/openssl/commit/1a5bee8dc57430a2be69cd1ffe7fec6a62f4f179",
+            "https://github.com/openssl/openssl/commit/3f7e1363dccec6f7732bb9e9fa471bb6e4aa68cb",
+            "https://github.com/openssl/openssl/commit/7d83bc7764999dfd91b83b4f0815b45390422afd",
+            "https://github.com/openssl/openssl/commit/8166827a78aad164a07aa86dea2b425403ced471",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54872",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54872"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.623Z",
+          "LastModifiedDate": "2026-10-08T01:19:04.663Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54873",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54873",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:74f186c851620d622ae723a8497b67227894c33f4e958a3dd1b1c0785d3ea141",
+          "Title": "openssl: openssl: Denial of Service via excessive QUIC packet buffer retention",
+          "Description": "Issue summary: QUIC process may keep memory for QUIC packet\nbuffer for much longer period than necessary.\n\nImpact summary: Remote peer can exploit this vulnerability\nby sending maliciously crafted packets, making the local\nQUIC stack to keep the memory for packet buffers allocated.\nThe time for which the memory remains allocated is entirely\nunder the control of the potentially malicious remote peer.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: To save copy operation from the packet buffer to the\nstream reassemble buffer the QUIC stack leaves the stream data\non the packet buffer waiting to be copied to a buffer provided\nby the local receiving application. The QUIC stack releases\na reference to the packet buffer only after the data are copied\nto the application buffer. This design is more efficient for\nlegitimate data transfers but enables an attacker to allocate a lot\nmore memory than actually required by the data kept in the receiving\nstream buffer.\n\nTo mitigate the vulnerability, the QUIC stack now calculates\nand monitors memory overhead for every stream. The memory overhead\nfor a single stream frame is calculated as a difference between the\nsize of the whole packet that carries the stream frame and the size\nof the stream frame itself. The memory overhead for a single stream\nframe is added to the total (cumulative) memory overhead QUIC stack\nkeeps for each stream. Once the cumulative memory overhead exceeds\n64kB, the QUIC stack moves the stream frame data from the packet\nbuffer to the stream buffer, starting with the next packet received.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54873",
+            "https://github.com/openssl/openssl/commit/1f643b8bc735487b500a1f68a7fb3a22d5e38e23",
+            "https://github.com/openssl/openssl/commit/279e7ee1392af98785746788168749491c74bd53",
+            "https://github.com/openssl/openssl/commit/3ea6213e050e938ecbbf8c4eff32bec2736780eb",
+            "https://github.com/openssl/openssl/commit/7127fb10888b49711c63128a09e524c0d2d5d0b2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54873",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54873"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.763Z",
+          "LastModifiedDate": "2026-10-08T01:19:18.2Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-72897",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-72897",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:069095096b7fe94baa892242bc8a63f37d72146781db97954832d584202fae7f",
+          "Title": "openssl: openssl: Denial of Service via out-of-bounds write during TLS context switch",
+          "Description": "Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a\nconnection to a different SSL_CTX part way through a handshake may access\nmemory beyond the end of an internal array if the replacement context knows\nabout more provider signature algorithms than the context the connection was\ncreated from. Applications which never call SSL_set_SSL_CTX() are not\naffected.\n\nImpact summary: A remote peer may be able to cause a small out-of-bounds\nread, and in some circumstances a fixed-value out-of-bounds write, on the\nserver heap. This may lead to a Denial of Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: A TLS connection records how many certificate slots it has\nwhen it is created, taken from the SSL_CTX that created it: the built-in\ncertificate types plus one slot for each provider TLS-SIGALG entry that\ncontext was aware of. That count sizes an internal array of per-slot\ncertificate validity flags.\n\nAn application may replace a connection's SSL_CTX part way through the\nhandshake by calling SSL_set_SSL_CTX(), most commonly from a servername\ncallback in order to serve a different virtual host. Doing so did not\nrefresh the recorded count. A provider signature algorithm's slot index is\nits position in the list of whichever context resolves it, so if the\nreplacement context is aware of more of them than the original, an\nalgorithm offered by the peer can resolve to an index beyond the end of the\narray. Processing the peer's signature algorithms then reads one four byte\nword past the end for each such algorithm and, where the word read is zero,\nwrites a fixed value over it. A peer offering many of them can corrupt heap\nmetadata and abort the process.\n\nOnly provider signature algorithms which occupy one of the excess slots,\nand which the server also has configured, have this effect. Codepoints the\nreplacement context does not recognise are discarded without being resolved\nto a slot, and provider signature algorithms are usable only from TLS 1.3.\n\nThe two contexts must therefore be aware of different numbers of provider\nsignature algorithms, which requires separate library contexts, a provider\nloaded between the two being created, or providers which differ in what\nthey advertise - in 4.0, for example, the default provider advertises SM2\nwhere the FIPS provider does not. A deployment meeting the condition is\nalso unable to negotiate the affected algorithms with legitimate clients,\nsince the same stale count hides the corresponding certificates, so the\nmisconfiguration is likely to be noticed. For that reason, and because the\nconfiguration is not the default, this issue has been assessed as Low\nseverity.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-72897",
+            "https://github.com/openssl/openssl/commit/00646e5085a0d12d29e0d2f9b9bc5f7111a50922",
+            "https://github.com/openssl/openssl/commit/4135f553c9d3ba4a09fe752f5d30af2a6a092b2e",
+            "https://github.com/openssl/openssl/commit/9c54d209486f6b1ad79fe2179c40f13200fa4f61",
+            "https://github.com/openssl/openssl/commit/e87ed26b298a74d8ba61a53e9c7bcd1acac6b814",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-72897",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-72897"
+          ],
+          "PublishedDate": "2026-09-29T16:17:09.903Z",
+          "LastModifiedDate": "2026-10-08T01:19:41.567Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75804",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75804",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:0cd89c6d6848f6a6733a3bbe7d9222ad56c39afd6180a5c75292b82804b96ad7",
+          "Title": "openssl: OpenSSL: Denial of Service via unenforced QUIC connection flow control",
+          "Description": "Issue summary: OpenSSL QUIC stack does not enforce connection\nlevel flow control for streams. Remote peers may send more bytes\nas long as they fit within the stream flow control limits.\n\nImpact summary: A malicious remote peer may exploit the lack of connection\nflow control for streams to make the QUIC stack receive ~100MB of memory\ninstead of 768 KiB (default flow control window size).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The local QUIC stack advertises two flow control limits\nto its remote peer: stream flow control limit and connection flow\ncontrol limit. The remote peer must follow both limits when transmitting\nstream data.\n\nWhenever the local QUIC stack receives a stream frame, it validates\nthat the size of the received stream frame stays within flow control limits.\nIf either limit is exceeded (stream level or connection level), then\nthe QUIC stack must close the connection with a flow control error.\n\nThe vulnerable OpenSSL QUIC stack enforces the stream-level but not\nthe connection-level limit. To exploit the issue, three conditions must be met:\n  - the remote peer opens several streams\n  - each stream must stay within the stream-level flow control limit\n  - there must be no zero-offset byte sent on any of the streams\n    (to prevent the vulnerable QUIC stack from consuming data).\nBy meeting the conditions above, the remote peer may make the local stack\nallocate 2 x MAX_STREAMS x (stream flow control limit) bytes\nof memory. MAX_STREAMS defaults to 100, and the limit applies to both\nbidirectional and unidirectional streams, making it 200 in total. The default\nflow control window for a stream is 512kB. The remote peer may\nforce the vulnerable QUIC stack to allocate 100MB of heap per connection.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75804",
+            "https://github.com/openssl/openssl/commit/2e8f54666b3fb7b05ff5f58aa6cac9285163654e",
+            "https://github.com/openssl/openssl/commit/4533ee8a5686c953ed3b644738ac4bdf20806538",
+            "https://github.com/openssl/openssl/commit/64d3102fb5b54311e92517f26ba00169d719e74a",
+            "https://github.com/openssl/openssl/commit/f9eaecf5bdd6692da052bc65b0332af2a938ac03",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75804",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75804"
+          ],
+          "PublishedDate": "2026-09-29T16:17:10.887Z",
+          "LastModifiedDate": "2026-10-08T01:20:01.25Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75805",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:de2ce7a4fa25f311895c551d0e3453364382ab6a7eac4c0e9d43eba149acd7b1",
+          "Title": "openssl: openssl: Denial of Service via crafted CMP certificate revocation response",
+          "Description": "Issue summary: A CMP client that requests certificate revocation on the basis\nof a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when\nprocessing a crafted revocation response. \n\nImpact summary: The NULL pointer dereference happens on a read which \nleads to a crash and a Denial of Service for the affected client application.\n\nCWE: CWE-476: NULL-pointer dereference\n\nDescription: A CMP client revoking a certificate has to tell the server which\ncertificate to revoke, and may do so by supplying a PKCS#10 CSR instead of the\ncertificate itself or its issuer name and serial number. This is\n'openssl cmp -cmd rr -csr \u003cfile\u003e' on the command line, or\nOSSL_CMP_exec_RR_ses() with the certificate supplied via\nOSSL_CMP_CTX_set1_p10CSR() through the API.\n\nA CSR does not contain the issuer name and serial number of the certificate,\nso the client does not send them. A server may optionally name the\ncertificate it revoked in its response, and the client then compares that\nname against what it sent. Having sent neither an issuer name nor a serial\nnumber, it has nothing to compare against, and a server returning a specially\ncrafted name causes the client to read from a NULL pointer and crash.\n\nThe revocation response is checked for valid message protection before\nthe affected code is reached, so an attacker must be a malicious or\ncompromised CMP server, or a man-in-the-middle in possession of the\nsecret used for message protection. Clients that identify the certificate\nto be revoked by a certificate or by issuer and serial number rather\nthan by a PKCS#10 CSR are not affected.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75805",
+            "https://github.com/openssl/openssl/commit/7588db7fef14209c3caa3a101d11a02006b19166",
+            "https://github.com/openssl/openssl/commit/7ca0ccb5172a577e9b87267d77bfe21e5481a5e7",
+            "https://github.com/openssl/openssl/commit/9eb2a8a9b86136cdb39d6d7d50644dd66941cdc3",
+            "https://github.com/openssl/openssl/commit/abf02872a4b71767ecc72293424420f5b009190f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75805",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75805"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.063Z",
+          "LastModifiedDate": "2026-10-08T01:20:24.147Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75806",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75806",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1c1e518877ccbf3dfd918d298d2cff9daa6779fe13032e66e6e64d9ff4065b07",
+          "Title": "openssl: OpenSSL: Denial of Service via undersized DTLS record",
+          "Description": "Issue summary: An established DTLS 1.2 association using an AEAD cipher suite\ncan be terminated by a single unauthenticated datagram whose encrypted\nfragment is shorter than the mandatory explicit IV and authentication tag\noverhead.\n\nImpact summary: An attacker who can send a datagram that is routed to an\nexisting DTLS 1.2 association can tear that association down without knowing\nany key material. This is a Denial of Service limited to the targeted\nassociation. There is no memory safety or confidentiality impact.\n\nCWE: CWE-1284: Improper Validation of Specified Quantity in Input\n\nDescription: In TLS 1.2 and DTLS 1.2 every record protected by an AEAD cipher\nsuite carries an explicit IV followed by the ciphertext and an authentication\ntag. When decrypting such a record the record layer passed the record length to\nthe cipher implementation before checking that the record was long enough to\ncontain the explicit IV and the tag. For a record shorter than that overhead the\ncipher implementation rejected the impossible length, and the record layer\ntreated this as an internal failure and raised a fatal internal_error alert\ninstead of treating the record as one that failed authentication.\n\nIn TLS 1.2 the same record causes a fatal internal_error alert instead of the\nexpected bad_record_mac alert. Since any undecryptable record already\nterminates a TLS connection, this is a protocol conformance issue rather than\na security issue in TLS.\n\nThe fix validates the record length against the explicit IV and tag length\nbefore any AEAD processing, so that TLS reports bad_record_mac and DTLS\nsilently discards the record.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75806",
+            "https://github.com/openssl/openssl/commit/04728a289a823e68137f88da016cb9ede307217d",
+            "https://github.com/openssl/openssl/commit/050b275cd671a6eed1d6457642d41a5a77aab972",
+            "https://github.com/openssl/openssl/commit/3a4589d015a9049d47b66f186cf50a8711343a1d",
+            "https://github.com/openssl/openssl/commit/5af82fefbaf2b5fec2fc0e1d87f112844902f01d",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75806",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75806"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.217Z",
+          "LastModifiedDate": "2026-10-08T01:20:33.453Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84782",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:34a21f6f2c7b9640fd40ab220f5a7bff04b32865dc89965cfff88b0d64f5851f",
+          "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
+          "Description": "Issue summary: The DTLS retransmission logic does not correctly handle\na handshake message write that is suspended part-way through.\nThe retransmitted message can be read past the message buffer and\nthe retransmission overwrites the internal state the suspended write\nneeds to resume correctly.\n\nImpact summary: The retransmitted message can disclose a heap memory\nto the peer as plaintext handshake data or cause a crash and a Denial\nof Service when the read reaches an unmapped memory region.\n\nCWE: CWE-125: Out-of-bounds Read\n\nDescription: DTLS handshake messages can be written out in multiple\nfragments, and a write can suspend mid-message (returning WANT_WRITE)\nif the underlying transport temporarily cannot accept more data. While\nsuch a write is suspended, the DTLS retransmission timer may\nindependently fire and ask the retransmission logic to resend an\nearlier, already-acknowledged-as-sent message from its retransmit\nqueue.\n\nThe retransmission logic reused the same internal buffer and position\ntracking as the message that was still being written, without\nresetting the position back to the start of the message being\nretransmitted. As a result the retransmission was read starting from\nwherever the suspended write had left off, producing a mislabelled\nmessage whose body was leftover bytes from the other, larger message\nstill in flight - content that was never meant to be sent at that\npoint, and which could run past the end of the allocated buffer.\n\nSeparately, even when the retransmission is positioned correctly,\nallowing it to run to completion while another write is suspended\noverwrites the same shared bookkeeping that the suspended write\ndepends on to resume. When the application later resumes the\nsuspended write (via a subsequent SSL_read(), SSL_write(),\nSSL_accept(), or SSL_connect() call), it finds that bookkeeping in a\nstate inconsistent with the message and aborts the process in\na debugging build.\n\nThe fix resets the retransmission's read position to the start of the\nmessage before resending, and skips retransmission entirely whenever a\nhandshake write is still suspended, deferring to the next call that\nresumes it instead.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77396",
+            "https://access.redhat.com/errata/RHSA-2026:80514",
+            "https://access.redhat.com/security/cve/CVE-2026-84782",
+            "https://bugzilla.redhat.com/2517560",
+            "https://bugzilla.redhat.com/2537080",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2537080",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
+            "https://errata.almalinux.org/9/ALSA-2026-80514.html",
+            "https://errata.rockylinux.org/RLSA-2026:77396",
+            "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
+            "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
+            "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
+            "https://github.com/openssl/openssl/commit/d951e02ede8f6a6ff8150546db44b34f0518192c",
+            "https://linux.oracle.com/cve/CVE-2026-84782.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80514.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84782",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://openssl-library.org/news/vulnerabilities/#CVE-2026-84782",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84782"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.5Z",
+          "LastModifiedDate": "2026-10-08T01:20:56.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84784",
+          "PkgID": "openssl@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "80805f0e3c75343e"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84784",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:fb0ba715dc6d64a34cb617a797a1a0b4e3d62a654603bdd93a02e795fb263a1b",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded QUIC connection identifier backlog",
+          "Description": "Issue summary: A malicious remote peer may flood the local QUIC\nstack with NEW_CONNECTION_ID frames by avoiding a limit check on\nhow many connection IDs the remote QUIC stack can use.\n\nImpact summary: The local QUIC stack sends a RETIRE_CONN_ID frame\nfor every NEW_CONNECTION_ID frame it receives. The RETIRE_CONN_ID\nframe is dispatched via the Control Frame Queue (CFQ). If the remote\npeer also withholds ACKs, then it can force the local stack\nto allocate ~400MB (depending on ACK delay).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: RFC 9000 sections 5.1.1 and 5.1.2 [1] describe the mechanism\nby which a remote peer can notify the local QUIC stack to change the\ndestination connection ID (a.k.a. CID) the local stack uses to\nidentify the connection at the remote peer. Each CID is associated\nwith a sequence number. The sequence number is transmitted\nin NEW_CONNECTION_ID and RETIRE_CONNECTION_ID frames to identify the CID\nwhich is being either associated with a connection or retired.\n\nThe remote peer sends a NEW_CONNECTION_ID frame to let the local stack know\na new CID is being associated with an existing connection. The\nNEW_CONNECTION_ID frame carries the new CID, its sequence number, and the\nretire-prior-to number. The retire-prior-to identifies existing\nCIDs that are to be retired. The local QUIC stack must send a\nRETIRE_CONNECTION_ID for every destination CID whose sequence number\nis less than retire-prior-to. The CID becomes retired after the\nlocal stack receives an ACK for its RETIRE_CONNECTION_ID frame.\n\nAlthough the OpenSSL QUIC stack supports at most one destination CID\nfor every connection, it can be tricked into processing more than\none RETIRE_CONNECTION_ID frame per connection. The OpenSSL QUIC\nstack currently retires the destination CID as soon as it receives\nthe NEW_CONNECTION_ID, while in fact the destination CID must\nbe retired after an ACK for the RETIRE_CONNECTION_ID frame is received.\nCorrecting the flawed logic also fixes the backlog growth.\n\n[1] https://datatracker.ietf.org/doc/html/rfc9000#name-issuing-connection-ids\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84784",
+            "https://github.com/openssl/openssl/commit/4685c914b0d410b1034f40b547c95bc95e7a380a",
+            "https://github.com/openssl/openssl/commit/9a30fe0fba195c14e5b87bf93c0d0fdb70373806",
+            "https://github.com/openssl/openssl/commit/dba3c48d653c64fcbc9070a17a0ee2b3e2f3af1f",
+            "https://github.com/openssl/openssl/commit/e9e5155833fa968bee50024bf9ca3a185ab599fe",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84784",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84784"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.81Z",
+          "LastModifiedDate": "2026-10-08T01:21:22.543Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-35189",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35189",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:f793d5596f8ac6c7e04f941796f92ea0532fb1eafce6a395280b2c04778e5232",
+          "Title": "openssl: openssl: Denial of Service via excessive memory allocation in CRL distribution point processing",
+          "Description": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL\ndistribution points causes disproportionate heap growth when OpenSSL caches\nX.509 extensions.\n\nImpact summary: Receiving a crafted certificate from a malicious peer can lead\nto significant memory pressure and possible Denial of Service in clients or\nin servers that solicit client certificates.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: A certificate or a set of certificates that fits under the limit for\nsize of certificates accepted from the peer (~100 KiB) can result in allocation\nof several hundred MiB of resident memory on the receiving side\nduring a normal TLS handshake.  This may be enough to crash the client or\nserver, if multiple concurrent connections lead to similarly large memory\nallocations.\n\nThe fix postpones processing of the CRL distribution points extensions in\ncertificates to the time when the processed value is required for CRL processing.\nThis avoids keeping large memory allocations for a long time when such\ncertificates are received.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35189",
+            "https://github.com/openssl/openssl/commit/2b93c73b2c70ddc4c61c5e4bfaaa6bd71379eb84",
+            "https://github.com/openssl/openssl/commit/3842516cc15e8b2cf55747011045e77547e71d89",
+            "https://github.com/openssl/openssl/commit/8e0efc7549b7ff8246d40e585e3fd604f728473f",
+            "https://github.com/openssl/openssl/commit/c72ae182cac17a82e4246c6ecd4e9c4ec3586ec9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35189",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35189"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.33Z",
+          "LastModifiedDate": "2026-10-08T01:01:54.577Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-35191",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35191",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:47ca37aacbc107b03e4f9342aba260f6c161f4a9635f82d2c3ac90cfbcfaf98b",
+          "Title": "openssl: openssl: Traffic amplification Denial of Service via QUIC packet over-accounting",
+          "Description": "Issue summary: The OpenSSL QUIC server, when configured to not preform address\nvalidation, can be forced to count incoming packets multiple times in its\nunvalidated credit computation, leading to a violation of the RFC 9000\nunvalidated connection amplification limit of 3 times the amount of data\nreceived.\n\nImpact summary: A remote attacker able to spoof packets to a server using the\nOpenSSL QUIC implementation might use the server for an amplification of\na DDoS attack.\n\nCWE: CWE-440: Expected Behavior Violation \n\nDescription: OpenSSL's QUIC stack, when operating as a server, enforces client\naddress validation (RFC 9000, Section 8), to confirm the peer address is not\nused for a traffic amplification attack.  If this feature is disabled on the\nserver, the QUIC stack limits the amount of server data that can be sent to 3\ntimes the amount of data received from the peer address, until such time as the\nTLS handshake is completed.\n\nThe OpenSSL QUIC server, when operating in non-validation mode, adds the\nlength of the whole datagram received to the unvalidated credit limit when\nprocessing each QUIC packet in the datagram. A remote peer may,\nafter establishing a connection with an initial client hello frame, send a\nsubsequent datagram containing multiple QUIC packets, leading the server to\naccount the entire datagram length for each packet in the datagram, resulting\nin the server believing that the peer has sent more data than it actually has,\nthereby violating the 3x amplification limit mandated by the RFC.\n\nFIPS impact: no\nAs the QUIC stack lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-440"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35191",
+            "https://github.com/openssl/openssl/commit/0fe4442d4f8ea3af8a174046dae176e0d4717239",
+            "https://github.com/openssl/openssl/commit/2de4c35fb13fc58f43fd8dc1d261700472ce72e5",
+            "https://github.com/openssl/openssl/commit/e44292e58b090014232ef75bd400393851b24d1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35191",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35191"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.49Z",
+          "LastModifiedDate": "2026-10-08T01:02:06.293Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42772",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42772",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5420f2816e0fea7fdc346215afbbe7b25bb164a74a7b80c490003bce669d2b73",
+          "Title": "openssl: openssl: Denial of Service via inefficient QUIC stream reassembly",
+          "Description": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates\nprogressively as packets are arriving out of order. The worst case has\na quadratic complexity proportional to the number of stream frames kept in\nthe buffer for the received stream data.\n\nImpact summary: A remote QUIC peer that completes the handshake can create\na connection-scoped CPU pressure and potentially a Denial of Service using\ncompliant STREAM frames inside the advertised receive window, with low\nattacker bandwidth.\n\nCWE: CWE-407: Inefficient Algorithmic Complexity\n\nDescription: OpenSSL manages received QUIC stream fragments using a\ndoubly-linked list. While it optimizes for append operations (at the end of\nthe list), it falls back to a head-to-tail linear search for any fragment\nthat does not immediately follow the current `tail`.\n\nBy manipulating the sequence of offsets, an attacker can force the server\nto perform O(n^2) operations, consuming excessive CPU time for the\nQUIC process.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42772",
+            "https://github.com/openssl/openssl/commit/32d0ed8afe1b8c3e7ece725b44663da3d7087a09",
+            "https://github.com/openssl/openssl/commit/ca8402e273af4de5b3f04fa61a0f0c02ce3ae20e",
+            "https://github.com/openssl/openssl/commit/eb2becc0a4baea7f3050a247834d0e5c2ebe1773",
+            "https://github.com/openssl/openssl/commit/f42ae513bbda513b3c121d54834040ee4a0eae1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42772",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42772"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.64Z",
+          "LastModifiedDate": "2026-10-08T01:18:57.547Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54872",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54872",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e0d6ff5d18f625821dceeadbf949da95b87f6ab1dd8d0a8201778388c93cf168",
+          "Title": "openssl: OpenSSL: Private key recovery via timing side-channel in generic elliptic curve operations",
+          "Description": "Issue summary: The generic elliptic-curve scalar multiplication used for\nECDSA and SM2 signature operations with curves that do not have a dedicated\nimplementation leaks information about the secret nonce through timing.\n\nImpact summary: An attacker able to measure signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: The generic elliptic-curve scalar multiplication used for\ncurves that do not have a dedicated constant-time implementation pads the\nsecret scalar with non-constant-time BIGNUM operations, so the time taken\ndepends on the value of the secret scalar derived from the ECDSA and SM2 nonce.\n\nThe leak is very small; observing it requires a large number of\nmeasurements. The effect is largest for curves whose group order lies\non a machine-word boundary, such as brainpoolP384r1.\n\nApplications using ECDSA signing over the Brainpool and other generic prime\ncurves, and SM2 signing on platforms that use the generic implementation,\nare vulnerable to this issue.\n\nThe NIST curves P-256, P-384 and P-521 use dedicated constant-time\nimplementations and are not affected.\n\nFIPS Impact: no\nThe FIPS modules are not affected: the approved NIST curves used in the FIPS\nprovider have dedicated constant-time implementations and do not use the\naffected code path.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54872",
+            "https://github.com/openssl/openssl/commit/1a5bee8dc57430a2be69cd1ffe7fec6a62f4f179",
+            "https://github.com/openssl/openssl/commit/3f7e1363dccec6f7732bb9e9fa471bb6e4aa68cb",
+            "https://github.com/openssl/openssl/commit/7d83bc7764999dfd91b83b4f0815b45390422afd",
+            "https://github.com/openssl/openssl/commit/8166827a78aad164a07aa86dea2b425403ced471",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54872",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54872"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.623Z",
+          "LastModifiedDate": "2026-10-08T01:19:04.663Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54873",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54873",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:134e64f0af5730c774f0440f0548980fa1e8ef3a068c339ca3f6d89e467c7c33",
+          "Title": "openssl: openssl: Denial of Service via excessive QUIC packet buffer retention",
+          "Description": "Issue summary: QUIC process may keep memory for QUIC packet\nbuffer for much longer period than necessary.\n\nImpact summary: Remote peer can exploit this vulnerability\nby sending maliciously crafted packets, making the local\nQUIC stack to keep the memory for packet buffers allocated.\nThe time for which the memory remains allocated is entirely\nunder the control of the potentially malicious remote peer.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: To save copy operation from the packet buffer to the\nstream reassemble buffer the QUIC stack leaves the stream data\non the packet buffer waiting to be copied to a buffer provided\nby the local receiving application. The QUIC stack releases\na reference to the packet buffer only after the data are copied\nto the application buffer. This design is more efficient for\nlegitimate data transfers but enables an attacker to allocate a lot\nmore memory than actually required by the data kept in the receiving\nstream buffer.\n\nTo mitigate the vulnerability, the QUIC stack now calculates\nand monitors memory overhead for every stream. The memory overhead\nfor a single stream frame is calculated as a difference between the\nsize of the whole packet that carries the stream frame and the size\nof the stream frame itself. The memory overhead for a single stream\nframe is added to the total (cumulative) memory overhead QUIC stack\nkeeps for each stream. Once the cumulative memory overhead exceeds\n64kB, the QUIC stack moves the stream frame data from the packet\nbuffer to the stream buffer, starting with the next packet received.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54873",
+            "https://github.com/openssl/openssl/commit/1f643b8bc735487b500a1f68a7fb3a22d5e38e23",
+            "https://github.com/openssl/openssl/commit/279e7ee1392af98785746788168749491c74bd53",
+            "https://github.com/openssl/openssl/commit/3ea6213e050e938ecbbf8c4eff32bec2736780eb",
+            "https://github.com/openssl/openssl/commit/7127fb10888b49711c63128a09e524c0d2d5d0b2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54873",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54873"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.763Z",
+          "LastModifiedDate": "2026-10-08T01:19:18.2Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-72897",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-72897",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:064db3a0537da5a80b3b60d311c5a0a41ad7bf9ac8dd6ac3b2c3ca525a57fb17",
+          "Title": "openssl: openssl: Denial of Service via out-of-bounds write during TLS context switch",
+          "Description": "Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a\nconnection to a different SSL_CTX part way through a handshake may access\nmemory beyond the end of an internal array if the replacement context knows\nabout more provider signature algorithms than the context the connection was\ncreated from. Applications which never call SSL_set_SSL_CTX() are not\naffected.\n\nImpact summary: A remote peer may be able to cause a small out-of-bounds\nread, and in some circumstances a fixed-value out-of-bounds write, on the\nserver heap. This may lead to a Denial of Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: A TLS connection records how many certificate slots it has\nwhen it is created, taken from the SSL_CTX that created it: the built-in\ncertificate types plus one slot for each provider TLS-SIGALG entry that\ncontext was aware of. That count sizes an internal array of per-slot\ncertificate validity flags.\n\nAn application may replace a connection's SSL_CTX part way through the\nhandshake by calling SSL_set_SSL_CTX(), most commonly from a servername\ncallback in order to serve a different virtual host. Doing so did not\nrefresh the recorded count. A provider signature algorithm's slot index is\nits position in the list of whichever context resolves it, so if the\nreplacement context is aware of more of them than the original, an\nalgorithm offered by the peer can resolve to an index beyond the end of the\narray. Processing the peer's signature algorithms then reads one four byte\nword past the end for each such algorithm and, where the word read is zero,\nwrites a fixed value over it. A peer offering many of them can corrupt heap\nmetadata and abort the process.\n\nOnly provider signature algorithms which occupy one of the excess slots,\nand which the server also has configured, have this effect. Codepoints the\nreplacement context does not recognise are discarded without being resolved\nto a slot, and provider signature algorithms are usable only from TLS 1.3.\n\nThe two contexts must therefore be aware of different numbers of provider\nsignature algorithms, which requires separate library contexts, a provider\nloaded between the two being created, or providers which differ in what\nthey advertise - in 4.0, for example, the default provider advertises SM2\nwhere the FIPS provider does not. A deployment meeting the condition is\nalso unable to negotiate the affected algorithms with legitimate clients,\nsince the same stale count hides the corresponding certificates, so the\nmisconfiguration is likely to be noticed. For that reason, and because the\nconfiguration is not the default, this issue has been assessed as Low\nseverity.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-72897",
+            "https://github.com/openssl/openssl/commit/00646e5085a0d12d29e0d2f9b9bc5f7111a50922",
+            "https://github.com/openssl/openssl/commit/4135f553c9d3ba4a09fe752f5d30af2a6a092b2e",
+            "https://github.com/openssl/openssl/commit/9c54d209486f6b1ad79fe2179c40f13200fa4f61",
+            "https://github.com/openssl/openssl/commit/e87ed26b298a74d8ba61a53e9c7bcd1acac6b814",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-72897",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-72897"
+          ],
+          "PublishedDate": "2026-09-29T16:17:09.903Z",
+          "LastModifiedDate": "2026-10-08T01:19:41.567Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75804",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75804",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:77c9de53bdbd178f3c8aa2e1f5716005ff360ea46817e445490f3e940e68197d",
+          "Title": "openssl: OpenSSL: Denial of Service via unenforced QUIC connection flow control",
+          "Description": "Issue summary: OpenSSL QUIC stack does not enforce connection\nlevel flow control for streams. Remote peers may send more bytes\nas long as they fit within the stream flow control limits.\n\nImpact summary: A malicious remote peer may exploit the lack of connection\nflow control for streams to make the QUIC stack receive ~100MB of memory\ninstead of 768 KiB (default flow control window size).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The local QUIC stack advertises two flow control limits\nto its remote peer: stream flow control limit and connection flow\ncontrol limit. The remote peer must follow both limits when transmitting\nstream data.\n\nWhenever the local QUIC stack receives a stream frame, it validates\nthat the size of the received stream frame stays within flow control limits.\nIf either limit is exceeded (stream level or connection level), then\nthe QUIC stack must close the connection with a flow control error.\n\nThe vulnerable OpenSSL QUIC stack enforces the stream-level but not\nthe connection-level limit. To exploit the issue, three conditions must be met:\n  - the remote peer opens several streams\n  - each stream must stay within the stream-level flow control limit\n  - there must be no zero-offset byte sent on any of the streams\n    (to prevent the vulnerable QUIC stack from consuming data).\nBy meeting the conditions above, the remote peer may make the local stack\nallocate 2 x MAX_STREAMS x (stream flow control limit) bytes\nof memory. MAX_STREAMS defaults to 100, and the limit applies to both\nbidirectional and unidirectional streams, making it 200 in total. The default\nflow control window for a stream is 512kB. The remote peer may\nforce the vulnerable QUIC stack to allocate 100MB of heap per connection.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75804",
+            "https://github.com/openssl/openssl/commit/2e8f54666b3fb7b05ff5f58aa6cac9285163654e",
+            "https://github.com/openssl/openssl/commit/4533ee8a5686c953ed3b644738ac4bdf20806538",
+            "https://github.com/openssl/openssl/commit/64d3102fb5b54311e92517f26ba00169d719e74a",
+            "https://github.com/openssl/openssl/commit/f9eaecf5bdd6692da052bc65b0332af2a938ac03",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75804",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75804"
+          ],
+          "PublishedDate": "2026-09-29T16:17:10.887Z",
+          "LastModifiedDate": "2026-10-08T01:20:01.25Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75805",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:82de6b8e7c99daab6dc5293b7ccc0aa505f75fe986b7bb08fe802e70530fbbd8",
+          "Title": "openssl: openssl: Denial of Service via crafted CMP certificate revocation response",
+          "Description": "Issue summary: A CMP client that requests certificate revocation on the basis\nof a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when\nprocessing a crafted revocation response. \n\nImpact summary: The NULL pointer dereference happens on a read which \nleads to a crash and a Denial of Service for the affected client application.\n\nCWE: CWE-476: NULL-pointer dereference\n\nDescription: A CMP client revoking a certificate has to tell the server which\ncertificate to revoke, and may do so by supplying a PKCS#10 CSR instead of the\ncertificate itself or its issuer name and serial number. This is\n'openssl cmp -cmd rr -csr \u003cfile\u003e' on the command line, or\nOSSL_CMP_exec_RR_ses() with the certificate supplied via\nOSSL_CMP_CTX_set1_p10CSR() through the API.\n\nA CSR does not contain the issuer name and serial number of the certificate,\nso the client does not send them. A server may optionally name the\ncertificate it revoked in its response, and the client then compares that\nname against what it sent. Having sent neither an issuer name nor a serial\nnumber, it has nothing to compare against, and a server returning a specially\ncrafted name causes the client to read from a NULL pointer and crash.\n\nThe revocation response is checked for valid message protection before\nthe affected code is reached, so an attacker must be a malicious or\ncompromised CMP server, or a man-in-the-middle in possession of the\nsecret used for message protection. Clients that identify the certificate\nto be revoked by a certificate or by issuer and serial number rather\nthan by a PKCS#10 CSR are not affected.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75805",
+            "https://github.com/openssl/openssl/commit/7588db7fef14209c3caa3a101d11a02006b19166",
+            "https://github.com/openssl/openssl/commit/7ca0ccb5172a577e9b87267d77bfe21e5481a5e7",
+            "https://github.com/openssl/openssl/commit/9eb2a8a9b86136cdb39d6d7d50644dd66941cdc3",
+            "https://github.com/openssl/openssl/commit/abf02872a4b71767ecc72293424420f5b009190f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75805",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75805"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.063Z",
+          "LastModifiedDate": "2026-10-08T01:20:24.147Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75806",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75806",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:ac261035de4b69be04679bb705360216488dd459fb21511db91e5f65d0c5d387",
+          "Title": "openssl: OpenSSL: Denial of Service via undersized DTLS record",
+          "Description": "Issue summary: An established DTLS 1.2 association using an AEAD cipher suite\ncan be terminated by a single unauthenticated datagram whose encrypted\nfragment is shorter than the mandatory explicit IV and authentication tag\noverhead.\n\nImpact summary: An attacker who can send a datagram that is routed to an\nexisting DTLS 1.2 association can tear that association down without knowing\nany key material. This is a Denial of Service limited to the targeted\nassociation. There is no memory safety or confidentiality impact.\n\nCWE: CWE-1284: Improper Validation of Specified Quantity in Input\n\nDescription: In TLS 1.2 and DTLS 1.2 every record protected by an AEAD cipher\nsuite carries an explicit IV followed by the ciphertext and an authentication\ntag. When decrypting such a record the record layer passed the record length to\nthe cipher implementation before checking that the record was long enough to\ncontain the explicit IV and the tag. For a record shorter than that overhead the\ncipher implementation rejected the impossible length, and the record layer\ntreated this as an internal failure and raised a fatal internal_error alert\ninstead of treating the record as one that failed authentication.\n\nIn TLS 1.2 the same record causes a fatal internal_error alert instead of the\nexpected bad_record_mac alert. Since any undecryptable record already\nterminates a TLS connection, this is a protocol conformance issue rather than\na security issue in TLS.\n\nThe fix validates the record length against the explicit IV and tag length\nbefore any AEAD processing, so that TLS reports bad_record_mac and DTLS\nsilently discards the record.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75806",
+            "https://github.com/openssl/openssl/commit/04728a289a823e68137f88da016cb9ede307217d",
+            "https://github.com/openssl/openssl/commit/050b275cd671a6eed1d6457642d41a5a77aab972",
+            "https://github.com/openssl/openssl/commit/3a4589d015a9049d47b66f186cf50a8711343a1d",
+            "https://github.com/openssl/openssl/commit/5af82fefbaf2b5fec2fc0e1d87f112844902f01d",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75806",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75806"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.217Z",
+          "LastModifiedDate": "2026-10-08T01:20:33.453Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84782",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:9c8b0629352df7531f3b72af5af5c76029a626c2016a5a298c3306a1c516f7bd",
+          "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
+          "Description": "Issue summary: The DTLS retransmission logic does not correctly handle\na handshake message write that is suspended part-way through.\nThe retransmitted message can be read past the message buffer and\nthe retransmission overwrites the internal state the suspended write\nneeds to resume correctly.\n\nImpact summary: The retransmitted message can disclose a heap memory\nto the peer as plaintext handshake data or cause a crash and a Denial\nof Service when the read reaches an unmapped memory region.\n\nCWE: CWE-125: Out-of-bounds Read\n\nDescription: DTLS handshake messages can be written out in multiple\nfragments, and a write can suspend mid-message (returning WANT_WRITE)\nif the underlying transport temporarily cannot accept more data. While\nsuch a write is suspended, the DTLS retransmission timer may\nindependently fire and ask the retransmission logic to resend an\nearlier, already-acknowledged-as-sent message from its retransmit\nqueue.\n\nThe retransmission logic reused the same internal buffer and position\ntracking as the message that was still being written, without\nresetting the position back to the start of the message being\nretransmitted. As a result the retransmission was read starting from\nwherever the suspended write had left off, producing a mislabelled\nmessage whose body was leftover bytes from the other, larger message\nstill in flight - content that was never meant to be sent at that\npoint, and which could run past the end of the allocated buffer.\n\nSeparately, even when the retransmission is positioned correctly,\nallowing it to run to completion while another write is suspended\noverwrites the same shared bookkeeping that the suspended write\ndepends on to resume. When the application later resumes the\nsuspended write (via a subsequent SSL_read(), SSL_write(),\nSSL_accept(), or SSL_connect() call), it finds that bookkeeping in a\nstate inconsistent with the message and aborts the process in\na debugging build.\n\nThe fix resets the retransmission's read position to the start of the\nmessage before resending, and skips retransmission entirely whenever a\nhandshake write is still suspended, deferring to the next call that\nresumes it instead.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77396",
+            "https://access.redhat.com/errata/RHSA-2026:80514",
+            "https://access.redhat.com/security/cve/CVE-2026-84782",
+            "https://bugzilla.redhat.com/2517560",
+            "https://bugzilla.redhat.com/2537080",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2537080",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
+            "https://errata.almalinux.org/9/ALSA-2026-80514.html",
+            "https://errata.rockylinux.org/RLSA-2026:77396",
+            "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
+            "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
+            "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
+            "https://github.com/openssl/openssl/commit/d951e02ede8f6a6ff8150546db44b34f0518192c",
+            "https://linux.oracle.com/cve/CVE-2026-84782.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80514.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84782",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://openssl-library.org/news/vulnerabilities/#CVE-2026-84782",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84782"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.5Z",
+          "LastModifiedDate": "2026-10-08T01:20:56.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84784",
+          "PkgID": "openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-fips-provider-latest",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-fips-provider-latest@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "4cc80b45f1e37521"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84784",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:c918a109582c7e9fe469ba8a474fb1729a913a471aef1bd82e837765a36bff39",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded QUIC connection identifier backlog",
+          "Description": "Issue summary: A malicious remote peer may flood the local QUIC\nstack with NEW_CONNECTION_ID frames by avoiding a limit check on\nhow many connection IDs the remote QUIC stack can use.\n\nImpact summary: The local QUIC stack sends a RETIRE_CONN_ID frame\nfor every NEW_CONNECTION_ID frame it receives. The RETIRE_CONN_ID\nframe is dispatched via the Control Frame Queue (CFQ). If the remote\npeer also withholds ACKs, then it can force the local stack\nto allocate ~400MB (depending on ACK delay).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: RFC 9000 sections 5.1.1 and 5.1.2 [1] describe the mechanism\nby which a remote peer can notify the local QUIC stack to change the\ndestination connection ID (a.k.a. CID) the local stack uses to\nidentify the connection at the remote peer. Each CID is associated\nwith a sequence number. The sequence number is transmitted\nin NEW_CONNECTION_ID and RETIRE_CONNECTION_ID frames to identify the CID\nwhich is being either associated with a connection or retired.\n\nThe remote peer sends a NEW_CONNECTION_ID frame to let the local stack know\na new CID is being associated with an existing connection. The\nNEW_CONNECTION_ID frame carries the new CID, its sequence number, and the\nretire-prior-to number. The retire-prior-to identifies existing\nCIDs that are to be retired. The local QUIC stack must send a\nRETIRE_CONNECTION_ID for every destination CID whose sequence number\nis less than retire-prior-to. The CID becomes retired after the\nlocal stack receives an ACK for its RETIRE_CONNECTION_ID frame.\n\nAlthough the OpenSSL QUIC stack supports at most one destination CID\nfor every connection, it can be tricked into processing more than\none RETIRE_CONNECTION_ID frame per connection. The OpenSSL QUIC\nstack currently retires the destination CID as soon as it receives\nthe NEW_CONNECTION_ID, while in fact the destination CID must\nbe retired after an ACK for the RETIRE_CONNECTION_ID frame is received.\nCorrecting the flawed logic also fixes the backlog growth.\n\n[1] https://datatracker.ietf.org/doc/html/rfc9000#name-issuing-connection-ids\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84784",
+            "https://github.com/openssl/openssl/commit/4685c914b0d410b1034f40b547c95bc95e7a380a",
+            "https://github.com/openssl/openssl/commit/9a30fe0fba195c14e5b87bf93c0d0fdb70373806",
+            "https://github.com/openssl/openssl/commit/dba3c48d653c64fcbc9070a17a0ee2b3e2f3af1f",
+            "https://github.com/openssl/openssl/commit/e9e5155833fa968bee50024bf9ca3a185ab599fe",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84784",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84784"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.81Z",
+          "LastModifiedDate": "2026-10-08T01:21:22.543Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-35189",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35189",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:142c2facb109df142c76af98745c6f33c8976d3492c6290fb2fef21fa9e9c0db",
+          "Title": "openssl: openssl: Denial of Service via excessive memory allocation in CRL distribution point processing",
+          "Description": "Issue summary: A certificate with many nameRelativeToCRLIssuer CRL\ndistribution points causes disproportionate heap growth when OpenSSL caches\nX.509 extensions.\n\nImpact summary: Receiving a crafted certificate from a malicious peer can lead\nto significant memory pressure and possible Denial of Service in clients or\nin servers that solicit client certificates.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: A certificate or a set of certificates that fits under the limit for\nsize of certificates accepted from the peer (~100 KiB) can result in allocation\nof several hundred MiB of resident memory on the receiving side\nduring a normal TLS handshake.  This may be enough to crash the client or\nserver, if multiple concurrent connections lead to similarly large memory\nallocations.\n\nThe fix postpones processing of the CRL distribution points extensions in\ncertificates to the time when the processed value is required for CRL processing.\nThis avoids keeping large memory allocations for a long time when such\ncertificates are received.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35189",
+            "https://github.com/openssl/openssl/commit/2b93c73b2c70ddc4c61c5e4bfaaa6bd71379eb84",
+            "https://github.com/openssl/openssl/commit/3842516cc15e8b2cf55747011045e77547e71d89",
+            "https://github.com/openssl/openssl/commit/8e0efc7549b7ff8246d40e585e3fd604f728473f",
+            "https://github.com/openssl/openssl/commit/c72ae182cac17a82e4246c6ecd4e9c4ec3586ec9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35189",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35189"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.33Z",
+          "LastModifiedDate": "2026-10-08T01:01:54.577Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-35191",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-35191",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:68edfd624f5dc67fded45648870dce30934045acc0ab0a814889b4f6e8f22302",
+          "Title": "openssl: openssl: Traffic amplification Denial of Service via QUIC packet over-accounting",
+          "Description": "Issue summary: The OpenSSL QUIC server, when configured to not preform address\nvalidation, can be forced to count incoming packets multiple times in its\nunvalidated credit computation, leading to a violation of the RFC 9000\nunvalidated connection amplification limit of 3 times the amount of data\nreceived.\n\nImpact summary: A remote attacker able to spoof packets to a server using the\nOpenSSL QUIC implementation might use the server for an amplification of\na DDoS attack.\n\nCWE: CWE-440: Expected Behavior Violation \n\nDescription: OpenSSL's QUIC stack, when operating as a server, enforces client\naddress validation (RFC 9000, Section 8), to confirm the peer address is not\nused for a traffic amplification attack.  If this feature is disabled on the\nserver, the QUIC stack limits the amount of server data that can be sent to 3\ntimes the amount of data received from the peer address, until such time as the\nTLS handshake is completed.\n\nThe OpenSSL QUIC server, when operating in non-validation mode, adds the\nlength of the whole datagram received to the unvalidated credit limit when\nprocessing each QUIC packet in the datagram. A remote peer may,\nafter establishing a connection with an initial client hello frame, send a\nsubsequent datagram containing multiple QUIC packets, leading the server to\naccount the entire datagram length for each packet in the datagram, resulting\nin the server believing that the peer has sent more data than it actually has,\nthereby violating the 3x amplification limit mandated by the RFC.\n\nFIPS impact: no\nAs the QUIC stack lives outside the FIPS module boundary, no FIPS modules\nare affected by this CVE.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-440"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-35191",
+            "https://github.com/openssl/openssl/commit/0fe4442d4f8ea3af8a174046dae176e0d4717239",
+            "https://github.com/openssl/openssl/commit/2de4c35fb13fc58f43fd8dc1d261700472ce72e5",
+            "https://github.com/openssl/openssl/commit/e44292e58b090014232ef75bd400393851b24d1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-35191",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-35191"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.49Z",
+          "LastModifiedDate": "2026-10-08T01:02:06.293Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42772",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42772",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5c841fdace0e6007423a3ee413b3cc480195f801aa98cdcfd9c22ffa956f958d",
+          "Title": "openssl: openssl: Denial of Service via inefficient QUIC stream reassembly",
+          "Description": "Issue summary: The QUIC stream reassembly algorithm performance deteriorates\nprogressively as packets are arriving out of order. The worst case has\na quadratic complexity proportional to the number of stream frames kept in\nthe buffer for the received stream data.\n\nImpact summary: A remote QUIC peer that completes the handshake can create\na connection-scoped CPU pressure and potentially a Denial of Service using\ncompliant STREAM frames inside the advertised receive window, with low\nattacker bandwidth.\n\nCWE: CWE-407: Inefficient Algorithmic Complexity\n\nDescription: OpenSSL manages received QUIC stream fragments using a\ndoubly-linked list. While it optimizes for append operations (at the end of\nthe list), it falls back to a head-to-tail linear search for any fragment\nthat does not immediately follow the current `tail`.\n\nBy manipulating the sequence of offsets, an attacker can force the server\nto perform O(n^2) operations, consuming excessive CPU time for the\nQUIC process.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-407"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42772",
+            "https://github.com/openssl/openssl/commit/32d0ed8afe1b8c3e7ece725b44663da3d7087a09",
+            "https://github.com/openssl/openssl/commit/ca8402e273af4de5b3f04fa61a0f0c02ce3ae20e",
+            "https://github.com/openssl/openssl/commit/eb2becc0a4baea7f3050a247834d0e5c2ebe1773",
+            "https://github.com/openssl/openssl/commit/f42ae513bbda513b3c121d54834040ee4a0eae1a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42772",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42772"
+          ],
+          "PublishedDate": "2026-09-29T16:17:07.64Z",
+          "LastModifiedDate": "2026-10-08T01:18:57.547Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54872",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54872",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3ef32126e4b18e1f2b74bad6156a9dbbf61a5d65d715ec5858e3f60ad7e474c4",
+          "Title": "openssl: OpenSSL: Private key recovery via timing side-channel in generic elliptic curve operations",
+          "Description": "Issue summary: The generic elliptic-curve scalar multiplication used for\nECDSA and SM2 signature operations with curves that do not have a dedicated\nimplementation leaks information about the secret nonce through timing.\n\nImpact summary: An attacker able to measure signing times may learn\ninformation about the per-signature secret nonce, which over many signatures\ncan, via a lattice / Hidden Number Problem attack, lead to recovery of the\nprivate key.\n\nCWE: CWE-208: Observable Timing Discrepancy\n\nDescription: The generic elliptic-curve scalar multiplication used for\ncurves that do not have a dedicated constant-time implementation pads the\nsecret scalar with non-constant-time BIGNUM operations, so the time taken\ndepends on the value of the secret scalar derived from the ECDSA and SM2 nonce.\n\nThe leak is very small; observing it requires a large number of\nmeasurements. The effect is largest for curves whose group order lies\non a machine-word boundary, such as brainpoolP384r1.\n\nApplications using ECDSA signing over the Brainpool and other generic prime\ncurves, and SM2 signing on platforms that use the generic implementation,\nare vulnerable to this issue.\n\nThe NIST curves P-256, P-384 and P-521 use dedicated constant-time\nimplementations and are not affected.\n\nFIPS Impact: no\nThe FIPS modules are not affected: the approved NIST curves used in the FIPS\nprovider have dedicated constant-time implementations and do not use the\naffected code path.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-208"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54872",
+            "https://github.com/openssl/openssl/commit/1a5bee8dc57430a2be69cd1ffe7fec6a62f4f179",
+            "https://github.com/openssl/openssl/commit/3f7e1363dccec6f7732bb9e9fa471bb6e4aa68cb",
+            "https://github.com/openssl/openssl/commit/7d83bc7764999dfd91b83b4f0815b45390422afd",
+            "https://github.com/openssl/openssl/commit/8166827a78aad164a07aa86dea2b425403ced471",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54872",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54872"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.623Z",
+          "LastModifiedDate": "2026-10-08T01:19:04.663Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54873",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54873",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:730b525787ec52c438c6381349cf986899b5ff552929a968494484d000671641",
+          "Title": "openssl: openssl: Denial of Service via excessive QUIC packet buffer retention",
+          "Description": "Issue summary: QUIC process may keep memory for QUIC packet\nbuffer for much longer period than necessary.\n\nImpact summary: Remote peer can exploit this vulnerability\nby sending maliciously crafted packets, making the local\nQUIC stack to keep the memory for packet buffers allocated.\nThe time for which the memory remains allocated is entirely\nunder the control of the potentially malicious remote peer.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: To save copy operation from the packet buffer to the\nstream reassemble buffer the QUIC stack leaves the stream data\non the packet buffer waiting to be copied to a buffer provided\nby the local receiving application. The QUIC stack releases\na reference to the packet buffer only after the data are copied\nto the application buffer. This design is more efficient for\nlegitimate data transfers but enables an attacker to allocate a lot\nmore memory than actually required by the data kept in the receiving\nstream buffer.\n\nTo mitigate the vulnerability, the QUIC stack now calculates\nand monitors memory overhead for every stream. The memory overhead\nfor a single stream frame is calculated as a difference between the\nsize of the whole packet that carries the stream frame and the size\nof the stream frame itself. The memory overhead for a single stream\nframe is added to the total (cumulative) memory overhead QUIC stack\nkeeps for each stream. Once the cumulative memory overhead exceeds\n64kB, the QUIC stack moves the stream frame data from the packet\nbuffer to the stream buffer, starting with the next packet received.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54873",
+            "https://github.com/openssl/openssl/commit/1f643b8bc735487b500a1f68a7fb3a22d5e38e23",
+            "https://github.com/openssl/openssl/commit/279e7ee1392af98785746788168749491c74bd53",
+            "https://github.com/openssl/openssl/commit/3ea6213e050e938ecbbf8c4eff32bec2736780eb",
+            "https://github.com/openssl/openssl/commit/7127fb10888b49711c63128a09e524c0d2d5d0b2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54873",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8861-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54873"
+          ],
+          "PublishedDate": "2026-09-29T16:17:08.763Z",
+          "LastModifiedDate": "2026-10-08T01:19:18.2Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-72897",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-72897",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:a4a82d59a8434770465df11c7a76f696429ea9e6c5a7ec29f2b876170f8b5b33",
+          "Title": "openssl: openssl: Denial of Service via out-of-bounds write during TLS context switch",
+          "Description": "Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a\nconnection to a different SSL_CTX part way through a handshake may access\nmemory beyond the end of an internal array if the replacement context knows\nabout more provider signature algorithms than the context the connection was\ncreated from. Applications which never call SSL_set_SSL_CTX() are not\naffected.\n\nImpact summary: A remote peer may be able to cause a small out-of-bounds\nread, and in some circumstances a fixed-value out-of-bounds write, on the\nserver heap. This may lead to a Denial of Service.\n\nCWE: CWE-787: Out-of-bounds Write\n\nDescription: A TLS connection records how many certificate slots it has\nwhen it is created, taken from the SSL_CTX that created it: the built-in\ncertificate types plus one slot for each provider TLS-SIGALG entry that\ncontext was aware of. That count sizes an internal array of per-slot\ncertificate validity flags.\n\nAn application may replace a connection's SSL_CTX part way through the\nhandshake by calling SSL_set_SSL_CTX(), most commonly from a servername\ncallback in order to serve a different virtual host. Doing so did not\nrefresh the recorded count. A provider signature algorithm's slot index is\nits position in the list of whichever context resolves it, so if the\nreplacement context is aware of more of them than the original, an\nalgorithm offered by the peer can resolve to an index beyond the end of the\narray. Processing the peer's signature algorithms then reads one four byte\nword past the end for each such algorithm and, where the word read is zero,\nwrites a fixed value over it. A peer offering many of them can corrupt heap\nmetadata and abort the process.\n\nOnly provider signature algorithms which occupy one of the excess slots,\nand which the server also has configured, have this effect. Codepoints the\nreplacement context does not recognise are discarded without being resolved\nto a slot, and provider signature algorithms are usable only from TLS 1.3.\n\nThe two contexts must therefore be aware of different numbers of provider\nsignature algorithms, which requires separate library contexts, a provider\nloaded between the two being created, or providers which differ in what\nthey advertise - in 4.0, for example, the default provider advertises SM2\nwhere the FIPS provider does not. A deployment meeting the condition is\nalso unable to negotiate the affected algorithms with legitimate clients,\nsince the same stale count hides the corresponding certificates, so the\nmisconfiguration is likely to be noticed. For that reason, and because the\nconfiguration is not the default, this issue has been assessed as Low\nseverity.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue as the affected code is outside\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-72897",
+            "https://github.com/openssl/openssl/commit/00646e5085a0d12d29e0d2f9b9bc5f7111a50922",
+            "https://github.com/openssl/openssl/commit/4135f553c9d3ba4a09fe752f5d30af2a6a092b2e",
+            "https://github.com/openssl/openssl/commit/9c54d209486f6b1ad79fe2179c40f13200fa4f61",
+            "https://github.com/openssl/openssl/commit/e87ed26b298a74d8ba61a53e9c7bcd1acac6b814",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-72897",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-72897"
+          ],
+          "PublishedDate": "2026-09-29T16:17:09.903Z",
+          "LastModifiedDate": "2026-10-08T01:19:41.567Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75804",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75804",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:bc78b7821233c149b758ac9fb7886faac21d97d1b8d7d16e6a49dd3de9eee55b",
+          "Title": "openssl: OpenSSL: Denial of Service via unenforced QUIC connection flow control",
+          "Description": "Issue summary: OpenSSL QUIC stack does not enforce connection\nlevel flow control for streams. Remote peers may send more bytes\nas long as they fit within the stream flow control limits.\n\nImpact summary: A malicious remote peer may exploit the lack of connection\nflow control for streams to make the QUIC stack receive ~100MB of memory\ninstead of 768 KiB (default flow control window size).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The local QUIC stack advertises two flow control limits\nto its remote peer: stream flow control limit and connection flow\ncontrol limit. The remote peer must follow both limits when transmitting\nstream data.\n\nWhenever the local QUIC stack receives a stream frame, it validates\nthat the size of the received stream frame stays within flow control limits.\nIf either limit is exceeded (stream level or connection level), then\nthe QUIC stack must close the connection with a flow control error.\n\nThe vulnerable OpenSSL QUIC stack enforces the stream-level but not\nthe connection-level limit. To exploit the issue, three conditions must be met:\n  - the remote peer opens several streams\n  - each stream must stay within the stream-level flow control limit\n  - there must be no zero-offset byte sent on any of the streams\n    (to prevent the vulnerable QUIC stack from consuming data).\nBy meeting the conditions above, the remote peer may make the local stack\nallocate 2 x MAX_STREAMS x (stream flow control limit) bytes\nof memory. MAX_STREAMS defaults to 100, and the limit applies to both\nbidirectional and unidirectional streams, making it 200 in total. The default\nflow control window for a stream is 512kB. The remote peer may\nforce the vulnerable QUIC stack to allocate 100MB of heap per connection.\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75804",
+            "https://github.com/openssl/openssl/commit/2e8f54666b3fb7b05ff5f58aa6cac9285163654e",
+            "https://github.com/openssl/openssl/commit/4533ee8a5686c953ed3b644738ac4bdf20806538",
+            "https://github.com/openssl/openssl/commit/64d3102fb5b54311e92517f26ba00169d719e74a",
+            "https://github.com/openssl/openssl/commit/f9eaecf5bdd6692da052bc65b0332af2a938ac03",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75804",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75804"
+          ],
+          "PublishedDate": "2026-09-29T16:17:10.887Z",
+          "LastModifiedDate": "2026-10-08T01:20:01.25Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75805",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:9ad0c92f9c65acb051298729033340cd35b2bc8c14a8e39deb2130efde883db2",
+          "Title": "openssl: openssl: Denial of Service via crafted CMP certificate revocation response",
+          "Description": "Issue summary: A CMP client that requests certificate revocation on the basis\nof a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when\nprocessing a crafted revocation response. \n\nImpact summary: The NULL pointer dereference happens on a read which \nleads to a crash and a Denial of Service for the affected client application.\n\nCWE: CWE-476: NULL-pointer dereference\n\nDescription: A CMP client revoking a certificate has to tell the server which\ncertificate to revoke, and may do so by supplying a PKCS#10 CSR instead of the\ncertificate itself or its issuer name and serial number. This is\n'openssl cmp -cmd rr -csr \u003cfile\u003e' on the command line, or\nOSSL_CMP_exec_RR_ses() with the certificate supplied via\nOSSL_CMP_CTX_set1_p10CSR() through the API.\n\nA CSR does not contain the issuer name and serial number of the certificate,\nso the client does not send them. A server may optionally name the\ncertificate it revoked in its response, and the client then compares that\nname against what it sent. Having sent neither an issuer name nor a serial\nnumber, it has nothing to compare against, and a server returning a specially\ncrafted name causes the client to read from a NULL pointer and crash.\n\nThe revocation response is checked for valid message protection before\nthe affected code is reached, so an attacker must be a malicious or\ncompromised CMP server, or a man-in-the-middle in possession of the\nsecret used for message protection. Clients that identify the certificate\nto be revoked by a certificate or by issuer and serial number rather\nthan by a PKCS#10 CSR are not affected.\n\nFIPS impact: no\nNo FIPS modules are affected by this issue, as the CMP protocol\nimplementation is outside the OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75805",
+            "https://github.com/openssl/openssl/commit/7588db7fef14209c3caa3a101d11a02006b19166",
+            "https://github.com/openssl/openssl/commit/7ca0ccb5172a577e9b87267d77bfe21e5481a5e7",
+            "https://github.com/openssl/openssl/commit/9eb2a8a9b86136cdb39d6d7d50644dd66941cdc3",
+            "https://github.com/openssl/openssl/commit/abf02872a4b71767ecc72293424420f5b009190f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75805",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75805"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.063Z",
+          "LastModifiedDate": "2026-10-08T01:20:24.147Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-75806",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-75806",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:d16600aba51b0c26955407836d3e95f05db5ce28d352ba70af72acd9322c62df",
+          "Title": "openssl: OpenSSL: Denial of Service via undersized DTLS record",
+          "Description": "Issue summary: An established DTLS 1.2 association using an AEAD cipher suite\ncan be terminated by a single unauthenticated datagram whose encrypted\nfragment is shorter than the mandatory explicit IV and authentication tag\noverhead.\n\nImpact summary: An attacker who can send a datagram that is routed to an\nexisting DTLS 1.2 association can tear that association down without knowing\nany key material. This is a Denial of Service limited to the targeted\nassociation. There is no memory safety or confidentiality impact.\n\nCWE: CWE-1284: Improper Validation of Specified Quantity in Input\n\nDescription: In TLS 1.2 and DTLS 1.2 every record protected by an AEAD cipher\nsuite carries an explicit IV followed by the ciphertext and an authentication\ntag. When decrypting such a record the record layer passed the record length to\nthe cipher implementation before checking that the record was long enough to\ncontain the explicit IV and the tag. For a record shorter than that overhead the\ncipher implementation rejected the impossible length, and the record layer\ntreated this as an internal failure and raised a fatal internal_error alert\ninstead of treating the record as one that failed authentication.\n\nIn TLS 1.2 the same record causes a fatal internal_error alert instead of the\nexpected bad_record_mac alert. Since any undecryptable record already\nterminates a TLS connection, this is a protocol conformance issue rather than\na security issue in TLS.\n\nThe fix validates the record length against the explicit IV and tag length\nbefore any AEAD processing, so that TLS reports bad_record_mac and DTLS\nsilently discards the record.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-1284"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-75806",
+            "https://github.com/openssl/openssl/commit/04728a289a823e68137f88da016cb9ede307217d",
+            "https://github.com/openssl/openssl/commit/050b275cd671a6eed1d6457642d41a5a77aab972",
+            "https://github.com/openssl/openssl/commit/3a4589d015a9049d47b66f186cf50a8711343a1d",
+            "https://github.com/openssl/openssl/commit/5af82fefbaf2b5fec2fc0e1d87f112844902f01d",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-75806",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-75806"
+          ],
+          "PublishedDate": "2026-09-29T16:17:11.217Z",
+          "LastModifiedDate": "2026-10-08T01:20:33.453Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84782",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:83f1bc42fff490df7cb4dea8cfdf11f01ba0f5143124ccd010acc75769b5f69a",
+          "Title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission",
+          "Description": "Issue summary: The DTLS retransmission logic does not correctly handle\na handshake message write that is suspended part-way through.\nThe retransmitted message can be read past the message buffer and\nthe retransmission overwrites the internal state the suspended write\nneeds to resume correctly.\n\nImpact summary: The retransmitted message can disclose a heap memory\nto the peer as plaintext handshake data or cause a crash and a Denial\nof Service when the read reaches an unmapped memory region.\n\nCWE: CWE-125: Out-of-bounds Read\n\nDescription: DTLS handshake messages can be written out in multiple\nfragments, and a write can suspend mid-message (returning WANT_WRITE)\nif the underlying transport temporarily cannot accept more data. While\nsuch a write is suspended, the DTLS retransmission timer may\nindependently fire and ask the retransmission logic to resend an\nearlier, already-acknowledged-as-sent message from its retransmit\nqueue.\n\nThe retransmission logic reused the same internal buffer and position\ntracking as the message that was still being written, without\nresetting the position back to the start of the message being\nretransmitted. As a result the retransmission was read starting from\nwherever the suspended write had left off, producing a mislabelled\nmessage whose body was leftover bytes from the other, larger message\nstill in flight - content that was never meant to be sent at that\npoint, and which could run past the end of the allocated buffer.\n\nSeparately, even when the retransmission is positioned correctly,\nallowing it to run to completion while another write is suspended\noverwrites the same shared bookkeeping that the suspended write\ndepends on to resume. When the application later resumes the\nsuspended write (via a subsequent SSL_read(), SSL_write(),\nSSL_accept(), or SSL_connect() call), it finds that bookkeeping in a\nstate inconsistent with the message and aborts the process in\na debugging build.\n\nThe fix resets the retransmission's read position to the start of the\nmessage before resending, and skips retransmission entirely whenever a\nhandshake write is still suspended, deferring to the next call that\nresumes it instead.\n\nFIPS impact: no\nThe affected code is outside the FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77396",
+            "https://access.redhat.com/errata/RHSA-2026:80514",
+            "https://access.redhat.com/security/cve/CVE-2026-84782",
+            "https://bugzilla.redhat.com/2517560",
+            "https://bugzilla.redhat.com/2537080",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2537080",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-84782",
+            "https://errata.almalinux.org/9/ALSA-2026-80514.html",
+            "https://errata.rockylinux.org/RLSA-2026:77396",
+            "https://github.com/openssl/openssl/commit/906cf0ef1c85ca40ce69163e9086d6d3fe292943",
+            "https://github.com/openssl/openssl/commit/9f6b34422af7eb5dac61322e33dac1ae989fa628",
+            "https://github.com/openssl/openssl/commit/a383dafdd754eb5b22bf45e37e1bff9d07277a58",
+            "https://github.com/openssl/openssl/commit/d951e02ede8f6a6ff8150546db44b34f0518192c",
+            "https://linux.oracle.com/cve/CVE-2026-84782.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80514.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84782",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://openssl-library.org/news/vulnerabilities/#CVE-2026-84782",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://ubuntu.com/security/notices/USN-8847-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84782"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.5Z",
+          "LastModifiedDate": "2026-10-08T01:20:56.003Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84784",
+          "PkgID": "openssl-libs@3.5.8-1.amzn2023.0.1.x86_64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/openssl-libs@3.5.8-1.amzn2023.0.1?arch=x86_64\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29\u0026epoch=1",
+            "UID": "91af3787105eca8a"
+          },
+          "InstalledVersion": "1:3.5.8-1.amzn2023.0.1",
+          "FixedVersion": "1:3.5.8-1.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84784",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:dd49845e4238ace35fb64ee7416945f97b9d3ed8841e10732f2d4b7520fbd97b",
+          "Title": "openssl: OpenSSL: Denial of Service via unbounded QUIC connection identifier backlog",
+          "Description": "Issue summary: A malicious remote peer may flood the local QUIC\nstack with NEW_CONNECTION_ID frames by avoiding a limit check on\nhow many connection IDs the remote QUIC stack can use.\n\nImpact summary: The local QUIC stack sends a RETIRE_CONN_ID frame\nfor every NEW_CONNECTION_ID frame it receives. The RETIRE_CONN_ID\nframe is dispatched via the Control Frame Queue (CFQ). If the remote\npeer also withholds ACKs, then it can force the local stack\nto allocate ~400MB (depending on ACK delay).\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: RFC 9000 sections 5.1.1 and 5.1.2 [1] describe the mechanism\nby which a remote peer can notify the local QUIC stack to change the\ndestination connection ID (a.k.a. CID) the local stack uses to\nidentify the connection at the remote peer. Each CID is associated\nwith a sequence number. The sequence number is transmitted\nin NEW_CONNECTION_ID and RETIRE_CONNECTION_ID frames to identify the CID\nwhich is being either associated with a connection or retired.\n\nThe remote peer sends a NEW_CONNECTION_ID frame to let the local stack know\na new CID is being associated with an existing connection. The\nNEW_CONNECTION_ID frame carries the new CID, its sequence number, and the\nretire-prior-to number. The retire-prior-to identifies existing\nCIDs that are to be retired. The local QUIC stack must send a\nRETIRE_CONNECTION_ID for every destination CID whose sequence number\nis less than retire-prior-to. The CID becomes retired after the\nlocal stack receives an ACK for its RETIRE_CONNECTION_ID frame.\n\nAlthough the OpenSSL QUIC stack supports at most one destination CID\nfor every connection, it can be tricked into processing more than\none RETIRE_CONNECTION_ID frame per connection. The OpenSSL QUIC\nstack currently retires the destination CID as soon as it receives\nthe NEW_CONNECTION_ID, while in fact the destination CID must\nbe retired after an ACK for the RETIRE_CONNECTION_ID frame is received.\nCorrecting the flawed logic also fixes the backlog growth.\n\n[1] https://datatracker.ietf.org/doc/html/rfc9000#name-issuing-connection-ids\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-84784",
+            "https://github.com/openssl/openssl/commit/4685c914b0d410b1034f40b547c95bc95e7a380a",
+            "https://github.com/openssl/openssl/commit/9a30fe0fba195c14e5b87bf93c0d0fdb70373806",
+            "https://github.com/openssl/openssl/commit/dba3c48d653c64fcbc9070a17a0ee2b3e2f3af1f",
+            "https://github.com/openssl/openssl/commit/e9e5155833fa968bee50024bf9ca3a185ab599fe",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84784",
+            "https://openssl-library.org/news/secadv/20260929.txt",
+            "https://ubuntu.com/security/notices/USN-8847-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84784"
+          ],
+          "PublishedDate": "2026-09-29T16:17:12.81Z",
+          "LastModifiedDate": "2026-10-08T01:21:22.543Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-97689",
+          "PkgID": "python3-pip-wheel@21.3.1-2.amzn2023.0.21.noarch",
+          "PkgName": "python3-pip-wheel",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-pip-wheel@21.3.1-2.amzn2023.0.21?arch=noarch\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29",
+            "UID": "e33a9c43be28fa1"
+          },
+          "InstalledVersion": "21.3.1-2.amzn2023.0.21",
+          "FixedVersion": "21.3.1-2.amzn2023.0.22",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:37ab5dcca5fcfb07ba12ec44114dd319b3ca437debcb391ee8de592afb72327d"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97689",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:11a2ae6e302cdd8be0711351da14bea795e938f60a1195e8a7d9464db7b36a17",
+          "Title": "urllib3: urllib3: Denial of Service via unbounded memory allocation in chunk parser",
+          "Description": "urllib3 is an HTTP client library for Python. From 1.10.3 until 2.8.0, the HTTPResponse.read_chunked and HTTPResponse.stream methods can allocate unbounded memory because the streaming chunk parser buffers the chunk-size field until newline or EOF without a length bound. The trigger is that a malicious server returns Transfer-Encoding: chunked followed by a very long run of bytes without a newline. The attack mechanism is that a malicious HTTP server sends a very long unterminated chunk-size line. The impact is that unbounded memory allocation can exhaust the client process. This issue is fixed in version 2.8.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "V40Score": 8.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-97689",
+            "https://advisory.echohq.com/cve/CVE-2026-97689",
+            "https://github.com/urllib3/urllib3",
+            "https://github.com/urllib3/urllib3/commit/cd770b059b543be29298ea5c52afb0b1b090f5ed",
+            "https://github.com/urllib3/urllib3/releases/tag/2.8.0",
+            "https://github.com/urllib3/urllib3/security/advisories/GHSA-vxq7-64xx-v4gw",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-97689",
+            "https://www.cve.org/CVERecord?id=CVE-2026-97689"
+          ],
+          "PublishedDate": "2026-09-29T16:17:18.837Z",
+          "LastModifiedDate": "2026-09-30T19:38:27.293Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-100419",
+          "PkgID": "rust-toolset-srpm-macros@1.98.0-1.amzn2023.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.98.0-1.amzn2023?arch=noarch\u0026distro=amazon-2023.12.20260930%20%28Amazon%20Linux%29",
+            "UID": "6ef8ff31718448f"
+          },
+          "InstalledVersion": "1.98.0-1.amzn2023",
+          "FixedVersion": "1.98.1-1.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d4ba5158b5f97c229f19be17d955da9da7c1196b511eaa84d557e24e4e99469a"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-100419",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:78df1224db03f0f4b433d9f6c1b7313a28616580e3c69e93a66eb6c445bbc7b9",
+          "Title": "gix-fs: gix-fs: Arbitrary code execution via symlink manipulation during checkout",
+          "Description": "gitoxide gix-fs before 0.23.0 contains a path validation bypass vulnerability in the worktree checkout mechanism that allows attackers to escape the worktree directory via symlink manipulation. During forced checkout with overwrite_existing enabled, attackers can craft malicious repository trees where symlink entries replace validated directories, causing subsequent files to be written outside the worktree through the symlink for code execution or file manipulation.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-100419",
+            "https://github.com/GitoxideLabs/gitoxide",
+            "https://github.com/GitoxideLabs/gitoxide/blob/gix-fs-v0.22.1/gix-fs/src/stack.rs#L185-L196",
+            "https://github.com/GitoxideLabs/gitoxide/commit/b62498378b8bc2c95863a044b700f2063b0b5875",
+            "https://github.com/GitoxideLabs/gitoxide/security/advisories/GHSA-6p9q-f2xg-6pr5",
+            "https://github.com/GitoxideLabs/gitoxide/security/advisories/GHSA-f89h-2fjh-2r9q",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-100419",
+            "https://www.cve.org/CVERecord?id=CVE-2026-100419",
+            "https://www.vulncheck.com/advisories/gitoxide-gix-fs-before-0.23.0-worktree-escape-via-symlink"
+          ],
+          "PublishedDate": "2026-09-25T22:17:10.613Z",
+          "LastModifiedDate": "2026-09-28T14:17:09.21Z"
+        }
       ]
     },
     {
@@ -20549,6 +22459,7 @@
             "CWE-1333"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 2
           },
@@ -20612,6 +22523,7 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -20796,6 +22708,7 @@
             "CWE-1333"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 2
           },
@@ -20859,6 +22772,7 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21043,6 +22957,7 @@
             "CWE-1333"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 2
           },
@@ -21106,6 +23021,7 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21353,6 +23269,7 @@
             "CWE-1333"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 2
           },
@@ -21416,6 +23333,7 @@
             "CWE-1333"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 2
           },
@@ -21479,6 +23397,7 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21540,6 +23459,7 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3
           },
@@ -21741,7 +23661,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -21752,7 +23671,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -21849,7 +23768,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -21936,7 +23855,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.2",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-q4xh-88c3-wmh7",
             "https://linux.oracle.com/cve/CVE-2026-68497.html",
-            "https://linux.oracle.com/errata/ELSA-2026-77648.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80504.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-68497",
             "https://www.cve.org/CVERecord?id=CVE-2026-68497"
           ],
@@ -21976,7 +23895,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -21994,6 +23914,7 @@
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
             "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/pull/6203",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
@@ -22104,6 +24025,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22438,7 +24360,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-77310"
           ],
           "PublishedDate": "2026-08-24T20:17:20.977Z",
-          "LastModifiedDate": "2026-09-09T21:06:39.057Z"
+          "LastModifiedDate": "2026-10-12T21:10:00.227Z"
         },
         {
           "VulnerabilityID": "CVE-2026-83557",
@@ -22473,6 +24395,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22604,7 +24527,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -22615,7 +24537,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -22712,7 +24634,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -22799,7 +24721,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.2",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-q4xh-88c3-wmh7",
             "https://linux.oracle.com/cve/CVE-2026-68497.html",
-            "https://linux.oracle.com/errata/ELSA-2026-77648.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80504.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-68497",
             "https://www.cve.org/CVERecord?id=CVE-2026-68497"
           ],
@@ -22839,7 +24761,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22857,6 +24780,7 @@
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
             "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/pull/6203",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
@@ -22967,6 +24891,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -23301,7 +25226,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-77310"
           ],
           "PublishedDate": "2026-08-24T20:17:20.977Z",
-          "LastModifiedDate": "2026-09-09T21:06:39.057Z"
+          "LastModifiedDate": "2026-10-12T21:10:00.227Z"
         },
         {
           "VulnerabilityID": "CVE-2026-83557",
@@ -23336,6 +25261,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -23467,7 +25393,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -23478,7 +25403,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -23545,7 +25470,6 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
-            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -23556,7 +25480,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -23653,7 +25577,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23753,7 +25677,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:43400",
+            "https://errata.rockylinux.org/RLSA-2026:40895",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23840,7 +25764,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.2",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-q4xh-88c3-wmh7",
             "https://linux.oracle.com/cve/CVE-2026-68497.html",
-            "https://linux.oracle.com/errata/ELSA-2026-77648.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80504.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-68497",
             "https://www.cve.org/CVERecord?id=CVE-2026-68497"
           ],
@@ -23917,7 +25841,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.2",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-q4xh-88c3-wmh7",
             "https://linux.oracle.com/cve/CVE-2026-68497.html",
-            "https://linux.oracle.com/errata/ELSA-2026-77648.html",
+            "https://linux.oracle.com/errata/ELSA-2026-80504.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-68497",
             "https://www.cve.org/CVERecord?id=CVE-2026-68497"
           ],
@@ -23957,7 +25881,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23975,6 +25900,7 @@
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
             "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/pull/6203",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
@@ -24020,7 +25946,8 @@
           ],
           "VendorSeverity": {
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -24038,6 +25965,7 @@
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577",
             "https://github.com/FasterXML/jackson-databind/issues/6203",
+            "https://github.com/FasterXML/jackson-databind/pull/6203",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.18.11",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.21.7",
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-2.22.3",
@@ -24213,6 +26141,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24279,6 +26208,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24732,7 +26662,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-77310"
           ],
           "PublishedDate": "2026-08-24T20:17:20.977Z",
-          "LastModifiedDate": "2026-09-09T21:06:39.057Z"
+          "LastModifiedDate": "2026-10-12T21:10:00.227Z"
         },
         {
           "VulnerabilityID": "CVE-2026-77310",
@@ -24796,7 +26726,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-77310"
           ],
           "PublishedDate": "2026-08-24T20:17:20.977Z",
-          "LastModifiedDate": "2026-09-09T21:06:39.057Z"
+          "LastModifiedDate": "2026-10-12T21:10:00.227Z"
         },
         {
           "VulnerabilityID": "CVE-2026-83557",
@@ -24831,6 +26761,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24897,6 +26828,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "ghsa": 2,
             "redhat": 2
           },
@@ -28927,7 +30859,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-67030",
             "https://errata.almalinux.org/9/ALSA-2026-38796.html",
-            "https://errata.rockylinux.org/RLSA-2026:38514",
+            "https://errata.rockylinux.org/RLSA-2026:38796",
             "https://gist.github.com/weaver4VD/3216dac645220f8c9b488362f61241ec",
             "https://github.com/advisories/GHSA-6fmv-xxpf-w3cw",
             "https://github.com/codehaus-plexus/plexus-utils",
