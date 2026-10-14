@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a13485-8f20-7418-aae0-f89e2431c11e",
-  "CreatedAt": "2026-10-13T09:08:50.592270974Z",
+  "ReportID": "01a1394b-62f0-7078-b455-64096348871b",
+  "CreatedAt": "2026-10-14T07:23:24.272032969Z",
   "ArtifactID": "sha256:89205b113a0a13c2eef0387f46bf9ddc0735062fb1dfd34f773f963702188c83",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16420,6 +16420,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 1,
             "ubuntu": 1
           },
@@ -16526,6 +16527,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16579,6 +16581,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16633,6 +16636,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16686,6 +16690,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16739,6 +16744,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16792,6 +16798,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16845,6 +16852,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16899,6 +16907,7 @@
           "VendorSeverity": {
             "alma": 2,
             "amazon": 3,
+            "azure": 3,
             "oracle-oval": 2,
             "redhat": 3,
             "rocky": 3,
@@ -16967,6 +16976,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17020,6 +17030,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 1,
             "ubuntu": 1
           },
@@ -17126,6 +17137,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17179,6 +17191,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17233,6 +17246,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17286,6 +17300,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17339,6 +17354,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17392,6 +17408,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17445,6 +17462,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17499,6 +17517,7 @@
           "VendorSeverity": {
             "alma": 2,
             "amazon": 3,
+            "azure": 3,
             "oracle-oval": 2,
             "redhat": 3,
             "rocky": 3,
@@ -17567,6 +17586,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17620,6 +17640,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 1,
             "ubuntu": 1
           },
@@ -17726,6 +17747,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17779,6 +17801,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 1,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17833,6 +17856,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17886,6 +17910,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17939,6 +17964,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17992,6 +18018,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18045,6 +18072,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 2,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18099,6 +18127,7 @@
           "VendorSeverity": {
             "alma": 2,
             "amazon": 3,
+            "azure": 3,
             "oracle-oval": 2,
             "redhat": 3,
             "rocky": 3,
@@ -18167,6 +18196,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18220,13 +18250,19 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "ghsa": 3,
+            "nvd": 3,
             "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
               "V40Score": 8.9
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -18244,7 +18280,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-97689"
           ],
           "PublishedDate": "2026-09-29T16:17:18.837Z",
-          "LastModifiedDate": "2026-09-30T19:38:27.293Z"
+          "LastModifiedDate": "2026-10-13T20:20:06.95Z"
         },
         {
           "VulnerabilityID": "CVE-2026-100419",
@@ -23740,13 +23776,14 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:77648",
+            "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
             "https://bugzilla.redhat.com/2531964",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2531964",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
-            "https://errata.almalinux.org/10/ALSA-2026-77648.html",
+            "https://errata.almalinux.org/9/ALSA-2026-80504.html",
             "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
@@ -24606,13 +24643,14 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:77648",
+            "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
             "https://bugzilla.redhat.com/2531964",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2531964",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
-            "https://errata.almalinux.org/10/ALSA-2026-77648.html",
+            "https://errata.almalinux.org/9/ALSA-2026-80504.html",
             "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
@@ -25190,13 +25228,14 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:77648",
+            "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
             "https://bugzilla.redhat.com/2531964",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2531964",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
-            "https://errata.almalinux.org/10/ALSA-2026-77648.html",
+            "https://errata.almalinux.org/9/ALSA-2026-80504.html",
             "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
@@ -25267,13 +25306,14 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:77648",
+            "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
             "https://bugzilla.redhat.com/2531964",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2531964",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
-            "https://errata.almalinux.org/10/ALSA-2026-77648.html",
+            "https://errata.almalinux.org/9/ALSA-2026-80504.html",
             "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
@@ -25344,13 +25384,14 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:77648",
+            "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
             "https://bugzilla.redhat.com/2531964",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2531964",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
-            "https://errata.almalinux.org/10/ALSA-2026-77648.html",
+            "https://errata.almalinux.org/9/ALSA-2026-80504.html",
             "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
