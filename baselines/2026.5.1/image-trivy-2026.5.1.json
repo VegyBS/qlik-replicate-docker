@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a13e68-4eb5-72fd-ae0f-6017d8c9778d",
-  "CreatedAt": "2026-10-15T07:13:05.717197478Z",
+  "ReportID": "01a1437d-6fb5-7b4e-a0dd-969f6071e576",
+  "CreatedAt": "2026-10-16T06:54:16.501743443Z",
   "ArtifactID": "sha256:89205b113a0a13c2eef0387f46bf9ddc0735062fb1dfd34f773f963702188c83",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16691,6 +16691,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -16977,6 +16978,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17301,6 +17303,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17587,6 +17590,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -17911,6 +17915,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18197,6 +18202,7 @@
           "VendorSeverity": {
             "amazon": 3,
             "azure": 3,
+            "photon": 3,
             "redhat": 2,
             "ubuntu": 1
           },
@@ -18253,7 +18259,8 @@
             "azure": 3,
             "ghsa": 3,
             "nvd": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -18277,6 +18284,7 @@
             "https://github.com/urllib3/urllib3/releases/tag/2.8.0",
             "https://github.com/urllib3/urllib3/security/advisories/GHSA-vxq7-64xx-v4gw",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-97689",
+            "https://ubuntu.com/security/notices/USN-8926-1",
             "https://www.cve.org/CVERecord?id=CVE-2026-97689"
           ],
           "PublishedDate": "2026-09-29T16:17:18.837Z",
