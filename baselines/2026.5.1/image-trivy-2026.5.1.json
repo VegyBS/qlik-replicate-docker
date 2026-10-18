@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a1489d-c9a7-7b16-8053-332e77bc4d5b",
-  "CreatedAt": "2026-10-17T06:47:42.75972804Z",
+  "ReportID": "01a14dd8-2c3f-798e-8d2a-b6c8bd02bbc4",
+  "CreatedAt": "2026-10-18T07:09:35.167631042Z",
   "ArtifactID": "sha256:89205b113a0a13c2eef0387f46bf9ddc0735062fb1dfd34f773f963702188c83",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -18320,6 +18320,7 @@
           ],
           "VendorSeverity": {
             "amazon": 3,
+            "azure": 3,
             "redhat": 2
           },
           "CVSS": {
