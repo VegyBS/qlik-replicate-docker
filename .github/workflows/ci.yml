@@ -33,7 +33,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Add version info to summary
         run: |
@@ -105,7 +105,7 @@ jobs:
           echo "Dockerfile: $DOCKERFILE"
 
       - name: Build Docker image
-        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc
         env:
           DOCKER_BUILD_RECORD_UPLOAD: "false"
           DOCKER_BUILD_SUMMARY: "false"
@@ -281,12 +281,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Lint Dockerfile with Hadolint
         id: hadolint
         continue-on-error: true
-        uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5
+        uses: hadolint/hadolint-action@06be81baf89a55ffd0e24b8f04a4185738dd3387
         with:
           dockerfile: docker/qlik-replicate/Dockerfile
           output-file: hadolint.txt
@@ -331,14 +331,14 @@ jobs:
 
     steps:
       - name: Checkout baseline branch
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           token: ${{ secrets.BASELINE_PAT }}
           fetch-depth: 0
 
       - name: Checkout scripts from default branch
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           sparse-checkout: .github/scripts
           path: scripts-src
