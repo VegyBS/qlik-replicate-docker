@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a16cb8-4d56-7e70-a2c6-916e357e50e6",
-  "CreatedAt": "2026-10-24T07:03:00.182947556Z",
+  "ReportID": "01a171f7-62c9-7c91-b9a4-8e32eefb84d9",
+  "CreatedAt": "2026-10-25T07:30:00.52182615Z",
   "ArtifactID": "sha256:cbbdcff5c854407e85d9e93860b362e4fded6d2660b2d40aea4a62a263e985ce",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16389,6 +16389,1310 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-113470",
+          "PkgID": "ca-certificates@2025.2.76-1.0.amzn2023.0.3.noarch",
+          "PkgName": "ca-certificates",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/ca-certificates@2025.2.76-1.0.amzn2023.0.3?arch=noarch\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "cdccf15930232721"
+          },
+          "InstalledVersion": "2025.2.76-1.0.amzn2023.0.3",
+          "FixedVersion": "2025.2.76-1.0.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-113470",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:377eabe2d9543d386cbb03282f0ec70cba4c619ac318f2329cf31530aa1336aa",
+          "Title": "firefox: Firefox: Website spoofing via failure to block compromised intermediate certificates",
+          "Description": "Cryptographic issue in the Security Block-lists, Allow-lists, and other State component. This vulnerability was fixed in Firefox 158.0.1, Firefox ESR 153.5.1, Firefox ESR 115.43.1, Thunderbird 158.0.1, Thunderbird 153.5.1, and Firefox 158.0.2.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "oracle-oval": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:L",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/20/30",
+            "https://access.redhat.com/security/cve/CVE-2026-113470",
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=2083382",
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=2083449",
+            "https://bugzilla.mozilla.org/show_bug.cgi?id=2084311",
+            "https://linux.oracle.com/cve/CVE-2026-113470.html",
+            "https://linux.oracle.com/errata/ELSA-2026-500496.html",
+            "https://lists.debian.org/debian-lts-announce/2026/10/msg00041.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-113470",
+            "https://www.cve.org/CVERecord?id=CVE-2026-113470",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2026-111/#CVE-2026-113470",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2026-112/#CVE-2026-113470",
+            "https://www.mozilla.org/en-US/security/advisories/mfsa2026-115/#CVE-2026-113470",
+            "https://www.mozilla.org/security/advisories/mfsa2026-111/",
+            "https://www.mozilla.org/security/advisories/mfsa2026-112/",
+            "https://www.mozilla.org/security/advisories/mfsa2026-113/",
+            "https://www.mozilla.org/security/advisories/mfsa2026-114/",
+            "https://www.mozilla.org/security/advisories/mfsa2026-115/",
+            "https://www.mozilla.org/security/advisories/mfsa2026-116/",
+            "https://www.openwall.com/lists/oss-security/2026/10/20/1"
+          ],
+          "PublishedDate": "2026-10-20T13:16:41.273Z",
+          "LastModifiedDate": "2026-10-21T20:17:25.23Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-92392",
+          "PkgID": "curl-minimal@8.21.0-5.amzn2023.0.2.x86_64",
+          "PkgName": "curl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/curl-minimal@8.21.0-5.amzn2023.0.2?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "456a0f1dd61b536e"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.2",
+          "FixedVersion": "8.21.0-5.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5f8ed6e68f40e3a490778a7748a0c110cb7c7a17b4cf400bd1fa849d090add65",
+          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
+          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
+            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
+            "https://access.redhat.com/security/cve/CVE-2026-92392",
+            "https://curl.se/docs/CVE-2026-92392.html",
+            "https://curl.se/docs/CVE-2026-92392.json",
+            "https://hackerone.com/reports/4030333",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://ubuntu.com/security/notices/USN-8927-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
+          ],
+          "PublishedDate": "2026-10-14T08:17:05.997Z",
+          "LastModifiedDate": "2026-10-18T23:16:57.163Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78659",
+          "PkgID": "libcap@2.73-1.amzn2023.0.7.x86_64",
+          "PkgName": "libcap",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcap@2.73-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "2ba9c0e502af47db"
+          },
+          "InstalledVersion": "2.73-1.amzn2023.0.7",
+          "FixedVersion": "2.73-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78659",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:40cf757d6505178217683bde1738d5ae0f626228eaedf633339331a29c003e29",
+          "Title": "net/http: golang.org/x/net/http2: golang: net/http: Denial of Service via HTTP/2 trailer header memory exhaustion",
+          "Description": "When \"Trailer\" headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers, a malicious client can exploit this by sending a \"Trailer\" header that declares a large number of fields, causing the server to allocate a disproportionate amount of memory while bypassing Server.MaxHeaderValueCount and Server.MaxHeaderBytes limits. This exploit is not applicable for HTTP/1 servers, which do not support multiplexing a large number of requests over one TCP connection, and whose Server.MaxHeaderBytes are calculated differently.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-405"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 2,
+            "bitnami": 3,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/security/cve/CVE-2026-78659",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548337",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548338",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548339",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548340",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548341",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548342",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548343",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548345",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548346",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548347",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56866",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78659",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78660",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78663",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94439",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94440",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94444",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94447",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94448",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86196",
+            "https://github.com/golang/go/issues/81857",
+            "https://go.dev/cl/847185",
+            "https://go.dev/cl/847314",
+            "https://go.dev/issue/81857",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://groups.google.com/g/golang-announce/c/ZPwCyRUuGBs",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78659",
+            "https://pkg.go.dev/vuln/GO-2026-6603",
+            "https://ubuntu.com/security/notices/USN-8935-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78659",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "PublishedDate": "2026-10-08T23:17:03.27Z",
+          "LastModifiedDate": "2026-10-09T16:35:35.9Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78667",
+          "PkgID": "libcap@2.73-1.amzn2023.0.7.x86_64",
+          "PkgName": "libcap",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcap@2.73-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "2ba9c0e502af47db"
+          },
+          "InstalledVersion": "2.73-1.amzn2023.0.7",
+          "FixedVersion": "2.73-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78667",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:8171bdc274fb3013c75aee37a65a4ab5eb880a868cae11e58d5950e8068d78cd",
+          "Title": "net/http: golang: golang: Denial of Service via crafted HTTP Range headers",
+          "Description": "When parsing a Range header containing a large number of small ranges, FileServer(FS), ServeContent, and ServeFile(FS) can consume an excessive amount of CPU.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "bitnami": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/security/cve/CVE-2026-78667",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548337",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548338",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548339",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548340",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548341",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548342",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548343",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548345",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548346",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548347",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56866",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78659",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78660",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78663",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94439",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94440",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94444",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94447",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94448",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86196",
+            "https://github.com/golang/go/issues/81858",
+            "https://go.dev/cl/847309",
+            "https://go.dev/issue/81858",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://linux.oracle.com/cve/CVE-2026-78667.html",
+            "https://linux.oracle.com/errata/ELSA-2026-88336.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78667",
+            "https://pkg.go.dev/vuln/GO-2026-6609",
+            "https://ubuntu.com/security/notices/USN-8935-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78667",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "PublishedDate": "2026-10-08T23:17:03.88Z",
+          "LastModifiedDate": "2026-10-09T17:16:49.69Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-94440",
+          "PkgID": "libcap@2.73-1.amzn2023.0.7.x86_64",
+          "PkgName": "libcap",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcap@2.73-1.amzn2023.0.7?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "2ba9c0e502af47db"
+          },
+          "InstalledVersion": "2.73-1.amzn2023.0.7",
+          "FixedVersion": "2.73-1.amzn2023.0.8",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-94440",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:a737a39c1216f2b0496dd68586e986e78f66717e95bec0284234eb947203a621",
+          "Title": "net/textproto: mime/multipart: golang: golang: Denial of Service via memory limit bypass in multipart form parsing",
+          "Description": "Parsing a multipart form can bypass memory limits and read an arbitrarily long line into memory when the remaining limit at the start of a part is less than 400 bytes.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "bitnami": 3,
+            "redhat": 2,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/security/cve/CVE-2026-94440",
+            "https://bugzilla.redhat.com/2548334",
+            "https://bugzilla.redhat.com/2548336",
+            "https://bugzilla.redhat.com/2548344",
+            "https://bugzilla.redhat.com/2556068",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548337",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548338",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548339",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548340",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548341",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548342",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548343",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548345",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548346",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2548347",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56866",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78659",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78660",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78663",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94439",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94440",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94444",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94447",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94448",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
+            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.rockylinux.org/RLSA-2026:86196",
+            "https://github.com/golang/go/issues/81741",
+            "https://go.dev/cl/847307",
+            "https://go.dev/issue/81741",
+            "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-94440",
+            "https://pkg.go.dev/vuln/GO-2026-6608",
+            "https://ubuntu.com/security/notices/USN-8935-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-94440",
+            "https://www.openwall.com/lists/oss-security/2026/10/08/9"
+          ],
+          "PublishedDate": "2026-10-08T23:17:04.917Z",
+          "LastModifiedDate": "2026-10-09T17:16:50.907Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-92392",
+          "PkgID": "libcurl-minimal@8.21.0-5.amzn2023.0.2.x86_64",
+          "PkgName": "libcurl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcurl-minimal@8.21.0-5.amzn2023.0.2?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "e1e6631c6bb3389d"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.2",
+          "FixedVersion": "8.21.0-5.amzn2023.0.3",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-92392",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:093269e8e099077986d832aa3d34adee68b06d629abdfc62249453635a224176",
+          "Title": "curl: curl: HTTP/2 upload Use-After-Free",
+          "Description": "During an upload, curl mishandles HTTP/2 `RST_STREAM` received from the server\n(with reason `HTTP_1_1_REQUIRED` or `REFUSED_STREAM`) leading to a use after\nfree of a `struct Curl_easy` object.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/10/18/5",
+            "http://www.openwall.com/lists/oss-security/2026/10/18/6",
+            "https://access.redhat.com/security/cve/CVE-2026-92392",
+            "https://curl.se/docs/CVE-2026-92392.html",
+            "https://curl.se/docs/CVE-2026-92392.json",
+            "https://hackerone.com/reports/4030333",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-92392",
+            "https://ubuntu.com/security/notices/USN-8927-1",
+            "https://ubuntu.com/security/notices/USN-8927-2",
+            "https://www.cve.org/CVERecord?id=CVE-2026-92392"
+          ],
+          "PublishedDate": "2026-10-14T08:17:05.997Z",
+          "LastModifiedDate": "2026-10-18T23:16:57.163Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103111",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.4.x86_64",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2@10.40-1.amzn2023.0.4?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "916c556393c63b54"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103111",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:ce0e15196402a11fd20ee2bdad0e772a03b6c639205b437baec766b2a5f49bf6",
+          "Title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression",
+          "Description": "PCRE2 before 10.49, when there is an attacker-controlled regular expression and certain JIT API usage, allows an out-of-bounds write with arbitrary data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
+              "V3Score": 7.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-103111",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
+            "https://linux.oracle.com/cve/CVE-2026-103111.html",
+            "https://linux.oracle.com/errata/ELSA-2026-84799.html",
+            "https://lists.debian.org/debian-lts-announce/2026/10/msg00008.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103111",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103111"
+          ],
+          "PublishedDate": "2026-09-30T05:16:45.863Z",
+          "LastModifiedDate": "2026-10-04T00:16:35.563Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86145",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.4.x86_64",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2@10.40-1.amzn2023.0.4?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "916c556393c63b54"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86145",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:2db91f5f8c9a9875b0600f7418c55c2d426adf2b6106d554a4599abee305cec2",
+          "Title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions",
+          "Description": "PCRE2 before 10.48 allows a pcre2_dfa_match out-of-bounds write because reuse of a cached workspace block, in a recursive DFA matching workspace, lacks a size check (even though a newly allocated block, for the same purpose, does have a size check). This outcome requires an attacker-controlled regular expression, or a recursive pattern in conjunction with a small heap limit (this can be set through the API).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-424"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "bottlerocket": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+              "V3Score": 8.2
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "http://www.openwall.com/lists/oss-security/2026/09/05/3",
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-86145",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
+            "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/17.1.0/BRSA-xqvt0yt0g9rb.toml",
+            "https://github.com/bottlerocket-os/bottlerocket/security/advisories/GHSA-3r4p-g7gg-ppmf",
+            "https://linux.oracle.com/cve/CVE-2026-86145.html",
+            "https://linux.oracle.com/errata/ELSA-2026-84799.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86145",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86145"
+          ],
+          "PublishedDate": "2026-09-05T06:17:10.37Z",
+          "LastModifiedDate": "2026-09-09T16:04:24.933Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89156",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.4.x86_64",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2@10.40-1.amzn2023.0.4?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "916c556393c63b54"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89156",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:90e1bb9da66cea3da6f3212b1ef3c4d4f31fc7dfea9b479d05535c0d6bb67c06",
+          "Title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback",
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read after a JIT fallback when an attacker can provide invalid UTF data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 1,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 1,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 2.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-89156",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
+            "https://linux.oracle.com/cve/CVE-2026-89156.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89156",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89156"
+          ],
+          "PublishedDate": "2026-09-11T04:18:03.23Z",
+          "LastModifiedDate": "2026-09-16T19:27:01.327Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89160",
+          "PkgID": "pcre2@10.40-1.amzn2023.0.4.x86_64",
+          "PkgName": "pcre2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2@10.40-1.amzn2023.0.4?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "916c556393c63b54"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89160",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:d0e80471cd3e1fd573525857434875e9a18e148d82537c2568036039c7addcdb",
+          "Title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching",
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read during the PCRE2_MATCH_INVALID_UTF matching of an invalid UTF subject.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 1,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 1,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-89160",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
+            "https://linux.oracle.com/cve/CVE-2026-89160.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89160",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89160"
+          ],
+          "PublishedDate": "2026-09-11T04:18:04.343Z",
+          "LastModifiedDate": "2026-09-16T19:15:29.443Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103111",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.4.noarch",
+          "PkgName": "pcre2-syntax",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2-syntax@10.40-1.amzn2023.0.4?arch=noarch\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "fc2653af4bb72a60"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103111",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:4af57a75ebcd28bca38b393291d6fef9a8749d96138151ac212e5c4e70618dcf",
+          "Title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression",
+          "Description": "PCRE2 before 10.49, when there is an attacker-controlled regular expression and certain JIT API usage, allows an out-of-bounds write with arbitrary data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:L",
+              "V3Score": 7.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-103111",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
+            "https://linux.oracle.com/cve/CVE-2026-103111.html",
+            "https://linux.oracle.com/errata/ELSA-2026-84799.html",
+            "https://lists.debian.org/debian-lts-announce/2026/10/msg00008.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103111",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103111"
+          ],
+          "PublishedDate": "2026-09-30T05:16:45.863Z",
+          "LastModifiedDate": "2026-10-04T00:16:35.563Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86145",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.4.noarch",
+          "PkgName": "pcre2-syntax",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2-syntax@10.40-1.amzn2023.0.4?arch=noarch\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "fc2653af4bb72a60"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86145",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e8e984bb7e83dd6dc9e198648d2f651f6c23e3a49d0d47cc7213eb0c8b09b355",
+          "Title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions",
+          "Description": "PCRE2 before 10.48 allows a pcre2_dfa_match out-of-bounds write because reuse of a cached workspace block, in a recursive DFA matching workspace, lacks a size check (even though a newly allocated block, for the same purpose, does have a size check). This outcome requires an attacker-controlled regular expression, or a recursive pattern in conjunction with a small heap limit (this can be set through the API).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-424"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "bottlerocket": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+              "V3Score": 8.2
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "http://www.openwall.com/lists/oss-security/2026/09/05/3",
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-86145",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
+            "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/17.1.0/BRSA-xqvt0yt0g9rb.toml",
+            "https://github.com/bottlerocket-os/bottlerocket/security/advisories/GHSA-3r4p-g7gg-ppmf",
+            "https://linux.oracle.com/cve/CVE-2026-86145.html",
+            "https://linux.oracle.com/errata/ELSA-2026-84799.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86145",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86145"
+          ],
+          "PublishedDate": "2026-09-05T06:17:10.37Z",
+          "LastModifiedDate": "2026-09-09T16:04:24.933Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89156",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.4.noarch",
+          "PkgName": "pcre2-syntax",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2-syntax@10.40-1.amzn2023.0.4?arch=noarch\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "fc2653af4bb72a60"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89156",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3dcfa1a2ab71f9822ea98f10f2b4e210109df2a41806368d7f3586c4dce9c1a8",
+          "Title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback",
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read after a JIT fallback when an attacker can provide invalid UTF data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 1,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 1,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 2.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-89156",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
+            "https://linux.oracle.com/cve/CVE-2026-89156.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89156",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89156"
+          ],
+          "PublishedDate": "2026-09-11T04:18:03.23Z",
+          "LastModifiedDate": "2026-09-16T19:27:01.327Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-89160",
+          "PkgID": "pcre2-syntax@10.40-1.amzn2023.0.4.noarch",
+          "PkgName": "pcre2-syntax",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/pcre2-syntax@10.40-1.amzn2023.0.4?arch=noarch\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "fc2653af4bb72a60"
+          },
+          "InstalledVersion": "10.40-1.amzn2023.0.4",
+          "FixedVersion": "10.40-1.amzn2023.0.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89160",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:6d745f86adbb87a08d40979c1fb78a2d181047529bd92056e384374ce8fb5270",
+          "Title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching",
+          "Description": "PCRE2 before 10.48 has a pcre2_match out-of-bounds read during the PCRE2_MATCH_INVALID_UTF matching of an invalid UTF subject.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 1,
+            "nvd": 2,
+            "oracle-oval": 3,
+            "redhat": 1,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81532",
+            "https://access.redhat.com/security/cve/CVE-2026-89160",
+            "https://bugzilla.redhat.com/2528993",
+            "https://bugzilla.redhat.com/2531743",
+            "https://bugzilla.redhat.com/2531744",
+            "https://bugzilla.redhat.com/2531745",
+            "https://bugzilla.redhat.com/2531746",
+            "https://bugzilla.redhat.com/2531747",
+            "https://bugzilla.redhat.com/2543797",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2528993",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531743",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531744",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531745",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531746",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531747",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543797",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-103111",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89156",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89157",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89158",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
+            "https://errata.almalinux.org/9/ALSA-2026-81532.html",
+            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
+            "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
+            "https://linux.oracle.com/cve/CVE-2026-89160.html",
+            "https://linux.oracle.com/errata/ELSA-2026-81532.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-89160",
+            "https://www.cve.org/CVERecord?id=CVE-2026-89160"
+          ],
+          "PublishedDate": "2026-09-11T04:18:04.343Z",
+          "LastModifiedDate": "2026-09-16T19:15:29.443Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19553",
+          "PkgID": "python3@3.9.25-1.amzn2023.0.9.x86_64",
+          "PkgName": "python3",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3@3.9.25-1.amzn2023.0.9?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "874089fca1d93b7e"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.9",
+          "FixedVersion": "3.9.25-1.amzn2023.0.11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19553",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:fb289f4fcdf7c781b35973e7290076c84222eaaf916eb96187e1ca662183bf3c",
+          "Title": "python: python: Certificate verification bypass via missing server_hostname validation in SSLContext.wrap_bio()",
+          "Description": "ssl.SSLContext.wrap_bio() didn't require the server_hostname argument\nto not be None if ssl.SSLContext.check_hostname was set. Due to a\nmissing parameter check in SSLObject, if the server_hostname argument\nisn't supplied then hostname verification would be silently skipped.\n\n\nThis defect could lead to programs where certificate hostname verification\n*appeared* to be succeeding with SSLContext.check_hostname = True and no\nValueError being raised due to misconfiguration.\n\n\nIf the program passes a server_hostname value that isn't an empty string\nor None to any of these APIs then certificate hostname verification\nproceeds as expected and the program is not affected by this vulnerability.\n\n\nMitigating this vulnerability doesn't require updating Python or applying\nthe patch. To mitigate, pass a valid non-None and non-empty\nserver_hostname value to SSLContext.wrap_bio(),\nasyncio.create_connection(), or asyncio.loop.start_tls() and\ncertificate hostname verification will proceed as expected. Upgrading to\nthe latest version of Python or applying the patch only changes the\nbehavior from silently skipping hostname verification to raising a\nValueError, similar to SSLContext.wrap_socket(), when server_hostname\nisn't supplied.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-297"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "bitnami": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 7.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/30/16",
+            "https://access.redhat.com/errata/RHSA-2026:77021",
+            "https://access.redhat.com/security/cve/CVE-2026-19553",
+            "https://bugzilla.redhat.com/2544127",
+            "https://bugzilla.redhat.com/2544138",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2544138",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
+            "https://errata.almalinux.org/9/ALSA-2026-77021.html",
+            "https://errata.rockylinux.org/RLSA-2026:77021",
+            "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
+            "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
+            "https://github.com/python/cpython/commit/641390146a16a38e6701923f4ee4f1940ae77082",
+            "https://github.com/python/cpython/commit/869069d52ce0efab2f8c38197e92cdaaa312f1ed",
+            "https://github.com/python/cpython/commit/966bf426d0b6c31c1b0a255ff14a17143a466ced",
+            "https://github.com/python/cpython/commit/bdebbf9b366ec91e9cd9daa0b3510c9e84b60b80",
+            "https://github.com/python/cpython/commit/f4e43ba525187282f2011da0e6ffc0d2b08d8062",
+            "https://github.com/python/cpython/issues/156793",
+            "https://github.com/python/cpython/pull/158503",
+            "https://linux.oracle.com/cve/CVE-2026-19553.html",
+            "https://linux.oracle.com/errata/ELSA-2026-85239.html",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/QNZRG3YOAMTHDCMVCICXGY6YEFPY2VDL/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-19553",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19553"
+          ],
+          "PublishedDate": "2026-09-30T17:16:45.88Z",
+          "LastModifiedDate": "2026-10-16T19:17:06.673Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19553",
+          "PkgID": "python3-libs@3.9.25-1.amzn2023.0.9.x86_64",
+          "PkgName": "python3-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-libs@3.9.25-1.amzn2023.0.9?arch=x86_64\u0026distro=amazon-2023.12.20261021%20%28Amazon%20Linux%29",
+            "UID": "675c0eba9a917895"
+          },
+          "InstalledVersion": "3.9.25-1.amzn2023.0.9",
+          "FixedVersion": "3.9.25-1.amzn2023.0.11",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74635040b5e7967efb2c8c4a362e7dd1316232c28e9e22a60f112b738d20cca1"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19553",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:783dafad890170ae2bd49b836f2cc54201765f2bbc05fb6ca9f8b6d087c061d2",
+          "Title": "python: python: Certificate verification bypass via missing server_hostname validation in SSLContext.wrap_bio()",
+          "Description": "ssl.SSLContext.wrap_bio() didn't require the server_hostname argument\nto not be None if ssl.SSLContext.check_hostname was set. Due to a\nmissing parameter check in SSLObject, if the server_hostname argument\nisn't supplied then hostname verification would be silently skipped.\n\n\nThis defect could lead to programs where certificate hostname verification\n*appeared* to be succeeding with SSLContext.check_hostname = True and no\nValueError being raised due to misconfiguration.\n\n\nIf the program passes a server_hostname value that isn't an empty string\nor None to any of these APIs then certificate hostname verification\nproceeds as expected and the program is not affected by this vulnerability.\n\n\nMitigating this vulnerability doesn't require updating Python or applying\nthe patch. To mitigate, pass a valid non-None and non-empty\nserver_hostname value to SSLContext.wrap_bio(),\nasyncio.create_connection(), or asyncio.loop.start_tls() and\ncertificate hostname verification will proceed as expected. Upgrading to\nthe latest version of Python or applying the patch only changes the\nbehavior from silently skipping hostname verification to raising a\nValueError, similar to SSLContext.wrap_socket(), when server_hostname\nisn't supplied.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-297"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "bitnami": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "bitnami": {
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "V40Score": 7.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/30/16",
+            "https://access.redhat.com/errata/RHSA-2026:77021",
+            "https://access.redhat.com/security/cve/CVE-2026-19553",
+            "https://bugzilla.redhat.com/2544127",
+            "https://bugzilla.redhat.com/2544138",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2544138",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
+            "https://errata.almalinux.org/9/ALSA-2026-77021.html",
+            "https://errata.rockylinux.org/RLSA-2026:77021",
+            "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
+            "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
+            "https://github.com/python/cpython/commit/641390146a16a38e6701923f4ee4f1940ae77082",
+            "https://github.com/python/cpython/commit/869069d52ce0efab2f8c38197e92cdaaa312f1ed",
+            "https://github.com/python/cpython/commit/966bf426d0b6c31c1b0a255ff14a17143a466ced",
+            "https://github.com/python/cpython/commit/bdebbf9b366ec91e9cd9daa0b3510c9e84b60b80",
+            "https://github.com/python/cpython/commit/f4e43ba525187282f2011da0e6ffc0d2b08d8062",
+            "https://github.com/python/cpython/issues/156793",
+            "https://github.com/python/cpython/pull/158503",
+            "https://linux.oracle.com/cve/CVE-2026-19553.html",
+            "https://linux.oracle.com/errata/ELSA-2026-85239.html",
+            "https://mail.python.org/archives/list/security-announce@python.org/thread/QNZRG3YOAMTHDCMVCICXGY6YEFPY2VDL/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-19553",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19553"
+          ],
+          "PublishedDate": "2026-09-30T17:16:45.88Z",
+          "LastModifiedDate": "2026-10-16T19:17:06.673Z"
+        }
       ]
     },
     {
@@ -22060,6 +23364,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -22135,6 +23440,7 @@
             "CWE-400"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -22201,6 +23507,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -22278,7 +23585,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22489,7 +23796,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
-          "LastModifiedDate": "2026-07-15T20:18:23.677Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59889",
@@ -22549,7 +23856,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
-          "LastModifiedDate": "2026-10-19T20:19:19.487Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-77310",
@@ -22648,7 +23955,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -22938,6 +24245,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -23013,6 +24321,7 @@
             "CWE-400"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -23079,6 +24388,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -23156,7 +24466,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -23367,7 +24677,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
-          "LastModifiedDate": "2026-07-15T20:18:23.677Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59889",
@@ -23427,7 +24737,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
-          "LastModifiedDate": "2026-10-19T20:19:19.487Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-77310",
@@ -23526,7 +24836,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -23993,6 +25303,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -24070,6 +25381,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -24145,6 +25457,7 @@
             "CWE-400"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -24210,6 +25523,7 @@
             "CWE-400"
           ],
           "VendorSeverity": {
+            "amazon": 3,
             "ghsa": 3,
             "redhat": 3,
             "ubuntu": 2
@@ -24276,6 +25590,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -24353,6 +25668,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "amazon": 3,
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
@@ -24430,7 +25746,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24497,7 +25813,7 @@
             "CWE-610"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -24827,7 +26143,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
-          "LastModifiedDate": "2026-07-15T20:18:23.677Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59888",
@@ -24887,7 +26203,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59888"
           ],
           "PublishedDate": "2026-07-14T17:17:15.137Z",
-          "LastModifiedDate": "2026-07-15T20:18:23.677Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59889",
@@ -24947,7 +26263,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
-          "LastModifiedDate": "2026-10-19T20:19:19.487Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-59889",
@@ -25007,7 +26323,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-59889"
           ],
           "PublishedDate": "2026-07-14T21:17:06.16Z",
-          "LastModifiedDate": "2026-10-19T20:19:19.487Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2026-77310",
@@ -25170,7 +26486,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -25237,7 +26553,7 @@
             "CWE-915"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "ghsa": 2,
             "redhat": 2
           },
@@ -29118,7 +30434,7 @@
             "https://nvd.nist.gov/vuln/detail/CVE-2026-8798"
           ],
           "PublishedDate": "2026-08-08T01:16:31.393Z",
-          "LastModifiedDate": "2026-10-23T20:10:00.16Z"
+          "LastModifiedDate": "2026-10-24T13:10:00.147Z"
         },
         {
           "VulnerabilityID": "CVE-2025-12194",
@@ -29648,7 +30964,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2026-6790"
           ],
           "PublishedDate": "2026-07-14T09:16:41.93Z",
-          "LastModifiedDate": "2026-07-14T18:35:54.793Z"
+          "LastModifiedDate": "2026-10-24T21:10:00.13Z"
         },
         {
           "VulnerabilityID": "CVE-2025-12383",
