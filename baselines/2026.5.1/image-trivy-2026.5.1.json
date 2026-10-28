@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a17c48-7db4-7481-8438-2754b37c10fd",
-  "CreatedAt": "2026-10-27T07:34:47.988297067Z",
+  "ReportID": "01a1818c-25b1-71a8-990f-f62eed36b1bd",
+  "CreatedAt": "2026-10-28T08:06:47.98511023Z",
   "ArtifactID": "sha256:b4921b883dd0c16ebacd897606a71ad5ddbcfbe7f2207831c7a6d12af86462a9",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16661,10 +16661,9 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:90462",
             "https://access.redhat.com/security/cve/CVE-2026-78667",
             "https://bugzilla.redhat.com/2548334",
-            "https://bugzilla.redhat.com/2548336",
-            "https://bugzilla.redhat.com/2548344",
             "https://bugzilla.redhat.com/2556068",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
@@ -16697,14 +16696,14 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
-            "https://errata.almalinux.org/9/ALSA-2026-86196.html",
+            "https://errata.almalinux.org/9/ALSA-2026-90462.html",
             "https://errata.rockylinux.org/RLSA-2026:86196",
             "https://github.com/golang/go/issues/81858",
             "https://go.dev/cl/847309",
             "https://go.dev/issue/81858",
             "https://groups.google.com/g/golang-announce/c/U2fTuyDJznI",
             "https://linux.oracle.com/cve/CVE-2026-78667.html",
-            "https://linux.oracle.com/errata/ELSA-2026-89761.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90462.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-78667",
             "https://pkg.go.dev/vuln/GO-2026-6609",
             "https://ubuntu.com/security/notices/USN-8935-1",
@@ -17590,7 +17589,9 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/30/16",
             "https://access.redhat.com/errata/RHSA-2026:77021",
+            "https://access.redhat.com/errata/RHSA-2026:89742",
             "https://access.redhat.com/security/cve/CVE-2026-19553",
+            "https://bugzilla.redhat.com/2543492",
             "https://bugzilla.redhat.com/2544127",
             "https://bugzilla.redhat.com/2544138",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
@@ -17598,7 +17599,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
-            "https://errata.almalinux.org/9/ALSA-2026-77021.html",
+            "https://errata.almalinux.org/9/ALSA-2026-89742.html",
             "https://errata.rockylinux.org/RLSA-2026:77021",
             "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
             "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
@@ -17668,7 +17669,9 @@
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/30/16",
             "https://access.redhat.com/errata/RHSA-2026:77021",
+            "https://access.redhat.com/errata/RHSA-2026:89742",
             "https://access.redhat.com/security/cve/CVE-2026-19553",
+            "https://bugzilla.redhat.com/2543492",
             "https://bugzilla.redhat.com/2544127",
             "https://bugzilla.redhat.com/2544138",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
@@ -17676,7 +17679,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
-            "https://errata.almalinux.org/9/ALSA-2026-77021.html",
+            "https://errata.almalinux.org/9/ALSA-2026-89742.html",
             "https://errata.rockylinux.org/RLSA-2026:77021",
             "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
             "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
@@ -25845,6 +25848,378 @@
           "LastModifiedDate": "2026-09-08T19:29:32.2Z"
         },
         {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/IMS/ims.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.3.1-jre",
+            "UID": "861cc2d9413d0a04"
+          },
+          "InstalledVersion": "33.3.1-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/endpoints/MongoDB/arep-mongodb.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.5.0-jre",
+            "UID": "8029418558c692d6"
+          },
+          "InstalledVersion": "33.5.0-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/guava-33.5.0-jre.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.5.0-jre",
+            "UID": "7f9f46fc505c34ed"
+          },
+          "InstalledVersion": "33.5.0-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/java/arep-google-cloud.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.5.0-jre",
+            "UID": "fe8f64971eaa7ca9"
+          },
+          "InstalledVersion": "33.5.0-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/java/arep-snowflake.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.5.0-jre",
+            "UID": "bdfe5077b7d180d7"
+          },
+          "InstalledVersion": "33.5.0-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-102554",
+          "VendorIDs": [
+            "GHSA-xxph-c9ww-hj94"
+          ],
+          "PkgName": "com.google.guava:guava",
+          "PkgPath": "opt/attunity/replicate/java/java_file_factory.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/com.google.guava/guava@33.5.0-jre",
+            "UID": "6f5eae23bc429ed2"
+          },
+          "InstalledVersion": "33.5.0-jre",
+          "FixedVersion": "33.7.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102554",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:9bb44533b3148504297f4e9e326947578535eaed2e73ca8ab9cd8ec89cc87951",
+          "Title": "com.google.guava/guava: Google Guava: Denial of Service via unthrottled memory allocation during deserialization",
+          "Description": "Allocation of resources without limits or throttling (CWE-770) during Java object deserialization in Google Guava versions 4.0 through 33.7.1 allows an attacker to cause a Denial of Service via OutOfMemoryError. When deserializing CompactHashMap, CompactHashSet, or MapMakerInternalMap instances, Guava eagerly allocates an array based on a caller-specified size parameter without throttling, permitting memory exhaustion from crafted serialization streams.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-502",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V40Vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "V3Score": 5.9,
+              "V40Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-102554",
+            "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
+            "https://github.com/google/guava",
+            "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "https://github.com/google/guava/releases/tag/v33.7.2",
+            "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+          ],
+          "PublishedDate": "2026-10-09T16:17:20.41Z",
+          "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-64607",
           "VendorIDs": [
             "GHSA-hjcp-jmpx-g3qm"
@@ -27001,6 +27376,184 @@
           ],
           "PublishedDate": "2026-06-10T00:16:51.917Z",
           "LastModifiedDate": "2026-07-23T09:10:00.113Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-108106",
+          "VendorIDs": [
+            "GHSA-q233-g92q-qxp6"
+          ],
+          "PkgName": "org.xerial.snappy:snappy-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/snappy-java-1.1.10.8.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.xerial.snappy/snappy-java@1.1.10.8",
+            "UID": "4818b7f183809bd1"
+          },
+          "InstalledVersion": "1.1.10.8",
+          "FixedVersion": "1.1.10.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-108106",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:b95d3c719c2e7e41d7d686888efe7125d2ace7dd9076853b449e75937fd532ed",
+          "Title": "org.xerial.snappy/snappy-java: snappy-java: Denial of Service via unbounded memory allocation during decompression",
+          "Description": "Xerial snappy-java before 1.1.10.9 contains an unbounded memory allocation vulnerability that allows attackers to exhaust JVM memory by declaring a large uncompressed length in compressed input. Attackers can supply a few crafted bytes to Snappy.uncompress, uncompressString, SnappyInputStream or SnappyFramedInputStream to force allocations up to 2 GB, causing OutOfMemoryError and denial of service.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-789"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-108106",
+            "https://advisory.echohq.com/cve/CVE-2026-108106",
+            "https://github.com/advisories/GHSA-94x4-5g3f-jjxp",
+            "https://github.com/xerial/snappy-java",
+            "https://github.com/xerial/snappy-java/blob/v1.1.10.8/src/main/java/org/xerial/snappy/Snappy.java#L517",
+            "https://github.com/xerial/snappy-java/commit/943c6043a292568575e8347af4507d015e802c75",
+            "https://github.com/xerial/snappy-java/pull/739",
+            "https://github.com/xerial/snappy-java/releases/tag/v1.1.10.9",
+            "https://github.com/xerial/snappy-java/security/advisories/GHSA-q233-g92q-qxp6",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-108106",
+            "https://www.cve.org/CVERecord?id=CVE-2026-108106",
+            "https://www.vulncheck.com/advisories/xerial-snappy-java-before-1.1.10.9-unbounded-memory-allocation-denial-of-service"
+          ],
+          "PublishedDate": "2026-10-09T15:17:11.55Z",
+          "LastModifiedDate": "2026-10-13T17:17:19.13Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-93451",
+          "VendorIDs": [
+            "GHSA-gwq9-9ffj-mvrv"
+          ],
+          "PkgName": "org.xerial.snappy:snappy-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/snappy-java-1.1.10.8.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.xerial.snappy/snappy-java@1.1.10.8",
+            "UID": "4818b7f183809bd1"
+          },
+          "InstalledVersion": "1.1.10.8",
+          "FixedVersion": "1.1.10.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-93451",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:80d89e29a674c2f7a95ca275269d061f3c3aa57f03370862123124a793ef9101",
+          "Title": "org.xerial/snappy-java: snappy-java: Buffer overflow via malformed compressed input",
+          "Description": "snappy-java through 1.1.10.8 contains a buffer overflow vulnerability in typed Snappy.uncompress*Array methods that allocate output arrays by dividing uncompressed length by element size but pass the undivided length to native code. Attackers controlling compressed input can cause misaligned length values to write past array bounds with attacker-controlled bytes, corrupting heap memory.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-93451",
+            "https://advisory.echohq.com/cve/CVE-2026-93451",
+            "https://github.com/advisories/GHSA-wm36-87w8-wg22",
+            "https://github.com/xerial/snappy-java",
+            "https://github.com/xerial/snappy-java/blob/v1.1.10.8/src/main/java/org/xerial/snappy/Snappy.java#L802",
+            "https://github.com/xerial/snappy-java/commit/943c6043a292568575e8347af4507d015e802c75",
+            "https://github.com/xerial/snappy-java/issues/729",
+            "https://github.com/xerial/snappy-java/pull/739",
+            "https://github.com/xerial/snappy-java/releases/tag/v1.1.10.9",
+            "https://github.com/xerial/snappy-java/security/advisories/GHSA-gwq9-9ffj-mvrv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-93451",
+            "https://www.cve.org/CVERecord?id=CVE-2026-93451",
+            "https://www.vulncheck.com/advisories/snappy-java-through-1.1.10.8-buffer-overflow-via-typed-uncompress-methods"
+          ],
+          "PublishedDate": "2026-09-18T00:17:49.38Z",
+          "LastModifiedDate": "2026-10-08T16:18:00.33Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-116590",
+          "VendorIDs": [
+            "GHSA-xqrx-qh46-34m7"
+          ],
+          "PkgName": "org.xerial.snappy:snappy-java",
+          "PkgPath": "opt/attunity/replicate/endpoint_srv/externals/snappy-java-1.1.10.8.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.xerial.snappy/snappy-java@1.1.10.8",
+            "UID": "4818b7f183809bd1"
+          },
+          "InstalledVersion": "1.1.10.8",
+          "FixedVersion": "1.1.10.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:330a84019391b5aa57b6e14c55e6ead7ea2ba9cbaf6d7949ee033e2db677cf74"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-116590",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:710508f076f5c7b0add6d022b4edf8207cfba008c01120753a5c10107624329c",
+          "Title": "snappy-java: JVM crash from unchecked ranges in Snappy.arrayCopy and SnappyOutputStream.rawWrite",
+          "Description": "snappy-java is a Java port of the snappy, a fast C++ compresser/decompresser developed by Google. Prior to 1.1.10.9, Snappy.arrayCopy(Object src, int offset, int byteLength, Object dest, int destOffset) passes caller-supplied ranges to native memcpy without validating either array, allowing negative or oversized byteLength and offset values to read or write outside array bounds and crash the JVM. SnappyOutputStream.rawWrite and SnappyInputStream.rawRead, including their typed-array write and read methods, pass caller-controlled ranges through this primitive, and typed-array byte-size calculations can overflow int. This issue is fixed in version 1.1.10.9.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-129",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://advisory.echohq.com/cve/CVE-2026-116590",
+            "https://github.com/xerial/snappy-java",
+            "https://github.com/xerial/snappy-java/commit/2d7ca71c087a98f1219fb2d51909f3891c3ce77b",
+            "https://github.com/xerial/snappy-java/pull/741",
+            "https://github.com/xerial/snappy-java/releases/tag/v1.1.10.9",
+            "https://github.com/xerial/snappy-java/security/advisories/GHSA-xqrx-qh46-34m7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-116590"
+          ],
+          "PublishedDate": "2026-10-26T22:16:55.637Z",
+          "LastModifiedDate": "2026-10-27T16:03:45.247Z"
         }
       ]
     },
