@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a19103-b8d6-7d97-b3fb-beccd78d2230",
-  "CreatedAt": "2026-10-31T08:11:42.678891849Z",
+  "ReportID": "01a19654-3a5e-7df3-8b59-d32d8a8813d0",
+  "CreatedAt": "2026-11-01T08:57:44.798915547Z",
   "ArtifactID": "sha256:b4921b883dd0c16ebacd897606a71ad5ddbcfbe7f2207831c7a6d12af86462a9",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16415,12 +16415,12 @@
           "Fingerprint": "sha256:dec3cef07d90f30ed7a5de874b4faf98e46b1eabf584eac3e42b6dba0fcc9e2c",
           "Title": "firefox: Firefox: Website spoofing via failure to block compromised intermediate certificates",
           "Description": "Cryptographic issue in the Security Block-lists, Allow-lists, and other State component. This vulnerability was fixed in Firefox 158.0.1, Firefox ESR 153.5.1, Firefox ESR 115.43.1, Thunderbird 158.0.1, Thunderbird 153.5.1, and Firefox 158.0.2.",
-          "Severity": "HIGH",
+          "Severity": "MEDIUM",
           "CweIDs": [
             "CWE-295"
           ],
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "oracle-oval": 3,
             "redhat": 2,
             "ubuntu": 2
@@ -16478,7 +16478,7 @@
             "URL": "https://alas.aws.amazon.com/"
           },
           "Fingerprint": "sha256:807f45533baf6174f3f57740ec86026768a7623e908e6e320ab0211282e2ca04",
-          "Title": "ELSA-2026-88550:  ca-certificates security update (CRITICAL)",
+          "Title": "ca-certificates: Distrust eMudhra intermediate CA certificates due to security concerns",
           "Description": "The system certificate authority (CA) store in Red Hat products, distributed via ca-certificates RPM packages, included multiple root CA certificates of authorities, which signed intermediate CA certificates with weak private keys issued by the eMudhra certificate authority. A man-in-the-middle attacker could use this flaw to issue certificates for arbitrary host names signed by the weak intermediate CA certificates, which would be considered trusted by a TLS/SSL client using system CA store and cause such clients to connect to malicious sites.\n\nDue to inability to only distrust specific intermediate certificates in all clients using the system CA store, root CA certificates of authorities that signed weak intermediate CA certificates are being removed.",
           "Severity": "MEDIUM",
           "CweIDs": [
@@ -16488,7 +16488,14 @@
             "alma": 4,
             "amazon": 2,
             "oracle-oval": 4,
+            "redhat": 4,
             "rocky": 4
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 6.8
+            }
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86595",
@@ -16553,9 +16560,11 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-114406",
             "https://errata.almalinux.org/9/ALSA-2026-88459.html",
-            "https://errata.rockylinux.org/RLSA-2026:88459",
+            "https://errata.rockylinux.org/RLSA-2026:88455",
             "https://linux.oracle.com/cve/CVE-2026-114406.html",
-            "https://linux.oracle.com/errata/ELSA-2026-88550.html"
+            "https://linux.oracle.com/errata/ELSA-2026-88550.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-114406",
+            "https://www.cve.org/CVERecord?id=CVE-2026-114406"
           ],
           "PublishedDate": "2026-10-21T21:17:58.547Z",
           "LastModifiedDate": "2026-10-30T19:18:09.933Z"
@@ -16662,6 +16671,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:86093",
             "https://access.redhat.com/errata/RHSA-2026:86196",
             "https://access.redhat.com/security/cve/CVE-2026-78659",
             "https://bugzilla.redhat.com/2548334",
@@ -16700,7 +16710,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
             "https://errata.almalinux.org/9/ALSA-2026-86196.html",
-            "https://errata.rockylinux.org/RLSA-2026:86196",
+            "https://errata.rockylinux.org/RLSA-2026:86093",
             "https://github.com/golang/go/issues/81857",
             "https://go.dev/cl/847185",
             "https://go.dev/cl/847314",
@@ -16764,6 +16774,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:89761",
             "https://access.redhat.com/errata/RHSA-2026:90462",
             "https://access.redhat.com/security/cve/CVE-2026-78667",
             "https://bugzilla.redhat.com/2548334",
@@ -16776,7 +16787,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
             "https://errata.almalinux.org/9/ALSA-2026-90462.html",
-            "https://errata.rockylinux.org/RLSA-2026:90462",
+            "https://errata.rockylinux.org/RLSA-2026:89761",
             "https://github.com/golang/go/issues/81858",
             "https://go.dev/cl/847309",
             "https://go.dev/issue/81858",
@@ -16841,44 +16852,21 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86196",
+            "https://access.redhat.com/errata/RHSA-2026:91138",
             "https://access.redhat.com/security/cve/CVE-2026-94440",
             "https://bugzilla.redhat.com/2548334",
             "https://bugzilla.redhat.com/2548336",
             "https://bugzilla.redhat.com/2548344",
             "https://bugzilla.redhat.com/2556068",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548334",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548335",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548336",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548337",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548338",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548339",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548340",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548341",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548342",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548343",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2548344",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548345",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548346",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2548347",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2556068",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-111943",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-56866",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78659",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78660",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78663",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78667",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-78669",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94439",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94440",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94444",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94447",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-94448",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97030",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97031",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-97032",
             "https://errata.almalinux.org/9/ALSA-2026-86196.html",
-            "https://errata.rockylinux.org/RLSA-2026:86196",
+            "https://errata.rockylinux.org/RLSA-2026:91138",
             "https://github.com/golang/go/issues/81741",
             "https://go.dev/cl/847307",
             "https://go.dev/issue/81741",
@@ -17044,6 +17032,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-103111",
             "https://bugzilla.redhat.com/2528993",
@@ -17069,7 +17058,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
             "https://linux.oracle.com/cve/CVE-2026-103111.html",
             "https://linux.oracle.com/errata/ELSA-2026-84799.html",
@@ -17127,6 +17116,7 @@
           "References": [
             "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
             "http://www.openwall.com/lists/oss-security/2026/09/05/3",
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-86145",
             "https://bugzilla.redhat.com/2528993",
@@ -17152,7 +17142,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
             "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/17.1.0/BRSA-xqvt0yt0g9rb.toml",
@@ -17214,6 +17204,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-89156",
             "https://bugzilla.redhat.com/2528993",
@@ -17239,7 +17230,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
             "https://linux.oracle.com/cve/CVE-2026-89156.html",
@@ -17299,6 +17290,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-89160",
             "https://bugzilla.redhat.com/2528993",
@@ -17324,7 +17316,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
             "https://linux.oracle.com/cve/CVE-2026-89160.html",
@@ -17379,6 +17371,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-103111",
             "https://bugzilla.redhat.com/2528993",
@@ -17404,7 +17397,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
             "https://linux.oracle.com/cve/CVE-2026-103111.html",
             "https://linux.oracle.com/errata/ELSA-2026-84799.html",
@@ -17462,6 +17455,7 @@
           "References": [
             "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86145",
             "http://www.openwall.com/lists/oss-security/2026/09/05/3",
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-86145",
             "https://bugzilla.redhat.com/2528993",
@@ -17487,7 +17481,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-3r4p-g7gg-ppmf",
             "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/17.1.0/BRSA-xqvt0yt0g9rb.toml",
@@ -17549,6 +17543,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-89156",
             "https://bugzilla.redhat.com/2528993",
@@ -17574,7 +17569,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-2p8c-ff85-vh9x",
             "https://linux.oracle.com/cve/CVE-2026-89156.html",
@@ -17634,6 +17629,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:81522",
             "https://access.redhat.com/errata/RHSA-2026:81532",
             "https://access.redhat.com/security/cve/CVE-2026-89160",
             "https://bugzilla.redhat.com/2528993",
@@ -17659,7 +17655,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89160",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89161",
             "https://errata.almalinux.org/9/ALSA-2026-81532.html",
-            "https://errata.rockylinux.org/RLSA-2026:81532",
+            "https://errata.rockylinux.org/RLSA-2026:81522",
             "https://github.com/PCRE2Project/pcre2/releases/tag/pcre2-10.48",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-9qww-pwc4-77qq",
             "https://linux.oracle.com/cve/CVE-2026-89160.html",
@@ -17719,20 +17715,19 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/30/16",
+            "https://access.redhat.com/errata/RHSA-2026:77020",
             "https://access.redhat.com/errata/RHSA-2026:89742",
             "https://access.redhat.com/security/cve/CVE-2026-19553",
             "https://bugzilla.redhat.com/2543492",
             "https://bugzilla.redhat.com/2544127",
             "https://bugzilla.redhat.com/2544138",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2543492",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544138",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-12345",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
             "https://errata.almalinux.org/9/ALSA-2026-89742.html",
-            "https://errata.rockylinux.org/RLSA-2026:89742",
+            "https://errata.rockylinux.org/RLSA-2026:77020",
             "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
             "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
             "https://github.com/python/cpython/commit/641390146a16a38e6701923f4ee4f1940ae77082",
@@ -17800,20 +17795,19 @@
           },
           "References": [
             "http://www.openwall.com/lists/oss-security/2026/09/30/16",
+            "https://access.redhat.com/errata/RHSA-2026:77020",
             "https://access.redhat.com/errata/RHSA-2026:89742",
             "https://access.redhat.com/security/cve/CVE-2026-19553",
             "https://bugzilla.redhat.com/2543492",
             "https://bugzilla.redhat.com/2544127",
             "https://bugzilla.redhat.com/2544138",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2543492",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544127",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2544138",
             "https://creativecommons.org/licenses/by/4.0/",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-12345",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19445",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-19553",
             "https://errata.almalinux.org/9/ALSA-2026-89742.html",
-            "https://errata.rockylinux.org/RLSA-2026:89742",
+            "https://errata.rockylinux.org/RLSA-2026:77020",
             "https://github.com/python/cpython/commit/1697ea386c707142555d98a1263176bbbc014a96",
             "https://github.com/python/cpython/commit/5867d4e4ae6d1062352baf6b497a4026e8578ccf",
             "https://github.com/python/cpython/commit/641390146a16a38e6701923f4ee4f1940ae77082",
@@ -22270,7 +22264,7 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 2,
-            "rocky": 2
+            "rocky": 3
           },
           "CVSS": {
             "ghsa": {
@@ -22284,17 +22278,20 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86706",
+            "https://access.redhat.com/errata/RHSA-2026:92408",
             "https://access.redhat.com/security/cve/CVE-2026-89407",
             "https://advisory.echohq.com/cve/CVE-2026-89407",
             "https://bugzilla.redhat.com/2538720",
             "https://bugzilla.redhat.com/2539084",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519775",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2538720",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2539084",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89058",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89059",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89407",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89425",
             "https://errata.almalinux.org/9/ALSA-2026-86706.html",
-            "https://errata.rockylinux.org/RLSA-2026:86706",
+            "https://errata.rockylinux.org/RLSA-2026:92408",
             "https://getsafety.com/vulnerabilities/SFTY-20260922-89449/CVE-2026-89407",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/731e794f62623aa0d86ced52490166be903fbb1d",
@@ -22347,7 +22344,7 @@
             "alma": 2,
             "amazon": 3,
             "ghsa": 3,
-            "oracle-oval": 2,
+            "oracle-oval": 3,
             "redhat": 3,
             "rocky": 2
           },
@@ -22381,7 +22378,7 @@
             "https://github.com/FasterXML/jackson-core/releases/tag/jackson-core-3.2.3",
             "https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf",
             "https://linux.oracle.com/cve/CVE-2026-89425.html",
-            "https://linux.oracle.com/errata/ELSA-2026-86706.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89425",
             "https://www.cve.org/CVERecord?id=CVE-2026-89425"
           ],
@@ -22549,7 +22546,7 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 2,
-            "rocky": 2
+            "rocky": 3
           },
           "CVSS": {
             "ghsa": {
@@ -22563,17 +22560,20 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86706",
+            "https://access.redhat.com/errata/RHSA-2026:92408",
             "https://access.redhat.com/security/cve/CVE-2026-89407",
             "https://advisory.echohq.com/cve/CVE-2026-89407",
             "https://bugzilla.redhat.com/2538720",
             "https://bugzilla.redhat.com/2539084",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519775",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2538720",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2539084",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89058",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89059",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89407",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89425",
             "https://errata.almalinux.org/9/ALSA-2026-86706.html",
-            "https://errata.rockylinux.org/RLSA-2026:86706",
+            "https://errata.rockylinux.org/RLSA-2026:92408",
             "https://getsafety.com/vulnerabilities/SFTY-20260922-89449/CVE-2026-89407",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/731e794f62623aa0d86ced52490166be903fbb1d",
@@ -22626,7 +22626,7 @@
             "alma": 2,
             "amazon": 3,
             "ghsa": 3,
-            "oracle-oval": 2,
+            "oracle-oval": 3,
             "redhat": 3,
             "rocky": 2
           },
@@ -22660,7 +22660,7 @@
             "https://github.com/FasterXML/jackson-core/releases/tag/jackson-core-3.2.3",
             "https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf",
             "https://linux.oracle.com/cve/CVE-2026-89425.html",
-            "https://linux.oracle.com/errata/ELSA-2026-86706.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89425",
             "https://www.cve.org/CVERecord?id=CVE-2026-89425"
           ],
@@ -22765,7 +22765,7 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 2,
-            "rocky": 2
+            "rocky": 3
           },
           "CVSS": {
             "ghsa": {
@@ -22779,17 +22779,20 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86706",
+            "https://access.redhat.com/errata/RHSA-2026:92408",
             "https://access.redhat.com/security/cve/CVE-2026-89407",
             "https://advisory.echohq.com/cve/CVE-2026-89407",
             "https://bugzilla.redhat.com/2538720",
             "https://bugzilla.redhat.com/2539084",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519775",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2538720",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2539084",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89058",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89059",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89407",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89425",
             "https://errata.almalinux.org/9/ALSA-2026-86706.html",
-            "https://errata.rockylinux.org/RLSA-2026:86706",
+            "https://errata.rockylinux.org/RLSA-2026:92408",
             "https://getsafety.com/vulnerabilities/SFTY-20260922-89449/CVE-2026-89407",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/731e794f62623aa0d86ced52490166be903fbb1d",
@@ -22844,7 +22847,7 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 2,
-            "rocky": 2
+            "rocky": 3
           },
           "CVSS": {
             "ghsa": {
@@ -22858,17 +22861,20 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86706",
+            "https://access.redhat.com/errata/RHSA-2026:92408",
             "https://access.redhat.com/security/cve/CVE-2026-89407",
             "https://advisory.echohq.com/cve/CVE-2026-89407",
             "https://bugzilla.redhat.com/2538720",
             "https://bugzilla.redhat.com/2539084",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519775",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2538720",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2539084",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89058",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89059",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89407",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89425",
             "https://errata.almalinux.org/9/ALSA-2026-86706.html",
-            "https://errata.rockylinux.org/RLSA-2026:86706",
+            "https://errata.rockylinux.org/RLSA-2026:92408",
             "https://getsafety.com/vulnerabilities/SFTY-20260922-89449/CVE-2026-89407",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/731e794f62623aa0d86ced52490166be903fbb1d",
@@ -22923,7 +22929,7 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 2,
-            "rocky": 2
+            "rocky": 3
           },
           "CVSS": {
             "ghsa": {
@@ -22937,17 +22943,20 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:86706",
+            "https://access.redhat.com/errata/RHSA-2026:92408",
             "https://access.redhat.com/security/cve/CVE-2026-89407",
             "https://advisory.echohq.com/cve/CVE-2026-89407",
             "https://bugzilla.redhat.com/2538720",
             "https://bugzilla.redhat.com/2539084",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2519775",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2538720",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2539084",
             "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89058",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89059",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89407",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89425",
             "https://errata.almalinux.org/9/ALSA-2026-86706.html",
-            "https://errata.rockylinux.org/RLSA-2026:86706",
+            "https://errata.rockylinux.org/RLSA-2026:92408",
             "https://getsafety.com/vulnerabilities/SFTY-20260922-89449/CVE-2026-89407",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/731e794f62623aa0d86ced52490166be903fbb1d",
@@ -23000,7 +23009,7 @@
             "alma": 2,
             "amazon": 3,
             "ghsa": 3,
-            "oracle-oval": 2,
+            "oracle-oval": 3,
             "redhat": 3,
             "rocky": 2
           },
@@ -23034,7 +23043,7 @@
             "https://github.com/FasterXML/jackson-core/releases/tag/jackson-core-3.2.3",
             "https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf",
             "https://linux.oracle.com/cve/CVE-2026-89425.html",
-            "https://linux.oracle.com/errata/ELSA-2026-86706.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89425",
             "https://www.cve.org/CVERecord?id=CVE-2026-89425"
           ],
@@ -23077,7 +23086,7 @@
             "alma": 2,
             "amazon": 3,
             "ghsa": 3,
-            "oracle-oval": 2,
+            "oracle-oval": 3,
             "redhat": 3,
             "rocky": 2
           },
@@ -23111,7 +23120,7 @@
             "https://github.com/FasterXML/jackson-core/releases/tag/jackson-core-3.2.3",
             "https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf",
             "https://linux.oracle.com/cve/CVE-2026-89425.html",
-            "https://linux.oracle.com/errata/ELSA-2026-86706.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89425",
             "https://www.cve.org/CVERecord?id=CVE-2026-89425"
           ],
@@ -23154,7 +23163,7 @@
             "alma": 2,
             "amazon": 3,
             "ghsa": 3,
-            "oracle-oval": 2,
+            "oracle-oval": 3,
             "redhat": 3,
             "rocky": 2
           },
@@ -23188,7 +23197,7 @@
             "https://github.com/FasterXML/jackson-core/releases/tag/jackson-core-3.2.3",
             "https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf",
             "https://linux.oracle.com/cve/CVE-2026-89425.html",
-            "https://linux.oracle.com/errata/ELSA-2026-86706.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-89425",
             "https://www.cve.org/CVERecord?id=CVE-2026-89425"
           ],
@@ -23248,6 +23257,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -23258,7 +23268,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -23355,7 +23365,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -23424,6 +23434,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77648",
             "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
@@ -23432,7 +23443,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
             "https://errata.almalinux.org/9/ALSA-2026-80504.html",
-            "https://errata.rockylinux.org/RLSA-2026:80504",
+            "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
             "https://github.com/FasterXML/jackson-databind/pull/6127",
@@ -23587,7 +23598,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
             "https://linux.oracle.com/cve/CVE-2026-91777.html",
-            "https://linux.oracle.com/errata/ELSA-2026-85231.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-91777",
             "https://www.cve.org/CVERecord?id=CVE-2026-91777"
           ],
@@ -24129,6 +24140,7 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:40895",
+            "https://access.redhat.com/errata/RHSA-2026:43400",
             "https://access.redhat.com/security/cve/CVE-2026-54512",
             "https://advisory.echohq.com/cve/CVE-2026-54512",
             "https://bugzilla.redhat.com/2492010",
@@ -24139,7 +24151,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5",
             "https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5%20%28jackson-databind-2.18.8%29",
@@ -24236,7 +24248,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54512",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-54513",
             "https://errata.almalinux.org/9/ALSA-2026-40895.html",
-            "https://errata.rockylinux.org/RLSA-2026:40895",
+            "https://errata.rockylinux.org/RLSA-2026:43400",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/01d1692c8d0ed03e51a0e3c4f8a9e6908e4931e5",
             "https://github.com/FasterXML/jackson-databind/commit/24529da29fdf46ff94ca38de9ebf31cd188f5e8e",
@@ -24305,6 +24317,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77648",
             "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
@@ -24313,7 +24326,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
             "https://errata.almalinux.org/9/ALSA-2026-80504.html",
-            "https://errata.rockylinux.org/RLSA-2026:80504",
+            "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
             "https://github.com/FasterXML/jackson-databind/pull/6127",
@@ -24468,7 +24481,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
             "https://linux.oracle.com/cve/CVE-2026-91777.html",
-            "https://linux.oracle.com/errata/ELSA-2026-85231.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-91777",
             "https://www.cve.org/CVERecord?id=CVE-2026-91777"
           ],
@@ -24964,6 +24977,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77648",
             "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
@@ -24972,7 +24986,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
             "https://errata.almalinux.org/9/ALSA-2026-80504.html",
-            "https://errata.rockylinux.org/RLSA-2026:80504",
+            "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
             "https://github.com/FasterXML/jackson-databind/pull/6127",
@@ -25042,6 +25056,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77648",
             "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
@@ -25050,7 +25065,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
             "https://errata.almalinux.org/9/ALSA-2026-80504.html",
-            "https://errata.rockylinux.org/RLSA-2026:80504",
+            "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
             "https://github.com/FasterXML/jackson-databind/pull/6127",
@@ -25120,6 +25135,7 @@
             }
           },
           "References": [
+            "https://access.redhat.com/errata/RHSA-2026:77648",
             "https://access.redhat.com/errata/RHSA-2026:80504",
             "https://access.redhat.com/security/cve/CVE-2026-68497",
             "https://advisory.echohq.com/cve/CVE-2026-68497",
@@ -25128,7 +25144,7 @@
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-68497",
             "https://errata.almalinux.org/9/ALSA-2026-80504.html",
-            "https://errata.rockylinux.org/RLSA-2026:80504",
+            "https://errata.rockylinux.org/RLSA-2026:77648",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/a99b7e74c8928f43f6975773a8c862c8316178bd",
             "https://github.com/FasterXML/jackson-databind/pull/6127",
@@ -25415,7 +25431,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
             "https://linux.oracle.com/cve/CVE-2026-91777.html",
-            "https://linux.oracle.com/errata/ELSA-2026-85231.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-91777",
             "https://www.cve.org/CVERecord?id=CVE-2026-91777"
           ],
@@ -25493,7 +25509,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
             "https://linux.oracle.com/cve/CVE-2026-91777.html",
-            "https://linux.oracle.com/errata/ELSA-2026-85231.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-91777",
             "https://www.cve.org/CVERecord?id=CVE-2026-91777"
           ],
@@ -25571,7 +25587,7 @@
             "https://github.com/FasterXML/jackson-databind/releases/tag/jackson-databind-3.2.3",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24",
             "https://linux.oracle.com/cve/CVE-2026-91777.html",
-            "https://linux.oracle.com/errata/ELSA-2026-85231.html",
+            "https://linux.oracle.com/errata/ELSA-2026-90909.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-91777",
             "https://www.cve.org/CVERecord?id=CVE-2026-91777"
           ],
