@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a1b01e-6987-7d3e-8ee4-bf75c7cf95d8",
-  "CreatedAt": "2026-11-06T09:09:05.543870433Z",
+  "ReportID": "01a1b524-c34e-7184-988b-3a210d159cb0",
+  "CreatedAt": "2026-11-07T08:34:07.822101121Z",
   "ArtifactID": "sha256:3fa87d36d49bf86bfa5da2fc2525155a71adaea9c6c3e360f5b57ff0b4bf9303",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
