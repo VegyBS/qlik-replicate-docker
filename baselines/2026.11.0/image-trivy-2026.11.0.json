@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a1bf9f-b8f6-7653-a2f9-b45487868446",
-  "CreatedAt": "2026-11-09T09:24:38.262415763Z",
+  "ReportID": "01a1c4cc-fe78-7b20-8dbb-93ee9cbb1711",
+  "CreatedAt": "2026-11-10T09:32:11.256731892Z",
   "ArtifactID": "sha256:0626ceaeffea02d7ff339d2e961d95e426f00d5a25bbdb84e67b2134ccf04a06",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -16386,6 +16386,1349 @@
           ],
           "AnalyzedBy": "rpm"
         }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-18924",
+          "PkgID": "curl-minimal@8.21.0-5.amzn2023.0.3.x86_64",
+          "PkgName": "curl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/curl-minimal@8.21.0-5.amzn2023.0.3?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "df68c3140a6b5db7"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.3",
+          "FixedVersion": "8.21.0-5.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:bcab07833d0e117767a9c810ff132c84d623b17150429ff3280b8b469f3a9f10",
+          "Title": "curl: libcurl: Use-after-free in HTTP/2 Server Push with shared connections",
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "photon": 4,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-18924",
+            "https://curl.se/docs/CVE-2026-18924.html",
+            "https://curl.se/docs/CVE-2026-18924.json",
+            "https://github.com/curl/curl/commit/90325ff0444cbdff368bda5d26d6",
+            "https://hackerone.com/reports/3916059",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-18924",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18924"
+          ],
+          "PublishedDate": "2026-09-06T18:17:20.553Z",
+          "LastModifiedDate": "2026-09-15T07:16:27.063Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19931",
+          "PkgID": "curl-minimal@8.21.0-5.amzn2023.0.3.x86_64",
+          "PkgName": "curl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/curl-minimal@8.21.0-5.amzn2023.0.3?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "df68c3140a6b5db7"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.3",
+          "FixedVersion": "8.21.0-5.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:1cf77751e02e127c89543d82df4ee8eed686153f1f18c7b189b3ae964a9eac57",
+          "Title": "curl: libcurl: Information disclosure via incorrect connection reuse with Negotiate authentication",
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-488"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "photon": 4,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-19931",
+            "https://curl.se/docs/CVE-2026-19931.html",
+            "https://curl.se/docs/CVE-2026-19931.json",
+            "https://hackerone.com/reports/3923520",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-19931",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19931"
+          ],
+          "PublishedDate": "2026-09-06T18:17:20.733Z",
+          "LastModifiedDate": "2026-09-15T07:16:27.29Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86805",
+          "PkgID": "glibc@2.34-231.amzn2023.0.5.x86_64",
+          "PkgName": "glibc",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glibc@2.34-231.amzn2023.0.5?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "6a2ace56a75cf745"
+          },
+          "InstalledVersion": "2.34-231.amzn2023.0.5",
+          "FixedVersion": "2.34-231.amzn2023.0.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:7435167d72b2a67f630eaa2d6831bc2b07087bedf12827c7b728e2aacd400be5",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86805",
+          "PkgID": "glibc-common@2.34-231.amzn2023.0.5.x86_64",
+          "PkgName": "glibc-common",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glibc-common@2.34-231.amzn2023.0.5?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "51705dd441d8d432"
+          },
+          "InstalledVersion": "2.34-231.amzn2023.0.5",
+          "FixedVersion": "2.34-231.amzn2023.0.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:b6c7e53c50312e4f6f77bffd31477316741e4b638e3188fc340f51431c869e37",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86805",
+          "PkgID": "glibc-gconv-extra@2.34-231.amzn2023.0.5.x86_64",
+          "PkgName": "glibc-gconv-extra",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glibc-gconv-extra@2.34-231.amzn2023.0.5?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "300dc3d5625bf7f5"
+          },
+          "InstalledVersion": "2.34-231.amzn2023.0.5",
+          "FixedVersion": "2.34-231.amzn2023.0.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8dc2fa03c93421dc340175ca047bbdb8f50fbb9795f2cc28e649da9f36a22379"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3ffcae438b1d57cd8b63c2acedee4af17d0f8ee2bee873c8d8660bc78c99fdc5",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86805",
+          "PkgID": "glibc-minimal-langpack@2.34-231.amzn2023.0.5.x86_64",
+          "PkgName": "glibc-minimal-langpack",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/glibc-minimal-langpack@2.34-231.amzn2023.0.5?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "a8a25049e69ea66f"
+          },
+          "InstalledVersion": "2.34-231.amzn2023.0.5",
+          "FixedVersion": "2.34-231.amzn2023.0.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:3a39a872f12d343b4cda67335fc3c7782133b8020ecce8ad256eb0116f1f9923",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-18924",
+          "PkgID": "libcurl-minimal@8.21.0-5.amzn2023.0.3.x86_64",
+          "PkgName": "libcurl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcurl-minimal@8.21.0-5.amzn2023.0.3?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c3467d8da5f69af2"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.3",
+          "FixedVersion": "8.21.0-5.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18924",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:48b3a2136e317f6ffffbadd9b1491cd880e00df4ca304cfd1c652e3a3b4c2320",
+          "Title": "curl: libcurl: Use-after-free in HTTP/2 Server Push with shared connections",
+          "Description": "A flaw in libcurl's handling of HTTP/2 Server Push streams, when the parent\nhandle is set to share connections with other handles, can lead to\nuse-after-free in the cleanup process.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "photon": 4,
+            "redhat": 1,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-18924",
+            "https://curl.se/docs/CVE-2026-18924.html",
+            "https://curl.se/docs/CVE-2026-18924.json",
+            "https://github.com/curl/curl/commit/90325ff0444cbdff368bda5d26d6",
+            "https://hackerone.com/reports/3916059",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-18924",
+            "https://ubuntu.com/security/notices/USN-8820-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-18924"
+          ],
+          "PublishedDate": "2026-09-06T18:17:20.553Z",
+          "LastModifiedDate": "2026-09-15T07:16:27.063Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19931",
+          "PkgID": "libcurl-minimal@8.21.0-5.amzn2023.0.3.x86_64",
+          "PkgName": "libcurl-minimal",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libcurl-minimal@8.21.0-5.amzn2023.0.3?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c3467d8da5f69af2"
+          },
+          "InstalledVersion": "8.21.0-5.amzn2023.0.3",
+          "FixedVersion": "8.21.0-5.amzn2023.0.4",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19931",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:4f8472a5fc93050930d585139875e4a8be0ff4c022383b56a25d89d6c06de3e3",
+          "Title": "curl: libcurl: Information disclosure via incorrect connection reuse with Negotiate authentication",
+          "Description": "A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given\nhostname using Negotiate authentication, when the initial request is done\nusing empty credentials. This can make user B's request get sent over user A's\npreviously authenticated connection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-488"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "photon": 4,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-19931",
+            "https://curl.se/docs/CVE-2026-19931.html",
+            "https://curl.se/docs/CVE-2026-19931.json",
+            "https://hackerone.com/reports/3923520",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-19931",
+            "https://www.cve.org/CVERecord?id=CVE-2026-19931"
+          ],
+          "PublishedDate": "2026-09-06T18:17:20.733Z",
+          "LastModifiedDate": "2026-09-15T07:16:27.29Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-86805",
+          "PkgID": "libnsl@2.34-231.amzn2023.0.5.x86_64",
+          "PkgName": "libnsl",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/libnsl@2.34-231.amzn2023.0.5?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "f58915aa5490498e"
+          },
+          "InstalledVersion": "2.34-231.amzn2023.0.5",
+          "FixedVersion": "2.34-231.amzn2023.0.6",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8a75919473a3c3d0936f568bbbd106811a4b30c50f20698f62e66fc6463f0617"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:b4378bdd8817c194dde3321c8c57d079482d216a504f49cce1d743bf64d71ab6",
+          "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "Description": "A time-of-check to time-of-use (TOCTOU) race condition in the dynamic loader (ld.so) of the GNU C Library (glibc) versions 2.14 through 2.44 allows a local attacker to escalate privileges. When expanding $ORIGIN in DT_RPATH for setuid/setgid (AT_SECURE) programs, glibc validates the lexically normalized search path against the trusted directories but then opens the raw, un-normalized path. On systems where the Linux fs.protected_hardlinks sysctl is disabled, a local attacker who hard-links such a program into an attacker-controlled directory and wins a race to replace an intermediate path component with a symbolic link can direct the loader outside the trusted directory, causing it to load an attacker-controlled shared object and execute arbitrary code with the elevated privileges of the program.\n\nExploitation requires an installed setuid or setgid binary whose DT_RPATH uses $ORIGIN followed by \"..\" traversal that normalizes into a trusted directory, and the ability to hard-link that binary and win the race by swapping a path component for a symbolic link. Major Linux-based OS distributions ship with fs.protected_hardlinks enabled by default and mitigate the vulnerability.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 3,
+            "oracle-oval": 2,
+            "redhat": 2,
+            "rocky": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:95618",
+            "https://access.redhat.com/security/cve/CVE-2026-86805",
+            "https://bugzilla.redhat.com/2531725",
+            "https://bugzilla.redhat.com/2536382",
+            "https://bugzilla.redhat.com/2538209",
+            "https://bugzilla.redhat.com/2538306",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2531725",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2536382",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538209",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2538306",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-8674",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-86805",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-89092",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-95818",
+            "https://errata.almalinux.org/9/ALSA-2026-95618.html",
+            "https://errata.rockylinux.org/RLSA-2026:95618",
+            "https://linux.oracle.com/cve/CVE-2026-86805.html",
+            "https://linux.oracle.com/errata/ELSA-2026-95618.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-86805",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34360",
+            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0022",
+            "https://www.cve.org/CVERecord?id=CVE-2026-86805"
+          ],
+          "PublishedDate": "2026-09-22T16:18:06.23Z",
+          "LastModifiedDate": "2026-09-23T04:17:57.137Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103242",
+          "PkgID": "python3-rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "python3-rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c64d9ad8909dc7c8"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103242",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:d10e1e212a4160adc5cc26b2392b63f95b0d8d6b5265341d2864c2612191113f",
+          "Title": "rpm: Heap-based buffer overflow write in hex2binv() via a mistyped RPMTAG_FILESIGNATURES header tag",
+          "Description": "A heap-based buffer overflow flaw was found in rpm. RPMTAG_FILESIGNATURES in a crafted, unsigned RPM package's main header is declared with the wrong header type, causing hex2binv() to allocate a one-byte buffer and then write the tag's attacker-controlled, hex-decoded content — of attacker-chosen length — past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an untrusted package.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-103242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103242",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103242"
+          ],
+          "PublishedDate": "2026-09-30T12:17:12.653Z",
+          "LastModifiedDate": "2026-11-06T08:17:17.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84837",
+          "PkgID": "python3-rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "python3-rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c64d9ad8909dc7c8"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84837",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:c72135445eaf0df7550a970fcf3d1c8d1ea9ef2b00e39eebf2df33de344e0f8f",
+          "Title": "rpm: Command Injection in `rpmbuild -t*` (`getTarSpec`) via Unescaped Tarball Path",
+          "Description": "A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or continuous integration (CI) workflows that ingest externally supplied artifact names. Successful exploitation allows for arbitrary command execution with the privileges of the build user, which could lead to information disclosure or disruption of the build environment.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:82378",
+            "https://access.redhat.com/security/cve/CVE-2026-84837",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478408",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84837",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84837"
+          ],
+          "PublishedDate": "2026-09-02T16:17:33.56Z",
+          "LastModifiedDate": "2026-11-06T08:17:37.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-95519",
+          "PkgID": "python3-rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "python3-rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/python3-rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c64d9ad8909dc7c8"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95519",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:281a44cf5ddbdfc7a1fbadbdeb88cae79ec9c90d772a79c67b660d5df8cdfc91",
+          "Title": "rpm: Code Execution via Macro Expansion of Manifest Entries in `rpmgi` (`-q -p` / verify manifest flows)",
+          "Description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95519",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2470977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95519",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95519"
+          ],
+          "PublishedDate": "2026-09-24T14:18:20.153Z",
+          "LastModifiedDate": "2026-11-06T08:17:39.247Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103242",
+          "PkgID": "rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "110cf8771c233261"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103242",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:2484f9c320eab2f42f21bb3df97c8f3507864d61c12bd8ab45dec7b8a4fede2c",
+          "Title": "rpm: Heap-based buffer overflow write in hex2binv() via a mistyped RPMTAG_FILESIGNATURES header tag",
+          "Description": "A heap-based buffer overflow flaw was found in rpm. RPMTAG_FILESIGNATURES in a crafted, unsigned RPM package's main header is declared with the wrong header type, causing hex2binv() to allocate a one-byte buffer and then write the tag's attacker-controlled, hex-decoded content — of attacker-chosen length — past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an untrusted package.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-103242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103242",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103242"
+          ],
+          "PublishedDate": "2026-09-30T12:17:12.653Z",
+          "LastModifiedDate": "2026-11-06T08:17:17.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84837",
+          "PkgID": "rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "110cf8771c233261"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84837",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:551dddb9abbc37b42a60c96811f5cd23be33067cf87bc5dd707237bba6860d78",
+          "Title": "rpm: Command Injection in `rpmbuild -t*` (`getTarSpec`) via Unescaped Tarball Path",
+          "Description": "A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or continuous integration (CI) workflows that ingest externally supplied artifact names. Successful exploitation allows for arbitrary command execution with the privileges of the build user, which could lead to information disclosure or disruption of the build environment.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:82378",
+            "https://access.redhat.com/security/cve/CVE-2026-84837",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478408",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84837",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84837"
+          ],
+          "PublishedDate": "2026-09-02T16:17:33.56Z",
+          "LastModifiedDate": "2026-11-06T08:17:37.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-95519",
+          "PkgID": "rpm@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "110cf8771c233261"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95519",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:d10d8f266a7db25bd02679c7404a4e08ef35e2995d7ecdad56b6eae8c958295a",
+          "Title": "rpm: Code Execution via Macro Expansion of Manifest Entries in `rpmgi` (`-q -p` / verify manifest flows)",
+          "Description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95519",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2470977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95519",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95519"
+          ],
+          "PublishedDate": "2026-09-24T14:18:20.153Z",
+          "LastModifiedDate": "2026-11-06T08:17:39.247Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103242",
+          "PkgID": "rpm-build-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-build-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-build-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "ba8e874b895eb3b3"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103242",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e379955b85639849ef02bbff0ba268bbf6c41367e76b18b0143f11397fe09413",
+          "Title": "rpm: Heap-based buffer overflow write in hex2binv() via a mistyped RPMTAG_FILESIGNATURES header tag",
+          "Description": "A heap-based buffer overflow flaw was found in rpm. RPMTAG_FILESIGNATURES in a crafted, unsigned RPM package's main header is declared with the wrong header type, causing hex2binv() to allocate a one-byte buffer and then write the tag's attacker-controlled, hex-decoded content — of attacker-chosen length — past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an untrusted package.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-103242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103242",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103242"
+          ],
+          "PublishedDate": "2026-09-30T12:17:12.653Z",
+          "LastModifiedDate": "2026-11-06T08:17:17.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84837",
+          "PkgID": "rpm-build-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-build-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-build-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "ba8e874b895eb3b3"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84837",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:5da756e7307e36c708d26d962a953b9d23c1899af34dccdccae3b7b53be58294",
+          "Title": "rpm: Command Injection in `rpmbuild -t*` (`getTarSpec`) via Unescaped Tarball Path",
+          "Description": "A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or continuous integration (CI) workflows that ingest externally supplied artifact names. Successful exploitation allows for arbitrary command execution with the privileges of the build user, which could lead to information disclosure or disruption of the build environment.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:82378",
+            "https://access.redhat.com/security/cve/CVE-2026-84837",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478408",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84837",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84837"
+          ],
+          "PublishedDate": "2026-09-02T16:17:33.56Z",
+          "LastModifiedDate": "2026-11-06T08:17:37.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-95519",
+          "PkgID": "rpm-build-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-build-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-build-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "ba8e874b895eb3b3"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95519",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:7fc1f6bbfb3da612b4a26fb68fd9054c841fca55f25621ecc0bfa4f95b1a2f2d",
+          "Title": "rpm: Code Execution via Macro Expansion of Manifest Entries in `rpmgi` (`-q -p` / verify manifest flows)",
+          "Description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95519",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2470977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95519",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95519"
+          ],
+          "PublishedDate": "2026-09-24T14:18:20.153Z",
+          "LastModifiedDate": "2026-11-06T08:17:39.247Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103242",
+          "PkgID": "rpm-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "9b79ce2c33c0fed5"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103242",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:414a7843d522bdc07ecdfbc39bee487a7e6c4a3a9231b2a3c6dd2721288deb11",
+          "Title": "rpm: Heap-based buffer overflow write in hex2binv() via a mistyped RPMTAG_FILESIGNATURES header tag",
+          "Description": "A heap-based buffer overflow flaw was found in rpm. RPMTAG_FILESIGNATURES in a crafted, unsigned RPM package's main header is declared with the wrong header type, causing hex2binv() to allocate a one-byte buffer and then write the tag's attacker-controlled, hex-decoded content — of attacker-chosen length — past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an untrusted package.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-103242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103242",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103242"
+          ],
+          "PublishedDate": "2026-09-30T12:17:12.653Z",
+          "LastModifiedDate": "2026-11-06T08:17:17.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84837",
+          "PkgID": "rpm-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "9b79ce2c33c0fed5"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84837",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:2dff6033a99ab8b9fa4b769fc5f3e74a686d89ad886fe3c2484ef0855941228f",
+          "Title": "rpm: Command Injection in `rpmbuild -t*` (`getTarSpec`) via Unescaped Tarball Path",
+          "Description": "A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or continuous integration (CI) workflows that ingest externally supplied artifact names. Successful exploitation allows for arbitrary command execution with the privileges of the build user, which could lead to information disclosure or disruption of the build environment.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:82378",
+            "https://access.redhat.com/security/cve/CVE-2026-84837",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478408",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84837",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84837"
+          ],
+          "PublishedDate": "2026-09-02T16:17:33.56Z",
+          "LastModifiedDate": "2026-11-06T08:17:37.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-95519",
+          "PkgID": "rpm-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "9b79ce2c33c0fed5"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95519",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:81bbf2e3b396233abab802494707308d6c91324e88085d6c72365281787204da",
+          "Title": "rpm: Code Execution via Macro Expansion of Manifest Entries in `rpmgi` (`-q -p` / verify manifest flows)",
+          "Description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95519",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2470977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95519",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95519"
+          ],
+          "PublishedDate": "2026-09-24T14:18:20.153Z",
+          "LastModifiedDate": "2026-11-06T08:17:39.247Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-103242",
+          "PkgID": "rpm-sign-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-sign-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-sign-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c69b6b4f04c1a81a"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103242",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:f384fdb98770f978be52750d63963cef2124a9ad83faf43100fb60f4359b626b",
+          "Title": "rpm: Heap-based buffer overflow write in hex2binv() via a mistyped RPMTAG_FILESIGNATURES header tag",
+          "Description": "A heap-based buffer overflow flaw was found in rpm. RPMTAG_FILESIGNATURES in a crafted, unsigned RPM package's main header is declared with the wrong header type, causing hex2binv() to allocate a one-byte buffer and then write the tag's attacker-controlled, hex-decoded content — of attacker-chosen length — past the end of that allocation. This is reachable via rpm2cpio, rpm2archive, and rpm -qlvp on an untrusted package.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-103242",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2543866",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-103242",
+            "https://www.cve.org/CVERecord?id=CVE-2026-103242"
+          ],
+          "PublishedDate": "2026-09-30T12:17:12.653Z",
+          "LastModifiedDate": "2026-11-06T08:17:17.297Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-84837",
+          "PkgID": "rpm-sign-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-sign-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-sign-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c69b6b4f04c1a81a"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-84837",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:630a8437e52f93b5ac8fced3f0816c81678d6452f655a062a3a202f3fefbc270",
+          "Title": "rpm: Command Injection in `rpmbuild -t*` (`getTarSpec`) via Unescaped Tarball Path",
+          "Description": "A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or continuous integration (CI) workflows that ingest externally supplied artifact names. Successful exploitation allows for arbitrary command execution with the privileges of the build user, which could lead to information disclosure or disruption of the build environment.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:82378",
+            "https://access.redhat.com/security/cve/CVE-2026-84837",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2478408",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-84837",
+            "https://www.cve.org/CVERecord?id=CVE-2026-84837"
+          ],
+          "PublishedDate": "2026-09-02T16:17:33.56Z",
+          "LastModifiedDate": "2026-11-06T08:17:37.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-95519",
+          "PkgID": "rpm-sign-libs@4.16.1.3-29.amzn2023.0.8.x86_64",
+          "PkgName": "rpm-sign-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rpm-sign-libs@4.16.1.3-29.amzn2023.0.8?arch=x86_64\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "c69b6b4f04c1a81a"
+          },
+          "InstalledVersion": "4.16.1.3-29.amzn2023.0.8",
+          "FixedVersion": "4.16.1.3-29.amzn2023.0.9",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25f1743a581b59d3b42f2318cd10c86d042d94314198620dfad1c234f23d06ed"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95519",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:40d926323a72e784401fe38268d73cc3d6cc459b599c7a6912a2beb64649dbe8",
+          "Title": "rpm: Code Execution via Macro Expansion of Manifest Entries in `rpmgi` (`-q -p` / verify manifest flows)",
+          "Description": "A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are unexpectedly macro-expanded before being opened, allowing embedded shell commands to run with the privileges of the `rpm` process. Successful exploitation can lead to a full compromise of confidentiality, integrity, and availability for the affected account.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-95519",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2470977",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-95519",
+            "https://www.cve.org/CVERecord?id=CVE-2026-95519"
+          ],
+          "PublishedDate": "2026-09-24T14:18:20.153Z",
+          "LastModifiedDate": "2026-11-06T08:17:39.247Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-82247",
+          "PkgID": "rust-toolset-srpm-macros@1.99.0-1.amzn2023.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.99.0-1.amzn2023?arch=noarch\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "46ed00c4dba9d23e"
+          },
+          "InstalledVersion": "1.99.0-1.amzn2023",
+          "FixedVersion": "1.99.1-1.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8dc2fa03c93421dc340175ca047bbdb8f50fbb9795f2cc28e649da9f36a22379"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82247",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:00c1ced2a56f435f2a2922894e2f88a4fc99aef3c661205286523555fae32a92",
+          "Title": "gitoxide's gix-url crate (\u003c= 0.32.0, fixed in 0.37.1) uses a hand-roll ...",
+          "Description": "gitoxide's gix-url crate (\u003c= 0.32.0, fixed in 0.37.1) uses a hand-rolled URL parser that does not treat '?' or '#' as terminating the authority component, contrary to RFC 3986. As a consequence, gix-transport's HTTP redirect identity guard (can_reuse_identity) compares the wrong host and fails open. An attacker controlling a redirect response can craft a Location header of the form \u003cattacker-authority\u003e?@\u003coriginal-authority\u003e so that gitoxide sends the caller's HTTP Basic Authorization credentials to an unintended host. gix-transport is affected in versions \u003c= 0.49.0 (fixed in 0.58.1).",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "VendorSeverity": {
+            "amazon": 2
+          },
+          "References": [
+            "https://github.com/GitoxideLabs/gitoxide/security/advisories/GHSA-jrcm-326h-gpp8",
+            "https://www.vulncheck.com/advisories/gitoxide-before-0.37.1-http-basic-credential-leak-via-url-parsing"
+          ],
+          "PublishedDate": "2026-08-28T12:16:36.5Z",
+          "LastModifiedDate": "2026-08-28T18:54:09.323Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-82249",
+          "PkgID": "rust-toolset-srpm-macros@1.99.0-1.amzn2023.noarch",
+          "PkgName": "rust-toolset-srpm-macros",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/amazon/rust-toolset-srpm-macros@1.99.0-1.amzn2023?arch=noarch\u0026distro=amazon-2023.12.20261102%20%28Amazon%20Linux%29",
+            "UID": "46ed00c4dba9d23e"
+          },
+          "InstalledVersion": "1.99.0-1.amzn2023",
+          "FixedVersion": "1.99.1-1.amzn2023",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:8dc2fa03c93421dc340175ca047bbdb8f50fbb9795f2cc28e649da9f36a22379"
+          },
+          "SeveritySource": "amazon",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82249",
+          "DataSource": {
+            "ID": "amazon",
+            "Name": "Amazon Linux Security Center",
+            "URL": "https://alas.aws.amazon.com/"
+          },
+          "Fingerprint": "sha256:e37fca48693029132203c480d9b841f15f1a88770e169c5d83c406aa5b853ef7",
+          "Title": "gitoxide before 0.38.2 fails to validate carriage return characters in ...",
+          "Description": "gitoxide before 0.38.2 fails to validate carriage return characters in URL values passed to credential helpers. Attackers can supply URLs containing bare carriage returns to inject additional helper protocol fields and cause credential helpers to return credentials for attacker-specified hosts instead of the requested URL.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-116"
+          ],
+          "VendorSeverity": {
+            "amazon": 2
+          },
+          "References": [
+            "https://github.com/GitoxideLabs/gitoxide/security/advisories/GHSA-6wr8-3w4h-j9wj",
+            "https://www.vulncheck.com/advisories/gitoxide-before-0.38.2-credential-helper-protocol-field-injection"
+          ],
+          "PublishedDate": "2026-08-28T12:16:36.81Z",
+          "LastModifiedDate": "2026-08-28T20:20:16.183Z"
+        }
       ]
     },
     {
@@ -20970,7 +22313,8 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
-            "rocky": 2
+            "rocky": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -21338,7 +22682,8 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
-            "rocky": 2
+            "rocky": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -21415,7 +22760,8 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
-            "rocky": 2
+            "rocky": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -21492,7 +22838,8 @@
             "ghsa": 3,
             "oracle-oval": 3,
             "redhat": 3,
-            "rocky": 2
+            "rocky": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22881,9 +24228,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22898,15 +24247,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -22944,9 +24302,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22961,15 +24321,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -23007,9 +24376,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23024,15 +24395,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -23070,9 +24450,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23087,15 +24469,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -23133,9 +24524,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23150,15 +24543,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -23196,9 +24598,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23213,15 +24617,24 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
@@ -23259,9 +24672,11 @@
             "CWE-770"
           ],
           "VendorSeverity": {
+            "amazon": 2,
             "azure": 2,
             "ghsa": 3,
-            "redhat": 3
+            "redhat": 3,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23276,18 +24691,82 @@
             }
           },
           "References": [
+            "github.com/cveproject/cvelistv5/tree/main/cves/2026/102xxx/cve-2026-102554.json",
+            "github.com/google/guava",
+            "github.com/google/guava/commit/a0d0c36432c4cc7aa4b5063bab9f20d3d18fe9fc",
+            "github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
+            "github.com/google/guava/releases/tag/v33.7.2",
+            "github.com/google/guava/security/advisories/ghsa-xxph-c9ww-hj94",
             "https://access.redhat.com/security/cve/CVE-2026-102554",
             "https://advisory.echohq.com/cve/CVE-2026-102554",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1150495",
             "https://github.com/advisories/GHSA-xxph-c9ww-hj94",
             "https://github.com/google/guava",
             "https://github.com/google/guava/commit/b931fe9d6d5cf00bc55714ad3308d086f71850fe",
             "https://github.com/google/guava/releases/tag/v33.7.2",
             "https://github.com/google/guava/security/advisories/GHSA-xxph-c9ww-hj94",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-102554",
-            "https://www.cve.org/CVERecord?id=CVE-2026-102554"
+            "https://www.cve.org/CVERecord?id=CVE-2026-102554",
+            "nvd.nist.gov/vuln/detail/cve-2026-102554",
+            "security-tracker.debian.org/tracker/cve-2026-102554"
           ],
           "PublishedDate": "2026-10-09T16:17:20.41Z",
           "LastModifiedDate": "2026-10-09T18:17:01.38Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-59171",
+          "VendorIDs": [
+            "GHSA-ghc9-756g-vrcv"
+          ],
+          "PkgName": "org.json:json",
+          "PkgPath": "opt/attunity/replicate/java/arep-google-cloud.jar",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.json/json@20250517",
+            "UID": "ee951480b3de0187"
+          },
+          "InstalledVersion": "20250517",
+          "FixedVersion": "20260719",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bd99d1f9aae72533be3a37ddfef838094b08848b32d83653cfe27708c1606adf"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-59171",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Fingerprint": "sha256:be06326eda956aa377724f36b0c4c59946b603d0049e14fdae09ac72f8b005c3",
+          "Title": "JSON-java: JSONTokener Has Unbounded Numeric String Resource-Exhaustion DoS",
+          "Description": "JSON-java is a reference implementation of a JSON package in Java. From version 20150729 through 20260522, JSONTokener.nextSimpleValue can accumulate unbounded numeric tokens before JSONObject.stringToNumber passes them to BigInteger or BigDecimal conversion without a length limit. An application that parses attacker-controlled JSON or XML through JSONObject, JSONArray, or XML.toJSONObject can spend super-linear CPU time converting a sufficiently long numeric literal, blocking request-handling threads and causing denial of service. Strict mode and keep-strings settings in JSONParserConfiguration do not prevent the affected conversion path. Version 20260719 limits numeric conversion length.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-400",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://github.com/stleary/JSON-java",
+            "https://github.com/stleary/JSON-java/commit/703ac34a55400f9c50889e3d0c778b6d7962e81c",
+            "https://github.com/stleary/JSON-java/commit/ab92bb9088a37f9e346cd1dda66f6a3c40a201e0",
+            "https://github.com/stleary/JSON-java/commit/fce83c91bb229dde472283dea648a9a8955237fd",
+            "https://github.com/stleary/JSON-java/pull/1065",
+            "https://github.com/stleary/JSON-java/pull/1067",
+            "https://github.com/stleary/JSON-java/releases/tag/20260719",
+            "https://github.com/stleary/JSON-java/security/advisories/GHSA-ghc9-756g-vrcv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-59171"
+          ],
+          "PublishedDate": "2026-11-06T21:17:09.39Z",
+          "LastModifiedDate": "2026-11-06T21:17:09.39Z"
         },
         {
           "VulnerabilityID": "CVE-2026-41716",
