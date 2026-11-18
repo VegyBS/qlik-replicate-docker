@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "01a1e90e-2369-7172-b907-d385a0337fbf",
-  "CreatedAt": "2026-11-17T10:29:40.329096408Z",
+  "ReportID": "01a1ee17-8901-773e-a177-a500c4e9e43a",
+  "CreatedAt": "2026-11-18T09:58:02.241476297Z",
   "ArtifactID": "sha256:16f16ccc22e28db281457a5f5686ef1614147771687b59e81eb6d7f062b4977f",
   "ArtifactName": "qlik-replicate:latest",
   "ArtifactType": "container_image",
@@ -20769,7 +20769,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-68494",
-            "https://advisory.echohq.com/cve/CVE-2026-68494",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/050b429804dce2a7e08f0be1b0b4c3d040fdb9cd",
             "https://github.com/FasterXML/jackson-core/commit/4cdd529749da396cc7edf6d4a2aad41d47902641",
@@ -21049,7 +21048,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-68494",
-            "https://advisory.echohq.com/cve/CVE-2026-68494",
             "https://github.com/FasterXML/jackson-core",
             "https://github.com/FasterXML/jackson-core/commit/050b429804dce2a7e08f0be1b0b4c3d040fdb9cd",
             "https://github.com/FasterXML/jackson-core/commit/4cdd529749da396cc7edf6d4a2aad41d47902641",
@@ -22271,7 +22269,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-54514",
-            "https://advisory.echohq.com/cve/CVE-2026-54514",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/1f5a1037b1e9e05920e755cb35f198bcd46667e4",
             "https://github.com/FasterXML/jackson-databind/pull/5951",
@@ -22316,7 +22313,8 @@
           "VendorSeverity": {
             "amazon": 3,
             "ghsa": 2,
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -22333,8 +22331,10 @@
             "https://advisory.echohq.com/cve/CVE-2026-54515",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa",
+            "https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa%20%28jackson-databind-3.1.4%29",
             "https://github.com/FasterXML/jackson-databind/issues/5962",
             "https://github.com/FasterXML/jackson-databind/issues/5964",
+            "https://github.com/FasterXML/jackson-databind/pull/5964",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5jmj-h7xm-6q6v",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54515",
             "https://www.cve.org/CVERecord?id=CVE-2026-54515"
@@ -22436,7 +22436,8 @@
           "VendorSeverity": {
             "amazon": 2,
             "ghsa": 2,
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23157,7 +23158,6 @@
           },
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-54514",
-            "https://advisory.echohq.com/cve/CVE-2026-54514",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/1f5a1037b1e9e05920e755cb35f198bcd46667e4",
             "https://github.com/FasterXML/jackson-databind/pull/5951",
@@ -23202,7 +23202,8 @@
           "VendorSeverity": {
             "amazon": 3,
             "ghsa": 2,
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
@@ -23219,8 +23220,10 @@
             "https://advisory.echohq.com/cve/CVE-2026-54515",
             "https://github.com/FasterXML/jackson-databind",
             "https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa",
+            "https://github.com/FasterXML/jackson-databind/commit/0e1b0b211f7a53baa62ba2f4c9bd006c7bf4d5fa%20%28jackson-databind-3.1.4%29",
             "https://github.com/FasterXML/jackson-databind/issues/5962",
             "https://github.com/FasterXML/jackson-databind/issues/5964",
+            "https://github.com/FasterXML/jackson-databind/pull/5964",
             "https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-5jmj-h7xm-6q6v",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-54515",
             "https://www.cve.org/CVERecord?id=CVE-2026-54515"
@@ -23322,7 +23325,8 @@
           "VendorSeverity": {
             "amazon": 2,
             "ghsa": 2,
-            "redhat": 2
+            "redhat": 2,
+            "ubuntu": 2
           },
           "CVSS": {
             "ghsa": {
